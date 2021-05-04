@@ -1,19 +1,20 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Collection;
 
 public class MascotaBuilder {
-    TipoAnimal tipoAnimal;
-    String nombre;
-    String apodo;
-    int edad = -1;
-    Sexo sexo;
-    String descripcionFisica;
-    List<String> fotos = new ArrayList<>();
-    List<Caracteristica> caracteriticasObligatorias = new ArrayList<>();
-    List<Caracteristica> caracteristicasOpcionales = new ArrayList<>();
-    Dueño dueño; //TODO ver nombre dueño por la ñ D:
-    List<Caracteristica> caracteristicasDefinidas = new ArrayList<>();
+    private TipoAnimal tipoAnimal;
+    private String nombre;
+    private String apodo;
+    private int edad = -1;
+    private Sexo sexo;
+    private String descripcionFisica;
+    private List<String> fotos = new ArrayList<>();
+    private List<Caracteristica> caracteriticasObligatorias = new ArrayList<>();
+    private List<Caracteristica> caracteristicasOpcionales = new ArrayList<>();
+    private Dueño dueño; //TODO ver nombre dueño por la ñ D:
+    private List<Caracteristica> caracteristicasDefinidas = new ArrayList<>();
 
     //agregar a listas
     public void agregarObligatorias(Caracteristica caracteristica) {
@@ -24,7 +25,7 @@ public class MascotaBuilder {
         caracteristicasOpcionales.add(caracteristica);
     }
 
-    public void agregarDefinidas(Caracteristica caracteristica) {
+    public void agregarDefinidas(Caracteristica caracteristica) { //no validamos que se carguen bien porque confiamos en el adentro
         caracteristicasDefinidas.add(caracteristica);
     }
 
@@ -105,7 +106,8 @@ public class MascotaBuilder {
 
     private void validarCaracteristicasObligatorias(){
         List<String> nombresCaracteristicasObligatorias = caracteriticasObligatorias.stream().map(Caracteristica::getNombre).collect(Collectors.toList());
-        Boolean caracteristicasValidas = caracteristicasDefinidas.stream().allMatch(caracteristica -> nombresCaracteristicasObligatorias.stream().anyMatch(unNombre -> unNombre == caracteristica.getNombre()));
+        List<String> nombresCaracteristicasDefinidas = caracteristicasDefinidas.stream().map(Caracteristica::getNombre).collect(Collectors.toList());
+        boolean caracteristicasValidas = nombresCaracteristicasDefinidas.containsAll(nombresCaracteristicasObligatorias);
         if(!caracteristicasValidas){
             throw new MascotaInvalidaException("debe ingresar todas las caracteristicas obligatorias");
         }

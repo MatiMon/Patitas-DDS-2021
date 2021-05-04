@@ -5,7 +5,4 @@ public abstract class Caracteristica {
         return nombre;
     }
 
-    public Caracteristica(String nombre) {
-        this.nombre = nombre;
-    }
 }
