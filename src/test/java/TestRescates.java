@@ -26,13 +26,11 @@ public class TestRescates {
       registroDeRescates.agregarRescateMascota(mascota1);
       registroDeRescates.agregarRescateMascota(mascota2);
       registroDeRescates.agregarRescateMascota(mascota3);
-
     }
 
 
   @Test
   public void lasMascotasRescatadasSonDeDiezDiasEnAdelante(){
     assertEquals(registroDeRescates.ultimasMascotasEncontradas(10).size(), 2);
-
   }
 }
