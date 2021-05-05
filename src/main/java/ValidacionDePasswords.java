@@ -1,3 +1,3 @@
 public interface ValidacionDePasswords {
-  boolean validarPassword();
+  boolean validarPassword(String password);
 }
