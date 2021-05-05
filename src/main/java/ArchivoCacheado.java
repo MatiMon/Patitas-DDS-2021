@@ -9,11 +9,10 @@ public class ArchivoCacheado {
 
     private String nombreArchivo;
     private List<String> cache;
-    private int tiempoDeRefresco;
 
-    public ArchivoCacheado(String nombreArchivo, int tiempoDeRefresco) {
+
+    public ArchivoCacheado(String nombreArchivo) {
             this.nombreArchivo = nombreArchivo;
-            this.tiempoDeRefresco = tiempoDeRefresco;
             guardarArchivoEnCache(this.nombreArchivo);
     }
 
