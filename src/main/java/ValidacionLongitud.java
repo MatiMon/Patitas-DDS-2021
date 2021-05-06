@@ -1,6 +1,6 @@
 public class ValidacionLongitud implements ValidacionDePasswords{
 
-    private final int longitudMinima = 4;
+    private final int longitudMinima = 8;
 
     private final int longitudMaxima = 64;
 
