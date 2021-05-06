@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Objects;
 
-public abstract class Usuario {
+public class Usuario {
   String nombreUsuario;
   ContraseniaHasheada contrasenia;
   ValidadorContrasenia validador;
