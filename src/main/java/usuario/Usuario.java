@@ -1,3 +1,5 @@
+package usuario;
+
 import excepciones.ContraseniaInvalidaException;
 
 import java.security.NoSuchAlgorithmException;

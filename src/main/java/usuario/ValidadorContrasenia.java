@@ -1,3 +1,5 @@
+package usuario;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +11,7 @@ public class ValidadorContrasenia {
   }
 
   public boolean validarContrasenia(String contrasenia){
-    //aplicar todas las validaciones de la lista validaciones
-    return true;
+    return validaciones.stream().allMatch(validacionDeContrasenia -> validarContrasenia(contrasenia));
   }
 
   public void agregarValidacion(ValidacionDeContrasenia validacion){
