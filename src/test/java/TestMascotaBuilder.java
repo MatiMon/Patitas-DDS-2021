@@ -1,7 +1,14 @@
+import caracteristicas.*;
+import duenio.Contacto;
+import duenio.Duenio;
+import duenio.TipoDocumento;
+import excepciones.MascotaInvalidaException;
+import mascota.MascotaBuilder;
+import mascota.Sexo;
+import mascota.TipoAnimal;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,6 +24,7 @@ public class TestMascotaBuilder {
   TextoLibre jugueteFavorito = new TextoLibre("Juguete Favorito", null);
   Numerico cantidadDePatas = new Numerico("Cantidad De Patas", 0);
   List<String> opcionesRaza = new ArrayList<>();
+  RepositorioCaracteristicas repositorioCaracteristicas;
 
   @BeforeEach
   public void inicializarCreadorMascotas() {
@@ -29,11 +37,12 @@ public class TestMascotaBuilder {
     opcionesComidaFavorita.add("Siames");
     opcionesComidaFavorita.add("Caniche");
     Enumerada raza = new Enumerada("Raza", opcionesRaza);
-    creadorMascota.agregarObligatorias(estaCastrada);
-    creadorMascota.agregarObligatorias(comidaFavorita);
-    creadorMascota.agregarObligatorias(jugueteFavorito);
-    creadorMascota.agregarObligatorias(cantidadDePatas);
-    creadorMascota.agregarOpcionales(raza);
+    repositorioCaracteristicas = RepositorioCaracteristicas.getInstancia();
+    repositorioCaracteristicas.agregarCaracteristicaObligatoria(estaCastrada);
+    repositorioCaracteristicas.agregarCaracteristicaObligatoria(comidaFavorita);
+    repositorioCaracteristicas.agregarCaracteristicaObligatoria(jugueteFavorito);
+    repositorioCaracteristicas.agregarCaracteristicaObligatoria(cantidadDePatas);
+    repositorioCaracteristicas.agregarCaracteristicaOpcional(raza);
     fotos.add("Foto1.jpg");
   }
 
@@ -41,11 +50,10 @@ public class TestMascotaBuilder {
   @Test
   public void noSePuedeRegistrarUnaMascotaVacia() {
     Assertions.assertThrows(
-        MascotaInvalidaException.class,
+        NullPointerException.class,
         () -> creadorMascota.registrarMascota()
     );
   }
-
 
   @Test
   public void noSePuedeCrearUnaMascotaSinTodasSusCaracteristicasObligatorias(){
@@ -83,8 +91,8 @@ public class TestMascotaBuilder {
     Contacto contacto = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
     List<Contacto> contactos = new ArrayList<>();
     contactos.add(contacto);
-    Dueño dueño = new Dueño("Nombre falso", "sanchez", LocalDate.now(), TipoDocumento.DNI, 1254589, contactos);
-    creadorMascota.setDueño(dueño);
+    Duenio duenio = new Duenio("Nombre falso", "sanchez", LocalDate.now(), TipoDocumento.DNI, 1254589, contactos);
+    creadorMascota.setDuenio(duenio);
   }
 
 }

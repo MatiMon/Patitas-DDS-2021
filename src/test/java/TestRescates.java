@@ -1,3 +1,5 @@
+import duenio.Contacto;
+import duenio.TipoDocumento;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,7 +21,7 @@ public class TestRescates {
     public void inicializar(){
       contactos.add(contacto);
       fotos.add("una foto");
-      Rescatista rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12),TipoDocumento.DNI, "callefalsa123", contactos);
+      Rescatista rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contactos);
       MascotaRescatada mascota1 = new MascotaRescatada(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now());
       MascotaRescatada mascota2 = new MascotaRescatada(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now().minusDays(10));
       MascotaRescatada mascota3 = new MascotaRescatada(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now().minusDays(15));

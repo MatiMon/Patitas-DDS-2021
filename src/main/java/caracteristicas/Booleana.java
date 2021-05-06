@@ -1,3 +1,5 @@
+package caracteristicas;
+
 public class Booleana extends Caracteristica{
   boolean valor;
 

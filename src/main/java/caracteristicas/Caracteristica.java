@@ -1,3 +1,5 @@
+package caracteristicas;
+
 public abstract class Caracteristica {
     String nombre;
 

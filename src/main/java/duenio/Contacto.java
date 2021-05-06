@@ -1,3 +1,5 @@
+package duenio;
+
 public class Contacto {
   String nombre;
   String apellido;

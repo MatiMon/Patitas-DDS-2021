@@ -1,3 +1,5 @@
+package caracteristicas;
+
 public class Numerico extends Caracteristica {
   int valor;
 

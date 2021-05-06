@@ -1,3 +1,7 @@
+import duenio.Contacto;
+import duenio.TipoDocumento;
+import excepciones.RescatistaInvalidoException;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

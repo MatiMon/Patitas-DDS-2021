@@ -1,3 +1,5 @@
+package caracteristicas;
+
 public class TextoLibre extends Caracteristica{
   String descripcion;
 
