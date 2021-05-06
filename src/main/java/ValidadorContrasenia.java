@@ -8,7 +8,7 @@ public class ValidadorContrasenia {
     this.validaciones = validaciones;
   }
 
-  public boolean validarPassword(String password){
+  public boolean validarContrasenia(String contrasenia){
     //aplicar todas las validaciones de la lista validaciones
     return true;
   }

@@ -1,3 +1,3 @@
 public interface ValidacionDeContrasenia {
-  boolean validarPassword();
+  boolean validarContrasenia(String contrasenia);
 }
