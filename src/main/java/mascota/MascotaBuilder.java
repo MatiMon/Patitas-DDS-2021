@@ -1,6 +1,7 @@
 package mascota;
 
-import caracteristicas.Caracteristica;
+import caracteristicas.CaracteristicaIdeal;
+import caracteristicas.CaracteristicaSensible;
 import caracteristicas.RepositorioCaracteristicas;
 import duenio.Duenio;
 import excepciones.MascotaInvalidaException;
@@ -8,6 +9,7 @@ import excepciones.MascotaInvalidaException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class MascotaBuilder {
@@ -19,12 +21,19 @@ public class MascotaBuilder {
     private String descripcionFisica;
     private List<String> fotos = new ArrayList<>();
     private Duenio duenio;
-    private List<Caracteristica> caracteristicasDefinidas = new ArrayList<>();
-
+    private List<CaracteristicaSensible> caracteristicasDefinidas = new ArrayList<>();
 
     //agregar a listas
-    public void agregarDefinidas(Caracteristica caracteristica) { //no validamos que se carguen bien porque confiamos en el adentro
-        caracteristicasDefinidas.add(caracteristica);
+    private CaracteristicaSensible ingresarNuevaCaracteristica(String nombre){
+        Optional<CaracteristicaIdeal> nuevaCaracteristica = RepositorioCaracteristicas.getCaracteristicas().stream().filter(caracteristica -> caracteristica.getNombre() == nombre).findAny();
+        if(!nuevaCaracteristica.isPresent()){
+            //tirar excepcion gg
+        }
+        return nuevaCaracteristica.get().crearCaracteristica();
+    }
+
+    public void ingresarValorCaracteristica(Object valor){
+
     }
 
     //setters
@@ -85,14 +94,13 @@ public class MascotaBuilder {
     }
 
     private void validarCaracteristicasObligatorias(){
-        List<String> nombresCaracteristicasObligatorias = RepositorioCaracteristicas.getInstancia()
-                .listarCaracterisitcasObligatorias()
-                .stream().map(Caracteristica::getNombre)
+        List<String> nombresCaracteristicasObligatorias = RepositorioCaracteristicas.getCaracteristicas()
+                .stream().map(CaracteristicaSensible::getNombre)
                 .collect(Collectors.toList());
 
         List<String> nombresCaracteristicasDefinidas = caracteristicasDefinidas
                 .stream()
-                .map(Caracteristica::getNombre)
+                .map(CaracteristicaSensible::getNombre)
                 .collect(Collectors.toList());
 
         boolean caracteristicasValidas = nombresCaracteristicasDefinidas.containsAll(nombresCaracteristicasObligatorias);

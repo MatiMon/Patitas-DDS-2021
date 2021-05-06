@@ -21,8 +21,8 @@ public class TestMascotaBuilder {
   List<String> fotos = new ArrayList<>();
   Booleana estaCastrada = new Booleana("Esta Castrada", false);
   List<String> opcionesComidaFavorita = new ArrayList<>();
-  TextoLibre jugueteFavorito = new TextoLibre("Juguete Favorito", null);
-  Numerico cantidadDePatas = new Numerico("Cantidad De Patas", 0);
+  TextoSensible jugueteFavorito = new TextoSensible("Juguete Favorito", null);
+  NumericoSensible cantidadDePatas = new NumericoSensible("Cantidad De Patas", 0);
   List<String> opcionesRaza = new ArrayList<>();
   RepositorioCaracteristicas repositorioCaracteristicas;
 
@@ -31,12 +31,12 @@ public class TestMascotaBuilder {
     opcionesComidaFavorita.add("En lata");
     opcionesComidaFavorita.add("casera");
     opcionesComidaFavorita.add("deshidrata");
-    Enumerada comidaFavorita = new Enumerada("Comida Favorita", opcionesComidaFavorita);
+    EnumeradaIdeal comidaFavorita = new EnumeradaIdeal("Comida Favorita", opcionesComidaFavorita);
     opcionesComidaFavorita.add("Labrador");
     opcionesComidaFavorita.add("Ovejero Aleman");
     opcionesComidaFavorita.add("Siames");
     opcionesComidaFavorita.add("Caniche");
-    Enumerada raza = new Enumerada("Raza", opcionesRaza);
+    EnumeradaIdeal raza = new EnumeradaIdeal("Raza", opcionesRaza);
     repositorioCaracteristicas = RepositorioCaracteristicas.getInstancia();
     repositorioCaracteristicas.agregarCaracteristicaObligatoria(estaCastrada);
     repositorioCaracteristicas.agregarCaracteristicaObligatoria(comidaFavorita);
@@ -72,7 +72,7 @@ public class TestMascotaBuilder {
     agregarDatosMascota();
     Booleana estaCastradaDefinida = new Booleana("Esta Castrada", true);
     creadorMascota.agregarDefinidas(estaCastradaDefinida);
-    creadorMascota.agregarDefinidas(new TextoLibre("Comida Favorita", null));
+    creadorMascota.agregarDefinidas(new TextoSensible("Comida Favorita", null));
     creadorMascota.agregarDefinidas(jugueteFavorito);
     creadorMascota.agregarDefinidas(cantidadDePatas);
     Assertions.assertDoesNotThrow(
