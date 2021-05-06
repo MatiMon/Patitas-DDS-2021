@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ValidadorPasswords {
-  List<ValidacionDePasswords> validaciones = new ArrayList<>();
+public class ValidadorContrasenia {
+  List<ValidacionDeContrasenia> validaciones = new ArrayList<>();
 
-  public ValidadorPasswords(List<ValidacionDePasswords> validaciones) {
+  public ValidadorContrasenia(List<ValidacionDeContrasenia> validaciones) {
     this.validaciones = validaciones;
   }
 
@@ -13,7 +13,7 @@ public class ValidadorPasswords {
     return true;
   }
 
-  public void agregarValidacion(ValidacionDePasswords validacion){
+  public void agregarValidacion(ValidacionDeContrasenia validacion){
     this.validaciones.add(validacion);
   }
 
