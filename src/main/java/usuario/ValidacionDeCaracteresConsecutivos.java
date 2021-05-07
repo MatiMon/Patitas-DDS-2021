@@ -1,6 +1,8 @@
-public class ValidacionCaracteresConsecutivos implements ValidacionContrasenia {
+package usuario;
 
-    public boolean validacionContrasenia(String password) {
+public class ValidacionDeCaracteresConsecutivos implements ValidacionDeContrasenia {
+
+    public boolean validarContrasenia(String password) {
         return !todosLosCaracteresIguales(password);
     }
 

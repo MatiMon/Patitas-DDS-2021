@@ -1,11 +1,13 @@
-public class ValidacionLongitud implements ValidacionContrasenia{
+package usuario;
+
+public class ValidacionDeLongitud implements ValidacionDeContrasenia {
 
     private final int longitudMinima = 8;
 
     private final int longitudMaxima = 64;
 
 
-    public boolean validacionContrasenia(String password) {
+    public boolean validarContrasenia(String password) {
         return longitudMinima <= password.length() && password.length() <= longitudMaxima;
     }
 

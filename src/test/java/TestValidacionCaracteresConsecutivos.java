@@ -1,29 +1,31 @@
 
 import org.junit.jupiter.api.Test;
+import usuario.ValidacionDeCaracteresConsecutivos;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestValidacionCaracteresConsecutivos {
 
-    ValidacionCaracteresConsecutivos validador = new ValidacionCaracteresConsecutivos();
+    ValidacionDeCaracteresConsecutivos validador = new ValidacionDeCaracteresConsecutivos();
 
     @Test
     public void cadenaInvalida() {
-        assertEquals(validador.validacionContrasenia(("aaaaaa")), false);
+        assertEquals(validador.validarContrasenia(("aaaaaa")), false);
     }
 
     @Test
     public void cadenaValida() {
-        assertEquals(validador.validacionContrasenia(("hola")), true);
+        assertEquals(validador.validarContrasenia(("hola")), true);
     }
 
     @Test
     public void cadenaNumericaInvalida() {
-        assertEquals(validador.validacionContrasenia(("1111111")), false);
+        assertEquals(validador.validarContrasenia(("1111111")), false);
     }
 
     @Test
     public void cadenaNumericaValida() {
-        assertEquals(validador.validacionContrasenia(("45621")), true);
+        assertEquals(validador.validarContrasenia(("45621")), true);
     }
 
 }

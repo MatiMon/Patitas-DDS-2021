@@ -1,5 +1,5 @@
 package usuario;
 
 public interface ValidacionDeContrasenia {
-  boolean validarContrasenia(String contrasenia);
+  boolean validarContrasenia(String password);
 }
