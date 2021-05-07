@@ -1,3 +1,5 @@
+package rescate;
+
 import excepciones.MascotaRescatadaInvalidaException;
 
 import java.time.LocalDateTime;
@@ -5,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MascotaRescatada {
-  List<String> fotos = new ArrayList<>();
-  String descripcion;
-  String ubicacion;
+  private List<String> fotos = new ArrayList<>();
+  private String descripcion;
+  private String ubicacion;
   Rescatista rescatista;
   LocalDateTime fecha;
 

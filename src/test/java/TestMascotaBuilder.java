@@ -32,10 +32,10 @@ public class TestMascotaBuilder {
     opcionesComidaFavorita.add("casera");
     opcionesComidaFavorita.add("deshidrata");
     Enumerada comidaFavorita = new Enumerada("Comida Favorita", opcionesComidaFavorita);
-    opcionesComidaFavorita.add("Labrador");
-    opcionesComidaFavorita.add("Ovejero Aleman");
-    opcionesComidaFavorita.add("Siames");
-    opcionesComidaFavorita.add("Caniche");
+    opcionesRaza.add("Labrador");
+    opcionesRaza.add("Ovejero Aleman");
+    opcionesRaza.add("Siames");
+    opcionesRaza.add("Caniche");
     Enumerada raza = new Enumerada("Raza", opcionesRaza);
     repositorioCaracteristicas = RepositorioCaracteristicas.getInstancia();
     repositorioCaracteristicas.agregarCaracteristicaObligatoria(estaCastrada);

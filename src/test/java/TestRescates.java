@@ -2,6 +2,10 @@ import duenio.Contacto;
 import duenio.TipoDocumento;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import rescate.MascotaRescatada;
+import rescate.RegistroDeRescates;
+import rescate.Rescatista;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;

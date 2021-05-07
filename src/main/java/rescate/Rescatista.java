@@ -1,3 +1,5 @@
+package rescate;
+
 import duenio.Contacto;
 import duenio.TipoDocumento;
 import excepciones.RescatistaInvalidoException;
