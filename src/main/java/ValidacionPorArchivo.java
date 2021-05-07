@@ -1,11 +1,11 @@
-public class ValidacionPorArchivo implements ValidacionDePasswords{
+public class ValidacionPorArchivo implements ValidacionContrasenia{
     private ArchivoCacheado archivoCacheado;
 
     public ValidacionPorArchivo(ArchivoCacheado archivoCacheado) {
         this.archivoCacheado = archivoCacheado;
     }
 
-    public boolean validarPassword(String password) {
+    public boolean validacionContrasenia(String password) {
         return !this.archivoCacheado.passwordEnArchivo(password);
     }
 
