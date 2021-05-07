@@ -10,7 +10,7 @@ public class RegistroDeRescates {
 
   public List<MascotaRescatada> ultimasMascotasEncontradas(int dias){
     return this.rescatesDeMascotas.stream()
-        .filter(mascotaRescatada -> mascotaRescatada.fecha.isAfter(LocalDateTime.now().minusDays(dias+1)))
+        .filter(mascotaRescatada -> mascotaRescatada.getFecha().isAfter(LocalDateTime.now().minusDays(dias+1)))
         .collect(Collectors.toList());
   }
 

@@ -1,10 +1,10 @@
 package duenio;
 
 public class Contacto {
-  String nombre;
-  String apellido;
-  int telefono;
-  String email;
+  private String nombre;
+  private String apellido;
+  private int telefono;
+  private String email;
 
   public Contacto(String nombre, String apellido, int telefono, String email) {
     this.nombre = nombre;

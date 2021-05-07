@@ -7,13 +7,13 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.Objects;
 
 public class Usuario {
-  String nombreUsuario;
-  ContraseniaHasheada contrasenia;
-  ValidadorContrasenia validador;
+  private String nombreUsuario;
+  private ContraseniaHasheada contrasenia;
+  private ValidadorContrasenia validador;
 
   public Usuario(String nombreUsuario, String contrasenia, ValidadorContrasenia validador) throws NoSuchAlgorithmException, InvalidKeySpecException {
     this.nombreUsuario = Objects.requireNonNull(nombreUsuario, "Debe introducir un nombre de usuario");
-    Objects.requireNonNull(contrasenia, "debe introducir una contrasenia");
+    Objects.requireNonNull(contrasenia, "Debe introducir una contrasenia");
 
     this.validador = validador;
     if (!validador.validarLasContrasenias(contrasenia)) {

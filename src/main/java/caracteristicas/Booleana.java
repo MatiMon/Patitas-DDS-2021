@@ -1,7 +1,7 @@
 package caracteristicas;
 
 public class Booleana extends Caracteristica{
-  boolean valor;
+  private boolean valor;
 
   public Booleana (String nombre, boolean valor) {
     this.nombre = nombre;

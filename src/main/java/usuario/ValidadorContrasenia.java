@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class ValidadorContrasenia {
-  List<ValidacionDeContrasenia> validaciones = new ArrayList<>();
+  private List<ValidacionDeContrasenia> validaciones = new ArrayList<>();
 
   public ValidadorContrasenia(List<ValidacionDeContrasenia> validaciones) {
     Objects.requireNonNull(validaciones, "Debe ingresar al menos una validacion");

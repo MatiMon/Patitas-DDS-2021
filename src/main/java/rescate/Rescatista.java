@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Rescatista {
-  String nombre;
-  String apodo;
-  LocalDate fechaNacimiento;
-  TipoDocumento tipoDocumento;
-  String direccion;
-  List<Contacto> contactos = new ArrayList<>();
+  private String nombre;
+  private String apodo;
+  private LocalDate fechaNacimiento;
+  private TipoDocumento tipoDocumento;
+  private String direccion;
+  private List<Contacto> contactos = new ArrayList<>();
 
   public Rescatista(String nombre, String apodo, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, String direccion, List<Contacto> contactos) {
     if(contactos.size()<1){

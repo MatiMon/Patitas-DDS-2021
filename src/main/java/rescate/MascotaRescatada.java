@@ -10,8 +10,8 @@ public class MascotaRescatada {
   private List<String> fotos = new ArrayList<>();
   private String descripcion;
   private String ubicacion;
-  Rescatista rescatista;
-  LocalDateTime fecha;
+  private Rescatista rescatista;
+  private LocalDateTime fecha;
 
   public MascotaRescatada(List<String> fotos, String descripcion, String ubicacion, Rescatista rescatista, LocalDateTime fecha) {
     if(fotos.size()<1){
@@ -29,4 +29,9 @@ public class MascotaRescatada {
     this.fotos.add(foto);
   }
 
+  public LocalDateTime getFecha() {
+    return fecha;
+  }
 }
+
+

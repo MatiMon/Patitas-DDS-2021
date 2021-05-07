@@ -1,7 +1,7 @@
 package caracteristicas;
 
 public class Numerico extends Caracteristica {
-  int valor;
+  private int valor;
 
   public Numerico(String nombre, int valor) {
     this.nombre = nombre;

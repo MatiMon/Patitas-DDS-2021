@@ -1,7 +1,7 @@
 package caracteristicas;
 
 public class TextoLibre extends Caracteristica{
-  String descripcion;
+  private String descripcion;
 
   public TextoLibre(String nombre, String descripcion) {
     this.nombre = nombre;
