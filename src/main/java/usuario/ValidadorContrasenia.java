@@ -12,14 +12,13 @@ public class ValidadorContrasenia {
   public ValidadorContrasenia(List<ValidacionDeContrasenia> validaciones) {
     Objects.requireNonNull(validaciones, "Debe ingresar al menos una validacion");
     if (validaciones.size() == 0){
-      //throw new ValidadorContraseniaInvalidoException("debe incluir al menos una validacion de seguridad");
-      this.validaciones = validaciones;
+      throw new ValidadorContraseniaInvalidoException("debe incluir al menos una validacion de seguridad");
     } else
     this.validaciones = validaciones;
   }
 
-  public boolean validarContrasenia(String contrasenia){
-  return validaciones.stream().allMatch(validacionDeContrasenia -> validarContrasenia(contrasenia));
+  public boolean validarLasContrasenias(String contrasenia){
+  return this.validaciones.stream().allMatch(validacionDeContrasenia -> validacionDeContrasenia.validarContrasenia(contrasenia));
   }
 
   public void agregarValidacion(ValidacionDeContrasenia validacion){

@@ -16,7 +16,7 @@ public class Usuario {
     Objects.requireNonNull(contrasenia, "debe introducir una contrasenia");
 
     this.validador = validador;
-    if (!validador.validarContrasenia(contrasenia)) {
+    if (!validador.validarLasContrasenias(contrasenia)) {
       throw new ContraseniaInvalidaException(" la contrasenia no cumple los requerimientos minimos de seguridad");
     }
 
@@ -30,7 +30,7 @@ public class Usuario {
   }
 
   public void actualizarContrasenia(String contrasenia) throws NoSuchAlgorithmException, InvalidKeySpecException {
-    if (!validador.validarContrasenia(contrasenia)) {
+    if (!validador.validarLasContrasenias(contrasenia)) {
       throw new ContraseniaInvalidaException(" la contrasenia no cumple los requerimientos minimos de seguridad");
     }
     this.contrasenia = new ContraseniaHasheada(contrasenia);
