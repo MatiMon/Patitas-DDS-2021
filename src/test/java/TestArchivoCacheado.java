@@ -6,10 +6,12 @@ import usuario.ArchivoCacheado;
 
 
 public class TestArchivoCacheado {
-    @Test
-    public void ArchivoInvalido() {
+  @Test
+  public void ArchivoInvalido() {
 
-        //Assertions.assertThrows(NombreDeArchivoInvalidoException.class, (Executable) new ArchivoCacheado("/este-nombre-es-invalido.txt"));
+    Assertions.assertThrows(NombreDeArchivoInvalidoException.class, () -> {
+      new ArchivoCacheado("/este-nombre-es-invalido.txt");
+    }); //se usa mucho para simular evaluacion diferida en objetos
 
-    }
+  }
 }

@@ -7,22 +7,19 @@ import java.util.List;
 import java.util.Objects;
 
 public class ValidadorContrasenia {
-  private List<ValidacionDeContrasenia> validaciones = new ArrayList<>();
+  private List<ValidacionDeContrasenia> validaciones;
 
   public ValidadorContrasenia(List<ValidacionDeContrasenia> validaciones) {
     Objects.requireNonNull(validaciones, "Debe ingresar al menos una validacion");
-    if (validaciones.size() == 0){
+    if (validaciones.size() == 0) {//isEmpty()
       throw new ValidadorContraseniaInvalidoException("debe incluir al menos una validacion de seguridad");
-    } else
+    }
     this.validaciones = validaciones;
   }
+  //CTRL+WN+ALT+L
 
-  public boolean validarLasContrasenias(String contrasenia){
-  return this.validaciones.stream().allMatch(validacionDeContrasenia -> validacionDeContrasenia.validarContrasenia(contrasenia));
-  }
-
-  public void agregarValidacion(ValidacionDeContrasenia validacion){
-    this.validaciones.add(validacion);
+  public boolean validarLasContrasenias(String contrasenia) {
+    return this.validaciones.stream().allMatch(validacionDeContrasenia -> validacionDeContrasenia.validarContrasenia(contrasenia));
   }
 
 }
