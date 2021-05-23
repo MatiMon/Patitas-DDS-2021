@@ -14,13 +14,13 @@ public class MascotaBuilder {
     private TipoAnimal tipoAnimal;
     private String nombre;
     private String apodo;
-    private int edad = -1;
+    private int edad;
     private Sexo sexo;
     private String descripcionFisica;
     private List<String> fotos = new ArrayList<>();
     private Duenio duenio;
     private List<Caracteristica> caracteristicasDefinidas = new ArrayList<>();
-
+    private String QR;
 
     //agregar a listas
     public void agregarDefinidas(Caracteristica caracteristica) { //no validamos que se carguen bien porque confiamos en el adentro
@@ -60,10 +60,14 @@ public class MascotaBuilder {
         this.apodo = apodo;
     }
 
+    public void setQR(String QR) {
+        this.QR = QR;
+    }
+
     //crear mascota
     public Mascota registrarMascota() {
         validarMascota();
-        return new Mascota(nombre, apodo, edad, sexo, tipoAnimal, descripcionFisica, fotos, caracteristicasDefinidas, duenio);
+        return new Mascota(nombre, apodo, edad, sexo, tipoAnimal, descripcionFisica, fotos, caracteristicasDefinidas, duenio, QR);
     }
 
     //validaciones

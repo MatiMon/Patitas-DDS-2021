@@ -2,7 +2,6 @@ package usuario;
 
 import excepciones.ValidadorContraseniaInvalidoException;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,10 +15,9 @@ public class ValidadorContrasenia {
     }
     this.validaciones = validaciones;
   }
-  //CTRL+WN+ALT+L
 
   public boolean validarLasContrasenias(String contrasenia) {
-    return this.validaciones.stream().allMatch(validacionDeContrasenia -> validacionDeContrasenia.validarContrasenia(contrasenia));
+    return this.validaciones.stream().allMatch(validacionDeContrasenia -> validacionDeContrasenia.esContraseniaValida(contrasenia));
   }
 
 }

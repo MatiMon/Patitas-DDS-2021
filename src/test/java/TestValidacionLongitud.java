@@ -8,27 +8,27 @@ public class TestValidacionLongitud {
 
     @Test
     public void contraseniaMenorMinimo() {
-        assertEquals(validador.validarContrasenia(("feq")), false);
+        assertEquals(validador.esContraseniaValida(("feq")), false);
     }
 
     @Test
     public void contraseniaIgualAlMinimo() {
-        assertEquals(validador.validarContrasenia(("mgrtzpla")), true);
+        assertEquals(validador.esContraseniaValida(("mgrtzpla")), true);
     }
 
     @Test
     public void contraseniaIgualAlMaximo() {
-        assertEquals(validador.validarContrasenia(("owaspowaspowaspowaspowaspowaspowaspowaspowaspowaspowaspwasp")), true);
+        assertEquals(validador.esContraseniaValida(("owaspowaspowaspowaspowaspowaspowaspowaspowaspowaspowaspwasp")), true);
     }
 
     @Test
     public void contraseniaMayorMaximo() {
-        assertEquals(validador.validarContrasenia(("owaspowaspowaspowaspowaspowaspowaspowaspowaspowaspowaspwaspdfasdfsadfsadfdfaf")), false);
+        assertEquals(validador.esContraseniaValida(("owaspowaspowaspowaspowaspowaspowaspowaspowaspowaspowaspwaspdfasdfsadfsadfdfaf")), false);
     }
 
     @Test
     public void contraseniaEntreMinimoAndMaximo() {
-        assertEquals(validador.validarContrasenia(("diseniodesistemas")), true);
+        assertEquals(validador.esContraseniaValida(("diseniodesistemas")), true);
     }
 
 }

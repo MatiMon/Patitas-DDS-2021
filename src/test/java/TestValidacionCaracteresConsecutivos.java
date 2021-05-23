@@ -10,22 +10,22 @@ public class TestValidacionCaracteresConsecutivos {
 
     @Test
     public void cadenaInvalida() {
-        assertEquals(validador.validarContrasenia(("aaaaaa")), false);
+        assertEquals(validador.esContraseniaValida(("aaaaaa")), false);
     }
 
     @Test
     public void cadenaValida() {
-        assertEquals(validador.validarContrasenia(("hola")), true);
+        assertEquals(validador.esContraseniaValida(("hola")), true);
     }
 
     @Test
     public void cadenaNumericaInvalida() {
-        assertEquals(validador.validarContrasenia(("1111111")), false);
+        assertEquals(validador.esContraseniaValida(("1111111")), false);
     }
 
     @Test
     public void cadenaNumericaValida() {
-        assertEquals(validador.validarContrasenia(("45621")), true);
+        assertEquals(validador.esContraseniaValida(("45621")), true);
     }
 
 }

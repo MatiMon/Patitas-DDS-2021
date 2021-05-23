@@ -2,7 +2,7 @@ package usuario;
 
 public class ValidacionDeCaracteresConsecutivos implements ValidacionDeContrasenia {
 
-    public boolean validarContrasenia(String password) {
+    public boolean esContraseniaValida(String password) {
         return !todosLosCaracteresIguales(password);
     }
 

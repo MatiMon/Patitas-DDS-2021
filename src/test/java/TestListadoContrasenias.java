@@ -1,16 +1,15 @@
 import excepciones.NombreDeArchivoInvalidoException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
-import usuario.ArchivoCacheado;
+import usuario.ListadoContrasenias;
 
 
-public class TestArchivoCacheado {
+public class TestListadoContrasenias {
   @Test
   public void ArchivoInvalido() {
 
     Assertions.assertThrows(NombreDeArchivoInvalidoException.class, () -> {
-      new ArchivoCacheado("/este-nombre-es-invalido.txt");
+      new ListadoContrasenias("/este-nombre-es-invalido.txt");
     }); //se usa mucho para simular evaluacion diferida en objetos
 
   }

@@ -1,10 +1,14 @@
 import duenio.Contacto;
 import duenio.TipoDocumento;
+import mascota.Mascota;
+import mascota.Sexo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import rescate.MascotaRescatada;
+import rescate.RescateDeMascota;
 import rescate.RegistroDeRescates;
 import rescate.Rescatista;
+
+import javax.crypto.Mac;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -23,15 +27,16 @@ public class TestRescates {
 
     @BeforeEach
     public void inicializar(){
+      /*Mascota mascota = new Mascota("a", "b", 1, Sexo.MACHO, )
       contactos.add(contacto);
       fotos.add("una foto");
       Rescatista rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contactos);
-      MascotaRescatada mascota1 = new MascotaRescatada(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now());
-      MascotaRescatada mascota2 = new MascotaRescatada(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now().minusDays(10));
-      MascotaRescatada mascota3 = new MascotaRescatada(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now().minusDays(15));
+      RescateDeMascota mascota1 = new RescateDeMascota(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now());
+      RescateDeMascota mascota2 = new RescateDeMascota(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now().minusDays(10));
+      RescateDeMascota mascota3 = new RescateDeMascota(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now().minusDays(15));
       registroDeRescates.agregarRescateMascota(mascota1);
       registroDeRescates.agregarRescateMascota(mascota2);
-      registroDeRescates.agregarRescateMascota(mascota3);
+      registroDeRescates.agregarRescateMascota(mascota3);*/
     }
 
 

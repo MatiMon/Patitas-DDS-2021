@@ -6,19 +6,19 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class RegistroDeRescates {
-  private List<MascotaRescatada> rescatesDeMascotas = new ArrayList<>();
+  private List<RescateDeMascota> rescatesDeMascotas = new ArrayList<>();
 
-  public List<MascotaRescatada> ultimasMascotasEncontradas(int dias){
+  public List<RescateDeMascota> ultimasMascotasEncontradas(int dias){
     return this.rescatesDeMascotas.stream()
-        .filter(mascotaRescatada -> mascotaRescatada.getFecha().isAfter(LocalDateTime.now().minusDays(dias+1)))
+        .filter(rescateDeMascota -> rescateDeMascota.getFecha().isAfter(LocalDateTime.now().minusDays(dias+1)))
         .collect(Collectors.toList());
   }
 
-  public void agregarRescateMascota(MascotaRescatada mascotaRescatada){
-    this.rescatesDeMascotas.add(mascotaRescatada);
+  public void agregarRescateMascota(RescateDeMascota rescateDeMascota){
+    this.rescatesDeMascotas.add(rescateDeMascota);
   }
 
-  public void removerRescateMascota(MascotaRescatada mascotaRescatada){
-    this.rescatesDeMascotas.remove(mascotaRescatada);
+  public void removerRescateMascota(RescateDeMascota rescateDeMascota){
+    this.rescatesDeMascotas.remove(rescateDeMascota);
   }
 }

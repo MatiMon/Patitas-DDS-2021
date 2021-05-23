@@ -1,19 +1,21 @@
 package rescate;
 
 import excepciones.MascotaRescatadaInvalidaException;
+import mascota.Mascota;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MascotaRescatada {
+public class RescateDeMascota {
   private List<String> fotos = new ArrayList<>();
   private String descripcion;
   private String ubicacion;
   private Rescatista rescatista;
   private LocalDateTime fecha;
+  private Mascota mascota;
 
-  public MascotaRescatada(List<String> fotos, String descripcion, String ubicacion, Rescatista rescatista, LocalDateTime fecha) {
+  public RescateDeMascota(List<String> fotos, String descripcion, String ubicacion, Rescatista rescatista, LocalDateTime fecha, Mascota mascota) {
     if(fotos.size()<1){
       throw new MascotaRescatadaInvalidaException("debe tener al menos una foto");
     }
@@ -23,6 +25,7 @@ public class MascotaRescatada {
     this.ubicacion = ubicacion;
     this.rescatista = rescatista;
     this.fecha = fecha;
+    this.mascota = mascota;
   }
 
   public void agregarFoto(String foto){

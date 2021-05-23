@@ -88,6 +88,7 @@ public class TestMascotaBuilder {
     creadorMascota.setSexo(Sexo.HEMBRA);
     creadorMascota.setTipoAnimal(TipoAnimal.GATO);
     creadorMascota.setFotos(fotos);
+    creadorMascota.setQR("soy un QR");
     Contacto contacto = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
     List<Contacto> contactos = new ArrayList<>();
     contactos.add(contacto);

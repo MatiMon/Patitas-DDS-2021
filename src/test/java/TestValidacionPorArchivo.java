@@ -1,20 +1,20 @@
 import org.junit.jupiter.api.Test;
-import usuario.ArchivoCacheado;
-import usuario.ValidacionDePorArchivo;
+import usuario.ListadoContrasenias;
+import usuario.ValidacionPorArchivo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestValidacionPorArchivo {
-    ValidacionDePorArchivo validador = new ValidacionDePorArchivo(new ArchivoCacheado("/10k-most-common.txt"));
+    ValidacionPorArchivo validador = new ValidacionPorArchivo(new ListadoContrasenias("/10k-most-common.txt"));
 
     @Test
     public void cadenaPertenecienteAlArchivo() {
-        assertEquals(validador.validarContrasenia(("monkey")), false);
+        assertEquals(validador.esContraseniaValida(("monkey")), false);
     }
 
     @Test
     public void cadenaNoPertencienteAlArchivo() {
-        assertEquals(validador.validarContrasenia(("soyUnaPasswordPotente")), true);
+        assertEquals(validador.esContraseniaValida(("soyUnaPasswordPotente")), true);
     }
 
 }
