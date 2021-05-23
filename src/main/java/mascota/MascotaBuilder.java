@@ -2,7 +2,7 @@ package mascota;
 
 import caracteristicas.CaracteristicaPosible;
 import caracteristicas.CaracteristicaDefinida;
-import caracteristicas.RepositorioCaracteristicas;
+import caracteristicas.RepositorioCaracteristicasPosibles;
 import duenio.Duenio;
 import excepciones.MascotaInvalidaException;
 
@@ -23,7 +23,7 @@ public class MascotaBuilder {
 
     //agregar a listas
     private void ingresarNuevaCaracteristica(String nombre, Object valor){
-        CaracteristicaPosible nuevaCaracteristica = RepositorioCaracteristicas.getCaracteristicaIdeal(nombre);
+        CaracteristicaPosible nuevaCaracteristica = RepositorioCaracteristicasPosibles.getCaracteristicaIdeal(nombre);
         caracteristicasDefinidas.add(nuevaCaracteristica.crearCaracteristica(valor));
     }
 

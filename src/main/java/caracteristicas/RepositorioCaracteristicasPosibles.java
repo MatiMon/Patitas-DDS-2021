@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class RepositorioCaracteristicas {
+public class RepositorioCaracteristicasPosibles {
   private static List<CaracteristicaPosible> caracteristicas = new ArrayList<>();
 
-  private static final RepositorioCaracteristicas INSTANCIA = new RepositorioCaracteristicas();
+  private static final RepositorioCaracteristicasPosibles INSTANCIA = new RepositorioCaracteristicasPosibles();
 
 
   //agregar a listas
@@ -28,7 +28,7 @@ public class RepositorioCaracteristicas {
     return nuevaCaracteristica.get();
   }
 
-  public static RepositorioCaracteristicas getInstancia() {
+  public static RepositorioCaracteristicasPosibles getInstancia() {
     return INSTANCIA;
   }
 }

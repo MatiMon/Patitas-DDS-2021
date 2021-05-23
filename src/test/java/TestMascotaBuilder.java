@@ -24,7 +24,7 @@ public class TestMascotaBuilder {
   TextoDefinida jugueteFavorito = new TextoDefinida("Juguete Favorito", null);
   NumericoDefinida cantidadDePatas = new NumericoDefinida("Cantidad De Patas", 0);
   List<String> opcionesRaza = new ArrayList<>();
-  RepositorioCaracteristicas repositorioCaracteristicas;
+  RepositorioCaracteristicasPosibles repositorioCaracteristicasPosibles;
 
   @BeforeEach
   public void inicializarCreadorMascotas() {
@@ -37,12 +37,12 @@ public class TestMascotaBuilder {
     opcionesComidaFavorita.add("Siames");
     opcionesComidaFavorita.add("Caniche");
     EnumeradaIdeal raza = new EnumeradaIdeal("Raza", opcionesRaza);
-    repositorioCaracteristicas = RepositorioCaracteristicas.getInstancia();
-    repositorioCaracteristicas.agregarCaracteristicaObligatoria(estaCastrada);
-    repositorioCaracteristicas.agregarCaracteristicaObligatoria(comidaFavorita);
-    repositorioCaracteristicas.agregarCaracteristicaObligatoria(jugueteFavorito);
-    repositorioCaracteristicas.agregarCaracteristicaObligatoria(cantidadDePatas);
-    repositorioCaracteristicas.agregarCaracteristicaOpcional(raza);
+    repositorioCaracteristicasPosibles = RepositorioCaracteristicasPosibles.getInstancia();
+    repositorioCaracteristicasPosibles.agregarCaracteristicaObligatoria(estaCastrada);
+    repositorioCaracteristicasPosibles.agregarCaracteristicaObligatoria(comidaFavorita);
+    repositorioCaracteristicasPosibles.agregarCaracteristicaObligatoria(jugueteFavorito);
+    repositorioCaracteristicasPosibles.agregarCaracteristicaObligatoria(cantidadDePatas);
+    repositorioCaracteristicasPosibles.agregarCaracteristicaOpcional(raza);
     fotos.add("Foto1.jpg");
   }
 
