@@ -1,6 +1,6 @@
 package mascota;
 
-import caracteristicas.CaracteristicaSensible;
+import caracteristicas.CaracteristicaDefinida;
 import duenio.Duenio;
 
 
@@ -15,10 +15,10 @@ public class Mascota {
   TipoAnimal tipoAnimal;
   String descripcionFisica;
   List<String> fotos = new ArrayList<>();
-  List<CaracteristicaSensible> caracteristicaSensibles = new ArrayList<>();
+  List<CaracteristicaDefinida> caracteristicaSensibles = new ArrayList<>();
   Duenio duenio;
 
-  public Mascota(String nombre, String apodo, int edad, Sexo sexo, TipoAnimal tipoAnimal, String descripcionFisica, List<String> fotos, List<CaracteristicaSensible> caracteristicaSensibles, Duenio duenio) {
+  public Mascota(String nombre, String apodo, int edad, Sexo sexo, TipoAnimal tipoAnimal, String descripcionFisica, List<String> fotos, List<CaracteristicaDefinida> caracteristicaSensibles, Duenio duenio) {
     this.nombre = nombre;
     this.apodo = apodo;
     this.edad = edad;

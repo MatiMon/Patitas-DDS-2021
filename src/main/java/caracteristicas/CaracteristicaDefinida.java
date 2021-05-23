@@ -1,6 +1,6 @@
 package caracteristicas;
 
-public abstract class CaracteristicaSensible {
+public abstract class CaracteristicaDefinida {
     String nombre;
 
     public String getNombre() {

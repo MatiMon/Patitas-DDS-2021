@@ -1,7 +1,7 @@
 package mascota;
 
-import caracteristicas.CaracteristicaIdeal;
-import caracteristicas.CaracteristicaSensible;
+import caracteristicas.CaracteristicaPosible;
+import caracteristicas.CaracteristicaDefinida;
 import caracteristicas.RepositorioCaracteristicas;
 import duenio.Duenio;
 import excepciones.MascotaInvalidaException;
@@ -9,8 +9,6 @@ import excepciones.MascotaInvalidaException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class MascotaBuilder {
     private TipoAnimal tipoAnimal;
@@ -21,19 +19,12 @@ public class MascotaBuilder {
     private String descripcionFisica;
     private List<String> fotos = new ArrayList<>();
     private Duenio duenio;
-    private List<CaracteristicaSensible> caracteristicasDefinidas = new ArrayList<>();
+    private List<CaracteristicaDefinida> caracteristicasDefinidas = new ArrayList<>();
 
     //agregar a listas
-    private CaracteristicaSensible ingresarNuevaCaracteristica(String nombre){
-        Optional<CaracteristicaIdeal> nuevaCaracteristica = RepositorioCaracteristicas.getCaracteristicas().stream().filter(caracteristica -> caracteristica.getNombre() == nombre).findAny();
-        if(!nuevaCaracteristica.isPresent()){
-            //tirar excepcion gg
-        }
-        return nuevaCaracteristica.get().crearCaracteristica();
-    }
-
-    public void ingresarValorCaracteristica(Object valor){
-
+    private void ingresarNuevaCaracteristica(String nombre, Object valor){
+        CaracteristicaPosible nuevaCaracteristica = RepositorioCaracteristicas.getCaracteristicaIdeal(nombre);
+        caracteristicasDefinidas.add(nuevaCaracteristica.crearCaracteristica(valor));
     }
 
     //setters
@@ -90,10 +81,10 @@ public class MascotaBuilder {
         if (fotos.isEmpty()) {
             throw new MascotaInvalidaException("debe ingresar al menos una foto");
         }
-        validarCaracteristicasObligatorias();
+        /*validarCaracteristicasObligatorias();*/
     }
 
-    private void validarCaracteristicasObligatorias(){
+    /*private void validarCaracteristicasObligatorias(){
         List<String> nombresCaracteristicasObligatorias = RepositorioCaracteristicas.getCaracteristicas()
                 .stream().map(CaracteristicaSensible::getNombre)
                 .collect(Collectors.toList());
@@ -107,5 +98,5 @@ public class MascotaBuilder {
         if(!caracteristicasValidas){
             throw new MascotaInvalidaException("debe ingresar todas las caracteristicas obligatorias");
         }
-    }
+    }*/
 }

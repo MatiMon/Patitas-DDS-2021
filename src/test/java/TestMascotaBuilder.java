@@ -21,8 +21,8 @@ public class TestMascotaBuilder {
   List<String> fotos = new ArrayList<>();
   Booleana estaCastrada = new Booleana("Esta Castrada", false);
   List<String> opcionesComidaFavorita = new ArrayList<>();
-  TextoSensible jugueteFavorito = new TextoSensible("Juguete Favorito", null);
-  NumericoSensible cantidadDePatas = new NumericoSensible("Cantidad De Patas", 0);
+  TextoDefinida jugueteFavorito = new TextoDefinida("Juguete Favorito", null);
+  NumericoDefinida cantidadDePatas = new NumericoDefinida("Cantidad De Patas", 0);
   List<String> opcionesRaza = new ArrayList<>();
   RepositorioCaracteristicas repositorioCaracteristicas;
 
@@ -72,7 +72,7 @@ public class TestMascotaBuilder {
     agregarDatosMascota();
     Booleana estaCastradaDefinida = new Booleana("Esta Castrada", true);
     creadorMascota.agregarDefinidas(estaCastradaDefinida);
-    creadorMascota.agregarDefinidas(new TextoSensible("Comida Favorita", null));
+    creadorMascota.agregarDefinidas(new TextoDefinida("Comida Favorita", null));
     creadorMascota.agregarDefinidas(jugueteFavorito);
     creadorMascota.agregarDefinidas(cantidadDePatas);
     Assertions.assertDoesNotThrow(

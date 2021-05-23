@@ -3,13 +3,13 @@ package caracteristicas;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CaracteristicaIdeal{
+public class CaracteristicaPosible {
     String nombre;
     Boolean esObligatoria;
     TipoCaracteristica tipo;
     List<String> opciones = new ArrayList<>();
 
-    public CaracteristicaIdeal(String nombre, Boolean esObligatoria, TipoCaracteristica tipo) {
+    public CaracteristicaPosible(String nombre, Boolean esObligatoria, TipoCaracteristica tipo) {
         this.nombre = nombre;
         this.esObligatoria = esObligatoria;
         this.tipo = tipo;
@@ -23,8 +23,8 @@ public class CaracteristicaIdeal{
         return nombre;
     }
 
-    public CaracteristicaSensible crearCaracteristica(){
-        return tipo.crearCaracteristica(nombre);
+    public CaracteristicaDefinida crearCaracteristica(Object valor){
+        return tipo.crearCaracteristica(nombre, valor);
     }
 }
 

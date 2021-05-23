@@ -1,5 +1,5 @@
 package caracteristicas;
 
 public interface TipoCaracteristica {
-    public abstract CaracteristicaSensible crearCaracteristica(String nombre);
+    CaracteristicaDefinida crearCaracteristica(String nombre, Object valor);
 }
