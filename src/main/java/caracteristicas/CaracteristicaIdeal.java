@@ -1,14 +1,11 @@
 package caracteristicas;
 
-import java.util.ArrayList;
-import java.util.List;
+public class CaracteristicaIdeal {
+    private String nombre;
+    private Boolean esObligatoria;
+    private TipoCaracteristica tipo;
 
-public class CaracteristicaPosible {
-    String nombre;
-    Boolean esObligatoria;
-    TipoCaracteristica tipo;
-
-    public CaracteristicaPosible(String nombre, Boolean esObligatoria, TipoCaracteristica tipo) {
+    public CaracteristicaIdeal(String nombre, Boolean esObligatoria, TipoCaracteristica tipo) {
         this.nombre = nombre;
         this.esObligatoria = esObligatoria;
         this.tipo = tipo;
@@ -18,9 +15,11 @@ public class CaracteristicaPosible {
         return nombre;
     }
 
+    public Boolean esObligatoria(){
+        return esObligatoria;
+    }
+
     public CaracteristicaDefinida crearCaracteristica(Object valor){
         return tipo.crearCaracteristica(nombre, valor);
     }
 }
-
-//new CaracteristicaIdeal("esta castrada", true, Booleana)
