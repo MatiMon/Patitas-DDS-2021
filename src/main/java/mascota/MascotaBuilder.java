@@ -1,7 +1,8 @@
 package mascota;
 
-import caracteristicas.Caracteristica;
-import caracteristicas.RepositorioCaracteristicas;
+import caracteristicas.CaracteristicaIdeal;
+import caracteristicas.CaracteristicaDefinida;
+import caracteristicas.RepositorioCaracteristicasIdeales;
 import duenio.Duenio;
 import excepciones.MascotaInvalidaException;
 
@@ -14,20 +15,18 @@ public class MascotaBuilder {
     private TipoAnimal tipoAnimal;
     private String nombre;
     private String apodo;
-    private int edad;
+    private int edad = -1;
     private Sexo sexo;
     private String descripcionFisica;
     private List<String> fotos = new ArrayList<>();
     private Duenio duenio;
-    private List<Caracteristica> caracteristicasDefinidas = new ArrayList<>();
+    private List<CaracteristicaDefinida> caracteristicasDefinidas = new ArrayList<>();
     private String QR;
 
-    //agregar a listas
-    public void agregarDefinidas(Caracteristica caracteristica) { //no validamos que se carguen bien porque confiamos en el adentro
-        caracteristicasDefinidas.add(caracteristica);
+    private void ingresarNuevaCaracteristica(CaracteristicaIdeal nuevaCaracteristica, Object valor){
+        caracteristicasDefinidas.add(nuevaCaracteristica.crearCaracteristica(valor));
     }
 
-    //setters
     public void setTipoAnimal(TipoAnimal tipoAnimal) {
         this.tipoAnimal = tipoAnimal;
     }
@@ -60,17 +59,15 @@ public class MascotaBuilder {
         this.apodo = apodo;
     }
 
-    public void setQR(String QR) {
+    public void setQR(String QR){
         this.QR = QR;
     }
 
-    //crear mascota
     public Mascota registrarMascota() {
         validarMascota();
         return new Mascota(nombre, apodo, edad, sexo, tipoAnimal, descripcionFisica, fotos, caracteristicasDefinidas, duenio, QR);
     }
 
-    //validaciones
     private void validarMascota() {
         Objects.requireNonNull(nombre, "Debe ingresar un nombre");
         Objects.requireNonNull(apodo, "Debe ingresar un apodo");
@@ -88,20 +85,19 @@ public class MascotaBuilder {
         validarCaracteristicasObligatorias();
     }
 
-    private void validarCaracteristicasObligatorias(){
-        List<String> nombresCaracteristicasObligatorias = RepositorioCaracteristicas.getInstancia()
-                .listarCaracterisitcasObligatorias()
-                .stream().map(Caracteristica::getNombre)
-                .collect(Collectors.toList());
-
-        List<String> nombresCaracteristicasDefinidas = caracteristicasDefinidas
-                .stream()
-                .map(Caracteristica::getNombre)
-                .collect(Collectors.toList());
-
-        boolean caracteristicasValidas = nombresCaracteristicasDefinidas.containsAll(nombresCaracteristicasObligatorias);
-        if(!caracteristicasValidas){
+    private void validarCaracteristicasObligatorias() {
+        RepositorioCaracteristicasIdeales repoCaracteristicas = RepositorioCaracteristicasIdeales.getInstancia();
+        List<String> caracteristicaObligatorias = repoCaracteristicas.getNombresCaracteristicasObligatorias();
+        List<String> caracteristicasDefinidas = getNombresCaracteristicasDefinidas();
+        if(caracteristicasDefinidas.containsAll(caracteristicaObligatorias)){
             throw new MascotaInvalidaException("debe ingresar todas las caracteristicas obligatorias");
-        }
+        };
+    }
+
+    private List<String> getNombresCaracteristicasDefinidas(){
+        return caracteristicasDefinidas
+            .stream()
+            .map(CaracteristicaDefinida::getNombre)
+            .collect(Collectors.toList());
     }
 }
