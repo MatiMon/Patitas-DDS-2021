@@ -15,14 +15,17 @@ public class HogarDeTransito {
   int lugaresDisponibles;
   List<CaracteristicaDefinida> caracteristicasPuntuales = new ArrayList<>();
 
-  public boolean aceptaMascota(TipoAnimal tipoAnimal, List<CaracteristicaDefinida> caracteristicasDeMascota) {
-    return admiteTipoAnimal(tipoAnimal); //&& admiteCaracteristicas(caracteristicasDeMascota);
+  public boolean aceptaTipoAnimal(TipoAnimal tipoAnimal) {
+    return admiteTipoAnimal(tipoAnimal);
   }
 
-/*  private boolean admiteCaracteristicas(List<CaracteristicaDefinida> caracteristicasDeMascota) {
-
+/*  public boolean aceptaTamanioAnimal(){
+    if(tienePatio )
+  }
+  public List<TamanioAnimal> tamanioAnimalAceptados{
+    if (tienePatio) return [TamanioAnimal.MEDIANO, TamanioAnimal.GRANDE];
+    return [TamanioAnimal.CHICO];
   }*/
-
 
   private boolean admiteTipoAnimal (TipoAnimal tipoAnimal){
     return animalesAdmitidos.contains(tipoAnimal);

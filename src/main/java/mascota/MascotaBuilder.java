@@ -23,7 +23,7 @@ public class MascotaBuilder {
     private List<CaracteristicaDefinida> caracteristicasDefinidas = new ArrayList<>();
     private String QR;
 
-    private void ingresarNuevaCaracteristica(CaracteristicaIdeal nuevaCaracteristica, Object valor){
+    public void ingresarNuevaCaracteristica(CaracteristicaIdeal nuevaCaracteristica, Object valor){
         caracteristicasDefinidas.add(nuevaCaracteristica.crearCaracteristica(valor));
     }
 
@@ -89,7 +89,7 @@ public class MascotaBuilder {
         RepositorioCaracteristicasIdeales repoCaracteristicas = RepositorioCaracteristicasIdeales.getInstancia();
         List<String> caracteristicaObligatorias = repoCaracteristicas.getNombresCaracteristicasObligatorias();
         List<String> caracteristicasDefinidas = getNombresCaracteristicasDefinidas();
-        if(caracteristicasDefinidas.containsAll(caracteristicaObligatorias)){
+        if(!caracteristicasDefinidas.containsAll(caracteristicaObligatorias)){
             throw new MascotaInvalidaException("debe ingresar todas las caracteristicas obligatorias");
         };
     }

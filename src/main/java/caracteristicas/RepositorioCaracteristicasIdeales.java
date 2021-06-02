@@ -10,7 +10,7 @@ public class RepositorioCaracteristicasIdeales {
 
   private static final RepositorioCaracteristicasIdeales INSTANCIA = new RepositorioCaracteristicasIdeales();
 
-  public void agregarCaracterisitcaIdeal(CaracteristicaIdeal caracteristica){
+  public void agregarCaracteristicaIdeal(CaracteristicaIdeal caracteristica){
     caracteristicas.add(caracteristica);
   }
 
