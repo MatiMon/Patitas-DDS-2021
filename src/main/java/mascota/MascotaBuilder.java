@@ -22,6 +22,7 @@ public class MascotaBuilder {
     private Duenio duenio;
     private List<CaracteristicaDefinida> caracteristicasDefinidas = new ArrayList<>();
     private String QR;
+    private Tamanio tamanio;
 
     public void ingresarNuevaCaracteristica(CaracteristicaIdeal nuevaCaracteristica, Object valor){
         caracteristicasDefinidas.add(nuevaCaracteristica.crearCaracteristica(valor));
@@ -63,9 +64,13 @@ public class MascotaBuilder {
         this.QR = QR;
     }
 
+    public void setTamanio(Tamanio tamanio) {
+        this.tamanio = tamanio;
+    }
+
     public Mascota registrarMascota() {
         validarMascota();
-        return new Mascota(nombre, apodo, edad, sexo, tipoAnimal, descripcionFisica, fotos, caracteristicasDefinidas, duenio, QR);
+        return new Mascota(nombre, apodo, edad, sexo, tipoAnimal, descripcionFisica, fotos, caracteristicasDefinidas, duenio, QR, tamanio);
     }
 
     private void validarMascota() {
@@ -75,6 +80,7 @@ public class MascotaBuilder {
         Objects.requireNonNull(tipoAnimal, "Debe ingresar un tipo de animal");
         Objects.requireNonNull(descripcionFisica, "Debe ingresar una descripción física");
         Objects.requireNonNull(duenio, "Debe ingresar un dueño");
+        Objects.requireNonNull(tamanio, "Debe ingresar un tamaño");
 
         if (edad < 0) {
             throw new MascotaInvalidaException("debe ingresar una edad válida");

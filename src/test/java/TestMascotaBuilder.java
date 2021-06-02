@@ -5,6 +5,7 @@ import excepciones.MascotaInvalidaException;
 import mascota.MascotaBuilder;
 import caracteristicas.*;
 import mascota.Sexo;
+import mascota.Tamanio;
 import mascota.TipoAnimal;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -73,6 +74,7 @@ public class TestMascotaBuilder {
     creadorMascota.setSexo(Sexo.HEMBRA);
     creadorMascota.setTipoAnimal(TipoAnimal.GATO);
     creadorMascota.setFotos(fotos);
+    creadorMascota.setTamanio(Tamanio.MEDIANO);
     Contacto contacto = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
     List<Contacto> contactos = new ArrayList<>();
     contactos.add(contacto);

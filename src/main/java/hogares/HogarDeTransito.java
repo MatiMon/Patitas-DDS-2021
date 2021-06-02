@@ -1,6 +1,7 @@
 package hogares;
 
 import caracteristicas.CaracteristicaDefinida;
+import mascota.Tamanio;
 import mascota.TipoAnimal;
 
 import java.util.ArrayList;
@@ -15,23 +16,20 @@ public class HogarDeTransito {
   int lugaresDisponibles;
   List<CaracteristicaDefinida> caracteristicasPuntuales = new ArrayList<>();
 
-  public boolean aceptaTipoAnimal(TipoAnimal tipoAnimal) {
-    return admiteTipoAnimal(tipoAnimal);
-  }
-
-/*  public boolean aceptaTamanioAnimal(){
-    if(tienePatio )
-  }
-  public List<TamanioAnimal> tamanioAnimalAceptados{
-    if (tienePatio) return [TamanioAnimal.MEDIANO, TamanioAnimal.GRANDE];
-    return [TamanioAnimal.CHICO];
-  }*/
-
-  private boolean admiteTipoAnimal (TipoAnimal tipoAnimal){
+  public boolean admiteTipoAnimal (TipoAnimal tipoAnimal){
     return animalesAdmitidos.contains(tipoAnimal);
   }
 
   public boolean tieneLugaresDisponibles() {
     return lugaresDisponibles > 0;
+  }
+
+  public boolean admiteTamanio(Tamanio tamanio) {
+    return !(tamanio.necesitaPatio() ^ tienePatio);
+  }
+
+  public boolean admiteAnimal(TipoAnimal tipoAnimal, Tamanio tamanio, double radio /*Ubicacion ubicancionRescate*/){
+    return tieneLugaresDisponibles() && admiteTamanio(tamanio) && admiteTipoAnimal(tipoAnimal);
+    //&& ubicacion.estaDentroDelRadio(ubicacionRescate, radio);
   }
 }

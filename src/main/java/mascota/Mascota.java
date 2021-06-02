@@ -8,18 +8,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Mascota {
-  String nombre;
-  String apodo;
-  int edad;
-  Sexo sexo;
-  TipoAnimal tipoAnimal;
-  String descripcionFisica;
-  List<String> fotos = new ArrayList<>();
-  List<CaracteristicaDefinida> caracteristicaDefinidas = new ArrayList<>();
-  Duenio duenio;
-  String QR;
+  private String nombre;
+  private String apodo;
+  private int edad;
+  private Sexo sexo;
+  private TipoAnimal tipoAnimal;
+  private Tamanio tamanio;
+  private String descripcionFisica;
+  private List<String> fotos = new ArrayList<>();
+  private List<CaracteristicaDefinida> caracteristicaDefinidas = new ArrayList<>();
+  private Duenio duenio;
+  private String QR;
 
-  public Mascota(String nombre, String apodo, int edad, Sexo sexo, TipoAnimal tipoAnimal, String descripcionFisica, List<String> fotos, List<CaracteristicaDefinida> caracteristicaDefinidas, Duenio duenio, String QR) {
+  public Mascota(String nombre, String apodo, int edad, Sexo sexo, TipoAnimal tipoAnimal, String descripcionFisica,
+                 List<String> fotos, List<CaracteristicaDefinida> caracteristicaDefinidas, Duenio duenio, String QR, Tamanio tamanio) {
     this.nombre = nombre;
     this.apodo = apodo;
     this.edad = edad;
@@ -30,5 +32,7 @@ public class Mascota {
     this.caracteristicaDefinidas = caracteristicaDefinidas;
     this.duenio = duenio;
     this.QR = QR;
+    this.tamanio = tamanio;
   }
+
 }
