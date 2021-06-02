@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RescateDeMascota {
+public abstract class RescateDeMascota {
   private List<String> fotos = new ArrayList<>();
   private String descripcion;
   private String ubicacion;
