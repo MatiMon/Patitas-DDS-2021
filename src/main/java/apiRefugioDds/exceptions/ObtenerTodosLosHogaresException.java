@@ -1,4 +1,4 @@
-package apiRefugioDds;
+package apiRefugioDds.exceptions;
 
 public class ObtenerTodosLosHogaresException extends RuntimeException {
   public ObtenerTodosLosHogaresException(String s) {

@@ -1,11 +1,9 @@
 package apiRefugioDds;
 
-import com.sun.jersey.api.client.Client;
+import apiRefugioDds.exceptions.GenerarUsuarioException;
+import apiRefugioDds.exceptions.ObtenerTodosLosHogaresException;
 import com.sun.jersey.api.client.ClientResponse;
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.annotate.JsonProperty;
 
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
