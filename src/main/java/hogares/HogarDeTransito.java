@@ -31,7 +31,7 @@ public class HogarDeTransito {
     return animalesAdmitidos.contains(tipoAnimal);
   }
 
-  public boolean tieneLugaresDisponibles() {
+  private boolean tieneLugaresDisponibles() {
     return lugaresDisponibles > 0;
   }
 
