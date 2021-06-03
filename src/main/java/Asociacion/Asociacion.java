@@ -64,6 +64,6 @@ public class Asociacion {
     return this.rescatesDeMascotasSinRegistrar.stream()
             .filter(rescateDeMascota -> rescateDeMascota.getEstadoDeAprobacion() && rescateDeMascota.getFecha().isAfter(LocalDateTime.now().minusDays(dias+1)))
             .collect(Collectors.toList());
-
   }
+
 }

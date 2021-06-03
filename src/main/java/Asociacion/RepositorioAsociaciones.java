@@ -22,8 +22,13 @@ public class RepositorioAsociaciones {
 
   /*@TODO ver de comparar la lista de asociaciones por "calcularDistancia"
   public Asociacion asociacionMasCercana (Ubicacion ubicacion) {
-
   }*/
+
+  public List<RescateDeMascota> ultimasMascotasEncontradasEnTodasLasAsociaciones(int dias) {
+    List<RescateDeMascota> rescatesGlobales = new ArrayList<>();
+     this.asociaciones.forEach(asociacion -> rescatesGlobales.addAll(asociacion.ultimasMascotasEncontradas(dias)));
+     return rescatesGlobales;
+  }
 
   public void agregarAsociacion(Asociacion asociacion){
     this.asociaciones.add(asociacion);

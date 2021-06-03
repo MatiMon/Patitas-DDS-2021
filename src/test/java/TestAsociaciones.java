@@ -20,6 +20,7 @@ import java.util.List;
 public class TestAsociaciones {
 
   private Asociacion asociacion;
+  private Asociacion asociacion2;
   private List<RescateDeMascotaRegistrada> rescatesDeMascotasRegistradas = new ArrayList<>();
   private List<RescateDeMascotaSinRegistrar> rescatesDeMascotasSinRegistrar = new ArrayList<>();
   private RescateDeMascotaRegistrada rescateDeMascotaRegistrada1;
@@ -74,6 +75,7 @@ public class TestAsociaciones {
   }
 
   @Test //surge a partir de la necesidad de hacer una busqueda entre TODOS los rescates
+        //al tester que contenga La lista, pero ademas sea la misma longitud, se llega a que es la misma.
   public void lasMascotasEncontradasSonDeDeizDiasEnAdelanteIncluyendoRegistradasYNoRegistradasAprobadas() {
     rescateDeMascotaSinRegistrar3.aprobarPublicacion();
     List<RescateDeMascota> rescatesRegistradosYaprobadosMenoresA10Dias = Arrays.asList(
