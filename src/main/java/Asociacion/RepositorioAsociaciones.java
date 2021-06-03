@@ -16,12 +16,14 @@ public class RepositorioAsociaciones {
 
   public List<RescateDeMascota> ultimasMascotasEncontradas (int dias) {
     List<RescateDeMascota> rescatesGlobales = new ArrayList<>();
-    this.asociaciones.forEach(
-            asociacion -> rescatesGlobales.addAll(asociacion.ultimasMascotasEncontradas(dias))
-    );
+    this.asociaciones.forEach(asociacion -> rescatesGlobales.addAll(asociacion.ultimasMascotasEncontradas(dias)));
     return rescatesGlobales;
   }
 
+  /*@TODO ver de comparar la lista de asociaciones por "calcularDistancia"
+  public Asociacion asociacionMasCercana (Ubicacion ubicacion) {
+
+  }*/
 
   public void agregarAsociacion(Asociacion asociacion){
     this.asociaciones.add(asociacion);

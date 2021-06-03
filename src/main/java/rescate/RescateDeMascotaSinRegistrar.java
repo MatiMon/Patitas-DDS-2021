@@ -17,8 +17,8 @@ public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
     this.numeroDePublicacion = numeroDePublicacion;
   }
 
-  public void aprobarPublicacion(boolean estadoDeAprobacion) {
-    this.estadoDeAprobacion = estadoDeAprobacion;
+  public void aprobarPublicacion() {
+    this.estadoDeAprobacion = true;
   }
 
   public boolean getEstadoDeAprobacion() {

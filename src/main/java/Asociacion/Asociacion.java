@@ -26,38 +26,44 @@ public class Asociacion {
   }
 
   //@TODO ver el tema de asociar una Publicacion con la Asociacion MAS CERCANA
-  //@TODO ver si funciona, ahora al tener que mostrar TODOS los rescates, es una combinacion de ambas listas
-  public List<RescateDeMascota> ultimasMascotasEncontradas(int dias) {
+   public List<RescateDeMascota> ultimasMascotasEncontradas(int dias) {
     List<RescateDeMascota> rescateDeMascotas = new ArrayList<>();
-    rescateDeMascotas.addAll(this.ultimasMascotasSinRegistrarEncontradas(dias));
+    rescateDeMascotas.addAll(this.ultimasMascotasSinRegistrarAprobadasEncontradas(dias));
     rescateDeMascotas.addAll(this.ultimasMascotasRegistradasEncontradas(dias));
     return rescateDeMascotas;
   }
 
-  //@TODO agregar metodo (getter) a la clase, redundante comparar true o false?
-  /*
   public List<RescateDeMascotaSinRegistrar> obtenerPublicacionesSinAprobar() {
     return this.rescatesDeMascotasSinRegistrar.stream()
-            .filter(publicaciones -> publicaciones.estaAprobada() == true)
+            .filter(publicaciones -> !publicaciones.getEstadoDeAprobacion())
             .collect(Collectors.toList());
   }
 
   public List<RescateDeMascotaSinRegistrar> obtenerPublicacionesAprobadas() {
     return this.rescatesDeMascotasSinRegistrar.stream()
-            .filter(publicaciones -> publicaciones.estaAprobada() == false)
+            .filter(RescateDeMascotaSinRegistrar::getEstadoDeAprobacion)
             .collect(Collectors.toList());
-  }*/
+  }
+
+  public void agregarRescateDeMascotaSinRegistar(RescateDeMascotaSinRegistrar rescateDeMascotaSinRegistrar) {
+    this.rescatesDeMascotasSinRegistrar.add(rescateDeMascotaSinRegistrar);
+  }
+
+  public void agregarRescateDeMascotaRegistrada(RescateDeMascotaRegistrada rescateDeMascotaRegistrada) {
+    this.rescatesDeMascotasRegistradas.add(rescateDeMascotaRegistrada);
+  }
 
 
-  //TODO ver si se abstrae la logica repetida de la búsqueda
+  /*Metodos Privados*/
   private List<RescateDeMascotaRegistrada> ultimasMascotasRegistradasEncontradas(int dias){
     return this.rescatesDeMascotasRegistradas.stream()
             .filter(rescateDeMascota -> rescateDeMascota.getFecha().isAfter(LocalDateTime.now().minusDays(dias+1)))
             .collect(Collectors.toList());
   }
-  private List<RescateDeMascotaSinRegistrar> ultimasMascotasSinRegistrarEncontradas(int dias){
+  private List<RescateDeMascotaSinRegistrar> ultimasMascotasSinRegistrarAprobadasEncontradas(int dias){
     return this.rescatesDeMascotasSinRegistrar.stream()
-            .filter(rescateDeMascota -> rescateDeMascota.getFecha().isAfter(LocalDateTime.now().minusDays(dias+1)))
+            .filter(rescateDeMascota -> rescateDeMascota.getEstadoDeAprobacion() && rescateDeMascota.getFecha().isAfter(LocalDateTime.now().minusDays(dias+1)))
             .collect(Collectors.toList());
+
   }
 }
