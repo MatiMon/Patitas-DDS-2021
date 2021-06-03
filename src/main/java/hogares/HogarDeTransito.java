@@ -15,9 +15,9 @@ public class HogarDeTransito {
   String telefono;
   List<TipoAnimal> animalesAdmitidos = new ArrayList<>();
   int lugaresDisponibles;
-  List<CaracteristicaDefinida> caracteristicasPuntuales = new ArrayList<>();
+  List<String> caracteristicasPuntuales = new ArrayList<>();
 
-  public HogarDeTransito(Boolean tienePatio, int capacidad, Ubicacion ubicacion, String telefono, List<TipoAnimal> animalesAdmitidos, int lugaresDisponibles, List<CaracteristicaDefinida> caracteristicasPuntuales) {
+  public HogarDeTransito(Boolean tienePatio, int capacidad, Ubicacion ubicacion, String telefono, List<TipoAnimal> animalesAdmitidos, int lugaresDisponibles, List<String> caracteristicasPuntuales) {
     this.tienePatio = tienePatio;
     Capacidad = capacidad;
     this.ubicacion = ubicacion;
