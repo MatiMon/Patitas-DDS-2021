@@ -1,6 +1,8 @@
 package Asociacion;
 
 import Asociacion.Asociacion;
+import caracteristicas.RepositorioCaracteristicasIdeales;
+import rescate.RescateDeMascota;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -10,14 +12,22 @@ import java.util.stream.Collectors;
 public class RepositorioAsociaciones {
   private List<Asociacion> asociaciones = new ArrayList<>();
 
+  private static final RepositorioAsociaciones INSTANCIA = new RepositorioAsociaciones();
 
-
-/*
-  public void agregarRescateMascota(RescateDeMascota rescateDeMascota){
-    this.rescatesDeMascotas.add(rescateDeMascota);
+  public List<RescateDeMascota> ultimasMascotasEncontradas (int dias) {
+    List<RescateDeMascota> rescatesGlobales = new ArrayList<>();
+    this.asociaciones.forEach(
+            asociacion -> rescatesGlobales.addAll(asociacion.ultimasMascotasEncontradas(dias))
+    );
+    return rescatesGlobales;
   }
 
-  public void removerRescateMascota(RescateDeMascota rescateDeMascota){
-    this.rescatesDeMascotas.remove(rescateDeMascota);
-  }*/
+
+  public void agregarAsociacion(Asociacion asociacion){
+    this.asociaciones.add(asociacion);
+  }
+
+  public void removerAsociacion(Asociacion asociacion){
+    this.asociaciones.remove(asociacion);
+  }
 }
