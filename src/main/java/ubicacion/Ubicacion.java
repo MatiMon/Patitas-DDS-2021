@@ -61,4 +61,8 @@ public class Ubicacion {
   public double getLongitud() {
     return longitud;
   }
+
+  public boolean estaDentroDelRadio(Ubicacion ubicacion, double radio) {
+    return calcularDistancia(ubicacion) <= radio;
+  }
 }
