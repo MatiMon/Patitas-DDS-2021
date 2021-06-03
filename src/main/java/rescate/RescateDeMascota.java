@@ -11,11 +11,11 @@ public abstract class RescateDeMascota {
   private List<String> fotos = new ArrayList<>();
   private String descripcion;
   private String ubicacion;
-  private Rescatista rescatista;
+  private InvolucradoEnRescate rescatista;
   private LocalDateTime fecha;
   private Mascota mascota;
 
-  public RescateDeMascota(List<String> fotos, String descripcion, String ubicacion, Rescatista rescatista, LocalDateTime fecha, Mascota mascota) {
+  public RescateDeMascota(List<String> fotos, String descripcion, String ubicacion, InvolucradoEnRescate rescatista, LocalDateTime fecha, Mascota mascota) {
     if(fotos.size()<1){
       throw new MascotaRescatadaInvalidaException("debe tener al menos una foto");
     }
