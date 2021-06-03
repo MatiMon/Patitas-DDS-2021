@@ -11,8 +11,8 @@ public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
   private InvolucradoEnRescate duenioSinRegistrar;
 
   public RescateDeMascotaSinRegistrar(List<String> fotos, String descripcion, String ubicacion,
-                                      InvolucradoEnRescate rescatista, LocalDateTime fecha, Mascota mascota, int numeroDePublicacion) {
-    super(fotos, descripcion, ubicacion, rescatista, fecha, mascota);
+                                      InvolucradoEnRescate rescatista, LocalDateTime fecha, int numeroDePublicacion) {
+    super(fotos, descripcion, ubicacion, rescatista, fecha);
     this.estadoDeAprobacion = false;
     this.numeroDePublicacion = numeroDePublicacion;
   }
