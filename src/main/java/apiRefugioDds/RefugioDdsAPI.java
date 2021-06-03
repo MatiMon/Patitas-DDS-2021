@@ -33,7 +33,7 @@ public class RefugioDdsAPI {
         .post(ClientResponse.class, jsonBody);
   }
 
-  public ClientResponse getHogaresDePagina(String pagina, String bearerToken) {
+  public ClientResponse getPaginaDeHogares(String pagina, String bearerToken) {
     return this.client.resource(API_REFUGIO_DDS).path(RESOURCE_HOGARES)
         .queryParam("offset", pagina).header("Authorization", "Bearer " + bearerToken)
         .accept(MediaType.APPLICATION_JSON)

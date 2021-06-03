@@ -52,7 +52,7 @@ public class ServicioRefugioDds implements ServicioRefugio {
     if (bearerToken == "") {
       throw new ObtenerTodosLosHogaresException("debe ingresar un token.");
     }
-    ClientResponse response = this.api.getHogaresDePagina("1", bearerToken);
+    ClientResponse response = this.api.getPaginaDeHogares("1", bearerToken);
     validarCodigoRespuesta(response.getStatusInfo().getStatusCode());
     RespuestaRefugioDdsAPI respuesta = response.getEntity(RespuestaRefugioDdsAPI.class);
 
@@ -62,7 +62,7 @@ public class ServicioRefugioDds implements ServicioRefugio {
     iteraciones = Math.ceil(iteraciones);
 
     for (int i = 2; i <= iteraciones; i++) {
-      response = this.api.getHogaresDePagina("" + i, bearerToken);
+      response = this.api.getPaginaDeHogares("" + i, bearerToken);
       respuesta = response.getEntity(RespuestaRefugioDdsAPI.class);
       hogares.addAll(respuesta.getHogares());
     }

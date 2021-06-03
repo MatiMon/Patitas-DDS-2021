@@ -20,7 +20,7 @@ public class HogarDeTransito {
   private String telefono;
 
   @JsonProperty("admisiones")
-  private List<Boolean> admisiones;
+  private Admisiones admisiones;
 
   @JsonProperty("capacidad")
   private int capacidad;
@@ -49,7 +49,7 @@ public class HogarDeTransito {
     return telefono;
   }
 
-  public List<Boolean> getAdmision() {
+  public Admisiones getAdmision() {
     return admisiones;
   }
 

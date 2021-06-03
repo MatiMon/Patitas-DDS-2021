@@ -6,26 +6,40 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 
-public class TestRefugioDdsAPI {
-  RefugioDdsAPI requester;
+public class TestServicioRefugioDds {
+  RefugioDdsAPI api;
+  ServicioRefugioDds servicio;
   RespuestaRefugioDdsAPI respuestaRefugioDdsAPI;
 
   @BeforeEach
   public void setUp() throws Exception {
-    this.requester = new RefugioDdsAPI();
+    this.api = new RefugioDdsAPI();
+    this.servicio = new ServicioRefugioDds(api);
     //this.respuestaRefugioDdsAPI = this.requester.getHogaresDePagina("1", "pR0GYdKrgvKfVehIfRtFxZddIRYvxIynays7X4P6l07rNQcmovyAmmE9ZXJJ");
   }
 
   @Test
-  public void laPrimerPaginaTiene40Hogares() throws Exception {
-    Assertions.assertEquals(respuestaRefugioDdsAPI.getTotalHogares(), 40);
+  public void generarUsuarioConMailInvalidoDaError() {
+
   }
 
   @Test
-  public void testCantidadHogares(){
-    RefugioDdsAPI api = new RefugioDdsAPI();
-    ServicioRefugioDds servicio = new ServicioRefugioDds(api);
+  public void generarUsuarioConMailYaRegistradoDaError() {
 
+  }
+
+  @Test
+  public void generarUsuarioNuevoDevuelveUnToken() {
+
+  }
+
+  @Test
+  public void generoUsuarioLoGuardoYDespuesLoPuedoBuscarParaObtenerHogares(){
+
+  }
+
+  @Test
+  public void hagoObtenerTodosLosHogaresYSonCuarenta(){
     List<HogarDeTransito> hogares = servicio.obtenerTodosLosHogares("pR0GYdKrgvKfVehIfRtFxZddIRYvxIynays7X4P6l07rNQcmovyAmmE9ZXJJ");
     Assertions.assertEquals(hogares.size(), 40);
 
@@ -44,14 +58,5 @@ public class TestRefugioDdsAPI {
   }
 
 
-  @Test
-  public void generarUnUsuario() throws Exception {
 
-    //UsuarioAPI usuario = this.requester.generarToken("perdonEzequiel0@gmail.com");
-    //Assertions.assertTrue(jsonConBearerToken.contains("bearer_token"));
-
-//    Assertions.assertEquals(response.getStatus(), 201);
-//    String json = response.getEntity(String.class);
-//    Assertions.assertTrue(json.contains("bearer_token"));
-  }
 }
