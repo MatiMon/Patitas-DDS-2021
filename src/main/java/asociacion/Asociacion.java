@@ -53,9 +53,6 @@ public class Asociacion {
     this.rescatesDeMascotasRegistradas.add(rescateDeMascotaRegistrada);
   }
 
-
-
-
   /*Metodos Privados*/
   private List<RescateDeMascotaRegistrada> ultimasMascotasRegistradasEncontradas(int dias){
     return this.rescatesDeMascotasRegistradas.stream()

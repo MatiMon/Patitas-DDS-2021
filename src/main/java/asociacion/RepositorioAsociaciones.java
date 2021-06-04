@@ -1,6 +1,7 @@
 package asociacion;
 
 import rescate.RescateDeMascota;
+import rescate.RescateDeMascotaSinRegistrar;
 import ubicacion.Ubicacion;
 
 import java.util.ArrayList;
@@ -12,18 +13,18 @@ public class RepositorioAsociaciones {
 
   private static final RepositorioAsociaciones INSTANCIA = new RepositorioAsociaciones();
 
-  public List<RescateDeMascota> ultimasMascotasEncontradas (int dias) {
-    List<RescateDeMascota> rescatesGlobales = new ArrayList<>();
-    this.asociaciones.forEach(asociacion -> rescatesGlobales.addAll(asociacion.ultimasMascotasEncontradas(dias)));
-    return rescatesGlobales;
+  public List<RescateDeMascotaSinRegistrar> obtenerPublicacionesAprobadas() {
+    List<RescateDeMascotaSinRegistrar> publicaciones = new ArrayList<>();
+    this.asociaciones.forEach(asociacion -> publicaciones.addAll(asociacion.obtenerPublicacionesAprobadas()));
+    return publicaciones;
   }
 
+  // VER SI QUEDA ESTE METODO EN BASE A LOS REQUERIMIENTOS
   public List<RescateDeMascota> ultimasMascotasEncontradasEnTodasLasAsociaciones(int dias) {
     List<RescateDeMascota> rescatesGlobales = new ArrayList<>();
     this.asociaciones.forEach(asociacion -> rescatesGlobales.addAll(asociacion.ultimasMascotasEncontradas(dias)));
     return rescatesGlobales;
   }
-
 
   public Asociacion asociacionMasCercana (Ubicacion ubicacion) {
 
