@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 public class Asociacion {
 
-  private String nombre;
+  String nombre;
   Ubicacion ubicacion;
   List<RescateDeMascotaSinRegistrar> rescatesDeMascotasSinRegistrar = new ArrayList<>();
   List<RescateDeMascotaRegistrada> rescatesDeMascotasRegistradas = new ArrayList<>();;
@@ -68,4 +68,7 @@ public class Asociacion {
             .collect(Collectors.toList());
   }
 
+  public String getNombre() {
+    return nombre;
+  }
 }

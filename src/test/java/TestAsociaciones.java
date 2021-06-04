@@ -1,6 +1,11 @@
 import Asociacion.Asociacion;
 import contacto.Contacto;
+import contacto.MedioDeNotificacion;
+import duenio.Duenio;
 import duenio.TipoDocumento;
+import mascota.Mascota;
+import mascota.RepositorioQR;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +15,7 @@ import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;
 import ubicacion.Ubicacion;
 import Asociacion.RepositorioAsociaciones;
-
+import static org.mockito.Mockito.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -20,8 +25,7 @@ import java.util.List;
 
 public class TestAsociaciones {
 
-  private Asociacion asociacionSanMartin;
-  private Asociacion asociacionLejana;
+
   private List<RescateDeMascotaRegistrada> rescatesDeMascotasRegistradas = new ArrayList<>();
   private List<RescateDeMascotaSinRegistrar> rescatesDeMascotasSinRegistrar = new ArrayList<>();
   private RescateDeMascotaRegistrada rescateDeMascotaRegistrada1;
@@ -34,21 +38,24 @@ public class TestAsociaciones {
   private Ubicacion ubicacionGuardiaVieja;
   private List<String> fotos = new ArrayList<>();
 
+
   private Contacto contacto1;
   Rescatista rescatista;
   private Contacto contacto2;
   private List<Contacto> contactos = new ArrayList<>();
+  Asociacion asociacionSanMartin = new Asociacion("Patitas", new Ubicacion("San Martin 155",-34.59000,-58.50000 ), rescatesDeMascotasSinRegistrar, rescatesDeMascotasRegistradas);
+  Asociacion asociacionLejana = new Asociacion("Manchitas",new Ubicacion("lugarLejano",35.86166,104.195397), null,null);
 
 
   @BeforeEach
-  void initFileSystem() {
+  void init() {
     contacto2 = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
     fotos.add("una foto");
     contacto1 = new Contacto("Juan", "Perez", 15501234, "juanperez@hotmail.com");
     rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contacto1);
     ubicacionSanMartin = new Ubicacion("San Martín 150", -34.58499, -58.45023);
     ubicacionGuardiaVieja = new Ubicacion("Guardia Vieja 2077", -34.58499, -58.45023);
-
+    contactos.add(contacto1);
 
     rescateDeMascotaRegistrada1 = new RescateDeMascotaRegistrada(fotos,"Descripcion1", ubicacionSanMartin, rescatista, LocalDateTime.now().minusDays(5),"QR-1");
     rescateDeMascotaRegistrada2 = new RescateDeMascotaRegistrada(fotos,"Descripcion2", ubicacionGuardiaVieja, rescatista, LocalDateTime.now().minusDays(2),"QR-2");
@@ -64,13 +71,19 @@ public class TestAsociaciones {
     rescatesDeMascotasSinRegistrar.add(rescateDeMascotaSinRegistrar2);
     rescatesDeMascotasSinRegistrar.add(rescateDeMascotaSinRegistrar3);
 
-    asociacionSanMartin = new Asociacion("Patitas", new Ubicacion("San Martin 155",-34.59000,-58.50000 ), rescatesDeMascotasSinRegistrar, rescatesDeMascotasRegistradas);
-    asociacionLejana = new Asociacion("Manchitas",new Ubicacion("lugarLejano",35.86166,104.195397), null,null);
+
 
     repositorioAsociaciones = RepositorioAsociaciones.getInstancia();
 
     repositorioAsociaciones.agregarAsociacion(asociacionSanMartin);
     repositorioAsociaciones.agregarAsociacion(asociacionLejana);
+  }
+
+  @AfterEach
+  void finalizar(){
+    repositorioAsociaciones.removerAsociacion(asociacionSanMartin);
+    repositorioAsociaciones.removerAsociacion(asociacionLejana);
+
   }
 
   @Test
@@ -90,8 +103,7 @@ public class TestAsociaciones {
     Assertions.assertEquals(listaNoAprobadas, asociacionSanMartin.obtenerPublicacionesSinAprobar());
   }
 
-  @Test //surge a partir de la necesidad de hacer una busqueda entre TODOS los rescates
-        //al testear que contenga La lista, pero ademas sea la misma longitud, se llega a que es la misma.
+  @Test //al testear que contenga La lista, pero ademas sea la misma longitud, se llega a que es la misma.
   public void lasMascotasEncontradasSonDeDeizDiasEnAdelanteIncluyendoRegistradasYNoRegistradasAprobadas() {
     rescateDeMascotaSinRegistrar3.aprobarPublicacion();
     List<RescateDeMascota> rescatesRegistradosYaprobadosMenoresA10Dias = Arrays.asList(
@@ -102,9 +114,11 @@ public class TestAsociaciones {
     Assertions.assertEquals(rescatesRegistradosYaprobadosMenoresA10Dias.size(), asociacionSanMartin.ultimasMascotasEncontradas(10).size());
   }
 
-  /* De forma Uniaria anda, con run all, no
+
   @Test
   public void elRepositorioAsociacionesEncuentraLaAsociacionMasCercanaAlRescateRegistradoEnSanMartin() {
     Assertions.assertEquals(asociacionSanMartin, repositorioAsociaciones.asociacionMasCercana(ubicacionSanMartin));
-  } */
+  }
 }
+
+

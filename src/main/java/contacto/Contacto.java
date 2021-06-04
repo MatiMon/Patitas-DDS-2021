@@ -30,4 +30,9 @@ public class Contacto {
   public String getEmail() {
     return email;
   }
+
+  /* setter */
+  public void setMedioDeNotificacionPreferido(MedioDeNotificacion medioDeNotificacionPreferido) {
+    this.medioDeNotificacionPreferido = medioDeNotificacionPreferido;
+  }
 }
