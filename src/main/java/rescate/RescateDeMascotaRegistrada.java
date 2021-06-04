@@ -16,7 +16,7 @@ public class RescateDeMascotaRegistrada extends RescateDeMascota {
 
   public void notificarEncuentroAlDuenio() {
    Mascota mascota =  obtenerMascota();
-   mascota.notificarEncuentroAlDuenio("¡Se ha encontrado a " + mascota.getNombre()
+   mascota.notificarEncuentroAlDuenio("¡Encontraron a " + mascota.getNombre()
        + "! Podés contactar al rescatista: " + this.rescatista.obtenerTarjetaDePresentacion());
   }
 

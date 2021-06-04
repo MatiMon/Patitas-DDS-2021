@@ -15,7 +15,7 @@ public class Rescatista {
   private TipoDocumento tipoDocumento;
   private String direccion;
   private Contacto contactoPrincipal;
-  private List<Contacto> contactos = new ArrayList<>();
+  private List<Contacto> contactosSecundarios = new ArrayList<>();
 
   public Rescatista(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, String direccion, Contacto contactoPrincipal) {
     if(contactoPrincipal == null){
@@ -30,7 +30,11 @@ public class Rescatista {
   }
 
   public void agregarContacto(Contacto contacto){
-    this.contactos.add(contacto);
+    this.contactosSecundarios.add(contacto);
+  }
+
+  public void notificarEncuentro(String mensaje) {
+    this.contactoPrincipal.notificar(mensaje);
   }
 
   public String obtenerTarjetaDePresentacion() {
