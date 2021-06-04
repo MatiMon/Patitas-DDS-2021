@@ -35,4 +35,7 @@ public class Mascota {
     this.tamanio = tamanio;
   }
 
+  public void notificarEncuentroAlDuenio(String mensaje) {
+    this.duenio.notificarEncuentro(mensaje);
+  }
 }
