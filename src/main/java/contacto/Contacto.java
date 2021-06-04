@@ -13,4 +13,8 @@ public class Contacto {
     this.telefono = telefono;
     this.email = email;
   }
+
+  public void notificar(String mensaje) {
+    this.medioDeNotificacionPreferido.enviarNotificacion(this, mensaje);
+  }
 }
