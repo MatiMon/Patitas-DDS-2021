@@ -11,7 +11,8 @@ import java.util.List;
 public class TestServicioRefugioDds {
   RefugioDdsAPI api;
   ServicioRefugioDds servicio;
-  RespuestaRefugioDdsAPI respuestaRefugioDdsAPI;
+  //RespuestaRefugioDdsAPI respuestaRefugioDdsAPI;
+  String bearerToken = "pR0GYdKrgvKfVehIfRtFxZddIRYvxIynays7X4P6l07rNQcmovyAmmE9ZXJJ";
 
   @BeforeEach
   public void setUp() throws Exception {
@@ -42,22 +43,22 @@ public class TestServicioRefugioDds {
 
   @Test
   public void hagoObtenerTodosLosHogaresYSonCuarenta() {
-    List<HogarDeTransito> hogares = servicio.obtenerTodosLosHogares("pR0GYdKrgvKfVehIfRtFxZddIRYvxIynays7X4P6l07rNQcmovyAmmE9ZXJJ");
+    List<HogarDeTransito> hogares = servicio.obtenerTodosLosHogares(bearerToken);
     Assertions.assertEquals(hogares.size(), 40);
 
   }
-/*
+
   @Test
   public void losDatosDelPrimerHogarSonLosDelPensionadoLlamadoComoEnCasa() {
-    HogarDeTransito hogar = respuestaRefugioDdsAPI.getHogares().get(0);
+    List<HogarDeTransito> hogares = servicio.obtenerTodosLosHogares(bearerToken);
+    HogarDeTransito hogar = hogares.get(0);
     Ubicacion ubicacion = hogar.getUbicacion();
 
-    //Assertions.assertEquals();
     Assertions.assertEquals(hogar.getNombre(), "Pensionado de mascotas \"Como en casa\"");
     Assertions.assertEquals(ubicacion.getDireccion(), "Av. Ing Eduardo Madero 2300, B1669BZQ Del Viso, Provincia de Buenos Aires");
     Assertions.assertEquals(ubicacion.getLatitud(), -34.46013439745161);
-    Assertions.assertEquals(ubicacion.getLongitud(),-58.80857841888721);
-  }*/
+    Assertions.assertEquals(ubicacion.getLongitud(), -58.80857841888721);
+  }
 
 
 }
