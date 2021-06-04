@@ -7,6 +7,7 @@ import ubicacion.Ubicacion;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,13 +28,18 @@ public class RepositorioAsociaciones {
     return rescatesGlobales;
   }
 
-  /*@TODO terminar de armar
-  public Asociacion asociacionMasCercana (Ubicacion ubicacion) {
-    //List<Asociacion> asociacionesOrdenadas = new ArrayList<> ();
 
-    this.asociaciones.sort(asociacion -> (int) asociacion.ubicacion.calcularDistancia(ubicacion));
-    return asociaciones.stream().findFirst().get();
-  }*/
+  public Asociacion asociacionMasCercana (Ubicacion ubicacion) {
+
+    this.asociaciones.sort(Comparator.comparing(asociacion -> asociacion.ubicacion.calcularDistancia(ubicacion)));
+    //@TODO ver de manejar mejor este error en caso que el REPO este VACIO.
+    return asociaciones.stream().findFirst().orElse(null);
+
+  }
+
+  public static RepositorioAsociaciones getInstancia() {
+    return INSTANCIA;
+  }
 
   public void agregarAsociacion(Asociacion asociacion){
     this.asociaciones.add(asociacion);

@@ -26,8 +26,7 @@ public class Asociacion {
     this.rescatesDeMascotasRegistradas = rescateDeMascotasRegistradas;
   }
 
-  //@TODO ver el tema de asociar una Publicacion con la Asociacion MAS CERCANA
-   public List<RescateDeMascota> ultimasMascotasEncontradas(int dias) {
+  public List<RescateDeMascota> ultimasMascotasEncontradas(int dias) {
     List<RescateDeMascota> rescateDeMascotas = new ArrayList<>();
     rescateDeMascotas.addAll(this.ultimasMascotasSinRegistrarAprobadasEncontradas(dias));
     rescateDeMascotas.addAll(this.ultimasMascotasRegistradasEncontradas(dias));
@@ -53,6 +52,8 @@ public class Asociacion {
   public void agregarRescateDeMascotaRegistrada(RescateDeMascotaRegistrada rescateDeMascotaRegistrada) {
     this.rescatesDeMascotasRegistradas.add(rescateDeMascotaRegistrada);
   }
+
+
 
 
   /*Metodos Privados*/
