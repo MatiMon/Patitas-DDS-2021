@@ -1,9 +1,8 @@
 package hogares;
 
-import apiRefugioDds.Admisiones;
-import caracteristicas.CaracteristicaDefinida;
 import mascota.Tamanio;
 import mascota.TipoAnimal;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 import ubicacion.Ubicacion;
@@ -29,8 +28,10 @@ public class HogarDeTransito {
   String telefono;
 
   @JsonProperty("admisiones")
-  //List<String> admisiones;
-  private Admisiones admisiones; //unificar
+  public void setAdmisiones(JsonNode admisiones) {
+    if(admisiones.get("perros").getBooleanValue()) animalesAdmitidos.add(TipoAnimal.PERRO);
+    if(admisiones.get("gatos").getBooleanValue()) animalesAdmitidos.add(TipoAnimal.GATO);
+  }
 
   List<TipoAnimal> animalesAdmitidos = new ArrayList<>();
 
