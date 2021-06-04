@@ -7,13 +7,13 @@ public class RepositorioQR {
   private static RepositorioQR instancia;
 
 
-  private RepositorioQR(HashMap<String,Mascota> unosQRs){
-    qrs =unosQRs;
+  private RepositorioQR(HashMap<String, Mascota> unosQRs) {
+    qrs = unosQRs;
   }
 
-  public static RepositorioQR getInstancia(){
-    if(instancia == null){
-      instancia = new RepositorioQR(new HashMap<String,Mascota>());
+  public static RepositorioQR getInstancia() {
+    if (instancia == null) {
+      instancia = new RepositorioQR(new HashMap<String, Mascota>());
     }
     return instancia;
   }
@@ -22,8 +22,12 @@ public class RepositorioQR {
     return qrs.get(qr);
   }
 
-  public void registrarQR(String qr, Mascota mascota){
-    qrs.put(qr,mascota);
+  public void registrarQR(String qr, Mascota mascota) {
+    qrs.put(qr, mascota);
+  }
+
+  public void removerQR(String qr) {
+    qrs.remove(qr);
   }
 
 
