@@ -15,7 +15,6 @@ public class Duenio {
   private List<Contacto> contactos;
   private Usuario usuario;
 
-
   public Duenio(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, double documento, List<Contacto> contactos) {
     this.nombre = nombre;
     this.apellido = apellido;
@@ -23,5 +22,9 @@ public class Duenio {
     this.tipoDocumento = tipoDocumento;
     this.contactos = contactos;
     this.documento = documento;
+  }
+
+  public void notificarEncuentro(String mensaje) {
+    this.contactos.forEach(contacto -> contacto.notificar(mensaje));
   }
 }
