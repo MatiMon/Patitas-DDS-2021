@@ -3,6 +3,7 @@ package contacto;
 public class Contacto {
   private String nombre;
   private String apellido;
+
   private int telefono;
   private String email;
   private MedioDeNotificacion medioDeNotificacionPreferido;
@@ -16,5 +17,13 @@ public class Contacto {
 
   public void notificar(String mensaje) {
     this.medioDeNotificacionPreferido.enviarNotificacion(this, mensaje);
+  }
+
+  public int getTelefono() {
+    return telefono;
+  }
+
+  public String getEmail() {
+    return email;
   }
 }
