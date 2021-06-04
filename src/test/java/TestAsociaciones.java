@@ -8,6 +8,7 @@ import rescate.Rescatista;
 import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;
+import ubicacion.Ubicacion;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -38,8 +39,8 @@ public class TestAsociaciones {
     contactos.add(contacto);
     fotos.add("una foto");
     rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contactos);
-    rescateDeMascotaRegistrada1 = new RescateDeMascotaRegistrada(fotos,"Descripcion1","Ubicacion1", rescatista, LocalDateTime.now().minusDays(5),"QR-1");
-    rescateDeMascotaRegistrada2 = new RescateDeMascotaRegistrada(fotos,"Descripcion2","ubicacion2", rescatista, LocalDateTime.now().minusDays(2),"QR-2");
+    rescateDeMascotaRegistrada1 = new RescateDeMascotaRegistrada(fotos,"Descripcion1", new Ubicacion("Sam Martín 150", -34.58499, -58.45023), rescatista, LocalDateTime.now().minusDays(5),"QR-1");
+    rescateDeMascotaRegistrada2 = new RescateDeMascotaRegistrada(fotos,"Descripcion2", new Ubicacion("Guardia Vieja 2077", -34.58499, -58.45023), rescatista, LocalDateTime.now().minusDays(2),"QR-2");
 
     //por el momento, con null porque no se necesitan para probar los metodos del TEST
 
