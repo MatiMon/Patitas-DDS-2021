@@ -1,4 +1,4 @@
-package duenio;
+package contacto;
 
 public class Contacto {
   private String nombre;

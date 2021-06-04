@@ -1,5 +1,5 @@
 import Asociacion.Asociacion;
-import duenio.Contacto;
+import contacto.Contacto;
 import duenio.TipoDocumento;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

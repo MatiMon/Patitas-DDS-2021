@@ -1,4 +1,4 @@
-import duenio.Contacto;
+import contacto.Contacto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import Asociacion.RepositorioAsociaciones;

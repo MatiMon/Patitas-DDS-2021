@@ -1,5 +1,6 @@
 package duenio;
 
+import contacto.Contacto;
 import usuario.Usuario;
 
 import java.time.LocalDate;

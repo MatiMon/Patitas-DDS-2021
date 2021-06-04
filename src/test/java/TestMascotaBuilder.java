@@ -1,4 +1,4 @@
-import duenio.Contacto;
+import contacto.Contacto;
 import duenio.Duenio;
 import duenio.TipoDocumento;
 import excepciones.MascotaInvalidaException;
