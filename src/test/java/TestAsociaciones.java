@@ -1,7 +1,6 @@
 import Asociacion.Asociacion;
 import duenio.Contacto;
 import duenio.TipoDocumento;
-import mascota.Mascota;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
