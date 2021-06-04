@@ -1,4 +1,4 @@
-import Asociacion.Asociacion;
+import asociacion.Asociacion;
 import contacto.Contacto;
 import duenio.TipoDocumento;
 import org.junit.jupiter.api.Assertions;
@@ -9,7 +9,7 @@ import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;
 import ubicacion.Ubicacion;
-import Asociacion.RepositorioAsociaciones;
+import asociacion.RepositorioAsociaciones;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

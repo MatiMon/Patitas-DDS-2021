@@ -1,4 +1,4 @@
-package Asociacion;
+package asociacion;
 
 import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaRegistrada;
