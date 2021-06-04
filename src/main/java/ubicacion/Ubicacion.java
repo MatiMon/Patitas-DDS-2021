@@ -24,7 +24,7 @@ public class Ubicacion {
   }
 
   public double calcularDistancia(Ubicacion unaUbicacion) {
-    return calcularDistanciaEntreCoordenadas(unaUbicacion.getLatitud(), unaUbicacion.getLongitud());
+    return Math.ceil(calcularDistanciaEntreCoordenadas(unaUbicacion.getLatitud(), unaUbicacion.getLongitud()));
   }
 
   private double calcularDistanciaEntreCoordenadas(double latitudDestino, double longitudDestino) {

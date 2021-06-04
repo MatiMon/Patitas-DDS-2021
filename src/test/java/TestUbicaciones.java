@@ -8,7 +8,7 @@ public class TestUbicaciones {
 
   @Test
   void sePuedeObtenerLaDistanciaEntreDosPuntos(){
-    Assertions.assertEquals(2930.20,ubicacion1.calcularDistancia(ubicacion2));
+    Assertions.assertEquals(2928,ubicacion1.calcularDistancia(ubicacion2));
   }
 
   @Test
