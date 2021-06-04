@@ -4,7 +4,7 @@ import duenio.TipoDocumento;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import rescate.InvolucradoEnRescate;
+import rescate.Rescatista;
 import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;
@@ -31,13 +31,13 @@ public class TestAsociaciones {
   private List<String> fotos = new ArrayList<>();
   private Contacto contacto = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
   private List<Contacto> contactos = new ArrayList<>();
-  InvolucradoEnRescate rescatista;
+  Rescatista rescatista;
 
   @BeforeEach
   void initFileSystem() {
     contactos.add(contacto);
     fotos.add("una foto");
-    rescatista = new InvolucradoEnRescate("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contactos);
+    rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contactos);
     rescateDeMascotaRegistrada1 = new RescateDeMascotaRegistrada(fotos,"Descripcion1","Ubicacion1", rescatista, LocalDateTime.now().minusDays(5),"QR-1");
     rescateDeMascotaRegistrada2 = new RescateDeMascotaRegistrada(fotos,"Descripcion2","ubicacion2", rescatista, LocalDateTime.now().minusDays(2),"QR-2");
 

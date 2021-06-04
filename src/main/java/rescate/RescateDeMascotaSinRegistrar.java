@@ -1,7 +1,5 @@
 package rescate;
 
-import mascota.Mascota;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -10,7 +8,7 @@ public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
   private int numeroDePublicacion;
 
   public RescateDeMascotaSinRegistrar(List<String> fotos, String descripcion, String ubicacion,
-                                      InvolucradoEnRescate rescatista, LocalDateTime fecha, int numeroDePublicacion) {
+                                      Rescatista rescatista, LocalDateTime fecha, int numeroDePublicacion) {
     super(fotos, descripcion, ubicacion, rescatista, fecha);
     this.estadoDeAprobacion = false;
     this.numeroDePublicacion = numeroDePublicacion;
