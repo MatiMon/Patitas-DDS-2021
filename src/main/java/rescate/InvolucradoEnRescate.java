@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rescatista {
+public class InvolucradoEnRescate {
   private String nombre;
   private String apodo;
   private LocalDate fechaNacimiento;
@@ -16,7 +16,7 @@ public class Rescatista {
   private String direccion;
   private List<Contacto> contactos = new ArrayList<>();
 
-  public Rescatista(String nombre, String apodo, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, String direccion, List<Contacto> contactos) {
+  public InvolucradoEnRescate(String nombre, String apodo, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, String direccion, List<Contacto> contactos) {
     if(contactos.size()<1){
       throw new RescatistaInvalidoException("debe tener al menos un contacto");
     }

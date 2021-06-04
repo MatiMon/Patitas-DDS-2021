@@ -1,19 +1,10 @@
 import duenio.Contacto;
-import duenio.TipoDocumento;
-import mascota.Mascota;
-import mascota.Sexo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import rescate.RescateDeMascota;
-import rescate.RegistroDeRescates;
-import rescate.Rescatista;
-
-import javax.crypto.Mac;
+import Asociacion.RepositorioAsociaciones;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +13,7 @@ public class TestRescates {
   List<String> fotos = new ArrayList<>();
   Contacto contacto = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
   List<Contacto> contactos = new ArrayList<>();
-  RegistroDeRescates registroDeRescates = new RegistroDeRescates();
+  RepositorioAsociaciones repositorioAsociaciones = new RepositorioAsociaciones();
 
 
     @BeforeEach
