@@ -36,17 +36,17 @@ public class TestServicioRefugioDds {
   }
 
   @Test
-  public void generoUsuarioLoGuardoYDespuesLoPuedoBuscarParaObtenerHogares(){
+  public void generoUsuarioLoGuardoYDespuesLoPuedoBuscarParaObtenerHogares() {
 
   }
 
   @Test
-  public void hagoObtenerTodosLosHogaresYSonCuarenta(){
+  public void hagoObtenerTodosLosHogaresYSonCuarenta() {
     List<HogarDeTransito> hogares = servicio.obtenerTodosLosHogares("pR0GYdKrgvKfVehIfRtFxZddIRYvxIynays7X4P6l07rNQcmovyAmmE9ZXJJ");
     Assertions.assertEquals(hogares.size(), 40);
 
   }
-
+/*
   @Test
   public void losDatosDelPrimerHogarSonLosDelPensionadoLlamadoComoEnCasa() {
     HogarDeTransito hogar = respuestaRefugioDdsAPI.getHogares().get(0);
@@ -57,8 +57,7 @@ public class TestServicioRefugioDds {
     Assertions.assertEquals(ubicacion.getDireccion(), "Av. Ing Eduardo Madero 2300, B1669BZQ Del Viso, Provincia de Buenos Aires");
     Assertions.assertEquals(ubicacion.getLatitud(), -34.46013439745161);
     Assertions.assertEquals(ubicacion.getLongitud(),-58.80857841888721);
-  }
-
+  }*/
 
 
 }

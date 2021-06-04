@@ -1,7 +1,7 @@
 package apiRefugioDds;
 
-import apiRefugioDds.exceptions.GenerarUsuarioException;
-import apiRefugioDds.exceptions.ObtenerTodosLosHogaresException;
+import excepciones.GenerarUsuarioException;
+import excepciones.ObtenerTodosLosHogaresException;
 import com.sun.jersey.api.client.ClientResponse;
 import hogares.HogarDeTransito;
 

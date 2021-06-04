@@ -54,7 +54,7 @@ public class HogarDeTransito {
 
   }
 
-  public boolean admiteTipoAnimal (TipoAnimal tipoAnimal){
+  public boolean admiteTipoAnimal(TipoAnimal tipoAnimal) {
     return animalesAdmitidos.contains(tipoAnimal);
   }
 

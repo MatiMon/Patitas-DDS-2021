@@ -1,4 +1,4 @@
-package apiRefugioDds.exceptions;
+package excepciones;
 
 public class GenerarUsuarioException extends RuntimeException {
   public GenerarUsuarioException(String s) {
