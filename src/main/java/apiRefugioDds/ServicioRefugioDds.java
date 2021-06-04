@@ -75,7 +75,7 @@ public class ServicioRefugioDds implements ServicioRefugio {
       case 200:
         break;
       case 400:
-        throw new ObtenerTodosLosHogaresException("se ingreso un numero de pagina mayor al que existe.");
+        throw new ObtenerTodosLosHogaresException("se ingreso un numero de pagina mayor al que existe o igual a cero.");
       case 401:
         throw new ObtenerTodosLosHogaresException("no se realizo la autenticacion o el token ingresado es invalido.");
       case 409:
