@@ -1,5 +1,7 @@
 package rescate;
 
+import mascota.Mascota;
+import mascota.RepositorioQR;
 import ubicacion.Ubicacion;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -10,5 +12,15 @@ public class RescateDeMascotaRegistrada extends RescateDeMascota {
   public RescateDeMascotaRegistrada(List<String> fotos, String descripcion, Ubicacion ubicacion, Rescatista rescatista, LocalDateTime fecha, String QR) {
     super(fotos, descripcion, ubicacion, rescatista, fecha);
     this.codigoQR = QR;
+  }
+
+  public void notificarEncuentroAlDuenio() {
+   Mascota mascota =  obtenerMascota();
+   mascota.notificarEncuentroAlDuenio("¡Se ha encontrado a " + mascota.getNombre()
+       + "! Podés contactar al rescatista: " + this.rescatista.obtenerTarjetaDePresentacion());
+  }
+
+  private Mascota obtenerMascota() {
+    return RepositorioQR.getInstancia().obtenerMascota(this.codigoQR);
   }
 }

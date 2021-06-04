@@ -11,7 +11,7 @@ public class RepositorioQR {
     qrs =unosQRs;
   }
 
-  public RepositorioQR getInstancia(){
+  public static RepositorioQR getInstancia(){
     if(instancia == null){
       instancia = new RepositorioQR(new HashMap<String,Mascota>());
     }

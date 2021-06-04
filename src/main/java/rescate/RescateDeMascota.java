@@ -10,7 +10,7 @@ public abstract class RescateDeMascota {
   private List<String> fotos = new ArrayList<>();
   private String descripcion;
   private Ubicacion ubicacion;
-  private Rescatista rescatista;
+  protected Rescatista rescatista;
   private LocalDateTime fecha;
 
   public RescateDeMascota(List<String> fotos, String descripcion, Ubicacion ubicacion, Rescatista rescatista, LocalDateTime fecha) {

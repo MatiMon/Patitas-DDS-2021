@@ -10,25 +10,30 @@ import java.util.List;
 
 public class Rescatista {
   private String nombre;
-  private String apodo;
+  private String apellido;
   private LocalDate fechaNacimiento;
   private TipoDocumento tipoDocumento;
   private String direccion;
+  private Contacto contactoPrincipal;
   private List<Contacto> contactos = new ArrayList<>();
 
-  public Rescatista(String nombre, String apodo, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, String direccion, List<Contacto> contactos) {
-    if(contactos.size()<1){
+  public Rescatista(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, String direccion, Contacto contactoPrincipal) {
+    if(contactoPrincipal == null){
       throw new RescatistaInvalidoException("debe tener al menos un contacto");
     }
     this.nombre = nombre;
-    this.apodo = apodo;
+    this.apellido = apellido;
     this.fechaNacimiento = fechaNacimiento;
     this.tipoDocumento = tipoDocumento;
     this.direccion = direccion;
-    this.contactos = contactos;
+    this.contactoPrincipal = contactoPrincipal;
   }
 
   public void agregarContacto(Contacto contacto){
     this.contactos.add(contacto);
+  }
+
+  public String obtenerTarjetaDePresentacion() {
+    return ("Nombre completo: " + this.nombre + " " + this.apellido + " - Contacto: " + this.contactoPrincipal.obtenerDatoDeContactoPreferido());
   }
 }

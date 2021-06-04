@@ -38,4 +38,8 @@ public class Mascota {
   public void notificarEncuentroAlDuenio(String mensaje) {
     this.duenio.notificarEncuentro(mensaje);
   }
+
+  public String getNombre() {
+    return nombre;
+  }
 }

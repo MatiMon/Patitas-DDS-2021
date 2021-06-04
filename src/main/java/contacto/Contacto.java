@@ -19,6 +19,10 @@ public class Contacto {
     this.medioDeNotificacionPreferido.enviarNotificacion(this, mensaje);
   }
 
+  public String obtenerDatoDeContactoPreferido() {
+    return this.medioDeNotificacionPreferido.obtenerDatoDeContacto();
+  }
+
   public int getTelefono() {
     return telefono;
   }

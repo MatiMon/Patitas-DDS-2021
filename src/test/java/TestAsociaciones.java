@@ -30,15 +30,13 @@ public class TestAsociaciones {
   private RescateDeMascotaSinRegistrar rescateDeMascotaSinRegistrar3;
 
   private List<String> fotos = new ArrayList<>();
-  private Contacto contacto = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
-  private List<Contacto> contactos = new ArrayList<>();
+  private Contacto contacto = new Contacto("Juan", "Perez", 15501234, "juanperez@hotmail.com");
   Rescatista rescatista;
 
   @BeforeEach
   void initFileSystem() {
-    contactos.add(contacto);
     fotos.add("una foto");
-    rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contactos);
+    rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contacto);
     rescateDeMascotaRegistrada1 = new RescateDeMascotaRegistrada(fotos,"Descripcion1", new Ubicacion("Sam Martín 150", -34.58499, -58.45023), rescatista, LocalDateTime.now().minusDays(5),"QR-1");
     rescateDeMascotaRegistrada2 = new RescateDeMascotaRegistrada(fotos,"Descripcion2", new Ubicacion("Guardia Vieja 2077", -34.58499, -58.45023), rescatista, LocalDateTime.now().minusDays(2),"QR-2");
 
