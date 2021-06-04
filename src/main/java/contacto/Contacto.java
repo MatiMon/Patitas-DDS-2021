@@ -5,6 +5,7 @@ public class Contacto {
   private String apellido;
   private int telefono;
   private String email;
+  private MedioDeNotificacion medioDeNotificacionPreferido;
 
   public Contacto(String nombre, String apellido, int telefono, String email) {
     this.nombre = nombre;
