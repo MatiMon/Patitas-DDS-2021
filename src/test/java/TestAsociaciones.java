@@ -1,10 +1,6 @@
-import Asociacion.Asociacion;
+import asociacion.Asociacion;
 import contacto.Contacto;
-import contacto.MedioDeNotificacion;
-import duenio.Duenio;
 import duenio.TipoDocumento;
-import mascota.Mascota;
-import mascota.RepositorioQR;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,8 +10,9 @@ import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;
 import ubicacion.Ubicacion;
-import Asociacion.RepositorioAsociaciones;
-import static org.mockito.Mockito.*;
+import asociacion.RepositorioAsociaciones;
+
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;

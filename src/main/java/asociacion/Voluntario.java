@@ -1,4 +1,4 @@
-package Asociacion;
+package asociacion;
 
 import usuario.Usuario;
 

@@ -13,15 +13,16 @@ public class RefugioDdsAPI {
   private static final String API_REFUGIO_DDS = "https://api.refugiosdds.com.ar/api";
   private static final String RESOURCE_HOGARES = "hogares";
   private static final String RESOURCE_USUARIOS = "usuarios";
-  private int maxElementosPorPagina = 10;
+  private int maxElementosPorPagina;
 
   //https://app.swaggerhub.com/apis-docs/ezequieloscarescobar/hogares-transito-mascotas/1.0-oas3#/
   //bearer token: pR0GYdKrgvKfVehIfRtFxZddIRYvxIynays7X4P6l07rNQcmovyAmmE9ZXJJ
 
-  public RefugioDdsAPI() {
+  public RefugioDdsAPI(int maxElementosPorPagina) {
     ClientConfig clientConfig = new DefaultClientConfig();
     clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
     this.client = Client.create(clientConfig);
+    this.maxElementosPorPagina = maxElementosPorPagina;
   }
 
   public ClientResponse generarToken(String email) {
@@ -41,6 +42,6 @@ public class RefugioDdsAPI {
   }
 
   public int getMaxElementosPorPagina() {
-    return maxElementosPorPagina;
+    return this.maxElementosPorPagina;
   }
 }
