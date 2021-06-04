@@ -1,5 +1,7 @@
 package apiRefugioDds;
 
+import hogares.HogarDeTransito;
+
 import java.util.List;
 
 public interface ServicioRefugio {

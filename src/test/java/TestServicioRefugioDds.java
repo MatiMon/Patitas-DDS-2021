@@ -1,7 +1,9 @@
 import apiRefugioDds.*;
+import hogares.HogarDeTransito;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ubicacion.Ubicacion;
 
 import java.util.List;
 

@@ -11,9 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestHogarDeTransito {
-  Ubicacion ubicacion = new Ubicacion("Calle falsa", 123, -34.42061525423029, -58.572775488348505);
-  Ubicacion ubicacionCercana = new Ubicacion("Calle falsa", 200, -34.42061525423024, -58.572775488348507);
-  Ubicacion ubicacionLejana = new Ubicacion("calle verdadera", 200, -34.42061525423024, -10.572775488348507);
+  Ubicacion ubicacion = new Ubicacion("Calle falsa 123", -34.42061525423029, -58.572775488348505);
+  Ubicacion ubicacionCercana = new Ubicacion("Calle falsa 200", -34.42061525423024, -58.572775488348507);
+  Ubicacion ubicacionLejana = new Ubicacion("calle verdadera 200", -34.42061525423024, -10.572775488348507);
   HogarDeTransito hogarDeGatos = crearHogarDeTransito(true, ubicacion, Arrays.asList(TipoAnimal.GATO), 20);
   HogarDeTransito hogarSinPatio = crearHogarDeTransito(false, ubicacionCercana, Arrays.asList(TipoAnimal.GATO), 26);
 

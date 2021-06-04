@@ -3,6 +3,7 @@ package apiRefugioDds;
 import apiRefugioDds.exceptions.GenerarUsuarioException;
 import apiRefugioDds.exceptions.ObtenerTodosLosHogaresException;
 import com.sun.jersey.api.client.ClientResponse;
+import hogares.HogarDeTransito;
 
 import java.util.ArrayList;
 import java.util.List;

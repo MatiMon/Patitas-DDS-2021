@@ -1,16 +1,26 @@
 package ubicacion;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 public class Ubicacion {
-  private String calle;
-  private int altura;
+
+  @JsonProperty("direccion")
+  private String direccion;
+
+  @JsonProperty("lat")
   private double latitud;
+
+  @JsonProperty("long")
   private double longitud;
 
-  public Ubicacion(String unaCalle,int unaAltura,double unaLatitud,double unaLongitud){
-    calle = unaCalle;
-    altura = unaAltura;
+  public Ubicacion(String direccion,double unaLatitud,double unaLongitud){
+    direccion = direccion;
     latitud = unaLatitud;
     longitud = unaLongitud;
+  }
+
+  public Ubicacion() {
+
   }
 
   public double calcularDistancia(Ubicacion unaUbicacion){
@@ -46,13 +56,7 @@ public class Ubicacion {
     return Math.sin(diferenciaDeMagnitudes(magnitud1,magnitud2)/ 2);
   }
 
-  public String getCalle() {
-    return calle;
-  }
-
-  public int getAltura() {
-    return altura;
-  }
+  public String getDireccion() { return this.direccion;}
 
   public double getLatitud() {
     return latitud;
