@@ -30,18 +30,24 @@ public class TestAsociaciones {
   private RescateDeMascotaSinRegistrar rescateDeMascotaSinRegistrar3;
 
   private List<String> fotos = new ArrayList<>();
-  private Contacto contacto = new Contacto("Juan", "Perez", 15501234, "juanperez@hotmail.com");
+
+  private Contacto contacto1;
   Rescatista rescatista;
+  private Contacto contacto2;
+  private List<Contacto> contactos = new ArrayList<>();
+
 
   @BeforeEach
   void initFileSystem() {
+    contacto2 = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
     fotos.add("una foto");
-    rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contacto);
-    rescateDeMascotaRegistrada1 = new RescateDeMascotaRegistrada(fotos,"Descripcion1", new Ubicacion("Sam Martín 150", -34.58499, -58.45023), rescatista, LocalDateTime.now().minusDays(5),"QR-1");
+    contacto1 = new Contacto("Juan", "Perez", 15501234, "juanperez@hotmail.com");
+    rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contacto1);
+
+    rescateDeMascotaRegistrada1 = new RescateDeMascotaRegistrada(fotos,"Descripcion1", new Ubicacion("San Martín 150", -34.58499, -58.45023), rescatista, LocalDateTime.now().minusDays(5),"QR-1");
     rescateDeMascotaRegistrada2 = new RescateDeMascotaRegistrada(fotos,"Descripcion2", new Ubicacion("Guardia Vieja 2077", -34.58499, -58.45023), rescatista, LocalDateTime.now().minusDays(2),"QR-2");
 
     //por el momento, con null porque no se necesitan para probar los metodos del TEST
-
     rescateDeMascotaSinRegistrar1 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(15),1);
     rescateDeMascotaSinRegistrar2 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(8),2);
     rescateDeMascotaSinRegistrar3 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(1),3);
@@ -52,7 +58,7 @@ public class TestAsociaciones {
     rescatesDeMascotasSinRegistrar.add(rescateDeMascotaSinRegistrar2);
     rescatesDeMascotasSinRegistrar.add(rescateDeMascotaSinRegistrar3);
 
-    asociacion = new Asociacion("PatitasLanus", rescatesDeMascotasSinRegistrar, rescatesDeMascotasRegistradas);
+    asociacion = new Asociacion("Patitas", new Ubicacion("correintes 100",-34.7000,-55.0000 ), rescatesDeMascotasSinRegistrar, rescatesDeMascotasRegistradas);
   }
 
   @Test

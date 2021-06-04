@@ -3,6 +3,7 @@ package Asociacion;
 import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;
+import ubicacion.Ubicacion;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -12,15 +13,15 @@ import java.util.stream.Collectors;
 public class Asociacion {
 
   private String nombre;
-  //Ubicacion ubicacion;
+  Ubicacion ubicacion;
   List<RescateDeMascotaSinRegistrar> rescatesDeMascotasSinRegistrar = new ArrayList<>();
   List<RescateDeMascotaRegistrada> rescatesDeMascotasRegistradas = new ArrayList<>();;
 
-  public Asociacion(String nombre, /*Ubicacion ubicacion,*/
+  public Asociacion(String nombre, Ubicacion ubicacion,
                     List<RescateDeMascotaSinRegistrar> rescateDeMascotasSinRegistrar,
                     List<RescateDeMascotaRegistrada> rescateDeMascotasRegistradas) {
     this.nombre = nombre;
-    /*this.ubicacion = ubicacion;*/
+    this.ubicacion = ubicacion;
     this.rescatesDeMascotasSinRegistrar = rescateDeMascotasSinRegistrar;
     this.rescatesDeMascotasRegistradas = rescateDeMascotasRegistradas;
   }

@@ -3,6 +3,7 @@ package Asociacion;
 import Asociacion.Asociacion;
 import caracteristicas.RepositorioCaracteristicasIdeales;
 import rescate.RescateDeMascota;
+import ubicacion.Ubicacion;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -20,15 +21,19 @@ public class RepositorioAsociaciones {
     return rescatesGlobales;
   }
 
-  /*@TODO ver de comparar la lista de asociaciones por "calcularDistancia"
-  public Asociacion asociacionMasCercana (Ubicacion ubicacion) {
-  }*/
-
   public List<RescateDeMascota> ultimasMascotasEncontradasEnTodasLasAsociaciones(int dias) {
     List<RescateDeMascota> rescatesGlobales = new ArrayList<>();
-     this.asociaciones.forEach(asociacion -> rescatesGlobales.addAll(asociacion.ultimasMascotasEncontradas(dias)));
-     return rescatesGlobales;
+    this.asociaciones.forEach(asociacion -> rescatesGlobales.addAll(asociacion.ultimasMascotasEncontradas(dias)));
+    return rescatesGlobales;
   }
+
+  /*@TODO terminar de armar
+  public Asociacion asociacionMasCercana (Ubicacion ubicacion) {
+    //List<Asociacion> asociacionesOrdenadas = new ArrayList<> ();
+
+    this.asociaciones.sort(asociacion -> (int) asociacion.ubicacion.calcularDistancia(ubicacion));
+    return asociaciones.stream().findFirst().get();
+  }*/
 
   public void agregarAsociacion(Asociacion asociacion){
     this.asociaciones.add(asociacion);
