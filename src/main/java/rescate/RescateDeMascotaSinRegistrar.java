@@ -8,7 +8,6 @@ import java.util.List;
 public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
   private boolean estadoDeAprobacion;
   private int numeroDePublicacion;
-  private InvolucradoEnRescate duenioSinRegistrar;
 
   public RescateDeMascotaSinRegistrar(List<String> fotos, String descripcion, String ubicacion,
                                       InvolucradoEnRescate rescatista, LocalDateTime fecha, int numeroDePublicacion) {
@@ -23,17 +22,5 @@ public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
 
   public boolean getEstadoDeAprobacion() {
     return estadoDeAprobacion;
-  }
-
-  public int getNumeroDePublicacion() {
-    return numeroDePublicacion;
-  }
-
-  public InvolucradoEnRescate getDuenioSinRegistrar() {
-    return duenioSinRegistrar;
-  }
-
-  public void setDuenioSinRegistrar(InvolucradoEnRescate duenioSinRegistrar) {
-    this.duenioSinRegistrar = duenioSinRegistrar;
   }
 }
