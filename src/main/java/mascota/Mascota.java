@@ -31,7 +31,7 @@ public class Mascota {
     this.fotos = fotos;
     this.caracteristicaDefinidas = caracteristicaDefinidas;
     this.duenio = duenio;
-    this.QR = QR;
+    this.QR = QR; //TODO minuscula
     this.tamanio = tamanio;
   }
 

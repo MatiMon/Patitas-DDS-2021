@@ -19,7 +19,7 @@ public class EnumeradaIdeal implements TipoCaracteristica{
         }catch (ClassCastException e) {
             throw new ValorCaracteristicaInvalidoException("String");
         }
-        //validarCaracteristica(_valor); problema de la interfaz
+        //TODO validarCaracteristica(_valor);
         return new TextoDefinida(nombre, _valor);
     }
     public List<String> getOpciones() {

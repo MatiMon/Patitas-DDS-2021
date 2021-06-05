@@ -72,10 +72,10 @@ public class HogarDeTransito {
   }
 
   /* OPCION 2 */
-/*  public boolean admiteAnimal(TipoAnimal tipoAnimal, Tamanio tamanio, double radio , Ubicacion ubicacionRescate){
+  public boolean admiteAnimal(TipoAnimal tipoAnimal, Tamanio tamanio, double radio , Ubicacion ubicacionRescate){
     return tieneLugaresDisponibles() && admiteTamanio(tamanio) && admiteTipoAnimal(tipoAnimal)
         && ubicacion.estaDentroDelRadio(ubicacionRescate, radio);
-  }*/
+  }
 
   public String getNombre() {
     return nombre;

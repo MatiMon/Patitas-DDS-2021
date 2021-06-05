@@ -15,7 +15,7 @@ public class Contacto {
     this.email = email;
   }
 
-  public void notificar(String mensaje) {
+  public void notificar(String mensaje) { //TODO tests w/mocks
     this.medioDeNotificacionPreferido.enviarNotificacion(this, mensaje);
   }
 

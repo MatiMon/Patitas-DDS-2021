@@ -28,7 +28,7 @@ public class RepositorioAsociaciones {
 
   public Asociacion asociacionMasCercana (Ubicacion ubicacion) {
 
-    this.asociaciones.sort(Comparator.comparing(asociacion -> asociacion.ubicacion.calcularDistancia(ubicacion)));
+    this.asociaciones.sort(Comparator.comparing(asociacion -> asociacion.ubicacion.calcularDistancia(ubicacion))); //TODO delegar a asociacion
     //@TODO ver de manejar mejor este error en caso que el REPO este VACIO.
     return asociaciones.stream().findFirst().orElse(null);
 

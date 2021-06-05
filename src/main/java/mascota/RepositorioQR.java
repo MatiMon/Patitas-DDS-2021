@@ -3,7 +3,7 @@ package mascota;
 import java.util.HashMap;
 
 public class RepositorioQR {
-  private HashMap<String, Mascota> qrs;
+  private HashMap<String, Mascota> qrs; //TODO map en lugar de hashMap
   private static RepositorioQR instancia;
 
 

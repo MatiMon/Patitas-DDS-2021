@@ -43,11 +43,9 @@ public class RepositorioHogares {
   }
 
   /* OPCION 2 */
-/*
   public List<HogarDeTransito> obtenerHogaresValidosAnimal(TipoAnimal tipoAnimal,Tamanio tamanio, double radio , Ubicacion ubicacion){
     return hogares.stream().filter((hogar)->hogar.admiteAnimal(tipoAnimal, tamanio,  radio , ubicacion)).collect(Collectors.toList());
   }
-*/
 
 
 }
