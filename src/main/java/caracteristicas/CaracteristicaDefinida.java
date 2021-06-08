@@ -1,5 +1,7 @@
 package caracteristicas;
 
+import java.util.function.Predicate;
+
 public abstract class CaracteristicaDefinida {
     String nombre;
 

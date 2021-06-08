@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca35795c-cc35-43b5-b77b-8094640599cf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ejercicio.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ejercicio.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mascota/MascotaBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mascota/MascotaBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mascota/RepositorioMascotas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mascota/RepositorioMascotas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rescate/RescateDeMascota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rescate/RescateDeMascota.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rescate/RescateDeMascotaRegistrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rescate/RescateDeMascotaRegistrada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asociacion/Asociacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/asociacion/Asociacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asociacion/RepositorioAsociaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/asociacion/RepositorioAsociaciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/CaracteristicaDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/CaracteristicaDefinida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/TextoDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/TextoDefinida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hogares/HogarDeTransito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hogares/HogarDeTransito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hogares/RepositorioHogares.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hogares/RepositorioHogares.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rescate/RescateDeMascotaSinRegistrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rescate/RescateDeMascotaSinRegistrar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestAsociaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestAsociaciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRepositorioQR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRepositorioQR.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +251,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.Whole project">
     <configuration selected="false" default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -283,6 +282,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Whole project" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -296,6 +307,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Whole project" />
         <item itemvalue="JUnit.TestCaracteristicas" />
       </list>
     </recent_temporary>

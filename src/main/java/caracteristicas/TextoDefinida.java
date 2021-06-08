@@ -7,4 +7,8 @@ public class TextoDefinida extends CaracteristicaDefinida {
     this.nombre = nombre;
     this.valor = valor;
   }
+
+  public String getValor() {
+    return valor;
+  }
 }

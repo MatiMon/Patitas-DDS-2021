@@ -1,5 +1,6 @@
 package hogares;
 
+import caracteristicas.TextoDefinida;
 import mascota.Tamanio;
 import mascota.TipoAnimal;
 import ubicacion.Ubicacion;
@@ -19,29 +20,8 @@ public class RepositorioHogares {
     hogares.add(hogar);
   }
 
-  /* OPCION 1 */
-
-  private List<HogarDeTransito> obtenerHogaresValidos(Tamanio tamanio, TipoAnimal tipoAnimal, double radio , Ubicacion ubicacion){
-    List<HogarDeTransito> hogaresDisponiblesDentroDelRadio = obtenerHogaresDisponiblesDentroDelRadio(ubicacion, radio);
-    List<HogarDeTransito> hogaresValidosTipoAnimal = obtenerHogaresSegunTipoAnimal(hogaresDisponiblesDentroDelRadio, tipoAnimal);
-    return obtenerHogaresSegunTamanio(hogaresValidosTipoAnimal, tamanio);
-  }
-
-  public List<HogarDeTransito> obtenerHogaresSegunTamanio(List<HogarDeTransito> hogares, Tamanio tamanio){
-    return hogares.stream().filter((hogar)->hogar.admiteTamanio(tamanio)).collect(Collectors.toList());
-  }
-
-  public List<HogarDeTransito> obtenerHogaresSegunTipoAnimal(List<HogarDeTransito> hogares, TipoAnimal tipoAnimal){
-    return hogares.stream().filter((hogar)->hogar.admiteTipoAnimal(tipoAnimal)).collect(Collectors.toList());
-  }
-
-  public List<HogarDeTransito> obtenerHogaresDisponiblesDentroDelRadio(Ubicacion ubicacionRescate, double radio){
-    return hogares.stream().filter((hogar)->hogar.estaDisponibleYcercaDe(ubicacionRescate, radio)).collect(Collectors.toList());
-  }
-
-  /* OPCION 2 */
-  public List<HogarDeTransito> obtenerHogaresValidosAnimal(TipoAnimal tipoAnimal,Tamanio tamanio, double radio , Ubicacion ubicacion){
-    return hogares.stream().filter((hogar)->hogar.admiteAnimal(tipoAnimal, tamanio,  radio , ubicacion)).collect(Collectors.toList());
+  public List<HogarDeTransito> obtenerHogaresValidosAnimal(TipoAnimal tipoAnimal,Tamanio tamanio, double radio , Ubicacion ubicacion, TextoDefinida personalidad){
+    return hogares.stream().filter((hogar)->hogar.admiteAnimal(tipoAnimal, tamanio,  radio , ubicacion, personalidad)).collect(Collectors.toList());
   }
 
 

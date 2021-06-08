@@ -68,4 +68,9 @@ public class Asociacion {
   public String getNombre() {
     return nombre;
   }
+
+  public double calcularDistanciaA(Ubicacion ubicacionRescate) {
+    return ubicacion.calcularDistancia(ubicacionRescate);
+  }
+
 }

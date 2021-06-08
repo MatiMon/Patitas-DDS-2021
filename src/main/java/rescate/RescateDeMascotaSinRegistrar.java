@@ -11,7 +11,7 @@ import java.util.List;
 
 public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
   private boolean estadoDeAprobacion;
-  private Integer numeroDePublicacion;
+  private Integer numeroDePublicacion; //TODO calcular el nro de publicacion
   private TipoAnimal tipoAnimal;
   private Tamanio tamanio;
   private CaracteristicaDefinida personalidad; //texto libre
