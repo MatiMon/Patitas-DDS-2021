@@ -1,12 +1,9 @@
 package hogares;
 
-import mascota.Mascota;
-import mascota.RepositorioQR;
 import mascota.Tamanio;
 import mascota.TipoAnimal;
 import ubicacion.Ubicacion;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -9,7 +9,7 @@ public class BooleanaIdeal implements TipoCaracteristica{
         try{
             _valor = (boolean)valor;
         }catch (ClassCastException e) {
-            throw new ValorCaracteristicaInvalidoException("Boolean");
+            throw new ValorCaracteristicaInvalidoException("de tipo Boolean");
         }
         return new BooleanaDefinida(nombre, _valor);
     }

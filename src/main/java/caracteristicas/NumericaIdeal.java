@@ -8,7 +8,7 @@ public class NumericaIdeal implements TipoCaracteristica{
         try{
             _valor = (int)valor;
         }catch (ClassCastException e) {
-            throw new ValorCaracteristicaInvalidoException("Int");
+            throw new ValorCaracteristicaInvalidoException("de tipo Int");
         }
         return new NumericoDefinida(nombre, _valor);
     }

@@ -75,6 +75,7 @@ public class TestMascotaBuilder {
     creadorMascota.setTipoAnimal(TipoAnimal.GATO);
     creadorMascota.setFotos(fotos);
     creadorMascota.setTamanio(Tamanio.MEDIANO);
+    creadorMascota.setId("123");
     Contacto contacto = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
     List<Contacto> contactos = new ArrayList<>();
     contactos.add(contacto);

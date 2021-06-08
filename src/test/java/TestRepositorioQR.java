@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestRepositorioQR {
-  private RepositorioQR repositorioDeQRs;
+  private RepositorioMascotas repositorioDeQRs;
   private List<String> fotos = new ArrayList<>();
   private Contacto contacto1 = new Contacto("Juan", "Perez", 15501234, "juanperez@hotmail.com");
   private List<Contacto> contactos = new ArrayList<Contacto>();

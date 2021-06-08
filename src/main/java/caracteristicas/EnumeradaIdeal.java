@@ -17,12 +17,15 @@ public class EnumeradaIdeal implements TipoCaracteristica{
         try{
             _valor = (String)valor;
         }catch (ClassCastException e) {
-            throw new ValorCaracteristicaInvalidoException("String");
+            throw new ValorCaracteristicaInvalidoException("de tipo String");
         }
-        //TODO validarCaracteristica(_valor);
+        validarCaracteristica(_valor);
         return new TextoDefinida(nombre, _valor);
     }
-    public List<String> getOpciones() {
-        return opciones;
+
+    private void validarCaracteristica(String valor){
+        if(!opciones.contains(valor)){
+            throw new ValorCaracteristicaInvalidoException("parte de las opciones.");
+        }
     }
 }

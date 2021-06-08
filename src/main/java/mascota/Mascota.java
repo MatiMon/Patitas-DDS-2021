@@ -18,10 +18,10 @@ public class Mascota {
   private List<String> fotos = new ArrayList<>();
   private List<CaracteristicaDefinida> caracteristicaDefinidas = new ArrayList<>();
   private Duenio duenio;
-  private String QR;
+  private String id;
 
   public Mascota(String nombre, String apodo, int edad, Sexo sexo, TipoAnimal tipoAnimal, String descripcionFisica,
-                 List<String> fotos, List<CaracteristicaDefinida> caracteristicaDefinidas, Duenio duenio, String QR, Tamanio tamanio) {
+                 List<String> fotos, List<CaracteristicaDefinida> caracteristicaDefinidas, Duenio duenio, String id, Tamanio tamanio) {
     this.nombre = nombre;
     this.apodo = apodo;
     this.edad = edad;
@@ -31,7 +31,7 @@ public class Mascota {
     this.fotos = fotos;
     this.caracteristicaDefinidas = caracteristicaDefinidas;
     this.duenio = duenio;
-    this.QR = QR; //TODO minuscula
+    this.id = id;
     this.tamanio = tamanio;
   }
 

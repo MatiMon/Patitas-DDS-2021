@@ -8,7 +8,7 @@ public class TextoIdeal implements TipoCaracteristica{
         try{
             _valor = (String)valor;
         }catch (ClassCastException e) {
-            throw new ValorCaracteristicaInvalidoException("String");
+            throw new ValorCaracteristicaInvalidoException("de tipo String");
         }
         return new TextoDefinida(nombre, _valor);
     }

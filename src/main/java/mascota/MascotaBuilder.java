@@ -21,7 +21,7 @@ public class MascotaBuilder {
     private List<String> fotos = new ArrayList<>();
     private Duenio duenio;
     private List<CaracteristicaDefinida> caracteristicasDefinidas = new ArrayList<>();
-    private String QR;
+    private String id;
     private Tamanio tamanio;
 
     public void ingresarNuevaCaracteristica(CaracteristicaIdeal nuevaCaracteristica, Object valor){
@@ -60,8 +60,8 @@ public class MascotaBuilder {
         this.apodo = apodo;
     }
 
-    public void setQR(String QR){
-        this.QR = QR;
+    public void setId(String id){
+        this.id = id;
     }
 
     public void setTamanio(Tamanio tamanio) {
@@ -70,7 +70,7 @@ public class MascotaBuilder {
 
     public Mascota registrarMascota() {
         validarMascota();
-        return new Mascota(nombre, apodo, edad, sexo, tipoAnimal, descripcionFisica, fotos, caracteristicasDefinidas, duenio, QR, tamanio);
+        return new Mascota(nombre, apodo, edad, sexo, tipoAnimal, descripcionFisica, fotos, caracteristicasDefinidas, duenio, id, tamanio);
     }
 
     private void validarMascota() {

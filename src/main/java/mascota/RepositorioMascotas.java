@@ -2,18 +2,18 @@ package mascota;
 
 import java.util.HashMap;
 
-public class RepositorioQR {
+public class RepositorioMascotas {
   private HashMap<String, Mascota> qrs; //TODO map en lugar de hashMap
-  private static RepositorioQR instancia;
+  private static RepositorioMascotas instancia;
 
 
-  private RepositorioQR(HashMap<String, Mascota> unosQRs) {
+  private RepositorioMascotas(HashMap<String, Mascota> unosQRs) {
     qrs = unosQRs;
   }
 
-  public static RepositorioQR getInstancia() {
+  public static RepositorioMascotas getInstancia() {
     if (instancia == null) {
-      instancia = new RepositorioQR(new HashMap<String, Mascota>());
+      instancia = new RepositorioMascotas(new HashMap<String, Mascota>());
     }
     return instancia;
   }
