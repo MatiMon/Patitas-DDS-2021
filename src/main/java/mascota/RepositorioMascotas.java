@@ -3,12 +3,12 @@ package mascota;
 import java.util.HashMap;
 
 public class RepositorioMascotas {
-  private HashMap<String, Mascota> qrs; //TODO map en lugar de hashMap
+  private HashMap<String, Mascota> mascotas; //TODO map en lugar de hashMap
   private static RepositorioMascotas instancia;
 
 
-  private RepositorioMascotas(HashMap<String, Mascota> unosQRs) {
-    qrs = unosQRs;
+  private RepositorioMascotas(HashMap<String, Mascota> unasMascotas) {
+    mascotas = unasMascotas;
   }
 
   public static RepositorioMascotas getInstancia() {
@@ -18,16 +18,17 @@ public class RepositorioMascotas {
     return instancia;
   }
 
-  public Mascota obtenerMascota(String qr) {
-    return qrs.get(qr);
+
+  public Mascota obtenerMascota(String id) {
+    return mascotas.get(id);
   }
 
-  public void registrarQR(String qr, Mascota mascota) {
-    qrs.put(qr, mascota);
+  public void registrarMascota(String id, Mascota mascota) {
+    mascotas.put(id, mascota);
   }
 
-  public void removerQR(String qr) {
-    qrs.remove(qr);
+  public void removerMascota(String id) {
+    mascotas.remove(id);
   }
 
 

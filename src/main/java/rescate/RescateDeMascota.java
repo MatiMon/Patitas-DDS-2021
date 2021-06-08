@@ -1,5 +1,7 @@
 package rescate;
 
+import asociacion.Asociacion;
+import asociacion.RepositorioAsociaciones;
 import excepciones.MascotaRescatadaInvalidaException;
 import ubicacion.Ubicacion;
 import java.time.LocalDateTime;
@@ -9,7 +11,7 @@ import java.util.List;
 public abstract class RescateDeMascota {
   private List<String> fotos = new ArrayList<>();
   private String descripcion;
-  private Ubicacion ubicacion;
+  Ubicacion ubicacion; //TODO ver ¿? si es privado no te deja usarlo en la clase hija :cccccc
   protected Rescatista rescatista;
   private LocalDateTime fecha;
 
@@ -32,6 +34,13 @@ public abstract class RescateDeMascota {
   public LocalDateTime getFecha() {
     return fecha;
   }
+
+  public void registrar(){
+    Asociacion asociacionMasCercada = RepositorioAsociaciones.getInstancia().asociacionMasCercana(ubicacion);
+    registrarEn(asociacionMasCercada);
+  }
+
+  abstract public void registrarEn(Asociacion asociacion);
 }
 
 

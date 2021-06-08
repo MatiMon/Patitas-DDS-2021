@@ -70,7 +70,9 @@ public class MascotaBuilder {
 
     public Mascota registrarMascota() {
         validarMascota();
-        return new Mascota(nombre, apodo, edad, sexo, tipoAnimal, descripcionFisica, fotos, caracteristicasDefinidas, duenio, id, tamanio);
+        Mascota mascota = new Mascota(nombre, apodo, edad, sexo, tipoAnimal, descripcionFisica, fotos, caracteristicasDefinidas, duenio, id, tamanio);
+        RepositorioMascotas.getInstancia().registrarMascota(id, mascota); //TODO hablar si esto va en la mascota o aca
+        return mascota;
     }
 
     private void validarMascota() {

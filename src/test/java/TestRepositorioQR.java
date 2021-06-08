@@ -41,12 +41,12 @@ public class TestRepositorioQR {
     contactos.add(contacto1);
     fotos.add("foto1");
 
-    repositorioDeQRs.getInstancia().registrarQR("qr-10", mascota1);
+    repositorioDeQRs.getInstancia().registrarMascota("qr-10", mascota1);
   }
 
   @AfterEach
   void vaciarRepositorio() {
-    repositorioDeQRs.getInstancia().removerQR("qr-10");
+    repositorioDeQRs.getInstancia().removerMascota("qr-10");
   }
 
   @Test

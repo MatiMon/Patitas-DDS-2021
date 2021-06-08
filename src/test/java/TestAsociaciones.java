@@ -1,6 +1,9 @@
 import asociacion.Asociacion;
+import caracteristicas.CaracteristicaDefinida;
+import caracteristicas.TextoDefinida;
 import contacto.Contacto;
 import duenio.TipoDocumento;
+import mascota.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -42,10 +45,14 @@ public class TestAsociaciones {
   private List<Contacto> contactos = new ArrayList<>();
   Asociacion asociacionSanMartin = new Asociacion("Patitas", new Ubicacion("San Martin 155",-34.59000,-58.50000 ), rescatesDeMascotasSinRegistrar, rescatesDeMascotasRegistradas);
   Asociacion asociacionLejana = new Asociacion("Manchitas",new Ubicacion("lugarLejano",35.86166,104.195397), null,null);
-
+  Mascota mascota = new Mascota("Pepito", "Pepe", 4, Sexo.MACHO, TipoAnimal.GATO, "lindo", Arrays.asList("foto1.jpg"), null, null, "QR-1", Tamanio.GRANDE);
+  RepositorioMascotas repositorioMascotas;
+  CaracteristicaDefinida personalidad = new TextoDefinida("personalidad", "Manso");
 
   @BeforeEach
   void init() {
+    repositorioMascotas = RepositorioMascotas.getInstancia();
+    repositorioMascotas.registrarMascota("QR-1", mascota);
     contacto2 = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
     fotos.add("una foto");
     contacto1 = new Contacto("Juan", "Perez", 15501234, "juanperez@hotmail.com");
@@ -54,21 +61,20 @@ public class TestAsociaciones {
     ubicacionGuardiaVieja = new Ubicacion("Guardia Vieja 2077", -34.58499, -58.45023);
     contactos.add(contacto1);
 
-    rescateDeMascotaRegistrada1 = new RescateDeMascotaRegistrada(fotos,"Descripcion1", ubicacionSanMartin, rescatista, LocalDateTime.now().minusDays(5),"QR-1");
-    rescateDeMascotaRegistrada2 = new RescateDeMascotaRegistrada(fotos,"Descripcion2", ubicacionGuardiaVieja, rescatista, LocalDateTime.now().minusDays(2),"QR-2");
+
+    rescateDeMascotaRegistrada1 = new RescateDeMascotaRegistrada(fotos,"Descripcion1", ubicacionSanMartin, rescatista, LocalDateTime.now().minusDays(5), repositorioMascotas.obtenerMascota("QR-1"));
+    rescateDeMascotaRegistrada2 = new RescateDeMascotaRegistrada(fotos,"Descripcion2", ubicacionGuardiaVieja, rescatista, LocalDateTime.now().minusDays(2), repositorioMascotas.obtenerMascota("QR-1"));
 
     //por el momento, con null porque no se necesitan para probar los metodos del TEST
-    rescateDeMascotaSinRegistrar1 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(15),1);
-    rescateDeMascotaSinRegistrar2 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(8),2);
-    rescateDeMascotaSinRegistrar3 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(1),3);
+    rescateDeMascotaSinRegistrar1 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(15),1, Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
+    rescateDeMascotaSinRegistrar2 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(8),2, Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
+    rescateDeMascotaSinRegistrar3 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(1),3, Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
 
     rescatesDeMascotasRegistradas.add(rescateDeMascotaRegistrada1);
     rescatesDeMascotasRegistradas.add(rescateDeMascotaRegistrada2);
     rescatesDeMascotasSinRegistrar.add(rescateDeMascotaSinRegistrar1);
     rescatesDeMascotasSinRegistrar.add(rescateDeMascotaSinRegistrar2);
     rescatesDeMascotasSinRegistrar.add(rescateDeMascotaSinRegistrar3);
-
-
 
     repositorioAsociaciones = RepositorioAsociaciones.getInstancia();
 
@@ -80,6 +86,7 @@ public class TestAsociaciones {
   void finalizar(){
     repositorioAsociaciones.removerAsociacion(asociacionSanMartin);
     repositorioAsociaciones.removerAsociacion(asociacionLejana);
+    repositorioMascotas.removerMascota("QR-1");
 
   }
 
