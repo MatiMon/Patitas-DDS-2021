@@ -29,7 +29,7 @@ public class Rescatista {
     this.contactoPrincipal = contactoPrincipal;
   }
 
-  public void agregarContacto(Contacto contacto){
+  public void agregarContactoSecundario(Contacto contacto){
     this.contactosSecundarios.add(contacto);
   }
 

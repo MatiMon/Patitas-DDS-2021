@@ -32,14 +32,18 @@ public class TestRescates {
   @BeforeEach
     public void inicializar(){
       this.fotos = new ArrayList<>();
-      this.unContacto = new Contacto("Juan", "Pérez", 1153798990, "juan.perez@hotmail.com");
+      this.fotos.add("Foto en el parque");
+
       this.contactos = new ArrayList<>();
+      this.unContacto = new Contacto("Juan", "Pérez", 1153798990, "juan.perez@hotmail.com");
       this.contactos.add(unContacto);
+
       this.unaMascota = new Mascota("Perrito", "Perry",
           3, Sexo.MACHO, TipoAnimal.PERRO, "Cachorro", this.fotos, null, this.duenio, "12345A", Tamanio.MEDIANO);
 
       this.rescateDeMascotaRegistrada = new RescateDeMascotaRegistrada(this.fotos, "Una descipción", new Ubicacion(), this.rescatista, null, unaMascota);
-      this.duenio = new Duenio("Matias", "Sosa", null, TipoDocumento.DNI, 40000000, this.contactos);
+
+      this.duenio = new Duenio("Matias", "Sosa", null, TipoDocumento.DNI, 40000000, this.unContacto);
 
       this.rescatista = new Rescatista("Manuel", "Quintana", null, null, null, this.unContacto);
 
