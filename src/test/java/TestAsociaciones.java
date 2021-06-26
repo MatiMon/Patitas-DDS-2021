@@ -2,6 +2,7 @@ import asociacion.Asociacion;
 import caracteristicas.CaracteristicaDefinida;
 import caracteristicas.TextoDefinida;
 import contacto.Contacto;
+import duenio.Duenio;
 import duenio.TipoDocumento;
 import mascota.*;
 import org.junit.jupiter.api.AfterEach;
@@ -49,6 +50,8 @@ public class TestAsociaciones {
   RepositorioMascotas repositorioMascotas;
   CaracteristicaDefinida personalidad = new TextoDefinida("personalidad", "Manso");
 
+  private Duenio duenio;
+
   @BeforeEach
   void init() {
     repositorioMascotas = RepositorioMascotas.getInstancia();
@@ -60,15 +63,16 @@ public class TestAsociaciones {
     ubicacionSanMartin = new Ubicacion("San Martín 150", -34.58499, -58.45023);
     ubicacionGuardiaVieja = new Ubicacion("Guardia Vieja 2077", -34.58499, -58.45023);
     contactos.add(contacto1);
+    this.duenio = new Duenio("Matias", "Sosa", null, TipoDocumento.DNI, 40000000, this.contactos);
 
 
     rescateDeMascotaRegistrada1 = new RescateDeMascotaRegistrada(fotos,"Descripcion1", ubicacionSanMartin, rescatista, LocalDateTime.now().minusDays(5), repositorioMascotas.obtenerMascota("QR-1"));
     rescateDeMascotaRegistrada2 = new RescateDeMascotaRegistrada(fotos,"Descripcion2", ubicacionGuardiaVieja, rescatista, LocalDateTime.now().minusDays(2), repositorioMascotas.obtenerMascota("QR-1"));
 
     //por el momento, con null porque no se necesitan para probar los metodos del TEST
-    rescateDeMascotaSinRegistrar1 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(15), Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
-    rescateDeMascotaSinRegistrar2 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(8), Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
-    rescateDeMascotaSinRegistrar3 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(1), Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
+    rescateDeMascotaSinRegistrar1 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(15), Tamanio.GRANDE, TipoAnimal.PERRO, personalidad, this.duenio);
+    rescateDeMascotaSinRegistrar2 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(8), Tamanio.GRANDE, TipoAnimal.PERRO, personalidad, this.duenio);
+    rescateDeMascotaSinRegistrar3 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(1), Tamanio.GRANDE, TipoAnimal.PERRO, personalidad, this.duenio);
 
     rescatesDeMascotasRegistradas.add(rescateDeMascotaRegistrada1);
     rescatesDeMascotasRegistradas.add(rescateDeMascotaRegistrada2);

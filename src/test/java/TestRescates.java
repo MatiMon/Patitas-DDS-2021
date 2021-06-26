@@ -56,10 +56,11 @@ public class TestRescates {
       registroDeRescates.agregarRescateMascota(mascota3);*/
     }
 
-
+  /*
   @Test
   public void sePuedeEnviarNotificacionDeEncuentroAlDueño(){
 
     this.rescateDeMascotaRegistrada.notificarEncuentroAlDuenio();
   }
+   */
 }

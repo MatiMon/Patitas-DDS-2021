@@ -2,6 +2,7 @@ package rescate;
 
 import asociacion.Asociacion;
 import caracteristicas.CaracteristicaDefinida;
+import duenio.Duenio;
 import mascota.Tamanio;
 import mascota.TipoAnimal;
 import ubicacion.Ubicacion;
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
+  private Duenio duenio;
   private boolean estadoDeAprobacion;
   private Integer numeroIdentificatorio; //TODO calcular el nro de publicacion
   private TipoAnimal tipoAnimal;
@@ -16,12 +18,14 @@ public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
   private CaracteristicaDefinida personalidad; //texto libre
 
   public RescateDeMascotaSinRegistrar(List<String> fotos, String descripcion, Ubicacion ubicacion,
-                                      Rescatista rescatista, LocalDateTime fecha, Tamanio tamanio, TipoAnimal tipoAnimal, CaracteristicaDefinida personalidad) {
+                                      Rescatista rescatista, LocalDateTime fecha, Tamanio tamanio,
+                                      TipoAnimal tipoAnimal, CaracteristicaDefinida personalidad, Duenio duenio) {
     super(fotos, descripcion, ubicacion, rescatista, fecha);
     this.estadoDeAprobacion = false;
     this.tipoAnimal = tipoAnimal;
     this.tamanio = tamanio;
     this.personalidad = personalidad;
+    this.duenio = duenio;
   }
 
   public void aprobarPublicacion() {
