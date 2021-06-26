@@ -11,42 +11,16 @@ import java.util.stream.Collectors;
 
 public class ServicioRefugioDds implements ServicioRefugio {
   private RefugioDdsAPI api; //hacerlo singleton?
-  private List<UsuarioAPI> usuariosAPI;
+  private String email = "matimonfrba.utn.edu.ar";
+  private String bearerToken = "pR0GYdKrgvKfVehIfRtFxZddIRYvxIynays7X4P6l07rNQcmovyAmmE9ZXJJ";
 
-  public ServicioRefugioDds(RefugioDdsAPI api) {
+  public ServicioRefugioDds(RefugioDdsAPI api, String bearerToken) {
     this.api = api;
   }
 
   @Override
   public List<HogarDeTransito> obtenerHogares(String email) {
-    if (!tieneTokenGenerado(email)) {
-      this.generarNuevoUsuario(email);
-    }
-    String bearerToken = this.obtenerTokenDeUsuario(email);
-
-    return obtenerTodosLosHogares(bearerToken);
-  }
-
-  public String obtenerTokenDeUsuario(String email) {
-    List<UsuarioAPI> usuariosFiltrados = usuariosAPI.stream().filter(usuarioAPI -> usuarioAPI.getEmail().equals(email)).collect(Collectors.toList());
-    return usuariosFiltrados.get(0).getBearerToken();
-  }
-
-  public boolean tieneTokenGenerado(String email) {
-    return this.usuariosAPI.stream().anyMatch(usuarioAPI -> usuarioAPI.getEmail().equals(email));
-  }
-
-  public void generarNuevoUsuario(String email) {
-    if (email == "") {
-      throw new GenerarUsuarioException("debe ingresar un email.");
-    }
-
-    ClientResponse response = api.generarToken(email);
-    validarCodigoRespuesta(response.getStatusInfo().getStatusCode());
-
-    UsuarioAPI nuevoUsuario = response.getEntity(UsuarioAPI.class);
-    nuevoUsuario.setEmail(email);
-    usuariosAPI.add(nuevoUsuario);
+    return obtenerTodosLosHogares(this.bearerToken);
   }
 
   public List<HogarDeTransito> obtenerTodosLosHogares(String bearerToken) {
@@ -87,4 +61,18 @@ public class ServicioRefugioDds implements ServicioRefugio {
     }
   }
 
+  public void cambiarEmail(String email) {
+    ClientResponse response = api.generarToken(email);
+    validarCodigoRespuesta(response.getStatusInfo().getStatusCode());
+    this.setEmail(email);
+    this.setBearerToken(response.getEntity(String.class));
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public void setBearerToken(String bearerToken) {
+    this.bearerToken = bearerToken;
+  }
 }

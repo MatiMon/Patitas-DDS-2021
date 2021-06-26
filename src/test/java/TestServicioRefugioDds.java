@@ -1,28 +1,11 @@
 import apiRefugioDds.*;
-import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.WebResource;
-import com.sun.jersey.core.header.InBoundHeaders;
-import com.sun.jersey.core.spi.component.ProviderServices;
-import com.sun.jersey.core.spi.factory.MessageBodyFactory;
-import com.sun.jersey.spi.MessageBodyWorkers;
-import excepciones.GenerarUsuarioException;
 import hogares.HogarDeTransito;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ubicacion.Ubicacion;
-
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.io.IOException;
-import java.io.InputStream;
-import java.security.Provider;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 
 public class TestServicioRefugioDds {
@@ -33,7 +16,7 @@ public class TestServicioRefugioDds {
   @BeforeEach
   public void setUp() throws Exception {
     this.api = new RefugioDdsAPI(10);
-    this.servicio = new ServicioRefugioDds(api);
+    this.servicio = new ServicioRefugioDds(api, bearerToken);
   }
 
   @Test
