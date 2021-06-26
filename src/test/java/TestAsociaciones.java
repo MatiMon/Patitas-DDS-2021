@@ -66,9 +66,9 @@ public class TestAsociaciones {
     rescateDeMascotaRegistrada2 = new RescateDeMascotaRegistrada(fotos,"Descripcion2", ubicacionGuardiaVieja, rescatista, LocalDateTime.now().minusDays(2), repositorioMascotas.obtenerMascota("QR-1"));
 
     //por el momento, con null porque no se necesitan para probar los metodos del TEST
-    rescateDeMascotaSinRegistrar1 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(15),1, Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
-    rescateDeMascotaSinRegistrar2 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(8),2, Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
-    rescateDeMascotaSinRegistrar3 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(1),3, Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
+    rescateDeMascotaSinRegistrar1 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(15), Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
+    rescateDeMascotaSinRegistrar2 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(8), Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
+    rescateDeMascotaSinRegistrar3 = new RescateDeMascotaSinRegistrar(fotos,null,null,null,LocalDateTime.now().minusDays(1), Tamanio.GRANDE, TipoAnimal.PERRO, personalidad);
 
     rescatesDeMascotasRegistradas.add(rescateDeMascotaRegistrada1);
     rescatesDeMascotasRegistradas.add(rescateDeMascotaRegistrada2);

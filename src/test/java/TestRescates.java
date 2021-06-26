@@ -1,7 +1,15 @@
 import contacto.Contacto;
+import duenio.Duenio;
+import duenio.TipoDocumento;
+import mascota.Mascota;
+import mascota.Sexo;
+import mascota.Tamanio;
+import mascota.TipoAnimal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import asociacion.RepositorioAsociaciones;
+import rescate.RescateDeMascotaRegistrada;
+import rescate.Rescatista;
+import ubicacion.Ubicacion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,16 +18,34 @@ import java.util.List;
 
 
 public class TestRescates {
-  List<String> fotos = new ArrayList<>();
-  Contacto contacto = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
-  List<Contacto> contactos = new ArrayList<>();
-  RepositorioAsociaciones repositorioAsociaciones = new RepositorioAsociaciones();
+  private List<String> fotos;
+  private Contacto unContacto;
+  private List<Contacto> contactos;
+  private Mascota unaMascota;
+
+  private RescateDeMascotaRegistrada rescateDeMascotaRegistrada;
+  private Duenio duenio;
+
+  private Rescatista rescatista;
 
 
-    @BeforeEach
+  @BeforeEach
     public void inicializar(){
+      this.fotos = new ArrayList<>();
+      this.unContacto = new Contacto("Juan", "Pérez", 1153798990, "juan.perez@hotmail.com");
+      this.contactos = new ArrayList<>();
+      this.contactos.add(unContacto);
+      this.unaMascota = new Mascota("Perrito", "Perry",
+          3, Sexo.MACHO, TipoAnimal.PERRO, "Cachorro", this.fotos, null, this.duenio, "12345A", Tamanio.MEDIANO);
+
+      this.rescateDeMascotaRegistrada = new RescateDeMascotaRegistrada(this.fotos, "Una descipción", new Ubicacion(), this.rescatista, null, unaMascota);
+      this.duenio = new Duenio("Matias", "Sosa", null, TipoDocumento.DNI, 40000000, this.contactos);
+
+      this.rescatista = new Rescatista("Manuel", "Quintana", null, null, null, this.unContacto);
+
+
+
       /*Mascota mascota = new Mascota("a", "b", 1, Sexo.MACHO, )
-      contactos.add(contacto);
       fotos.add("una foto");
       Rescatista rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contactos);
       RescateDeMascota mascota1 = new RescateDeMascota(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now());
@@ -32,7 +58,8 @@ public class TestRescates {
 
 
   @Test
-  public void lasMascotasRescatadasSonDeDiezDiasEnAdelante(){
-    //assertEquals(registroDeRescates.ultimasMascotasEncontradas(10).size(), 2);
+  public void sePuedeEnviarNotificacionDeEncuentroAlDueño(){
+
+    this.rescateDeMascotaRegistrada.notificarEncuentroAlDuenio();
   }
 }
