@@ -47,7 +47,7 @@ public class Mascota {
     return caracteristicaDefinidas;
   }
 
-  public boolean caracteristicasCompatiblesCon(PublicacionMascotaEnAdopcion intencionDeAdopcion) {
+  public boolean caracteristicasCompatiblesCon(PublicacionIntencionDeAdopcion intencionDeAdopcion) {
     return tipoAnimal.equals(intencionDeAdopcion.getTipoAnimal()) && sexo.equals(intencionDeAdopcion.getSexo()) && tamanio.equals(intencionDeAdopcion.getTamanio());
   }
 

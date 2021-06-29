@@ -1,5 +1,6 @@
 package asociacion;
 
+import mascota.PublicacionMascotaEnAdopcion;
 import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaSinRegistrar;
 import ubicacion.Ubicacion;
@@ -44,5 +45,10 @@ public class RepositorioAsociaciones {
 
   public void removerAsociacion(Asociacion asociacion){
     this.asociaciones.remove(asociacion);
+  }
+
+  public List<PublicacionMascotaEnAdopcion> publicacionesMascotasEnAdopcion() {
+    //TODO
+    return null;
   }
 }

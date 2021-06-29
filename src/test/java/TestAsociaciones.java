@@ -91,6 +91,9 @@ public class TestAsociaciones {
     repositorioAsociaciones.removerAsociacion(asociacionSanMartin);
     repositorioAsociaciones.removerAsociacion(asociacionLejana);
     repositorioMascotas.removerMascota("QR-1");
+    rescatesDeMascotasRegistradas.remove(rescateDeMascotaSinRegistrar1);
+    rescatesDeMascotasRegistradas.remove(rescateDeMascotaSinRegistrar2);
+    rescatesDeMascotasRegistradas.remove(rescateDeMascotaSinRegistrar3);
 
   }
 
@@ -126,6 +129,20 @@ public class TestAsociaciones {
   @Test
   public void elRepositorioAsociacionesEncuentraLaAsociacionMasCercanaAlRescateRegistradoEnSanMartin() {
     Assertions.assertEquals(asociacionSanMartin, repositorioAsociaciones.asociacionMasCercana(ubicacionSanMartin));
+  }
+
+  @Test
+  public void aprueboDosPublicacionesDeSanMartin() {
+    rescateDeMascotaSinRegistrar1.aprobarPublicacion();
+    rescateDeMascotaSinRegistrar2.aprobarPublicacion();
+    Assertions.assertEquals(asociacionSanMartin.obtenerPublicacionesAprobadas().size(), 2);
+  }
+
+  @Test
+  public void aprueboDosPublicacionesDeSanMartinYQuieroObtenerLasNoAprobadas() {
+    rescateDeMascotaSinRegistrar1.aprobarPublicacion();
+    rescateDeMascotaSinRegistrar2.aprobarPublicacion();
+    Assertions.assertEquals(asociacionSanMartin.obtenerPublicacionesSinAprobar().size(), 1);
   }
 }
 
