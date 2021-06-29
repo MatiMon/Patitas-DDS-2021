@@ -1,9 +1,10 @@
 package mascota;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class RepositorioMascotas {
-  private HashMap<String, Mascota> mascotas; //TODO map en lugar de hashMap
+  private Map<String, Mascota> mascotas;
   private static RepositorioMascotas instancia;
 
 

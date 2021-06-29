@@ -12,7 +12,7 @@ public class EnumeradaIdeal implements TipoCaracteristica{
         this.opciones = Objects.requireNonNull(opciones, "Debe ingresar una lista de opciones posibles");
     }
 
-    public TextoDefinida crearCaracteristica(String nombre, Object valor){
+    public EnumeradaDefinida crearCaracteristica(String nombre, Object valor){
         String _valor;
         try{
             _valor = (String)valor;
@@ -20,7 +20,7 @@ public class EnumeradaIdeal implements TipoCaracteristica{
             throw new ValorCaracteristicaInvalidoException("de tipo String");
         }
         validarCaracteristica(_valor);
-        return new TextoDefinida(nombre, _valor);
+        return new EnumeradaDefinida(nombre, _valor);
     }
 
     private void validarCaracteristica(String valor){

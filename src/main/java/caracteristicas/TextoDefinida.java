@@ -11,4 +11,9 @@ public class TextoDefinida extends CaracteristicaDefinida {
   public String getValor() {
     return valor;
   }
+
+  @Override
+  public Boolean esCompatibleCon(CaracteristicaDefinida comodidad) {
+    return true;
+  }
 }

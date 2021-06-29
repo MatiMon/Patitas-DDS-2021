@@ -7,4 +7,10 @@ public class NumericoDefinida extends CaracteristicaDefinida {
     this.nombre = nombre;
     this.valor = valor;
   }
+
+  @Override
+  public Boolean esCompatibleCon(CaracteristicaDefinida comodidad) {
+    NumericoDefinida comodidadNumerica = (NumericoDefinida) comodidad;
+    return comodidadNumerica.valor == valor;
+  }
 }

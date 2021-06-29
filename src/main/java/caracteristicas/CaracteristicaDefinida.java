@@ -8,5 +8,6 @@ public abstract class CaracteristicaDefinida {
     public String getNombre() {
         return nombre;
     }
+    public abstract Boolean esCompatibleCon(CaracteristicaDefinida comodidad);
 
 }
