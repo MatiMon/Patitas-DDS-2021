@@ -12,19 +12,24 @@ public class Duenio {
   private LocalDate fechaNacimiento;
   private TipoDocumento tipoDocumento;
   private double documento;
-  private List<Contacto> contactos;
+  private Contacto contactoPrincipal;
+  private List<Contacto> contactosSecundarios;
   private Usuario usuario;
 
-  public Duenio(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, double documento, List<Contacto> contactos) {
+  public Duenio(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, double documento, Contacto contactoPrincipal) {
     this.nombre = nombre;
     this.apellido = apellido;
     this.fechaNacimiento = fechaNacimiento;
     this.tipoDocumento = tipoDocumento;
-    this.contactos = contactos;
+    this.contactoPrincipal = contactoPrincipal;
     this.documento = documento;
   }
 
   public void notificarEncuentro(String mensaje) {
-    this.contactos.forEach(contacto -> contacto.notificar(mensaje));
+    this.contactosSecundarios.forEach(contacto -> contacto.notificar(mensaje));
+  }
+
+  public void agregarContactoSecundario(Contacto contacto){
+    this.contactosSecundarios.add(contacto);
   }
 }
