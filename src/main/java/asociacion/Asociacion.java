@@ -23,11 +23,15 @@ public class Asociacion {
 
     public Asociacion(String nombre, Ubicacion ubicacion,
                       List<RescateDeMascotaSinRegistrar> rescateDeMascotasSinRegistrar,
-                      List<RescateDeMascotaRegistrada> rescateDeMascotasRegistradas) {
+                      List<RescateDeMascotaRegistrada> rescateDeMascotasRegistradas,
+                      List<PublicacionMascotaEnAdopcion> mascotasEnAdopcion,
+                      List<PublicacionIntencionDeAdopcion> intencionesDeAdoptar) {
         this.nombre = nombre;
         this.ubicacion = ubicacion;
         this.rescatesDeMascotasSinRegistrar = rescateDeMascotasSinRegistrar;
         this.rescatesDeMascotasRegistradas = rescateDeMascotasRegistradas;
+        this.mascotasEnAdopcion = mascotasEnAdopcion;
+        this.intencionesDeAdoptar = intencionesDeAdoptar;
     }
 
     public List<RescateDeMascota> ultimasMascotasEncontradas(int dias) {
@@ -55,6 +59,14 @@ public class Asociacion {
 
     public void agregarRescateDeMascotaRegistrada(RescateDeMascotaRegistrada rescateDeMascotaRegistrada) {
         this.rescatesDeMascotasRegistradas.add(rescateDeMascotaRegistrada);
+    }
+
+    public void agregarIntencionDeAdopcion(PublicacionIntencionDeAdopcion intencion) {
+        this.intencionesDeAdoptar.add(intencion);
+    }
+
+    public void agregarMascotaEnAdopcion(PublicacionMascotaEnAdopcion adopcion){
+        this.mascotasEnAdopcion.add(adopcion);
     }
 
     public List<RescateDeMascotaSinRegistrar> obtenerPublicacionesRescatesSinAprobar() {
@@ -87,4 +99,11 @@ public class Asociacion {
         return ubicacion.calcularDistancia(ubicacionRescate);
     }
 
+    public List<PublicacionMascotaEnAdopcion> getMascotasEnAdopcion() {
+        return mascotasEnAdopcion;
+    }
+
+    public List<PublicacionIntencionDeAdopcion> getIntencionesDeAdoptar() {
+        return intencionesDeAdoptar;
+    }
 }

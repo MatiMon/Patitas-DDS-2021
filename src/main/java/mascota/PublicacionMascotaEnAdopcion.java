@@ -9,6 +9,11 @@ public class PublicacionMascotaEnAdopcion {
   private int numeroPublicacion;
   private List<CaracteristicaDefinida> comodidades;
   private Mascota mascota;
+
+  public PublicacionMascotaEnAdopcion() {
+    //TODO definir parametros del constructor, luego habra que agregarlos al TestAsociaciones
+  }
+
   public boolean esCompatible(PublicacionIntencionDeAdopcion intencionDeAdopcion) {
     return comodidadesCompatibles(intencionDeAdopcion) && caracteristicasPersonalizadasCompatibles(intencionDeAdopcion) && caracteristicasBasicasCompatibles(intencionDeAdopcion);
   }

@@ -13,6 +13,10 @@ public class PublicacionIntencionDeAdopcion {
     Sexo sexo;
     Tamanio tamanio;
 
+    public PublicacionIntencionDeAdopcion() {
+        //TODO definir parametros del constructor, luego habra que agregarlos al TestAsociaciones
+    }
+
     public void darDeBaja() {
         //TODO
     }

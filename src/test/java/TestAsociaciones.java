@@ -38,14 +38,18 @@ public class TestAsociaciones {
   private Ubicacion ubicacionSanMartin;
   private Ubicacion ubicacionGuardiaVieja;
   private List<String> fotos = new ArrayList<>();
+  List<PublicacionMascotaEnAdopcion> mascotasEnAdopcionSM = new ArrayList<>();
+  List<PublicacionIntencionDeAdopcion> intencionesDeAdoptarSM = new ArrayList<>();
+  List<PublicacionMascotaEnAdopcion> mascotasEnAdopcionLejana = new ArrayList<>();
+  List<PublicacionIntencionDeAdopcion> intencionesDeAdoptarLejana = new ArrayList<>();
 
 
   private Contacto contacto1;
   Rescatista rescatista;
   private Contacto contacto2;
   private List<Contacto> contactos = new ArrayList<>();
-  Asociacion asociacionSanMartin = new Asociacion("Patitas", new Ubicacion("San Martin 155",-34.59000,-58.50000 ), rescatesDeMascotasSinRegistrar, rescatesDeMascotasRegistradas);
-  Asociacion asociacionLejana = new Asociacion("Manchitas",new Ubicacion("lugarLejano",35.86166,104.195397), null,null);
+  Asociacion asociacionSanMartin = new Asociacion("Patitas", new Ubicacion("San Martin 155",-34.59000,-58.50000 ), rescatesDeMascotasSinRegistrar, rescatesDeMascotasRegistradas, mascotasEnAdopcionSM, intencionesDeAdoptarSM);
+  Asociacion asociacionLejana = new Asociacion("Manchitas",new Ubicacion("lugarLejano",35.86166,104.195397), null,null, mascotasEnAdopcionLejana, intencionesDeAdoptarLejana);
   Mascota mascota = new Mascota("Pepito", "Pepe", 4, Sexo.MACHO, TipoAnimal.GATO, "lindo", Arrays.asList("foto1.jpg"), null, null, "QR-1", Tamanio.GRANDE);
   RepositorioMascotas repositorioMascotas;
   CaracteristicaDefinida personalidad = new TextoDefinida("personalidad", "Manso");
@@ -143,6 +147,20 @@ public class TestAsociaciones {
     rescateDeMascotaSinRegistrar1.aprobarPublicacion();
     rescateDeMascotaSinRegistrar2.aprobarPublicacion();
     Assertions.assertEquals(asociacionSanMartin.obtenerPublicacionesSinAprobar().size(), 1);
+  }
+
+  @Test
+  public void repoAsociacionesObtieneDosMascotasEnAdopcionYUnaIntencionDeAdoptar() {
+    PublicacionMascotaEnAdopcion publicacion1 = new PublicacionMascotaEnAdopcion();
+    asociacionSanMartin.agregarMascotaEnAdopcion(publicacion1);
+    PublicacionMascotaEnAdopcion publicacion2 = new PublicacionMascotaEnAdopcion();
+    asociacionSanMartin.agregarMascotaEnAdopcion(publicacion2);
+    PublicacionIntencionDeAdopcion publicacion3 = new PublicacionIntencionDeAdopcion();
+    asociacionSanMartin.agregarIntencionDeAdopcion(publicacion3);
+
+    Assertions.assertEquals(repositorioAsociaciones.publicacionesIntencionDeAdopcion().size(), 1);
+    Assertions.assertEquals(repositorioAsociaciones.publicacionesMascotasEnAdopcion().size(), 2);
+
   }
 }
 
