@@ -43,7 +43,7 @@ public class TestRescates {
 
       this.rescateDeMascotaRegistrada = new RescateDeMascotaRegistrada(this.fotos, "Una descipción", new Ubicacion(), this.rescatista, null, unaMascota);
 
-      this.duenio = new Duenio("Matias", "Sosa", null, TipoDocumento.DNI, 40000000, this.unContacto);
+      this.duenio = new Duenio("Matias", "Sosa", null, TipoDocumento.DNI, 40000000, this.unContacto,null);
 
       this.rescatista = new Rescatista("Manuel", "Quintana", null, null, null, this.unContacto);
 
