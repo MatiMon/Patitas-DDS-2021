@@ -9,7 +9,7 @@ public class BooleanaDefinida extends CaracteristicaDefinida {
   }
 
   @Override
-  public Boolean esCompatibleCon(CaracteristicaDefinida comodidad) {
+  public boolean compatibilidad(CaracteristicaDefinida comodidad) {
     BooleanaDefinida comodidadBooleana = (BooleanaDefinida) comodidad;
     return  !valor || (valor && comodidadBooleana.valor);
   }

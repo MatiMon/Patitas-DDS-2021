@@ -13,7 +13,7 @@ public class TextoDefinida extends CaracteristicaDefinida {
   }
 
   @Override
-  public Boolean esCompatibleCon(CaracteristicaDefinida comodidad) {
+  public boolean compatibilidad(CaracteristicaDefinida comodidad) {
     return true;
   }
 }

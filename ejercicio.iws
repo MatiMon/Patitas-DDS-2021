@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca35795c-cc35-43b5-b77b-8094640599cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/EnumeradaDefinida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejercicio.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio.ipr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PublicacionMascotaEnAdopcion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/RecomendadorMascotas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ejercicio.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/BooleanaDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/BooleanaDefinida.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/CaracteristicaDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/CaracteristicaDefinida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/EnumeradaIdeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/EnumeradaIdeal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/EnumeradaDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/EnumeradaDefinida.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/NumericoDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/NumericoDefinida.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/TextoDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/TextoDefinida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mascota/RepositorioMascotas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mascota/RepositorioMascotas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mascota/Mascota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mascota/Mascota.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

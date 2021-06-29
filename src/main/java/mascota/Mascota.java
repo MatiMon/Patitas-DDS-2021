@@ -42,4 +42,14 @@ public class Mascota {
   public String getNombre() {
     return nombre;
   }
+
+  public List<CaracteristicaDefinida> getCaracteristicaDefinidas() {
+    return caracteristicaDefinidas;
+  }
+
+  public boolean caracteristicasCompatiblesCon(PublicacionMascotaEnAdopcion intencionDeAdopcion) {
+    return tipoAnimal.equals(intencionDeAdopcion.getTipoAnimal()) && sexo.equals(intencionDeAdopcion.getSexo()) && tamanio.equals(intencionDeAdopcion.getTamanio());
+  }
+
+
 }
