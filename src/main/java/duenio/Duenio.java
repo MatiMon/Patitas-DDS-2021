@@ -29,7 +29,7 @@ public class Duenio {
     this.ubicacion = ubicacion;
   }
 
-  public void notificarEncuentro(String mensaje) {
+  public void notificar(String mensaje) {
     contactoPrincipal.notificar(mensaje);
     if (!contactosSecundarios.isEmpty())
       this.contactosSecundarios.forEach(contacto -> contacto.notificar(mensaje));

@@ -35,8 +35,8 @@ public class Mascota {
     this.tamanio = tamanio;
   }
 
-  public void notificarEncuentroAlDuenio(String mensaje) {
-    this.duenio.notificarEncuentro(mensaje);
+  public void notificarAlDuenio(String mensaje) {
+    this.duenio.notificar(mensaje);
   }
 
   public String getNombre() {
@@ -54,8 +54,4 @@ public class Mascota {
   //@TODO implementar!!
   public void darEnAdopcion(){
   }
-  //@TODO implementar, ver si se sigue mismo camino q notificarEncuentro, o hacer algo polimorfico
-  public void notificarPosibleAdopcionAlDuenio(){};
-
-
 }

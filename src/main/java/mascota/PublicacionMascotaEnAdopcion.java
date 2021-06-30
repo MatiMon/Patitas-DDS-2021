@@ -33,7 +33,7 @@ public class PublicacionMascotaEnAdopcion {
   }
 
   //@TODO terminar de revisar!!
-  public void notificarAlDuenioPosibleAdopcion(){
-    this.mascota.notificarPosibleAdopcionAlDuenio();
+  public void notificarAlDuenioPosibleAdopcion(String mensaje){
+    this.mascota.notificarAlDuenio(mensaje);
   }
 }
