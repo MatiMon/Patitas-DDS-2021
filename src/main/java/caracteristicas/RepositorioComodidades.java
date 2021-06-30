@@ -3,6 +3,7 @@ package caracteristicas;
 import asociacion.Asociacion;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class RepositorioComodidades {
   private List<ComodidadIdeal> comodidadesGenericas = new ArrayList<>();
@@ -33,5 +34,9 @@ public class RepositorioComodidades {
 
   public static RepositorioComodidades getInstancia() {
     return INSTANCIA;
+  }
+
+  public static List<String> getNombresComodidadesDeAsociacion(Asociacion asociacion){
+    return INSTANCIA.getComodidadesDeAsociacion(asociacion).stream().map(ComodidadIdeal::getNombre).collect(Collectors.toList());
   }
 }

@@ -6,12 +6,14 @@ import java.util.List;
 
 public class PublicacionMascotaEnAdopcion {
 
-  private int numeroPublicacion;
+  private int numeroPublicacion; //@TODO idem rescate, calcularlo?
   private List<CaracteristicaDefinida> comodidades;
   private Mascota mascota;
 
-  public PublicacionMascotaEnAdopcion() {
-    //TODO definir parametros del constructor, luego habra que agregarlos al TestAsociaciones
+
+  public PublicacionMascotaEnAdopcion(List<CaracteristicaDefinida> comodidades,Mascota mascota) {
+    this.mascota = mascota;
+    this.comodidades = comodidades;
   }
 
   public boolean esCompatible(PublicacionIntencionDeAdopcion intencionDeAdopcion) {
@@ -28,5 +30,10 @@ public class PublicacionMascotaEnAdopcion {
 
   private boolean caracteristicasBasicasCompatibles(PublicacionIntencionDeAdopcion intencionDeAdopcion){
     return mascota.caracteristicasCompatiblesCon(intencionDeAdopcion);
+  }
+
+  //@TODO terminar de revisar!!
+  public void notificarAlDuenioPosibleAdopcion(){
+    this.mascota.notificarPosibleAdopcionAlDuenio();
   }
 }

@@ -51,5 +51,11 @@ public class Mascota {
     return tipoAnimal.equals(intencionDeAdopcion.getTipoAnimal()) && sexo.equals(intencionDeAdopcion.getSexo()) && tamanio.equals(intencionDeAdopcion.getTamanio());
   }
 
+  //@TODO implementar!!
+  public void darEnAdopcion(){
+  }
+  //@TODO implementar, ver si se sigue mismo camino q notificarEncuentro, o hacer algo polimorfico
+  public void notificarPosibleAdopcionAlDuenio(){};
+
 
 }

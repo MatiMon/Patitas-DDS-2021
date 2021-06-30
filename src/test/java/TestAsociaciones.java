@@ -1,5 +1,6 @@
 import asociacion.Asociacion;
 import caracteristicas.CaracteristicaDefinida;
+import caracteristicas.ComodidadIdeal;
 import caracteristicas.TextoDefinida;
 import contacto.Contacto;
 import duenio.Duenio;
@@ -43,7 +44,6 @@ public class TestAsociaciones {
   List<PublicacionMascotaEnAdopcion> mascotasEnAdopcionLejana = new ArrayList<>();
   List<PublicacionIntencionDeAdopcion> intencionesDeAdoptarLejana = new ArrayList<>();
 
-
   private Contacto contacto1;
   Rescatista rescatista;
   private Contacto contacto2;
@@ -55,6 +55,9 @@ public class TestAsociaciones {
   CaracteristicaDefinida personalidad = new TextoDefinida("personalidad", "Manso");
 
   private Duenio duenio;
+  //@TODO ver de acomodar, asi no lo dejo en null y puedo probar más cosas
+  private List<ComodidadIdeal> comodidades = new ArrayList<>();
+  private ComodidadIdeal comodidadIdeal;
 
   @BeforeEach
   void init() {
@@ -151,9 +154,9 @@ public class TestAsociaciones {
 
   @Test
   public void repoAsociacionesObtieneDosMascotasEnAdopcionYUnaIntencionDeAdoptar() {
-    PublicacionMascotaEnAdopcion publicacion1 = new PublicacionMascotaEnAdopcion();
+    PublicacionMascotaEnAdopcion publicacion1 = new PublicacionMascotaEnAdopcion(null,null);
     asociacionSanMartin.agregarMascotaEnAdopcion(publicacion1);
-    PublicacionMascotaEnAdopcion publicacion2 = new PublicacionMascotaEnAdopcion();
+    PublicacionMascotaEnAdopcion publicacion2 = new PublicacionMascotaEnAdopcion(null,null);
     asociacionSanMartin.agregarMascotaEnAdopcion(publicacion2);
     PublicacionIntencionDeAdopcion publicacion3 = new PublicacionIntencionDeAdopcion();
     asociacionSanMartin.agregarIntencionDeAdopcion(publicacion3);
