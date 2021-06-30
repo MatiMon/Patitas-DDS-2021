@@ -6,20 +6,24 @@ import duenio.Duenio;
 import java.util.List;
 
 public class PublicacionIntencionDeAdopcion {
-    List<CaracteristicaDefinida> comodidades;
-    List<CaracteristicaDefinida> caracteristicasMascota;
-    Duenio posibleDuenio;
-    TipoAnimal tipoAnimal;
-    Sexo sexo;
-    Tamanio tamanio;
+    private List<CaracteristicaDefinida> comodidades;
+    private List<CaracteristicaDefinida> caracteristicasMascota;
+    private Duenio posibleDuenio;
+    private TipoAnimal tipoAnimal;
+    private Sexo sexoMascota;
+    private Tamanio tamanioMascota;
 
-    public PublicacionIntencionDeAdopcion() {
-        //TODO definir parametros del constructor, luego habra que agregarlos al TestAsociaciones
+    public PublicacionIntencionDeAdopcion(List<CaracteristicaDefinida> comodidades, List<CaracteristicaDefinida> caracteristicasMascota,
+                                          Duenio posibleDuenio, TipoAnimal tipoAnimal, Sexo sexoMascota, Tamanio tamanioMascota) {
+        this.comodidades = comodidades;
+        this.caracteristicasMascota = caracteristicasMascota;
+        this.posibleDuenio = posibleDuenio;
+        this.tipoAnimal = tipoAnimal;
+        this.sexoMascota = sexoMascota;
+        this.tamanioMascota = tamanioMascota;
     }
 
-    public void darDeBaja() {
-        //TODO
-    }
+
 
     public void recomendarMascotas(List<PublicacionMascotaEnAdopcion> posiblesMascotas) {
         //TODO
@@ -34,14 +38,15 @@ public class PublicacionIntencionDeAdopcion {
     }
 
     public TipoAnimal getTipoAnimal() {
-        return tipoAnimal;
+        return this.tipoAnimal;
     }
 
     public Sexo getSexo() {
-        return sexo;
+        return this.sexoMascota;
     }
 
     public Tamanio getTamanio() {
-        return tamanio;
+        return this.tamanioMascota;
     }
+
 }

@@ -5,6 +5,7 @@ import ubicacion.Ubicacion;
 import usuario.Usuario;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Duenio {
@@ -29,10 +30,21 @@ public class Duenio {
   }
 
   public void notificarEncuentro(String mensaje) {
-    this.contactosSecundarios.forEach(contacto -> contacto.notificar(mensaje));
+    contactoPrincipal.notificar(mensaje);
+    if (!contactosSecundarios.isEmpty())
+      this.contactosSecundarios.forEach(contacto -> contacto.notificar(mensaje));
+  }
+
+  public void notificarBaja(String mensaje) {
+    contactoPrincipal.notificar(mensaje);
+    if (!contactosSecundarios.isEmpty())
+      this.contactosSecundarios.forEach(contacto -> contacto.notificar(mensaje));
   }
 
   public void agregarContactoSecundario(Contacto contacto){
+    if (contactosSecundarios == null) {
+      this.contactosSecundarios = new ArrayList<>();
+    }
     this.contactosSecundarios.add(contacto);
   }
 }
