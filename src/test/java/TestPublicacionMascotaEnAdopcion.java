@@ -2,6 +2,7 @@ import asociacion.Asociacion;
 import asociacion.RepositorioAsociaciones;
 import caracteristicas.BooleanaDefinida;
 import caracteristicas.NumericoDefinida;
+import caracteristicas.TextoDefinida;
 import mascota.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -12,12 +13,14 @@ import java.util.Arrays;
 public class TestPublicacionMascotaEnAdopcion {
 
   private NumericoDefinida edadDoce = new NumericoDefinida("Edad", 12);
+  private TextoDefinida descipcionFisica1 = new TextoDefinida("Descripcion Fisica","Linda");
+
   private NumericoDefinida edadCuatro = new NumericoDefinida("Edad", 4);
 
   private BooleanaDefinida comodidadPatioTrue = new BooleanaDefinida("Patio", true);
   private BooleanaDefinida comodidadPatioFalse = new BooleanaDefinida("Patio", false);
 
-  private Mascota mascota1 = new Mascota("nombre", "apodo", 2, Sexo.HEMBRA, TipoAnimal.GATO, "Lindo", null, Arrays.asList(edadDoce) , null, "2", Tamanio.GRANDE);
+  private Mascota mascota1 = new Mascota("nombre", "apodo", 2, Sexo.HEMBRA, TipoAnimal.GATO, "Lindo", null, Arrays.asList(edadDoce, descipcionFisica1) , null, "2", Tamanio.GRANDE);
   private PublicacionMascotaEnAdopcion mascotaEnAdopcion = new PublicacionMascotaEnAdopcion(Arrays.asList(comodidadPatioTrue),mascota1);
 
   private PublicacionIntencionDeAdopcion intencionDeAdopcionCompatible = new PublicacionIntencionDeAdopcion(Arrays.asList(comodidadPatioTrue),
