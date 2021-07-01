@@ -15,6 +15,7 @@ public class RecomendadorMascotas {
   }
 
   public void generarRecomendaciones(){
-
+    RepositorioAsociaciones.getInstancia().publicacionesIntencionDeAdopcion().
+        forEach(intencionAdopcion -> intencionAdopcion.recomendarMascotas(this.publicacionesMascotasEnAdopcionCompatibles(intencionAdopcion)));
   }
 }

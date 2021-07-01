@@ -17,6 +17,7 @@ public class RepositorioComodidades {
   }
 
   //Si fuera una sola comodidad a agregar, y no lo pongo como lista, no puedo agregarla, porque el map es tipo List.
+  // TODO ver que pasa si es la primera o si ya hay comodidades en la lista
   public void agregarComodidadPersonalizada(Asociacion asociacion,ComodidadIdeal... comodidadIdeal){
     this.comodidadesPersonalizadas.put(asociacion, Arrays.asList(comodidadIdeal));
   }
@@ -40,7 +41,7 @@ public class RepositorioComodidades {
   }
 
   public List<ComodidadIdeal> getComodidadesObligatorias(Asociacion asociacion){
-    return INSTANCIA.getComodidadesDeAsociacion(asociacion).stream().filter(CaracteristicaIdeal::esObligatoria).collect(Collectors.toList());
+    return INSTANCIA.getComodidadesDeAsociacion(asociacion).stream().filter(ComodidadIdeal::esObligatoria).collect(Collectors.toList());
   }
 
   public void removerComodidadesDeAsociacion (Asociacion asociacion,List<ComodidadIdeal> comodidades){

@@ -9,6 +9,7 @@ import duenio.Duenio;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Mascota {
   private String nombre;
@@ -51,8 +52,14 @@ public class Mascota {
   }
 
   public boolean caracteristicasCompatiblesCon(PublicacionIntencionDeAdopcion intencionDeAdopcion) {
-    return tipoAnimal.equals(intencionDeAdopcion.getTipoAnimal()) && sexo.equals(intencionDeAdopcion.getSexo()) && tamanio.equals(intencionDeAdopcion.getTamanio());
+    TipoAnimal tipoAnimalRequerido = intencionDeAdopcion.getTipoAnimal();
+    Sexo sexoRequerido = intencionDeAdopcion.getSexo();
+    Tamanio tamanioRequerido = intencionDeAdopcion.getTamanio();
+    return (tipoAnimal.equals(tipoAnimalRequerido) || Objects.isNull(tipoAnimalRequerido))
+        && (sexo.equals(sexoRequerido) || Objects.isNull(sexoRequerido))
+        && (tamanio.equals(tamanioRequerido) || Objects.isNull(tamanioRequerido));
   }
+
   public void darEnAdopcion(List<CaracteristicaDefinida> comodidades, Asociacion asociacionDeseada){
     PublicacionMascotaEnAdopcion publicacion = new PublicacionMascotaEnAdopcion(comodidades,this);
     asociacionDeseada.agregarMascotaEnAdopcion(publicacion);
