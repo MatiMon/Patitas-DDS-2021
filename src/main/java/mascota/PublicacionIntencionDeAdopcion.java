@@ -40,6 +40,10 @@ public class PublicacionIntencionDeAdopcion {
             filter(caracteristica -> caracteristica.getNombre().equals(nombreCaracteristica)).findAny().orElse(null);
     }
 
+    public void darDeBaja(String linkDeBaja) {
+        this.posibleDuenio.notificar("Se ha creado tu publicación, podés darla de baja con el siguiente link: " + linkDeBaja);
+    }
+
     public TipoAnimal getTipoAnimal() {
         return this.tipoAnimal;
     }
