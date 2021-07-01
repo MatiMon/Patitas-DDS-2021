@@ -38,4 +38,12 @@ public class RepositorioComodidades {
   public static List<String> getNombresComodidadesDeAsociacion(Asociacion asociacion){
     return INSTANCIA.getComodidadesDeAsociacion(asociacion).stream().map(ComodidadIdeal::getNombre).collect(Collectors.toList());
   }
+
+  public List<ComodidadIdeal> getComodidadesObligatorias(Asociacion asociacion){
+    return INSTANCIA.getComodidadesDeAsociacion(asociacion).stream().filter(CaracteristicaIdeal::esObligatoria).collect(Collectors.toList());
+  }
+
+  public void removerComodidadesDeAsociacion (Asociacion asociacion,List<ComodidadIdeal> comodidades){
+    this.comodidadesPersonalizadas.remove(asociacion,comodidades);
+  }
 }

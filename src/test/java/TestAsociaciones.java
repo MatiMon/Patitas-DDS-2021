@@ -163,7 +163,6 @@ public class TestAsociaciones {
 
     Assertions.assertEquals(repositorioAsociaciones.publicacionesIntencionDeAdopcion().size(), 1);
     Assertions.assertEquals(repositorioAsociaciones.publicacionesMascotasEnAdopcion().size(), 2);
-
   }
 }
 

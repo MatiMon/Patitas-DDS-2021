@@ -7,9 +7,7 @@
     <list default="true" id="ca35795c-cc35-43b5-b77b-8094640599cf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/ejercicio.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/RepositorioComodidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/RepositorioComodidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/duenio/Duenio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/duenio/Duenio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mascota/Mascota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mascota/Mascota.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mascota/PublicacionMascotaEnAdopcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mascota/PublicacionMascotaEnAdopcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestAsociaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestAsociaciones.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,8 +263,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager" selected="JUnit.Whole project (1)">
+  <component name="RunManager" selected="JUnit.Whole project (2)">
     <configuration selected="false" default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -283,11 +282,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestValidacionCaracteresConsecutivos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRepositorioComodidades.elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ejercicio" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestValidacionCaracteresConsecutivos" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="TestRepositorioComodidades" />
+      <option name="METHOD_NAME" value="elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRepositorioComodidades.elRepoConoceTodasLasComodidadesDeLaAsociacionDadaIncluyendoGenericasYPersonalizadas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ejercicio" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestRepositorioComodidades" />
+      <option name="METHOD_NAME" value="elRepoConoceTodasLasComodidadesDeLaAsociacionDadaIncluyendoGenericasYPersonalizadas" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -309,19 +324,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Whole project (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Whole project (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Whole project (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" />
@@ -358,11 +361,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Whole project (2)" />
+        <item itemvalue="JUnit.TestRepositorioComodidades.elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" />
+        <item itemvalue="JUnit.TestRepositorioComodidades.elRepoConoceTodasLasComodidadesDeLaAsociacionDadaIncluyendoGenericasYPersonalizadas" />
         <item itemvalue="JUnit.Whole project (1)" />
         <item itemvalue="JUnit.Whole project" />
-        <item itemvalue="JUnit.TestValidacionCaracteresConsecutivos" />
-        <item itemvalue="JUnit.Whole project (4)" />
-        <item itemvalue="JUnit.Whole project (3)" />
       </list>
     </recent_temporary>
   </component>
