@@ -2,6 +2,7 @@ package mascota;
 
 import caracteristicas.CaracteristicaDefinida;
 import duenio.Duenio;
+import excepciones.CaracteristicaInexistenteException;
 
 import java.util.List;
 
@@ -28,7 +29,15 @@ public class PublicacionIntencionDeAdopcion {
     }
 
     public void recomendarMascotas(String mensajeDeNotificacion) {
-        this.posibleDuenio.notificar(mensajeDeNotificacion);
+        this.notificarAlPosibleDuenio(mensajeDeNotificacion);
+    }
+
+    public void enviarLinkDeBaja() {
+        this.notificarAlPosibleDuenio("Se ha creado tu publicación, podés darla de baja con el siguiente link: " + this.linkDeBaja);
+    }
+
+    private void notificarAlPosibleDuenio(String mensaje) {
+        this.posibleDuenio.notificar(mensaje);
     }
 
     public CaracteristicaDefinida valorCaracteristica(String nombreCaracteristica) {
@@ -40,12 +49,10 @@ public class PublicacionIntencionDeAdopcion {
     }
 
     private CaracteristicaDefinida obtenerCaracteristica(List<CaracteristicaDefinida> caracteristicas, String nombreCaracteristica) {
-        return caracteristicas.stream().
-            filter(caracteristica -> caracteristica.getNombre().equals(nombreCaracteristica)).findAny().orElse(null);
-    }
-
-    public void darDeBaja() {
-        this.posibleDuenio.notificar("Se ha creado tu publicación, podés darla de baja con el siguiente link: " + this.linkDeBaja);
+        CaracteristicaDefinida caracteristica = caracteristicas.stream().
+            filter(unaCaracteristica -> unaCaracteristica.getNombre().equals(nombreCaracteristica)).findAny().orElse(null);
+        if (caracteristica == null) throw new CaracteristicaInexistenteException("las características/comodidades de esta publicación");
+        return  caracteristica;
     }
 
     public TipoAnimal getTipoAnimal() {

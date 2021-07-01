@@ -35,12 +35,6 @@ public class Duenio {
       this.contactosSecundarios.forEach(contacto -> contacto.notificar(mensaje));
   }
 
-  public void notificarBaja(String mensaje) {
-    contactoPrincipal.notificar(mensaje);
-    if (!contactosSecundarios.isEmpty())
-      this.contactosSecundarios.forEach(contacto -> contacto.notificar(mensaje));
-  }
-
   public void agregarContactoSecundario(Contacto contacto){
     if (contactosSecundarios == null) {
       this.contactosSecundarios = new ArrayList<>();
