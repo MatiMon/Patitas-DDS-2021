@@ -1,6 +1,9 @@
 package mascota;
 
+import asociacion.Asociacion;
+import asociacion.RepositorioAsociaciones;
 import caracteristicas.CaracteristicaDefinida;
+import caracteristicas.ComodidadIdeal;
 import duenio.Duenio;
 
 
@@ -50,8 +53,17 @@ public class Mascota {
   public boolean caracteristicasCompatiblesCon(PublicacionIntencionDeAdopcion intencionDeAdopcion) {
     return tipoAnimal.equals(intencionDeAdopcion.getTipoAnimal()) && sexo.equals(intencionDeAdopcion.getSexo()) && tamanio.equals(intencionDeAdopcion.getTamanio());
   }
-
-  //@TODO implementar!!
-  public void darEnAdopcion(){
+  public void darEnAdopcion(List<CaracteristicaDefinida> comodidades, Asociacion asociacionDeseada){
+    PublicacionMascotaEnAdopcion publicacion = new PublicacionMascotaEnAdopcion(comodidades,this);
+    asociacionDeseada.agregarMascotaEnAdopcion(publicacion);
   }
+
+  //Otra variante, Automática, guarda en la AsociacioMasCercana PERO creo que rompe el encapsulamiento al pedir la Ubicación del Duenio
+  /*
+  public void darEnAdopcionEnLaAsociacionMasCercana (List<CaracteristicaDefinida> comodidades){
+    PublicacionMascotaEnAdopcion publicacion = new PublicacionMascotaEnAdopcion(comodidades,this);
+    Asociacion asociacionCercana = RepositorioAsociaciones.getInstancia().asociacionMasCercana(this.duenio.getUbicacion());
+    asociacionCercana.agregarMascotaEnAdopcion(publicacion);
+  }
+   */
 }

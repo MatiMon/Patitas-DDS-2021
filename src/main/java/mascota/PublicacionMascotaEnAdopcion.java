@@ -32,8 +32,8 @@ public class PublicacionMascotaEnAdopcion {
     return mascota.caracteristicasCompatiblesCon(intencionDeAdopcion);
   }
 
-  //@TODO terminar de revisar!!
-  public void notificarAlDuenioPosibleAdopcion(String mensaje){
-    this.mascota.notificarAlDuenio(mensaje);
+  public void notificarAlDuenioPosibleAdopcion(){
+    this.mascota.notificarAlDuenio("Se encontró un posible Adoptante para tu mascota," +
+            " siendo tu publiacion la número:" + this.numeroPublicacion);
   }
 }

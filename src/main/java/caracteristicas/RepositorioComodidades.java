@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 public class RepositorioComodidades {
   private List<ComodidadIdeal> comodidadesGenericas = new ArrayList<>();
 
-  //Correcto iniciarlo así?
   private Map<Asociacion,List<ComodidadIdeal>> comodidadesPersonalizadas = new HashMap<>();
 
   private static final RepositorioComodidades INSTANCIA = new RepositorioComodidades();

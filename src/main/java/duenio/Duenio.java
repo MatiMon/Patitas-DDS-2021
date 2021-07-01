@@ -47,4 +47,8 @@ public class Duenio {
     }
     this.contactosSecundarios.add(contacto);
   }
+
+  public Ubicacion getUbicacion() {
+    return ubicacion;
+  }
 }
