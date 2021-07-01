@@ -23,18 +23,21 @@ public class PublicacionIntencionDeAdopcion {
         this.tamanioMascota = tamanioMascota;
     }
 
-
-
-    public void recomendarMascotas(List<PublicacionMascotaEnAdopcion> posiblesMascotas) {
-        //TODO
+    public void recomendarMascotas(String mensajeDeNotificacion) {
+        this.posibleDuenio.notificar(mensajeDeNotificacion);
     }
+
     public CaracteristicaDefinida valorCaracteristica(String nombreCaracteristica) {
-        //TODO
-        return null;
+        return obtenerCaracteristica(this.caracteristicasMascota, nombreCaracteristica);
     }
+
     public CaracteristicaDefinida valorComodidad(String nombreComodidad) {
-        //TODO
-        return null;
+        return obtenerCaracteristica(this.comodidades, nombreComodidad);
+    }
+
+    private CaracteristicaDefinida obtenerCaracteristica(List<CaracteristicaDefinida> caracteristicas, String nombreCaracteristica) {
+        return caracteristicas.stream().
+            filter(caracteristica -> caracteristica.getNombre().equals(nombreCaracteristica)).findAny().orElse(null);
     }
 
     public TipoAnimal getTipoAnimal() {
