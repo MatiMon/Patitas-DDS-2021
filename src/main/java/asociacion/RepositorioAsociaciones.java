@@ -1,8 +1,8 @@
 package asociacion;
 
 import excepciones.AsociacionNoEncontradaException;
-import mascota.PublicacionIntencionDeAdopcion;
-import mascota.PublicacionMascotaEnAdopcion;
+import adopciones.PublicacionIntencionDeAdopcion;
+import adopciones.PublicacionMascotaEnAdopcion;
 import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaSinRegistrar;
 import ubicacion.Ubicacion;

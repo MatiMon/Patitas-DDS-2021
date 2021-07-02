@@ -1,11 +1,13 @@
-package caracteristicas;
+package caracteristicas.ideales;
 
+import caracteristicas.definidas.EnumeradaDefinida;
+import caracteristicas.TipoCaracteristica;
 import excepciones.ValorCaracteristicaInvalidoException;
 
 import java.util.List;
 import java.util.Objects;
 
-public class EnumeradaIdeal implements TipoCaracteristica{
+public class EnumeradaIdeal implements TipoCaracteristica {
     List<String> opciones;
 
     public EnumeradaIdeal(List<String> opciones) {

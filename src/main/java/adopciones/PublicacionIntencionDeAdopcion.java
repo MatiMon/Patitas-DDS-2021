@@ -1,8 +1,10 @@
-package mascota;
+package adopciones;
 
-import caracteristicas.CaracteristicaDefinida;
+import caracteristicas.definidas.CaracteristicaDefinida;
 import duenio.Duenio;
-import excepciones.CaracteristicaInexistenteException;
+import mascota.Sexo;
+import mascota.Tamanio;
+import mascota.TipoAnimal;
 
 import java.util.List;
 

@@ -1,7 +1,9 @@
+import adopciones.PublicacionIntencionDeAdopcion;
+import adopciones.PublicacionMascotaEnAdopcion;
 import asociacion.Asociacion;
-import caracteristicas.CaracteristicaDefinida;
+import caracteristicas.definidas.CaracteristicaDefinida;
 import caracteristicas.ComodidadIdeal;
-import caracteristicas.TextoDefinida;
+import caracteristicas.definidas.TextoDefinida;
 import contacto.Contacto;
 import duenio.Duenio;
 import duenio.TipoDocumento;

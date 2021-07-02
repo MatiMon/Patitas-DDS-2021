@@ -1,11 +1,8 @@
-package mascota;
+package adopciones;
 
 import asociacion.RepositorioAsociaciones;
-import mascota.PublicacionIntencionDeAdopcion;
-import mascota.PublicacionMascotaEnAdopcion;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class RecomendadorMascotas {

@@ -1,14 +1,16 @@
+import adopciones.PublicacionIntencionDeAdopcion;
+import adopciones.PublicacionMascotaEnAdopcion;
+import adopciones.RecomendadorMascotas;
 import asociacion.Asociacion;
 import asociacion.RepositorioAsociaciones;
-import caracteristicas.*;
+import caracteristicas.definidas.BooleanaDefinida;
+import caracteristicas.definidas.NumericoDefinida;
 import mascota.*;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

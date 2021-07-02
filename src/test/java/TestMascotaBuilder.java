@@ -1,3 +1,4 @@
+import caracteristicas.ideales.*;
 import contacto.Contacto;
 import duenio.Duenio;
 import duenio.TipoDocumento;

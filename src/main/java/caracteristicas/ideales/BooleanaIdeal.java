@@ -1,8 +1,10 @@
-package caracteristicas;
+package caracteristicas.ideales;
 
+import caracteristicas.definidas.BooleanaDefinida;
+import caracteristicas.TipoCaracteristica;
 import excepciones.ValorCaracteristicaInvalidoException;
 
-public class BooleanaIdeal implements TipoCaracteristica{
+public class BooleanaIdeal implements TipoCaracteristica {
 
     public BooleanaDefinida crearCaracteristica(String nombre, Object valor){
         boolean _valor;

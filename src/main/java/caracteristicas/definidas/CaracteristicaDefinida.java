@@ -1,6 +1,4 @@
-package caracteristicas;
-
-import java.util.function.Predicate;
+package caracteristicas.definidas;
 
 public abstract class CaracteristicaDefinida {
     String nombre;

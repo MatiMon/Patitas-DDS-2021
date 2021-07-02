@@ -1,8 +1,8 @@
-import asociacion.Asociacion;
-import asociacion.RepositorioAsociaciones;
-import caracteristicas.BooleanaDefinida;
-import caracteristicas.NumericoDefinida;
-import caracteristicas.TextoDefinida;
+import adopciones.PublicacionIntencionDeAdopcion;
+import adopciones.PublicacionMascotaEnAdopcion;
+import caracteristicas.definidas.BooleanaDefinida;
+import caracteristicas.definidas.NumericoDefinida;
+import caracteristicas.definidas.TextoDefinida;
 import mascota.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;

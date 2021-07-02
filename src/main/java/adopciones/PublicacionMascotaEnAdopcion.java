@@ -1,6 +1,7 @@
-package mascota;
+package adopciones;
 
-import caracteristicas.CaracteristicaDefinida;
+import caracteristicas.definidas.CaracteristicaDefinida;
+import mascota.Mascota;
 
 import java.util.List;
 import java.util.Objects;

@@ -5,10 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca35795c-cc35-43b5-b77b-8094640599cf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ejercicio.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ejercicio.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rescateDePatitasAPP/RescateDePatitasAPP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rescateDePatitasAPP/RescateDePatitasAPP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asociacion/Asociacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/asociacion/Asociacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/asociacion/RepositorioAsociaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/asociacion/RepositorioAsociaciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/BooleanaDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/definidas/BooleanaDefinida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/BooleanaIdeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/ideales/BooleanaIdeal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/CaracteristicaDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/definidas/CaracteristicaDefinida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/CaracteristicaIdeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/ideales/CaracteristicaIdeal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/ComodidadIdeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/ComodidadIdeal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/EnumeradaDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/definidas/EnumeradaDefinida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/EnumeradaIdeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/ideales/EnumeradaIdeal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/NumericaIdeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/ideales/NumericaIdeal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/NumericoDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/definidas/NumericoDefinida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/RepositorioCaracteristicasIdeales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/RepositorioCaracteristicasIdeales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/TextoDefinida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/definidas/TextoDefinida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/TextoIdeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/ideales/TextoIdeal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/caracteristicas/TipoCaracteristica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/caracteristicas/TipoCaracteristica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hogares/HogarDeTransito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hogares/HogarDeTransito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hogares/RepositorioHogares.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hogares/RepositorioHogares.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mascota/Mascota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mascota/Mascota.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mascota/MascotaBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mascota/MascotaBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mascota/PublicacionIntencionDeAdopcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adopciones/PublicacionIntencionDeAdopcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mascota/PublicacionMascotaEnAdopcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adopciones/PublicacionMascotaEnAdopcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mascota/RecomendadorMascotas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adopciones/RecomendadorMascotas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rescate/RescateDeMascotaSinRegistrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rescate/RescateDeMascotaSinRegistrar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rescateDePatitasAPP/RescateDePatitasAPP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rescateDePatitasAPP/RescateDePatitasAPP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestAsociaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestAsociaciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaracteristicas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaracteristicas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestMascotaBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestMascotaBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestNotificaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNotificaciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestPublicacionMascotaEnAdopcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestPublicacionMascotaEnAdopcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRecomendadorMascotas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRecomendadorMascotas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRepositorioQR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRepositorioQR.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +297,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="build.tools" />
   </component>
-  <component name="RunManager" selected="JUnit.Whole project (1)">
+  <component name="RunManager" selected="JUnit.Whole project (2)">
     <configuration selected="false" default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -300,50 +328,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAsociaciones" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ejercicio" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestAsociaciones" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestRepositorioComodidades" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ejercicio" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestRepositorioComodidades" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestRepositorioComodidades.elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ejercicio" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestRepositorioComodidades" />
-      <option name="METHOD_NAME" value="elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Whole project (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Whole project (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" />
@@ -386,13 +383,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Whole project (2)" />
         <item itemvalue="Application.RescateDePatitasAPP" />
         <item itemvalue="JUnit.Whole project (3)" />
         <item itemvalue="JUnit.Whole project (1)" />
         <item itemvalue="JUnit.Whole project" />
-        <item itemvalue="JUnit.TestRepositorioComodidades.elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" />
-        <item itemvalue="JUnit.TestRepositorioComodidades" />
-        <item itemvalue="JUnit.TestAsociaciones" />
       </list>
     </recent_temporary>
   </component>

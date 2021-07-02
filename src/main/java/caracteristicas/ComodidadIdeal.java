@@ -1,5 +1,7 @@
 package caracteristicas;
 
+import caracteristicas.ideales.CaracteristicaIdeal;
+
 public class ComodidadIdeal extends CaracteristicaIdeal {
     String preguntaAdoptante;
     String preguntaDuenio;

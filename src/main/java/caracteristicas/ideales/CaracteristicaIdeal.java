@@ -1,4 +1,7 @@
-package caracteristicas;
+package caracteristicas.ideales;
+
+import caracteristicas.definidas.CaracteristicaDefinida;
+import caracteristicas.TipoCaracteristica;
 
 public class CaracteristicaIdeal {
     private String nombre;

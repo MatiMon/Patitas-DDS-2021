@@ -1,8 +1,10 @@
-package caracteristicas;
+package caracteristicas.ideales;
 
+import caracteristicas.definidas.TextoDefinida;
+import caracteristicas.TipoCaracteristica;
 import excepciones.ValorCaracteristicaInvalidoException;
 
-public class TextoIdeal implements TipoCaracteristica{
+public class TextoIdeal implements TipoCaracteristica {
     public TextoDefinida crearCaracteristica(String nombre, Object valor){
         String _valor;
         try{

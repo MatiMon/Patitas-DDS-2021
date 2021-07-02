@@ -1,4 +1,7 @@
-import caracteristicas.*;
+import caracteristicas.definidas.CaracteristicaDefinida;
+import caracteristicas.ideales.CaracteristicaIdeal;
+import caracteristicas.ideales.EnumeradaIdeal;
+import caracteristicas.ideales.NumericaIdeal;
 import excepciones.ValorCaracteristicaInvalidoException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

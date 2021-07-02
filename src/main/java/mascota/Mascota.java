@@ -1,9 +1,8 @@
 package mascota;
 
-import asociacion.Asociacion;
-import asociacion.RepositorioAsociaciones;
-import caracteristicas.CaracteristicaDefinida;
-import caracteristicas.ComodidadIdeal;
+import adopciones.PublicacionIntencionDeAdopcion;
+import adopciones.PublicacionMascotaEnAdopcion;
+import caracteristicas.definidas.CaracteristicaDefinida;
 import duenio.Duenio;
 
 

@@ -1,6 +1,6 @@
 package hogares;
 
-import caracteristicas.TextoDefinida;
+import caracteristicas.definidas.TextoDefinida;
 import mascota.Tamanio;
 import mascota.TipoAnimal;
 import ubicacion.Ubicacion;

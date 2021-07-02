@@ -1,6 +1,6 @@
 package rescateDePatitasAPP;
 
-import mascota.RecomendadorMascotas;
+import adopciones.RecomendadorMascotas;
 
 public class RescateDePatitasAPP {
 

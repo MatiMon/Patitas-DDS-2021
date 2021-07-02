@@ -1,7 +1,7 @@
 package asociacion;
 
-import mascota.PublicacionIntencionDeAdopcion;
-import mascota.PublicacionMascotaEnAdopcion;
+import adopciones.PublicacionIntencionDeAdopcion;
+import adopciones.PublicacionMascotaEnAdopcion;
 import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;

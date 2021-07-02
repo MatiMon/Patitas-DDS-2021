@@ -1,7 +1,7 @@
 package mascota;
 
-import caracteristicas.CaracteristicaIdeal;
-import caracteristicas.CaracteristicaDefinida;
+import caracteristicas.ideales.CaracteristicaIdeal;
+import caracteristicas.definidas.CaracteristicaDefinida;
 import caracteristicas.RepositorioCaracteristicasIdeales;
 import duenio.Duenio;
 import excepciones.MascotaInvalidaException;

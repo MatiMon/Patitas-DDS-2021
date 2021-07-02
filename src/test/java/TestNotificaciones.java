@@ -1,3 +1,5 @@
+import adopciones.PublicacionIntencionDeAdopcion;
+import adopciones.PublicacionMascotaEnAdopcion;
 import contacto.Contacto;
 import contacto.MedioDeNotificacion;
 import duenio.Duenio;
@@ -9,7 +11,6 @@ import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;
 import rescate.Rescatista;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -1,7 +1,7 @@
 package rescate;
 
 import asociacion.Asociacion;
-import caracteristicas.CaracteristicaDefinida;
+import caracteristicas.definidas.CaracteristicaDefinida;
 import duenio.Duenio;
 import mascota.Tamanio;
 import mascota.TipoAnimal;

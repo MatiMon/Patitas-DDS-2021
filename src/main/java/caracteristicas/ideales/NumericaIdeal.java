@@ -1,8 +1,10 @@
-package caracteristicas;
+package caracteristicas.ideales;
 
+import caracteristicas.definidas.NumericoDefinida;
+import caracteristicas.TipoCaracteristica;
 import excepciones.ValorCaracteristicaInvalidoException;
 
-public class NumericaIdeal implements TipoCaracteristica{
+public class NumericaIdeal implements TipoCaracteristica {
     public NumericoDefinida crearCaracteristica(String nombre, Object valor){
         int _valor;
         try{

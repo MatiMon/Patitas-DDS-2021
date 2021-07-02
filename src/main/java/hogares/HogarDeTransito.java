@@ -1,7 +1,6 @@
 package hogares;
 
-import caracteristicas.CaracteristicaDefinida;
-import caracteristicas.TextoDefinida;
+import caracteristicas.definidas.TextoDefinida;
 import mascota.Tamanio;
 import mascota.TipoAnimal;
 import org.codehaus.jackson.JsonNode;

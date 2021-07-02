@@ -1,6 +1,6 @@
-import caracteristicas.CaracteristicaDefinida;
-import caracteristicas.CaracteristicaIdeal;
-import caracteristicas.NumericaIdeal;
+import caracteristicas.definidas.CaracteristicaDefinida;
+import caracteristicas.ideales.CaracteristicaIdeal;
+import caracteristicas.ideales.NumericaIdeal;
 import contacto.Contacto;
 import duenio.Duenio;
 import duenio.TipoDocumento;

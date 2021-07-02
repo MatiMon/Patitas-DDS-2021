@@ -1,4 +1,4 @@
-package caracteristicas;
+package caracteristicas.definidas;
 
 public class BooleanaDefinida extends CaracteristicaDefinida {
   boolean valor;
