@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca35795c-cc35-43b5-b77b-8094640599cf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ejercicio.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ejercicio.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rescateDePatitasAPP/RescateDePatitasAPP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rescateDePatitasAPP/RescateDePatitasAPP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/asociacion/RepositorioAsociaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/asociacion/RepositorioAsociaciones.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -261,7 +263,13 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="build.tools" />
+  </component>
+  <component name="RunManager" selected="Application.RescateDePatitasAPP">
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager" selected="JUnit.Whole project (1)">
@@ -274,6 +282,20 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
+    </configuration>
+    <configuration name="RescateDePatitasAPP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rescateDePatitasAPP.RescateDePatitasAPP" />
+      <module name="ejercicio" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rescateDePatitasAPP.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -309,6 +331,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Whole project (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
     <configuration name="TestRepositorioComodidades.elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ejercicio" />
       <option name="PACKAGE_NAME" value="" />
@@ -361,6 +384,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RescateDePatitasAPP" />
+        <item itemvalue="JUnit.TestValidacionCaracteresConsecutivos" />
+        <item itemvalue="JUnit.Whole project (4)" />
+        <item itemvalue="JUnit.Whole project (3)" />
         <item itemvalue="JUnit.Whole project (1)" />
         <item itemvalue="JUnit.Whole project" />
         <item itemvalue="JUnit.TestRepositorioComodidades.elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" />
@@ -406,6 +433,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1623173442495</updated>
+      <workItem from="1625174264138" duration="3731000" />
+      <workItem from="1625178800082" duration="3704000" />
+      <workItem from="1625182977203" duration="1619000" />
     </task>
     <servers />
   </component>
@@ -443,6 +473,9 @@
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.25" order="3" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.25" order="5" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
