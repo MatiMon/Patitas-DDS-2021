@@ -33,7 +33,7 @@ public class Duenio {
 
   public void notificar(String mensaje) {
     contactoPrincipal.notificar(mensaje);
-    if (!contactosSecundarios.isEmpty())
+    if (contactosSecundarios != null)
       this.contactosSecundarios.forEach(contacto -> contacto.notificar(mensaje));
   }
 
