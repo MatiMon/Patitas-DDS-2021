@@ -32,10 +32,9 @@ public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
     this.estadoDeAprobacion = true;
   }
 
-  public void notificarEncuentroAlRescatista(String nombreDuenio, String apellidoDuenio, String datoDeContacto) { //TODO test -> el dueño se tiene que registrar
+  public void notificarEncuentroAlRescatista() { //TODO test -> el dueño se tiene que registrar
     this.rescatista.notificarEncuentro("¡La mascota de la publicación " + this.numeroIdentificatorio.toString() +
-        " fue encontrada por su dueño! Los datos del mismo son: *Nombre: " + nombreDuenio + " " + apellidoDuenio +
-        " *Dato de contacto: " + datoDeContacto);
+        " fue encontrada por su dueño! Los datos del mismo son: " + this.duenio.obtenerTarjetaDePresentacion());
   }
 
   public boolean getEstadoDeAprobacion() {
@@ -47,5 +46,7 @@ public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
     asociacion.agregarRescateDeMascotaSinRegistar(this);
   }
 
-
+  public void setNumeroIdentificatorio(Integer numeroIdentificatorio) {
+    this.numeroIdentificatorio = numeroIdentificatorio;
+  }
 }
