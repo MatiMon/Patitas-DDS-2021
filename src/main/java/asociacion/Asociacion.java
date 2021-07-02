@@ -77,6 +77,10 @@ public class Asociacion {
         return rescatesDeMascotasSinRegistrar.stream().filter(rescateDeMascotaSinRegistrar -> rescateDeMascotaSinRegistrar.getEstadoDeAprobacion()).collect(Collectors.toList());
     }
 
+    public void darDeBaja(PublicacionIntencionDeAdopcion intencion) {
+        this.intencionesDeAdoptar.remove(intencion);
+    }
+
 
     /*Metodos Privados*/
     private List<RescateDeMascotaRegistrada> ultimasMascotasRegistradasEncontradas(int dias) {
