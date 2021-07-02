@@ -23,14 +23,6 @@ public class Contacto {
     return this.medioDeNotificacionPreferido.obtenerDatoDeContacto();
   }
 
-  public int getTelefono() {
-    return telefono;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
   /* setter */
   public void setMedioDeNotificacionPreferido(MedioDeNotificacion medioDeNotificacionPreferido) {
     this.medioDeNotificacionPreferido = medioDeNotificacionPreferido;

@@ -49,9 +49,8 @@ public class PublicacionIntencionDeAdopcion {
     }
 
     private CaracteristicaDefinida obtenerCaracteristica(List<CaracteristicaDefinida> caracteristicas, String nombreCaracteristica) {
-        CaracteristicaDefinida caracteristica = caracteristicas.stream().
+        return caracteristicas.stream().
             filter(unaCaracteristica -> unaCaracteristica.getNombre().equals(nombreCaracteristica)).findAny().orElse(null);
-        return  caracteristica;
     }
 
     public TipoAnimal getTipoAnimal() {

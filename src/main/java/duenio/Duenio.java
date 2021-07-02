@@ -47,4 +47,8 @@ public class Duenio {
   public Asociacion obtenerAsociacionMasCercana(){
    return RepositorioAsociaciones.getInstancia().asociacionMasCercana(ubicacion);
   }
+
+  public String obtenerTarjetaDePresentacion() {
+    return ("Nombre completo: " + this.nombre + " " + this.apellido + " - Contacto: " + this.contactoPrincipal.obtenerDatoDeContactoPreferido());
+  }
 }
