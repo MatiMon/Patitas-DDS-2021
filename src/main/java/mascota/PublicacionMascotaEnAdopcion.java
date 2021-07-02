@@ -7,7 +7,11 @@ import java.util.Objects;
 
 public class PublicacionMascotaEnAdopcion {
 
-  private int numeroPublicacion; //@TODO idem rescate, calcularlo?
+  public String getNumeroPublicacion() {
+    return numeroPublicacion;
+  }
+
+  private String numeroPublicacion; //@TODO idem rescate, calcularlo?
   private List<CaracteristicaDefinida> comodidades;
   private Mascota mascota;
 

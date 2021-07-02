@@ -21,7 +21,7 @@ public class TestRecomendadorMascotas {
 
   private PublicacionMascotaEnAdopcion mascotaEnAdopcionCompatible = new PublicacionMascotaEnAdopcion(Arrays.asList(comodidadPatio),mascota1);
 
-  private Mascota mascota2 = new Mascota("nombre", "apodo", 2, Sexo.HEMBRA, TipoAnimal.GATO, "Lindo", null, null , null, "2", Tamanio.CHICO);
+  private Mascota mascota2 = new Mascota("nombre", "apodo", 2, Sexo.HEMBRA, TipoAnimal.GATO, "Lindo", null, null , null, "3", Tamanio.CHICO);
   private PublicacionMascotaEnAdopcion mascotaEnAdopcionIncompatible = new PublicacionMascotaEnAdopcion(Arrays.asList(comodidadPatio),mascota2);
 
   private Asociacion asociacion1 = asociacion1 = new Asociacion("patitas",null, null,null, Arrays.asList(mascotaEnAdopcionCompatible ,mascotaEnAdopcionIncompatible),null);
