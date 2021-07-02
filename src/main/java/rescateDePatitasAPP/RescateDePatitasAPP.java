@@ -7,10 +7,11 @@ public class RescateDePatitasAPP {
   public static void  main(String[] args){
 
     RecomendadorMascotas recomendadorMascotas = new RecomendadorMascotas();
+    //todo: cambiar por sigleton
 
     System.out.println("Ejemplo");
 
-    //TODO: completar plugin y probar en vm despues
+    //TODO: probar en vm despues
 
     //recomendadorMascotas.generarRecomendaciones();
   }
