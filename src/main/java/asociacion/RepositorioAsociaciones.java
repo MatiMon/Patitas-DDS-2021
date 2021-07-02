@@ -1,5 +1,6 @@
 package asociacion;
 
+import excepciones.AsociacionNoEncontradaException;
 import mascota.PublicacionIntencionDeAdopcion;
 import mascota.PublicacionMascotaEnAdopcion;
 import rescate.RescateDeMascota;
@@ -29,9 +30,13 @@ public class RepositorioAsociaciones {
   }
 
   public Asociacion asociacionMasCercana (Ubicacion ubicacion) {
-    this.asociaciones.sort(Comparator.comparing(asociacion -> asociacion.calcularDistanciaA(ubicacion)));
-    //TODO ver de manejar mejor este error en caso que el REPO este VACIO.
-    return asociaciones.stream().findFirst().orElse(null);
+    if (this.asociaciones.isEmpty()){
+      throw new AsociacionNoEncontradaException("no se encontro una asociacion");
+    }
+    else {
+      this.asociaciones.sort(Comparator.comparing(asociacion -> asociacion.calcularDistanciaA(ubicacion)));
+      return asociaciones.stream().findFirst().orElse(null);
+    }
   }
 
   public List<PublicacionMascotaEnAdopcion> publicacionesMascotasEnAdopcion() {
