@@ -269,9 +269,6 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="build.tools" />
   </component>
-  <component name="RunManager" selected="Application.RescateDePatitasAPP">
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-  </component>
   <component name="RunManager" selected="JUnit.Whole project (1)">
     <configuration selected="false" default="true" type="Applet" factoryName="Applet">
       <module name="" />
@@ -331,7 +328,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Whole project (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
     <configuration name="TestRepositorioComodidades.elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ejercicio" />
       <option name="PACKAGE_NAME" value="" />
@@ -355,6 +351,12 @@
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="wholeProject" />
       </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Whole project (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -385,8 +387,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.RescateDePatitasAPP" />
-        <item itemvalue="JUnit.TestValidacionCaracteresConsecutivos" />
-        <item itemvalue="JUnit.Whole project (4)" />
         <item itemvalue="JUnit.Whole project (3)" />
         <item itemvalue="JUnit.Whole project (1)" />
         <item itemvalue="JUnit.Whole project" />
