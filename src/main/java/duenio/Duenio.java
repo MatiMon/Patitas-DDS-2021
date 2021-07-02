@@ -1,5 +1,7 @@
 package duenio;
 
+import asociacion.Asociacion;
+import asociacion.RepositorioAsociaciones;
 import contacto.Contacto;
 import ubicacion.Ubicacion;
 import usuario.Usuario;
@@ -42,7 +44,7 @@ public class Duenio {
     this.contactosSecundarios.add(contacto);
   }
 
-  public Ubicacion getUbicacion() {
-    return ubicacion;
+  public Asociacion obtenerAsociacionMasCercana(){
+   return RepositorioAsociaciones.getInstancia().asociacionMasCercana(ubicacion);
   }
 }
