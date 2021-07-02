@@ -15,6 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class TestNotificaciones {
   private MedioDeNotificacion medioDeNotificacion;
@@ -47,9 +48,12 @@ public class TestNotificaciones {
     RescateDeMascotaSinRegistrar rescateDeMascotaSinRegistrar = new RescateDeMascotaSinRegistrar
         (this.fotos,null,        null, this.unRescatista, null,
             Tamanio.GRANDE, TipoAnimal.PERRO, null, this.unDuenio);
-    rescateDeMascotaSinRegistrar.setNumeroIdentificatorio(007);
+    rescateDeMascotaSinRegistrar.setNumeroIdentificatorio(7);
 
     rescateDeMascotaSinRegistrar.notificarEncuentroAlRescatista();
+
+    verify(medioDeNotificacion).enviarNotificacion(this.unContacto, "¡La mascota de la publicación 7 fue " +
+        "encontrada por su dueño! Los datos del mismo son: Nombre completo: Matias Sosa - Contacto: null");
   }
 
   @Test
@@ -58,6 +62,9 @@ public class TestNotificaciones {
         (fotos,null, null, unRescatista, null, unaMascota);
 
     rescateDeMascotaRegistrada.notificarEncuentroAlDuenio();
+
+    verify(medioDeNotificacion).enviarNotificacion(this.unContacto, "¡Encontraron a Pepe! Podés contactar al " +
+        "rescatista: Nombre completo: Jerónimo Fontana - Contacto: null");
   }
 
   @Test
@@ -67,6 +74,9 @@ public class TestNotificaciones {
         "https://host.com/publicaciones-de-intencion/8632432");
 
     publicacion.enviarLinkDeBaja();
+
+    verify(medioDeNotificacion).enviarNotificacion(this.unContacto, "Se ha creado tu publicación, podés " +
+        "darla de baja con el siguiente link: https://host.com/publicaciones-de-intencion/8632432");
   }
 
   @Test
@@ -76,12 +86,18 @@ public class TestNotificaciones {
         "https://host.com/publicaciones-de-intencion/8632432");
 
     publicacion.recomendarMascotas("Mascotas recomendadas: ...");
+
+    verify(medioDeNotificacion).enviarNotificacion(this.unContacto, "Mascotas recomendadas: ...");
   }
 
   @Test
   public void PublicacionMascotaEnAdopcionNotificaAlDuenioPosibleAdopcion() {
     PublicacionMascotaEnAdopcion publicacion = new PublicacionMascotaEnAdopcion(null, this.unaMascota);
     publicacion.setNumeroIdentificatorio("80");
+
     publicacion.notificarAlDuenioPosibleAdopcion();
+
+    verify(medioDeNotificacion).enviarNotificacion(this.unContacto, "Se encontró un posible Adoptante para " +
+        "tu mascota, siendo tu publiacion la número:80");
   }
 }
