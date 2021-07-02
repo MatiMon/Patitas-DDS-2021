@@ -158,12 +158,11 @@ public class TestAsociaciones {
     asociacionSanMartin.agregarMascotaEnAdopcion(publicacion1);
     PublicacionMascotaEnAdopcion publicacion2 = new PublicacionMascotaEnAdopcion(null,null);
     asociacionSanMartin.agregarMascotaEnAdopcion(publicacion2);
-    PublicacionIntencionDeAdopcion publicacion3 = new PublicacionIntencionDeAdopcion();
+    PublicacionIntencionDeAdopcion publicacion3 = new PublicacionIntencionDeAdopcion(null, null, null , TipoAnimal.PERRO, Sexo.HEMBRA, Tamanio.MEDIANO, null);
     asociacionSanMartin.agregarIntencionDeAdopcion(publicacion3);
 
     Assertions.assertEquals(repositorioAsociaciones.publicacionesIntencionDeAdopcion().size(), 1);
     Assertions.assertEquals(repositorioAsociaciones.publicacionesMascotasEnAdopcion().size(), 2);
-
   }
 }
 

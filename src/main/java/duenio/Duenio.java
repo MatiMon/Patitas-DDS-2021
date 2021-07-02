@@ -1,10 +1,13 @@
 package duenio;
 
+import asociacion.Asociacion;
+import asociacion.RepositorioAsociaciones;
 import contacto.Contacto;
 import ubicacion.Ubicacion;
 import usuario.Usuario;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Duenio {
@@ -28,11 +31,20 @@ public class Duenio {
     this.ubicacion = ubicacion;
   }
 
-  public void notificarEncuentro(String mensaje) {
-    this.contactosSecundarios.forEach(contacto -> contacto.notificar(mensaje));
+  public void notificar(String mensaje) {
+    contactoPrincipal.notificar(mensaje);
+    if (!contactosSecundarios.isEmpty())
+      this.contactosSecundarios.forEach(contacto -> contacto.notificar(mensaje));
   }
 
   public void agregarContactoSecundario(Contacto contacto){
+    if (contactosSecundarios == null) {
+      this.contactosSecundarios = new ArrayList<>();
+    }
     this.contactosSecundarios.add(contacto);
+  }
+
+  public Asociacion obtenerAsociacionMasCercana(){
+   return RepositorioAsociaciones.getInstancia().asociacionMasCercana(ubicacion);
   }
 }

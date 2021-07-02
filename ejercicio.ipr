@@ -230,7 +230,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module filepath="$PROJECT_DIR$/ejercicio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejercicio.iml" filepath="$PROJECT_DIR$/ejercicio.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />

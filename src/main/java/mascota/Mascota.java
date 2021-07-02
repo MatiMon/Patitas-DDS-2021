@@ -1,11 +1,15 @@
 package mascota;
 
+import asociacion.Asociacion;
+import asociacion.RepositorioAsociaciones;
 import caracteristicas.CaracteristicaDefinida;
+import caracteristicas.ComodidadIdeal;
 import duenio.Duenio;
 
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Mascota {
   private String nombre;
@@ -35,8 +39,8 @@ public class Mascota {
     this.tamanio = tamanio;
   }
 
-  public void notificarEncuentroAlDuenio(String mensaje) {
-    this.duenio.notificarEncuentro(mensaje);
+  public void notificarAlDuenio(String mensaje) {
+    this.duenio.notificar(mensaje);
   }
 
   public String getNombre() {
@@ -48,14 +52,22 @@ public class Mascota {
   }
 
   public boolean caracteristicasCompatiblesCon(PublicacionIntencionDeAdopcion intencionDeAdopcion) {
-    return tipoAnimal.equals(intencionDeAdopcion.getTipoAnimal()) && sexo.equals(intencionDeAdopcion.getSexo()) && tamanio.equals(intencionDeAdopcion.getTamanio());
+    TipoAnimal tipoAnimalRequerido = intencionDeAdopcion.getTipoAnimal();
+    Sexo sexoRequerido = intencionDeAdopcion.getSexo();
+    Tamanio tamanioRequerido = intencionDeAdopcion.getTamanio();
+    return (tipoAnimal.equals(tipoAnimalRequerido) || Objects.isNull(tipoAnimalRequerido))
+        && (sexo.equals(sexoRequerido) || Objects.isNull(sexoRequerido))
+        && (tamanio.equals(tamanioRequerido) || Objects.isNull(tamanioRequerido));
   }
 
-  //@TODO implementar!!
-  public void darEnAdopcion(){
+  /* ESTE METODO ES POR SI QUEREMOS ELEGIR A MANO LA ASOCIACION, POR AHORA LO HACEMOS AUTOMATICO
+  public void darEnAdopcion(List<CaracteristicaDefinida> comodidades, Asociacion asociacionDeseada){
+    PublicacionMascotaEnAdopcion publicacion = new PublicacionMascotaEnAdopcion(comodidades,this);
+    asociacionDeseada.agregarMascotaEnAdopcion(publicacion);
+  }*/
+
+  public void darEnAdopcionEnLaAsociacionMasCercana (List<CaracteristicaDefinida> comodidades){
+    PublicacionMascotaEnAdopcion publicacion = new PublicacionMascotaEnAdopcion(comodidades,this);
+    this.duenio.obtenerAsociacionMasCercana().agregarMascotaEnAdopcion(publicacion);
   }
-  //@TODO implementar, ver si se sigue mismo camino q notificarEncuentro, o hacer algo polimorfico
-  public void notificarPosibleAdopcionAlDuenio(){};
-
-
 }

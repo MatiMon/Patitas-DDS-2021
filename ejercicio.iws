@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/ejercicio.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ejercicio.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rescateDePatitasAPP/RescateDePatitasAPP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rescateDePatitasAPP/RescateDePatitasAPP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asociacion/RepositorioAsociaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/asociacion/RepositorioAsociaciones.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,6 +270,9 @@
     <property name="settings.editor.selected.configurable" value="build.tools" />
   </component>
   <component name="RunManager" selected="Application.RescateDePatitasAPP">
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager" selected="JUnit.Whole project (1)">
     <configuration selected="false" default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -313,10 +317,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestValidacionCaracteresConsecutivos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRepositorioComodidades" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ejercicio" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestValidacionCaracteresConsecutivos" />
+      <option name="MAIN_CLASS_NAME" value="TestRepositorioComodidades" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -328,6 +332,22 @@
       </method>
     </configuration>
     <configuration name="Whole project (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRepositorioComodidades.elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ejercicio" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestRepositorioComodidades" />
+      <option name="METHOD_NAME" value="elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Whole project (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" />
@@ -339,7 +359,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Whole project (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Whole project" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" />
@@ -368,6 +388,10 @@
         <item itemvalue="JUnit.TestValidacionCaracteresConsecutivos" />
         <item itemvalue="JUnit.Whole project (4)" />
         <item itemvalue="JUnit.Whole project (3)" />
+        <item itemvalue="JUnit.Whole project (1)" />
+        <item itemvalue="JUnit.Whole project" />
+        <item itemvalue="JUnit.TestRepositorioComodidades.elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada" />
+        <item itemvalue="JUnit.TestRepositorioComodidades" />
         <item itemvalue="JUnit.TestAsociaciones" />
       </list>
     </recent_temporary>

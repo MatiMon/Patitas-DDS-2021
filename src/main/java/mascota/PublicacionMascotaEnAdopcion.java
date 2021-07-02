@@ -3,6 +3,7 @@ package mascota;
 import caracteristicas.CaracteristicaDefinida;
 
 import java.util.List;
+import java.util.Objects;
 
 public class PublicacionMascotaEnAdopcion {
 
@@ -15,25 +16,26 @@ public class PublicacionMascotaEnAdopcion {
     this.mascota = mascota;
     this.comodidades = comodidades;
   }
-
+  //Si algo es null lo tomamos como compatible
   public boolean esCompatible(PublicacionIntencionDeAdopcion intencionDeAdopcion) {
     return comodidadesCompatibles(intencionDeAdopcion) && caracteristicasPersonalizadasCompatibles(intencionDeAdopcion) && caracteristicasBasicasCompatibles(intencionDeAdopcion);
   }
 
   private boolean comodidadesCompatibles(PublicacionIntencionDeAdopcion intencionDeAdopcion){
-    return comodidades.stream().allMatch(comodidad -> comodidad.esCompatibleCon(intencionDeAdopcion.valorComodidad(comodidad.getNombre())));
+    return Objects.isNull(comodidades) || comodidades.stream().allMatch(comodidad -> comodidad.esCompatibleCon(intencionDeAdopcion.valorComodidad(comodidad.getNombre())));
   }
 
   private boolean caracteristicasPersonalizadasCompatibles(PublicacionIntencionDeAdopcion intencionDeAdopcion){
-    return mascota.getCaracteristicaDefinidas().stream().allMatch(caracteristica -> caracteristica.esCompatibleCon(intencionDeAdopcion.valorCaracteristica(caracteristica.getNombre())));
+    List<CaracteristicaDefinida> caracteristicas = mascota.getCaracteristicaDefinidas();
+    return Objects.isNull(caracteristicas) || caracteristicas.stream().allMatch(caracteristica -> caracteristica.esCompatibleCon(intencionDeAdopcion.valorCaracteristica(caracteristica.getNombre())));
   }
 
   private boolean caracteristicasBasicasCompatibles(PublicacionIntencionDeAdopcion intencionDeAdopcion){
     return mascota.caracteristicasCompatiblesCon(intencionDeAdopcion);
   }
 
-  //@TODO terminar de revisar!!
   public void notificarAlDuenioPosibleAdopcion(){
-    this.mascota.notificarPosibleAdopcionAlDuenio();
+    this.mascota.notificarAlDuenio("Se encontró un posible Adoptante para tu mascota," +
+            " siendo tu publiacion la número:" + this.numeroPublicacion);
   }
 }
