@@ -16,23 +16,19 @@ public class RepositorioComodidades {
     this.comodidadesGenericas.add(comodidadIdeal);
   }
 
-  //Si fuera una sola comodidad a agregar, y no lo pongo como lista, no puedo agregarla, porque el map es tipo List.
-  public void agregarComodidadPersonalizada(Asociacion asociacion,ComodidadIdeal... comodidadIdeal){
+  public void agregarComodidadesPersonalizadas(Asociacion asociacion,ComodidadIdeal... comodidadIdeal){
 
     if (this.comodidadesPersonalizadas.containsKey(asociacion)){
-
       List<ComodidadIdeal>comodidadesAsociacion = this.comodidadesPersonalizadas.get(asociacion);
       comodidadesAsociacion.addAll(Arrays.asList(comodidadIdeal));
-      this.comodidadesPersonalizadas.replace(asociacion, comodidadesAsociacion);
     }
     else {
-      this.comodidadesPersonalizadas.put(asociacion, Arrays.asList(comodidadIdeal));
+      this.comodidadesPersonalizadas.put(asociacion, new ArrayList<>(Arrays.asList(comodidadIdeal)));
     }
   }
 
   public List<ComodidadIdeal> getComodidadesDeAsociacion (Asociacion asociacion){
-    List<ComodidadIdeal> comodidadesTotales = comodidadesGenericas;
-
+    List<ComodidadIdeal> comodidadesTotales = new ArrayList<>(comodidadesGenericas);
     comodidadesTotales.addAll(this.comodidadesPersonalizadas.get(asociacion));
     return comodidadesTotales;
   }
@@ -56,14 +52,13 @@ public class RepositorioComodidades {
   public void removerComodidadDeAsociacion (Asociacion asociacion, ComodidadIdeal comodidad){
     List<ComodidadIdeal> comodidadIdeales = this.comodidadesPersonalizadas.get(asociacion);
     comodidadIdeales.remove(comodidad);
-    this.comodidadesPersonalizadas.replace(asociacion,comodidadIdeales);
   }
 
   public void removerComodidadGenerica (ComodidadIdeal comodidadIdeal){
     this.comodidadesGenericas.remove(comodidadIdeal);
   }
-
+/*
   public void agregarComodidadesPersonalizadas(Asociacion asociacion,List<ComodidadIdeal> comodidadIdeals){
     this.comodidadesPersonalizadas.put(asociacion, comodidadIdeals);
-  }
+  }*/
 }
