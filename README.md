@@ -1,5 +1,5 @@
 # DIAGRAMA DE CLASES
-https://lucid.app/lucidchart/ddd8c6d7-5b6c-4cc8-b7c0-ecfe2b4e122b/edit?shared=true&page=~IXIRD0ugIyz#
+https://lucid.app/lucidchart/ddd8c6d7-5b6c-4cc8-b7c0-ecfe2b4e122b/edit?shared=true&page=G9FOjcLEwgbh#
 
 # java-base-project
 
