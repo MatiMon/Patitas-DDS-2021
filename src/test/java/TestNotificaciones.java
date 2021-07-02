@@ -2,10 +2,7 @@ import contacto.Contacto;
 import contacto.MedioDeNotificacion;
 import duenio.Duenio;
 import duenio.TipoDocumento;
-import mascota.Mascota;
-import mascota.Sexo;
-import mascota.Tamanio;
-import mascota.TipoAnimal;
+import mascota.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import rescate.RescateDeMascotaRegistrada;
@@ -63,5 +60,28 @@ public class TestNotificaciones {
     rescateDeMascotaRegistrada.notificarEncuentroAlDuenio();
   }
 
+  @Test
+  public void PublicacionIntencionNotificaEnviaLinkDeBaja() {
+    PublicacionIntencionDeAdopcion publicacion = new PublicacionIntencionDeAdopcion(null,
+        null, this.unDuenio, null, null, null,
+        "https://host.com/publicaciones-de-intencion/8632432");
 
+    publicacion.enviarLinkDeBaja();
+  }
+
+  @Test
+  public void PublicacionIntencionDeAdopcionNotificaMascotasRecomendadas() {
+    PublicacionIntencionDeAdopcion publicacion = new PublicacionIntencionDeAdopcion(null,
+        null, this.unDuenio, null, null, null,
+        "https://host.com/publicaciones-de-intencion/8632432");
+
+    publicacion.recomendarMascotas("Mascotas recomendadas: ...");
+  }
+
+  @Test
+  public void PublicacionMascotaEnAdopcionNotificaAlDuenioPosibleAdopcion() {
+    PublicacionMascotaEnAdopcion publicacion = new PublicacionMascotaEnAdopcion(null, this.unaMascota);
+    publicacion.setNumeroIdentificatorio("80");
+    publicacion.notificarAlDuenioPosibleAdopcion();
+  }
 }

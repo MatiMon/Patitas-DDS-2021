@@ -42,4 +42,8 @@ public class PublicacionMascotaEnAdopcion {
     this.mascota.notificarAlDuenio("Se encontró un posible Adoptante para tu mascota," +
             " siendo tu publiacion la número:" + this.numeroPublicacion);
   }
+
+  public void setNumeroIdentificatorio(String numeroDePublicacion) {
+    this.numeroPublicacion = numeroDePublicacion;
+  }
 }
