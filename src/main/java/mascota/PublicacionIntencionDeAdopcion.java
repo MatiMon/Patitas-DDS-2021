@@ -28,8 +28,7 @@ public class PublicacionIntencionDeAdopcion {
         this.linkDeBaja = linkDeBaja;
     }
 
-    public void recomendarMascotas(List<PublicacionMascotaEnAdopcion> mascotasRecomendadas) { //TODO el mensaje se deberia armar aca
-        String mensajeDeNotificacion = "";
+    public void recomendarMascotas(String mensajeDeNotificacion) {
         this.notificarAlPosibleDuenio(mensajeDeNotificacion);
     }
 
@@ -52,7 +51,6 @@ public class PublicacionIntencionDeAdopcion {
     private CaracteristicaDefinida obtenerCaracteristica(List<CaracteristicaDefinida> caracteristicas, String nombreCaracteristica) {
         CaracteristicaDefinida caracteristica = caracteristicas.stream().
             filter(unaCaracteristica -> unaCaracteristica.getNombre().equals(nombreCaracteristica)).findAny().orElse(null);
-        //TODO me parece que esto no va if (caracteristica == null) throw new CaracteristicaInexistenteException("las características/comodidades de esta publicación");
         return  caracteristica;
     }
 

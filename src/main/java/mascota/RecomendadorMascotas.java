@@ -5,6 +5,7 @@ import mascota.PublicacionIntencionDeAdopcion;
 import mascota.PublicacionMascotaEnAdopcion;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class RecomendadorMascotas {
@@ -21,6 +22,12 @@ public class RecomendadorMascotas {
 
   public static void generarRecomendaciones(){
     RepositorioAsociaciones.getInstancia().publicacionesIntencionDeAdopcion().
-        forEach(intencionAdopcion -> intencionAdopcion.recomendarMascotas(publicacionesMascotasEnAdopcionCompatibles(intencionAdopcion)));
+        forEach(intencionAdopcion -> intencionAdopcion.recomendarMascotas(mensajeRecomendacion(publicacionesMascotasEnAdopcionCompatibles(intencionAdopcion))));
+  }
+
+  public static String mensajeRecomendacion(List<PublicacionMascotaEnAdopcion> publicacionesRecomendadas){
+    String mensaje = "Le recomendamos las siguientes mascotas en adopcion: ";
+    List<String> numerosPublicaciones = publicacionesRecomendadas.stream().map(PublicacionMascotaEnAdopcion::getNumeroPublicacion).collect(Collectors.toList());
+    return mensaje.concat(String.join(", ", numerosPublicaciones));
   }
 }
