@@ -30,7 +30,8 @@ public class Mascota {
   @JoinColumn(name = "mascota_id", referencedColumnName = "id")
   private List<CaracteristicaDefinida> caracteristicaDefinidas = new ArrayList<>();
 
-  @Transient
+  @ManyToOne
+  @JoinColumn(name = "DuenioId", referencedColumnName = "id")
   private Duenio duenio;
   private String id_mascota;
 

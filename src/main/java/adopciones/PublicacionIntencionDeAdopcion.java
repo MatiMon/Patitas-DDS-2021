@@ -21,7 +21,9 @@ public class PublicacionIntencionDeAdopcion {
     @OneToMany
     @JoinColumn(name = "publicacionIntencionAdopcionId", referencedColumnName = "id")
     private List<CaracteristicaDefinida> caracteristicasMascota;
-    @Transient
+
+    @ManyToOne
+    @JoinColumn(name = "DuenioId", referencedColumnName = "id")
     private Duenio posibleDuenio;
     @Enumerated(EnumType.ORDINAL)
     private TipoAnimal tipoAnimal;

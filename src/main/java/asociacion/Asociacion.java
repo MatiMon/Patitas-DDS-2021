@@ -27,9 +27,11 @@ public class Asociacion {
     List<RescateDeMascotaSinRegistrar> rescatesDeMascotasSinRegistrar;
     @Transient
     List<RescateDeMascotaRegistrada> rescatesDeMascotasRegistradas;
-    @Transient
+    @OneToMany
+    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
     List<PublicacionMascotaEnAdopcion> mascotasEnAdopcion;
-    @Transient
+    @OneToMany
+    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
     List<PublicacionIntencionDeAdopcion> intencionesDeAdoptar;
 
     public Asociacion(String nombre, Ubicacion ubicacion,

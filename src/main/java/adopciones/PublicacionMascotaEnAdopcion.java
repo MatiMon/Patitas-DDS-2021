@@ -12,10 +12,6 @@ public class PublicacionMascotaEnAdopcion {
   @GeneratedValue
   private Long id;
 
-  public String getNumeroPublicacion() {
-    return numeroPublicacion;
-  }
-
   private String numeroPublicacion;
 
   @OneToMany
@@ -26,6 +22,9 @@ public class PublicacionMascotaEnAdopcion {
   @JoinColumn(name = "mascotaId", referencedColumnName = "id")
   private Mascota mascota;
 
+  public String getNumeroPublicacion() {
+    return numeroPublicacion;
+  }
 
   public PublicacionMascotaEnAdopcion(List<CaracteristicaDefinida> comodidades,Mascota mascota) {
     this.mascota = mascota;

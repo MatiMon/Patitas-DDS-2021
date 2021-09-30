@@ -9,7 +9,8 @@ public class Voluntario {
   @Id
   @GeneratedValue
   private Long id;
-  @Transient
+  @OneToOne
+  @JoinColumn(name = "Usuario_Id", referencedColumnName = "id")
   Usuario usuario;
   @ManyToOne
   @JoinColumn(name = "Asociacion_id", referencedColumnName = "id")

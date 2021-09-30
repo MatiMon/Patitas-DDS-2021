@@ -41,10 +41,11 @@ public class Duenio {
   @JoinColumn(name = "duenioId", referencedColumnName = "id")
   private List<Contacto> contactosSecundarios;
 
-  @Transient //TODO @OneToOne
+  @OneToOne
+  @JoinColumn(name = "usuarioId", referencedColumnName = "id")
   private Usuario usuario;
 
-  @Transient
+  @Embedded
   private Ubicacion ubicacion;
 
   public Duenio(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, double documento, Contacto contactoPrincipal, Ubicacion ubicacion) {
