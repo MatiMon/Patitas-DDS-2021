@@ -4,10 +4,17 @@ import caracteristicas.definidas.EnumeradaDefinida;
 import caracteristicas.TipoCaracteristica;
 import excepciones.ValorCaracteristicaInvalidoException;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
 import java.util.List;
 import java.util.Objects;
 
-public class EnumeradaIdeal implements TipoCaracteristica {
+@Entity
+@DiscriminatorValue("Enum")
+public class EnumeradaIdeal extends TipoCaracteristica {
+
+    @ElementCollection
     List<String> opciones;
 
     public EnumeradaIdeal(List<String> opciones) {

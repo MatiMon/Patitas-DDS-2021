@@ -2,6 +2,14 @@ package caracteristicas;
 
 import caracteristicas.definidas.CaracteristicaDefinida;
 
-public interface TipoCaracteristica {
-    CaracteristicaDefinida crearCaracteristica(String nombre, Object valor);
+import javax.persistence.*;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo")
+public abstract class TipoCaracteristica {
+    @Id
+    @GeneratedValue
+    private Long id;
+    public abstract CaracteristicaDefinida crearCaracteristica(String nombre, Object valor);
 }

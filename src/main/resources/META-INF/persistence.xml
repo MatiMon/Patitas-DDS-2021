@@ -22,6 +22,11 @@
         <class>contacto.Contacto</class>
         <class>usuario.Usuario</class>
         <class>usuario.ValidacionDeContrasenia</class>
+        <class>caracteristicas.TipoCaracteristica</class>
+        <class>caracteristicas.ideales.TextoIdeal</class>
+        <class>caracteristicas.ideales.NumericaIdeal</class>
+        <class>caracteristicas.ideales.EnumeradaIdeal</class>
+        <class>caracteristicas.ideales.BooleanaIdeal</class>
 
         <class>usuario.Usuario</class>
         <class>usuario.ValidacionDeContrasenia</class>

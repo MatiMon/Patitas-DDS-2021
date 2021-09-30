@@ -4,7 +4,12 @@ import caracteristicas.definidas.BooleanaDefinida;
 import caracteristicas.TipoCaracteristica;
 import excepciones.ValorCaracteristicaInvalidoException;
 
-public class BooleanaIdeal implements TipoCaracteristica {
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("Bool")
+public class BooleanaIdeal extends TipoCaracteristica {
 
     public BooleanaDefinida crearCaracteristica(String nombre, Object valor){
         boolean _valor;

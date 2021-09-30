@@ -4,7 +4,12 @@ import caracteristicas.definidas.TextoDefinida;
 import caracteristicas.TipoCaracteristica;
 import excepciones.ValorCaracteristicaInvalidoException;
 
-public class TextoIdeal implements TipoCaracteristica {
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("Text")
+public class TextoIdeal extends TipoCaracteristica {
     public TextoDefinida crearCaracteristica(String nombre, Object valor){
         String _valor;
         try{
