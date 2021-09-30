@@ -7,6 +7,21 @@
 
     <persistence-unit name="db" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>mascota.Mascota</class>
+        <class>caracteristicas.definidas.CaracteristicaDefinida</class>
+        <class>caracteristicas.definidas.BooleanaDefinida</class>
+        <class>caracteristicas.definidas.EnumeradaDefinida</class>
+        <class>caracteristicas.definidas.NumericoDefinida</class>
+        <class>caracteristicas.definidas.TextoDefinida</class>
+        <class>asociacion.Asociacion</class>
+        <class>asociacion.Voluntario</class>
+        <class>adopciones.PublicacionIntencionDeAdopcion</class>
+        <class>adopciones.PublicacionMascotaEnAdopcion</class>
+        <class>duenio.Duenio</class>
+        <class>rescate.Rescatista</class>
+        <class>contacto.Contacto</class>
+        <class>usuario.Usuario</class>
+        <class>usuario.ValidacionDeContrasenia</class>
 
         <class>usuario.Usuario</class>
         <class>usuario.ValidacionDeContrasenia</class>

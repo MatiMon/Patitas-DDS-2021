@@ -11,6 +11,7 @@ import ubicacion.Ubicacion;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @JsonIgnoreProperties({"id"})
 public class HogarDeTransito {
   @JsonProperty("patio")

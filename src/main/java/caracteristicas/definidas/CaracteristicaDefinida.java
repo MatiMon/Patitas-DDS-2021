@@ -1,6 +1,15 @@
 package caracteristicas.definidas;
 
+
+
+import javax.persistence.*;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo")
 public abstract class CaracteristicaDefinida {
+    @Id @GeneratedValue
+    private Long id;
     String nombre;
 
     public String getNombre() {

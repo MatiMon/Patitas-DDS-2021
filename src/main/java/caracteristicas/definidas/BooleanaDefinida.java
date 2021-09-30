@@ -1,5 +1,11 @@
 package caracteristicas.definidas;
 
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("Bool")
 public class BooleanaDefinida extends CaracteristicaDefinida {
   boolean valor;
 

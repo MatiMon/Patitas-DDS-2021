@@ -2,6 +2,9 @@ package ubicacion;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Ubicacion {
 
   @JsonProperty("direccion")

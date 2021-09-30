@@ -6,14 +6,28 @@ import mascota.Sexo;
 import mascota.Tamanio;
 import mascota.TipoAnimal;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class PublicacionIntencionDeAdopcion {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @OneToMany
+    @JoinColumn(name = "publicacionIntencionAdopcionId", referencedColumnName = "id")
     private List<CaracteristicaDefinida> comodidades;
+    @OneToMany
+    @JoinColumn(name = "publicacionIntencionAdopcionId", referencedColumnName = "id")
     private List<CaracteristicaDefinida> caracteristicasMascota;
+    @Transient
     private Duenio posibleDuenio;
+    @Enumerated(EnumType.ORDINAL)
     private TipoAnimal tipoAnimal;
+    @Enumerated(EnumType.ORDINAL)
     private Sexo sexoMascota;
+    @Enumerated(EnumType.ORDINAL)
     private Tamanio tamanioMascota;
     private String linkDeBaja;
 

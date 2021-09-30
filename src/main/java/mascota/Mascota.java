@@ -6,11 +6,16 @@ import caracteristicas.definidas.CaracteristicaDefinida;
 import duenio.Duenio;
 
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class Mascota {
+  @Id @GeneratedValue
+  private Long id;
+
   private String nombre;
   private String apodo;
   private int edad;
@@ -18,10 +23,16 @@ public class Mascota {
   private TipoAnimal tipoAnimal;
   private Tamanio tamanio;
   private String descripcionFisica;
+  @ElementCollection
   private List<String> fotos = new ArrayList<>();
+
+  @OneToMany
+  @JoinColumn(name = "mascota_id", referencedColumnName = "id")
   private List<CaracteristicaDefinida> caracteristicaDefinidas = new ArrayList<>();
+
+  @Transient
   private Duenio duenio;
-  private String id;
+  private String id_mascota;
 
   public Mascota(String nombre, String apodo, int edad, Sexo sexo, TipoAnimal tipoAnimal, String descripcionFisica,
                  List<String> fotos, List<CaracteristicaDefinida> caracteristicaDefinidas, Duenio duenio, String id, Tamanio tamanio) {
@@ -34,7 +45,7 @@ public class Mascota {
     this.fotos = fotos;
     this.caracteristicaDefinidas = caracteristicaDefinidas;
     this.duenio = duenio;
-    this.id = id;
+    this.id_mascota = id;
     this.tamanio = tamanio;
   }
 
