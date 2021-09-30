@@ -2,13 +2,24 @@ package usuario;
 
 import excepciones.ContraseniaInvalidaException;
 
+import javax.persistence.*;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Objects;
 
+@Entity
+@Table(name = "usuario")
 public class Usuario {
+
+  @Id @GeneratedValue
+  private Long id;
+
   private String nombreUsuario;
+
+  @Embedded
   private ContraseniaHasheada contrasenia;
+
+  @Transient
   private ValidadorContrasenia validador;
 
   public Usuario(String nombreUsuario, String contrasenia, ValidadorContrasenia validador) throws NoSuchAlgorithmException, InvalidKeySpecException {

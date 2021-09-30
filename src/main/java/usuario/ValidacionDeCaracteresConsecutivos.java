@@ -1,11 +1,16 @@
 package usuario;
 
-public class ValidacionDeCaracteresConsecutivos implements ValidacionDeContrasenia {
+import javax.persistence.DiscriminatorValue;
 
+@DiscriminatorValue("PorCaracteresConsecutivos")
+public class ValidacionDeCaracteresConsecutivos extends ValidacionDeContrasenia {
+
+    @Override
     public boolean esContraseniaValida(String password) {
         return !todosLosCaracteresIguales(password);
     }
 
+    @Override
     public String getIdentificador() {
         return "CARACTERES";
     }

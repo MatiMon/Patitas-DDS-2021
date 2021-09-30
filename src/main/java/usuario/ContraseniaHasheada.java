@@ -2,16 +2,24 @@ package usuario;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
+import javax.persistence.Embeddable;
+import javax.persistence.Lob;
+import javax.persistence.Transient;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 import java.util.Arrays;
 
+@Embeddable
 public class ContraseniaHasheada {
+  @Lob
   private byte[] hash;
+  @Lob
   private byte[] salt = new byte[16];
+  @Transient
   private int iteraciones = 10000;
+  @Transient
   private int longitud = 256;
 
   public ContraseniaHasheada(String contrasenia) throws NoSuchAlgorithmException, InvalidKeySpecException {

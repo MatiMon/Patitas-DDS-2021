@@ -1,16 +1,24 @@
 package usuario;
 
-public class ValidacionPorArchivo implements ValidacionDeContrasenia {
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Embedded;
+
+@DiscriminatorValue("PorArchivo")
+public class ValidacionPorArchivo extends ValidacionDeContrasenia {
+
+    @Embedded
     private ListadoContrasenias listadoContrasenias;
 
     public ValidacionPorArchivo(ListadoContrasenias listadoContrasenias) {
         this.listadoContrasenias = listadoContrasenias;
     }
 
+    @Override
     public boolean esContraseniaValida(String password) {
         return !this.listadoContrasenias.contieneContraseniaEnListado(password);
     }
 
+    @Override
     public String getIdentificador() {
             return "ARCHIVO";
     }
