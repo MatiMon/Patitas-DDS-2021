@@ -37,7 +37,8 @@ public class Duenio {
   @OneToOne
   private Contacto contactoPrincipal;
 
-  @OneToMany(mappedBy = "id")
+  @OneToMany
+  @JoinColumn(name = "duenioId", referencedColumnName = "id")
   private List<Contacto> contactosSecundarios;
 
   @Transient //TODO @OneToOne

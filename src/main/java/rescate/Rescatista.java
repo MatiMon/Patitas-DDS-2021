@@ -35,7 +35,8 @@ public class Rescatista {
   @OneToOne
   private Contacto contactoPrincipal;
 
-  @OneToMany (mappedBy = "id")
+  @OneToMany
+  @JoinColumn(name = "rescatistaId", referencedColumnName = "id")
   private List<Contacto> contactosSecundarios = new ArrayList<>();
 
   public Rescatista(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, String direccion, Contacto contactoPrincipal) {

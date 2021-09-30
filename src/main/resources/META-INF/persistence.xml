@@ -17,6 +17,9 @@
         <class>asociacion.Voluntario</class>
         <class>adopciones.PublicacionIntencionDeAdopcion</class>
         <class>adopciones.PublicacionMascotaEnAdopcion</class>
+        <class>duenio.Duenio</class>
+        <class>rescate.Rescatista</class>
+        <class>contacto.Contacto</class>
 
 
 
