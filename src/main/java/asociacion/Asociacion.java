@@ -7,18 +7,29 @@ import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;
 import ubicacion.Ubicacion;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Entity
 public class Asociacion {
+    @Id
+    @GeneratedValue
+    private Long id;
 
     String nombre;
+
+    @Embedded
     Ubicacion ubicacion;
+
+    @Transient
     List<RescateDeMascotaSinRegistrar> rescatesDeMascotasSinRegistrar;
+    @Transient
     List<RescateDeMascotaRegistrada> rescatesDeMascotasRegistradas;
+    @Transient
     List<PublicacionMascotaEnAdopcion> mascotasEnAdopcion;
+    @Transient
     List<PublicacionIntencionDeAdopcion> intencionesDeAdoptar;
 
     public Asociacion(String nombre, Ubicacion ubicacion,

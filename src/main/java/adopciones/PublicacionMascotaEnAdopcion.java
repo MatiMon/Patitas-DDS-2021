@@ -3,17 +3,27 @@ package adopciones;
 import caracteristicas.definidas.CaracteristicaDefinida;
 import mascota.Mascota;
 
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
-
+@Entity
 public class PublicacionMascotaEnAdopcion {
+  @Id
+  @GeneratedValue
+  private Long id;
 
   public String getNumeroPublicacion() {
     return numeroPublicacion;
   }
 
-  private String numeroPublicacion; //@TODO idem rescate, calcularlo?
+  private String numeroPublicacion;
+
+  @OneToMany
+  @JoinColumn(name = "publicacionMascotaEnAdopcionId", referencedColumnName = "id")
   private List<CaracteristicaDefinida> comodidades;
+
+  @OneToOne
+  @JoinColumn(name = "mascotaId", referencedColumnName = "id")
   private Mascota mascota;
 
 
