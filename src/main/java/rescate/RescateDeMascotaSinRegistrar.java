@@ -6,15 +6,27 @@ import duenio.Duenio;
 import mascota.Tamanio;
 import mascota.TipoAnimal;
 import ubicacion.Ubicacion;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Entity
 public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
+
+  @ManyToOne
+  @JoinColumn(name = "duenio_id", referencedColumnName = "id")
   private Duenio duenio;
   private boolean estadoDeAprobacion;
-  private Integer numeroIdentificatorio; //TODO calcular el nro de publicacion
+  private Integer numeroIdentificatorio;
+
+  @Enumerated(EnumType.ORDINAL)
   private TipoAnimal tipoAnimal;
+  @Enumerated(EnumType.ORDINAL)
   private Tamanio tamanio;
+
+  @OneToOne
+  @JoinColumn(name = "caracteristicaDefinida_id", referencedColumnName = "id")
   private CaracteristicaDefinida personalidad; //texto libre
 
   public RescateDeMascotaSinRegistrar(List<String> fotos, String descripcion, Ubicacion ubicacion,

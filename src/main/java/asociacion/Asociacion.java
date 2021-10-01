@@ -24,9 +24,11 @@ public class Asociacion {
     @Embedded
     Ubicacion ubicacion;
 
-    @Transient
+    @OneToMany
+    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
     List<RescateDeMascotaSinRegistrar> rescatesDeMascotasSinRegistrar;
-    @Transient
+    @OneToMany
+    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
     List<RescateDeMascotaRegistrada> rescatesDeMascotasRegistradas;
     @OneToMany
     @JoinColumn(name = "AsociacionId", referencedColumnName = "id")

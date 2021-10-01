@@ -4,15 +4,30 @@ import asociacion.Asociacion;
 import asociacion.RepositorioAsociaciones;
 import excepciones.MascotaRescatadaInvalidaException;
 import ubicacion.Ubicacion;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class RescateDeMascota {
+  @Id
+  @GeneratedValue(strategy = GenerationType.TABLE)
+  private Long id;
+
+  @ElementCollection
   private List<String> fotos = new ArrayList<>();
   private String descripcion;
-  Ubicacion ubicacion; //TODO ver ¿? si es privado no te deja usarlo en la clase hija :cccccc
+
+  @Embedded
+  Ubicacion ubicacion;
+
+  @ManyToOne
+  @JoinColumn(name = "rescatista_id", referencedColumnName = "id")
   protected Rescatista rescatista;
+
   private LocalDateTime fecha;
 
   public RescateDeMascota(List<String> fotos, String descripcion, Ubicacion ubicacion, Rescatista rescatista, LocalDateTime fecha) {

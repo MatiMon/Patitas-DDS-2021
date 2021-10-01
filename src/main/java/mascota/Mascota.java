@@ -19,8 +19,11 @@ public class Mascota {
   private String nombre;
   private String apodo;
   private int edad;
+  @Enumerated(EnumType.ORDINAL)
   private Sexo sexo;
+  @Enumerated(EnumType.ORDINAL)
   private TipoAnimal tipoAnimal;
+  @Enumerated(EnumType.ORDINAL)
   private Tamanio tamanio;
   private String descripcionFisica;
   @ElementCollection
