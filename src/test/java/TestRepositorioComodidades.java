@@ -27,17 +27,17 @@ public class TestRepositorioComodidades {
   @BeforeEach
   public void init(){
     repositorioComodidades.agregarComodidadGeneral(tamanioPatio);
-    repositorioComodidades.agregarComodidadesPersonalizadas(asociacion1,cantidadHorasLibres);
-    repositorioComodidades.agregarComodidadesPersonalizadas(asociacion2,horasJuegoOpcionales);
-    repositorioComodidades.agregarComodidadesPersonalizadas(asociacion2,cantidadHorasLibres);
+    asociacion1.agregarComodidad(cantidadHorasLibres);
+    asociacion2.agregarComodidad(horasJuegoOpcionales);
+    asociacion2.agregarComodidad(cantidadHorasLibres);
   }
 
   @AfterEach
   void finalizar(){
-    repositorioComodidades.removerComodidadDeAsociacion(asociacion2,cantidadHorasLibres);
-    repositorioComodidades.removerComodidadDeAsociacion(asociacion2,horasJuegoOpcionales);
+    asociacion2.removerComodidad(cantidadHorasLibres);
+    asociacion2.removerComodidad(horasJuegoOpcionales);
     repositorioComodidades.removerComodidadGenerica(tamanioPatio);
-    repositorioComodidades.removerComodidadDeAsociacion(asociacion1,cantidadHorasLibres);
+    asociacion1.removerComodidad(cantidadHorasLibres);
   }
 
 

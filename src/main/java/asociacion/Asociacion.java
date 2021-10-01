@@ -2,6 +2,7 @@ package asociacion;
 
 import adopciones.PublicacionIntencionDeAdopcion;
 import adopciones.PublicacionMascotaEnAdopcion;
+import caracteristicas.ComodidadIdeal;
 import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;
@@ -33,6 +34,10 @@ public class Asociacion {
     @OneToMany
     @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
     List<PublicacionIntencionDeAdopcion> intencionesDeAdoptar;
+
+    @Transient
+    List<ComodidadIdeal> comodidadesPersonalizadas;
+
 
     public Asociacion(String nombre, Ubicacion ubicacion,
                       List<RescateDeMascotaSinRegistrar> rescateDeMascotasSinRegistrar,
@@ -116,11 +121,24 @@ public class Asociacion {
         return ubicacion.calcularDistancia(ubicacionRescate);
     }
 
+
     public List<PublicacionMascotaEnAdopcion> getMascotasEnAdopcion() {
         return mascotasEnAdopcion;
     }
 
     public List<PublicacionIntencionDeAdopcion> getIntencionesDeAdoptar() {
         return intencionesDeAdoptar;
+    }
+
+    public List<ComodidadIdeal> getComodidadesPersonalizadas() {
+        return comodidadesPersonalizadas;
+    }
+
+    public void agregarComodidad(ComodidadIdeal comodidadIdeal){
+        comodidadesPersonalizadas.add(comodidadIdeal);
+    }
+
+    public void removerComodidad(ComodidadIdeal comodidadIdeal){
+        comodidadesPersonalizadas.remove(comodidadIdeal);
     }
 }
