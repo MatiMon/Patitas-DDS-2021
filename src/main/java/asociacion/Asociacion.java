@@ -40,7 +40,7 @@ public class Asociacion  implements WithGlobalEntityManager {
 
     @OneToMany
     @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
-    List<ComodidadIdeal> comodidadesPersonalizadas;
+    List<ComodidadIdeal> comodidadesPersonalizadas = new ArrayList<>();
 
 
     public Asociacion(String nombre, Ubicacion ubicacion,
@@ -127,32 +127,22 @@ public class Asociacion  implements WithGlobalEntityManager {
 
 
     public List<PublicacionMascotaEnAdopcion> getMascotasEnAdopcion() {
-        final List id = entityManager()
-            .createQuery("from PublicacionesMascotaEnAdopcion where AsociacionId = :id")
-            .setParameter("id", this.id)
-            .getResultList();
-        return id;
+        return mascotasEnAdopcion;
     }
 
     public List<PublicacionIntencionDeAdopcion> getIntencionesDeAdoptar() {
-        return entityManager()
-            .createQuery("from PublicacionesIntencionDeAdopcion where AsociacionId = :id")
-            .setParameter("id", id)
-            .getResultList();
+        return intencionesDeAdoptar;
     }
 
     public List<ComodidadIdeal> getComodidadesPersonalizadas() {
-        return entityManager()
-            .createQuery("from ComodidadesIdeales where AsociacionId = :id")
-            .setParameter("id", id)
-            .getResultList();
+        return comodidadesPersonalizadas;
     }
 
     public void agregarComodidad(ComodidadIdeal comodidadIdeal){
-        entityManager().persist(comodidadIdeal);
+        comodidadesPersonalizadas.add(comodidadIdeal);
     }
 
     public void removerComodidad(ComodidadIdeal comodidadIdeal){
-        entityManager().remove(comodidadIdeal);
+        comodidadesPersonalizadas.remove(comodidadIdeal);
     }
 }

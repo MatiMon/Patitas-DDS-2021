@@ -34,10 +34,7 @@ public class TestRepositorioComodidades {
 
   @AfterEach
   void finalizar(){
-    asociacion2.removerComodidad(cantidadHorasLibres);
-    asociacion2.removerComodidad(horasJuegoOpcionales);
     repositorioComodidades.removerComodidadGenerica(tamanioPatio);
-    asociacion1.removerComodidad(cantidadHorasLibres);
   }
 
 
@@ -45,7 +42,7 @@ public class TestRepositorioComodidades {
   public void elRepoConoceLasComodidadesObligatoriasDeLaAsociacionDada(){
 
     Assertions.assertTrue(repositorioComodidades.getComodidadesObligatorias(asociacion2)
-            .containsAll(Arrays.asList(cantidadHorasLibres, tamanioPatio)));
+       .containsAll(Arrays.asList(cantidadHorasLibres, tamanioPatio)));
 
     Assertions.assertEquals(2,repositorioComodidades.getComodidadesObligatorias(asociacion2).size());
 

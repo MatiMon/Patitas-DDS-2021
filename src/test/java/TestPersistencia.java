@@ -30,7 +30,7 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
   public void puedoPersistirValidaciones() {
     entityManager().persist(new ValidacionDeLongitud());
 
-    assertEquals(1, entityManager().createQuery("from validaciones", ValidacionDeContrasenia.class).getResultList().size());
+    assertEquals(1, entityManager().createQuery("from Validaciones", ValidacionDeContrasenia.class).getResultList().size());
   }
 
   @Test
