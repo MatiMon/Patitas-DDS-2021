@@ -35,7 +35,8 @@ public class Asociacion {
     @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
     List<PublicacionIntencionDeAdopcion> intencionesDeAdoptar;
 
-    @Transient
+    @OneToMany
+    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
     List<ComodidadIdeal> comodidadesPersonalizadas;
 
 

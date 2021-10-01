@@ -16,10 +16,10 @@ public class PublicacionIntencionDeAdopcion {
     private Long id;
 
     @OneToMany
-    @JoinColumn(name = "publicacionIntencionAdopcionId", referencedColumnName = "id")
+    @JoinColumn(name = "publicacionIntencionDeAdopcionComodidad_Id", referencedColumnName = "id")
     private List<CaracteristicaDefinida> comodidades;
     @OneToMany
-    @JoinColumn(name = "publicacionIntencionAdopcionId", referencedColumnName = "id")
+    @JoinColumn(name = "publicacionIntencionDeAdopcionCaracteristica_Id", referencedColumnName = "id")
     private List<CaracteristicaDefinida> caracteristicasMascota;
 
     @ManyToOne
