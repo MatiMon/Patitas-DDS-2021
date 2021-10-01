@@ -2,8 +2,8 @@ package usuario;
 
 import javax.persistence.*;
 
-@Entity(name = "validaciones")
-@Table(name = "validaciones")
+@Entity(name = "Validaciones")
+@Table(name = "Validaciones")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo")
 public abstract class ValidacionDeContrasenia extends Persistence {

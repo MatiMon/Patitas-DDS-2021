@@ -11,7 +11,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity
+@Entity(name = "RescateDeMascotaSinRegistrar")
 public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
 
   @ManyToOne

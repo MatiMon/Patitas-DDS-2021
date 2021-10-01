@@ -5,7 +5,7 @@ import caracteristicas.ideales.CaracteristicaIdeal;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
-@Entity
+@Entity(name = "ComodidadesIdeales")
 public class ComodidadIdeal extends CaracteristicaIdeal {
     String preguntaAdoptante;
     String preguntaDuenio;

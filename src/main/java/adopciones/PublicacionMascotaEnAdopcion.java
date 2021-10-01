@@ -6,7 +6,7 @@ import mascota.Mascota;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
-@Entity
+@Entity(name = "PublicacionesMascotaEnAdopcion")
 public class PublicacionMascotaEnAdopcion {
   @Id
   @GeneratedValue

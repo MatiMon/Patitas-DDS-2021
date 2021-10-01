@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "Duenios")
 @Table(name = "duenio")
 public class Duenio {
   @Id

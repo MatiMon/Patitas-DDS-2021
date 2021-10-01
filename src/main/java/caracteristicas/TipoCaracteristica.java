@@ -4,7 +4,7 @@ import caracteristicas.definidas.CaracteristicaDefinida;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "TiposCaraacteritica")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo")
 public abstract class TipoCaracteristica {

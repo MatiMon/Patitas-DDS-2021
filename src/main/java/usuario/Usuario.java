@@ -7,8 +7,8 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Objects;
 
-@Entity
-@Table(name = "usuario")
+@Entity(name = "Usuarios")
+@Table(name = "Usuario")
 public class Usuario {
 
   @Id @GeneratedValue

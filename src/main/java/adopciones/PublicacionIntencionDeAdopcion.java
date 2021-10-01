@@ -9,7 +9,7 @@ import mascota.TipoAnimal;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "PublicacionesIntencionDeAdopcion")
 public class PublicacionIntencionDeAdopcion {
     @Id
     @GeneratedValue

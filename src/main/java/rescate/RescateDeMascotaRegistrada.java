@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity
+@Entity(name = "RescatesDeMascotaRegistrada")
 public class RescateDeMascotaRegistrada extends RescateDeMascota {
   @OneToOne
   @JoinColumn(name = "mascota_id", referencedColumnName = "id")

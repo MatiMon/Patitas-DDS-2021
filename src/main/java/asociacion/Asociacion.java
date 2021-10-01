@@ -3,6 +3,7 @@ package asociacion;
 import adopciones.PublicacionIntencionDeAdopcion;
 import adopciones.PublicacionMascotaEnAdopcion;
 import caracteristicas.ComodidadIdeal;
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;
@@ -13,8 +14,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-@Entity
-public class Asociacion {
+@Entity (name = "Asociaciones")
+public class Asociacion  implements WithGlobalEntityManager {
     @Id
     @GeneratedValue
     private Long id;
@@ -126,22 +127,32 @@ public class Asociacion {
 
 
     public List<PublicacionMascotaEnAdopcion> getMascotasEnAdopcion() {
-        return mascotasEnAdopcion;
+        final List id = entityManager()
+            .createQuery("from PublicacionesMascotaEnAdopcion where AsociacionId = :id")
+            .setParameter("id", this.id)
+            .getResultList();
+        return id;
     }
 
     public List<PublicacionIntencionDeAdopcion> getIntencionesDeAdoptar() {
-        return intencionesDeAdoptar;
+        return entityManager()
+            .createQuery("from PublicacionesIntencionDeAdopcion where AsociacionId = :id")
+            .setParameter("id", id)
+            .getResultList();
     }
 
     public List<ComodidadIdeal> getComodidadesPersonalizadas() {
-        return comodidadesPersonalizadas;
+        return entityManager()
+            .createQuery("from ComodidadesIdeales where AsociacionId = :id")
+            .setParameter("id", id)
+            .getResultList();
     }
 
     public void agregarComodidad(ComodidadIdeal comodidadIdeal){
-        comodidadesPersonalizadas.add(comodidadIdeal);
+        entityManager().persist(comodidadIdeal);
     }
 
     public void removerComodidad(ComodidadIdeal comodidadIdeal){
-        comodidadesPersonalizadas.remove(comodidadIdeal);
+        entityManager().remove(comodidadIdeal);
     }
 }

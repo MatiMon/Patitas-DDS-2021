@@ -5,7 +5,7 @@ import caracteristicas.TipoCaracteristica;
 
 import javax.persistence.*;
 
-@Entity
+@Entity (name = "CaracteristicasIdeales")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class CaracteristicaIdeal {
     @Id

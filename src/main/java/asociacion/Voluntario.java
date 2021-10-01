@@ -4,7 +4,7 @@ import usuario.Usuario;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "Voluntarios")
 public class Voluntario {
   @Id
   @GeneratedValue

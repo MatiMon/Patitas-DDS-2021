@@ -9,8 +9,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "rescatista")
+@Entity(name = "Rescatista")
+@Table(name = "Rescatista")
 public class Rescatista {
   @Id
   @GeneratedValue

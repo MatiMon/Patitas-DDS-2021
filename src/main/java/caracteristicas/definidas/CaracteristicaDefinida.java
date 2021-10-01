@@ -4,7 +4,7 @@ package caracteristicas.definidas;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "CaracteristicasDefinidas")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo")
 public abstract class CaracteristicaDefinida {

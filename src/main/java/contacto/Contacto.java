@@ -2,7 +2,7 @@ package contacto;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "Contactos")
 @Table(name = "contacto")
 public class Contacto {
   @Id
