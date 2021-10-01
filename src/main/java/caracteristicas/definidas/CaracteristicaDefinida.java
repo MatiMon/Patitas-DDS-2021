@@ -20,4 +20,8 @@ public abstract class CaracteristicaDefinida {
     }
 
     public abstract boolean compatibilidad(CaracteristicaDefinida comodidad);
+
+    public Long getId() {
+        return id;
+    }
 }
