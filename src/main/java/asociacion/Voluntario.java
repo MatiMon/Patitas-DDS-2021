@@ -16,4 +16,8 @@ public class Voluntario {
   @JoinColumn(name = "Asociacion_id", referencedColumnName = "id")
   Asociacion asociacion;
 
+  public Long getId() {
+    return id;
+  }
+
 }

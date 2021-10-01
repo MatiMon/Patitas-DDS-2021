@@ -2,7 +2,7 @@ package usuario;
 
 import javax.persistence.*;
 
-@Entity(name = "validacion")
+@Entity(name = "validaciones")
 @Table(name = "validaciones")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo")
