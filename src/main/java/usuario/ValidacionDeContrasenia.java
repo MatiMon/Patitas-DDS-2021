@@ -2,7 +2,7 @@ package usuario;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "validacion")
 @Table(name = "validaciones")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo")
@@ -12,4 +12,5 @@ public abstract class ValidacionDeContrasenia extends Persistence {
 
   abstract boolean esContraseniaValida(String password);
   abstract public String getIdentificador();
+
 }

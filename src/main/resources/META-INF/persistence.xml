@@ -28,6 +28,7 @@
         <class>caracteristicas.ideales.EnumeradaIdeal</class>
         <class>caracteristicas.ideales.BooleanaIdeal</class>
         <class>caracteristicas.ComodidadIdeal</class>
+        <class>caracteristicas.ideales.CaracteristicaIdeal</class>
         <class>hogares.HogarDeTransito</class>
 
         <class>usuario.Usuario</class>

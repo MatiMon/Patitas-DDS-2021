@@ -1,7 +1,9 @@
 package usuario;
 
 import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
+@Entity
 @DiscriminatorValue("PorCaracteresConsecutivos")
 public class ValidacionDeCaracteresConsecutivos extends ValidacionDeContrasenia {
 

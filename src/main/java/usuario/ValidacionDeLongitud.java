@@ -1,8 +1,10 @@
 package usuario;
 
 import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 import javax.persistence.Transient;
 
+@Entity
 @DiscriminatorValue("PorLongitud")
 public class ValidacionDeLongitud extends ValidacionDeContrasenia {
 
@@ -20,4 +22,5 @@ public class ValidacionDeLongitud extends ValidacionDeContrasenia {
     public String getIdentificador() {
         return "LONGITUD";
     }
+
 }

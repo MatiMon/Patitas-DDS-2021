@@ -15,4 +15,5 @@ public class Voluntario {
   @ManyToOne
   @JoinColumn(name = "Asociacion_id", referencedColumnName = "id")
   Asociacion asociacion;
+
 }
