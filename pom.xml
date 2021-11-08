@@ -26,6 +26,12 @@
       <version>5.7.0</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
 
     <!--MANEJO DE APIS -->
     <dependency>
@@ -58,6 +64,7 @@
       <version>1.0-alpha-1</version>
     </dependency>
 
+    <!-- PERSISTENCIA -->
     <!-- Modificar tag version “X.X.X” según corresponda. MySQL 5.X: 5.1.28,  MySQL 8.X: 8.0.13  -->
     <dependency>
       <groupId>mysql</groupId>
@@ -71,11 +78,17 @@
       <version>2.4.0</version>
     </dependency>
 
+    <!-- SPARK y HANDLEBARS -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
+      <groupId>com.sparkjava</groupId>
+      <artifactId>spark-core</artifactId>
+      <version>2.9.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.sparkjava</groupId>
+      <artifactId>spark-template-handlebars</artifactId>
+      <version>2.7.1</version>
     </dependency>
 
   </dependencies>
