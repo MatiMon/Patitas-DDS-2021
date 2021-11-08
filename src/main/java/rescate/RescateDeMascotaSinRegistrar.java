@@ -15,7 +15,7 @@ import java.util.List;
 public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
 
   @ManyToOne
-  @JoinColumn(name = "duenio_id", referencedColumnName = "id")
+  @JoinColumn(name = "duenio_id")
   private Duenio duenio;
   private boolean estadoDeAprobacion;
   private Integer numeroIdentificatorio;
@@ -26,7 +26,7 @@ public class RescateDeMascotaSinRegistrar extends RescateDeMascota {
   private Tamanio tamanio;
 
   @OneToOne
-  @JoinColumn(name = "caracteristicaDefinida_id", referencedColumnName = "id")
+  @JoinColumn(name = "caracteristicaDefinida_id")
   private CaracteristicaDefinida personalidad; //texto libre
 
   public RescateDeMascotaSinRegistrar(List<String> fotos, String descripcion, Ubicacion ubicacion,

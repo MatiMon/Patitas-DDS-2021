@@ -26,20 +26,20 @@ public class Asociacion  implements WithGlobalEntityManager {
     Ubicacion ubicacion;
 
     @OneToMany
-    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
+    @JoinColumn(name = "AsociacionId")
     List<RescateDeMascotaSinRegistrar> rescatesDeMascotasSinRegistrar;
     @OneToMany
-    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
+    @JoinColumn(name = "AsociacionId")
     List<RescateDeMascotaRegistrada> rescatesDeMascotasRegistradas;
     @OneToMany
-    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
+    @JoinColumn(name = "AsociacionId")
     List<PublicacionMascotaEnAdopcion> mascotasEnAdopcion;
     @OneToMany
-    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
+    @JoinColumn(name = "AsociacionId")
     List<PublicacionIntencionDeAdopcion> intencionesDeAdoptar;
 
     @OneToMany
-    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
+    @JoinColumn(name = "AsociacionId")
     List<ComodidadIdeal> comodidadesPersonalizadas = new ArrayList<>();
 
 

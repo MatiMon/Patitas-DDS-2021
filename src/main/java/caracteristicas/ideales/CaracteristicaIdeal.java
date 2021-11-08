@@ -16,7 +16,7 @@ public class CaracteristicaIdeal {
     private Boolean esObligatoria;
 
     @ManyToOne
-    @JoinColumn(name = "tipoCaracteristica_id", referencedColumnName = "id")
+    @JoinColumn(name = "tipoCaracteristica_id")
     private TipoCaracteristica tipo;
 
     public CaracteristicaIdeal(String nombre, Boolean esObligatoria, TipoCaracteristica tipo) {

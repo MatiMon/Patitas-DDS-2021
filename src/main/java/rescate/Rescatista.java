@@ -3,6 +3,7 @@ package rescate;
 import contacto.Contacto;
 import duenio.TipoDocumento;
 import excepciones.RescatistaInvalidoException;
+import org.uqbarproject.jpa.java8.extras.convert.LocalDateConverter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -23,6 +24,7 @@ public class Rescatista {
   private String apellido;
 
   @Column(name = "fecha_nacimiento")
+  @Convert(converter = LocalDateConverter.class)
   private LocalDate fechaNacimiento;
 
   @Column(name = "tipo_documento")
@@ -36,7 +38,7 @@ public class Rescatista {
   private Contacto contactoPrincipal;
 
   @OneToMany
-  @JoinColumn(name = "rescatistaId", referencedColumnName = "id")
+  @JoinColumn(name = "rescatistaId")
   private List<Contacto> contactosSecundarios = new ArrayList<>();
 
   public Rescatista(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, String direccion, Contacto contactoPrincipal) {

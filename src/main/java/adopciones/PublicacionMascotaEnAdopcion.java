@@ -15,11 +15,11 @@ public class PublicacionMascotaEnAdopcion {
   private String numeroPublicacion;
 
   @OneToMany
-  @JoinColumn(name = "publicacionMascotaEnAdopcionId", referencedColumnName = "id")
+  @JoinColumn(name = "publicacionMascotaEnAdopcionId")
   private List<CaracteristicaDefinida> comodidades;
 
   @OneToOne
-  @JoinColumn(name = "mascotaId", referencedColumnName = "id")
+  @JoinColumn(name = "mascotaId")
   private Mascota mascota;
 
   public String getNumeroPublicacion() {

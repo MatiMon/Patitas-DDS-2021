@@ -10,10 +10,10 @@ public class Voluntario {
   @GeneratedValue
   private Long id;
   @OneToOne
-  @JoinColumn(name = "Usuario_Id", referencedColumnName = "id")
+  @JoinColumn(name = "Usuario_Id")
   Usuario usuario;
   @ManyToOne
-  @JoinColumn(name = "Asociacion_id", referencedColumnName = "id")
+  @JoinColumn(name = "Asociacion_id")
   Asociacion asociacion;
 
   public Long getId() {

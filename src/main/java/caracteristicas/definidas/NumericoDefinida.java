@@ -3,7 +3,6 @@ package caracteristicas.definidas;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 
 @Entity
 @DiscriminatorValue("Num")

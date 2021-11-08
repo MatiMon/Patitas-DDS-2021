@@ -16,14 +16,14 @@ public class PublicacionIntencionDeAdopcion {
     private Long id;
 
     @OneToMany
-    @JoinColumn(name = "publicacionIntencionDeAdopcionComodidad_Id", referencedColumnName = "id")
+    @JoinColumn(name = "publicacionIntencionDeAdopcionComodidad_Id")
     private List<CaracteristicaDefinida> comodidades;
     @OneToMany
-    @JoinColumn(name = "publicacionIntencionDeAdopcionCaracteristica_Id", referencedColumnName = "id")
+    @JoinColumn(name = "publicacionIntencionDeAdopcionCaracteristica_Id")
     private List<CaracteristicaDefinida> caracteristicasMascota;
 
     @ManyToOne
-    @JoinColumn(name = "DuenioId", referencedColumnName = "id")
+    @JoinColumn(name = "DuenioId")
     private Duenio posibleDuenio;
     @Enumerated(EnumType.ORDINAL)
     private TipoAnimal tipoAnimal;

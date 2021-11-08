@@ -3,6 +3,7 @@ package duenio;
 import asociacion.Asociacion;
 import asociacion.RepositorioAsociaciones;
 import contacto.Contacto;
+import org.uqbarproject.jpa.java8.extras.convert.LocalDateConverter;
 import ubicacion.Ubicacion;
 import usuario.Usuario;
 
@@ -25,6 +26,7 @@ public class Duenio {
   private String apellido;
 
   @Column(name = "fecha_nacimiento")
+  @Convert(converter = LocalDateConverter.class)
   private LocalDate fechaNacimiento;
 
   @Column(name = "tipo_documento")

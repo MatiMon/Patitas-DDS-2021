@@ -13,7 +13,7 @@ import java.util.List;
 @Entity(name = "RescatesDeMascotaRegistrada")
 public class RescateDeMascotaRegistrada extends RescateDeMascota {
   @OneToOne
-  @JoinColumn(name = "mascota_id", referencedColumnName = "id")
+  @JoinColumn(name = "mascota_id")
   private Mascota mascota;
   
   public RescateDeMascotaRegistrada(List<String> fotos, String descripcion, Ubicacion ubicacion, Rescatista rescatista, LocalDateTime fecha, Mascota mascota) {

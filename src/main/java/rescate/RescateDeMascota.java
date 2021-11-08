@@ -25,7 +25,7 @@ public abstract class RescateDeMascota {
   Ubicacion ubicacion;
 
   @ManyToOne
-  @JoinColumn(name = "rescatista_id", referencedColumnName = "id")
+  @JoinColumn(name = "rescatista_id")
   protected Rescatista rescatista;
 
   private LocalDateTime fecha;

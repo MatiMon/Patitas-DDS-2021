@@ -27,14 +27,14 @@ public class Mascota {
   private Tamanio tamanio;
   private String descripcionFisica;
   @ElementCollection
-  private List<String> fotos = new ArrayList<>();
+  private List<String> fotos;
 
   @OneToMany
-  @JoinColumn(name = "mascota_id", referencedColumnName = "id")
-  private List<CaracteristicaDefinida> caracteristicaDefinidas = new ArrayList<>();
+  @JoinColumn(name = "mascota_id")
+  private List<CaracteristicaDefinida> caracteristicaDefinidas;
 
   @ManyToOne
-  @JoinColumn(name = "DuenioId", referencedColumnName = "id")
+  @JoinColumn(name = "DuenioId")
   private Duenio duenio;
   private String id_mascota;
 
