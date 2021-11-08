@@ -1,5 +1,11 @@
 package caracteristicas.definidas;
 
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("Text")
 public class TextoDefinida extends CaracteristicaDefinida {
   String valor;
 

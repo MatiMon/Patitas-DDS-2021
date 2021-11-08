@@ -4,7 +4,13 @@ import caracteristicas.definidas.NumericoDefinida;
 import caracteristicas.TipoCaracteristica;
 import excepciones.ValorCaracteristicaInvalidoException;
 
-public class NumericaIdeal implements TipoCaracteristica {
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+
+@Entity
+@DiscriminatorValue("Num")
+public class NumericaIdeal extends TipoCaracteristica {
     public NumericoDefinida crearCaracteristica(String nombre, Object valor){
         int _valor;
         try{

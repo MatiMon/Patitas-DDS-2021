@@ -6,19 +6,46 @@ import contacto.Contacto;
 import ubicacion.Ubicacion;
 import usuario.Usuario;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity(name = "Duenios")
+@Table(name = "duenio")
 public class Duenio {
+  @Id
+  @GeneratedValue
+  private Long id;
+
+  @Column
   private String nombre;
+
+  @Column
   private String apellido;
+
+  @Column(name = "fecha_nacimiento")
   private LocalDate fechaNacimiento;
+
+  @Column(name = "tipo_documento")
+  @Enumerated(EnumType.ORDINAL)
   private TipoDocumento tipoDocumento;
+
+  @Column
   private double documento;
+
+  @OneToOne
   private Contacto contactoPrincipal;
+
+  @OneToMany
+  @JoinColumn(name = "duenioId", referencedColumnName = "id")
   private List<Contacto> contactosSecundarios;
+
+  @OneToOne
+  @JoinColumn(name = "usuarioId", referencedColumnName = "id")
   private Usuario usuario;
+
+  @Embedded
   private Ubicacion ubicacion;
 
   public Duenio(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, double documento, Contacto contactoPrincipal, Ubicacion ubicacion) {
@@ -51,4 +78,9 @@ public class Duenio {
   public String obtenerTarjetaDePresentacion() {
     return ("Nombre completo: " + this.nombre + " " + this.apellido + " - Contacto: " + this.contactoPrincipal.obtenerDatoDeContactoPreferido());
   }
+
+  public Long getId() {
+    return id;
+  }
+
 }

@@ -8,11 +8,17 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 import ubicacion.Ubicacion;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity(name = "HogaresDeTransito")
 @JsonIgnoreProperties({"id"})
 public class HogarDeTransito {
+  @Id
+  @GeneratedValue
+  private Long id;
+
   @JsonProperty("patio")
   Boolean tienePatio;
 
@@ -22,6 +28,7 @@ public class HogarDeTransito {
   @JsonProperty("capacidad")
   int Capacidad;
 
+  @Embedded
   @JsonProperty("ubicacion")
   Ubicacion ubicacion;
 
@@ -34,11 +41,13 @@ public class HogarDeTransito {
     if(admisiones.get("gatos").getBooleanValue()) animalesAdmitidos.add(TipoAnimal.GATO);
   }
 
+  @ElementCollection
   List<TipoAnimal> animalesAdmitidos = new ArrayList<>();
 
   @JsonProperty("lugares_disponibles")
   int lugaresDisponibles;
 
+  @ElementCollection
   @JsonProperty("caracteristicas")
   List<String> conductasAdmitidas = new ArrayList<>();
 

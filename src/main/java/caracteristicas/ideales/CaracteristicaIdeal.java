@@ -3,9 +3,20 @@ package caracteristicas.ideales;
 import caracteristicas.definidas.CaracteristicaDefinida;
 import caracteristicas.TipoCaracteristica;
 
+import javax.persistence.*;
+
+@Entity (name = "CaracteristicasIdeales")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class CaracteristicaIdeal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Long id;
+
     private String nombre;
     private Boolean esObligatoria;
+
+    @ManyToOne
+    @JoinColumn(name = "tipoCaracteristica_id", referencedColumnName = "id")
     private TipoCaracteristica tipo;
 
     public CaracteristicaIdeal(String nombre, Boolean esObligatoria, TipoCaracteristica tipo) {

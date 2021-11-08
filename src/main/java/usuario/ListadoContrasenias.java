@@ -2,6 +2,10 @@ package usuario;
 
 import excepciones.NombreDeArchivoInvalidoException;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Transient;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -9,9 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Embeddable
+@AttributeOverride(name = "nombreArchivo", column = @Column(name = "nombre_archivo"))
 public class ListadoContrasenias {
-
+    @Column(name = "nombre_archivo")
     private String nombreArchivo;
+    @Transient
     private List<String> cache;
 
 

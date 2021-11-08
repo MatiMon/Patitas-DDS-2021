@@ -2,24 +2,46 @@ package asociacion;
 
 import adopciones.PublicacionIntencionDeAdopcion;
 import adopciones.PublicacionMascotaEnAdopcion;
+import caracteristicas.ComodidadIdeal;
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import rescate.RescateDeMascota;
 import rescate.RescateDeMascotaRegistrada;
 import rescate.RescateDeMascotaSinRegistrar;
 import ubicacion.Ubicacion;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-public class Asociacion {
+@Entity (name = "Asociaciones")
+public class Asociacion  implements WithGlobalEntityManager {
+    @Id
+    @GeneratedValue
+    private Long id;
 
     String nombre;
+
+    @Embedded
     Ubicacion ubicacion;
+
+    @OneToMany
+    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
     List<RescateDeMascotaSinRegistrar> rescatesDeMascotasSinRegistrar;
+    @OneToMany
+    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
     List<RescateDeMascotaRegistrada> rescatesDeMascotasRegistradas;
+    @OneToMany
+    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
     List<PublicacionMascotaEnAdopcion> mascotasEnAdopcion;
+    @OneToMany
+    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
     List<PublicacionIntencionDeAdopcion> intencionesDeAdoptar;
+
+    @OneToMany
+    @JoinColumn(name = "AsociacionId", referencedColumnName = "id")
+    List<ComodidadIdeal> comodidadesPersonalizadas = new ArrayList<>();
+
 
     public Asociacion(String nombre, Ubicacion ubicacion,
                       List<RescateDeMascotaSinRegistrar> rescateDeMascotasSinRegistrar,
@@ -103,11 +125,24 @@ public class Asociacion {
         return ubicacion.calcularDistancia(ubicacionRescate);
     }
 
+
     public List<PublicacionMascotaEnAdopcion> getMascotasEnAdopcion() {
         return mascotasEnAdopcion;
     }
 
     public List<PublicacionIntencionDeAdopcion> getIntencionesDeAdoptar() {
         return intencionesDeAdoptar;
+    }
+
+    public List<ComodidadIdeal> getComodidadesPersonalizadas() {
+        return comodidadesPersonalizadas;
+    }
+
+    public void agregarComodidad(ComodidadIdeal comodidadIdeal){
+        comodidadesPersonalizadas.add(comodidadIdeal);
+    }
+
+    public void removerComodidad(ComodidadIdeal comodidadIdeal){
+        comodidadesPersonalizadas.remove(comodidadIdeal);
     }
 }
