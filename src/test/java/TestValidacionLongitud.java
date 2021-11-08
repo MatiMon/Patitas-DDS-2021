@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-import usuario.ValidacionDeLongitud;
+import model.usuario.ValidacionDeLongitud;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,9 +1,9 @@
-import adopciones.PublicacionIntencionDeAdopcion;
-import adopciones.PublicacionMascotaEnAdopcion;
-import caracteristicas.definidas.BooleanaDefinida;
-import caracteristicas.definidas.NumericoDefinida;
-import caracteristicas.definidas.TextoDefinida;
-import mascota.*;
+import model.adopciones.PublicacionIntencionDeAdopcion;
+import model.adopciones.PublicacionMascotaEnAdopcion;
+import model.caracteristicas.definidas.BooleanaDefinida;
+import model.caracteristicas.definidas.NumericoDefinida;
+import model.caracteristicas.definidas.TextoDefinida;
+import model.mascota.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

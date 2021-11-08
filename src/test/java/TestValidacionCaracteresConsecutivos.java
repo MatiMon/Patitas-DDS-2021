@@ -1,6 +1,6 @@
 
 import org.junit.jupiter.api.Test;
-import usuario.ValidacionDeCaracteresConsecutivos;
+import model.usuario.ValidacionDeCaracteresConsecutivos;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

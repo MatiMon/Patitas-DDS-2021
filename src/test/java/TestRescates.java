@@ -1,15 +1,14 @@
-import contacto.Contacto;
-import duenio.Duenio;
-import duenio.TipoDocumento;
-import mascota.Mascota;
-import mascota.Sexo;
-import mascota.Tamanio;
-import mascota.TipoAnimal;
+import model.contacto.Contacto;
+import model.duenio.Duenio;
+import model.duenio.TipoDocumento;
+import model.mascota.Mascota;
+import model.mascota.Sexo;
+import model.mascota.Tamanio;
+import model.mascota.TipoAnimal;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import rescate.RescateDeMascotaRegistrada;
-import rescate.Rescatista;
-import ubicacion.Ubicacion;
+import model.rescate.RescateDeMascotaRegistrada;
+import model.rescate.Rescatista;
+import model.ubicacion.Ubicacion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -49,12 +48,12 @@ public class TestRescates {
 
 
 
-      /*Mascota mascota = new Mascota("a", "b", 1, Sexo.MACHO, )
+      /*Mascota model.mascota = new Mascota("a", "b", 1, Sexo.MACHO, )
       fotos.add("una foto");
       Rescatista rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contactos);
-      RescateDeMascota mascota1 = new RescateDeMascota(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now());
-      RescateDeMascota mascota2 = new RescateDeMascota(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now().minusDays(10));
-      RescateDeMascota mascota3 = new RescateDeMascota(fotos, "descripcion", "ubicacion", rescatista, LocalDateTime.now().minusDays(15));
+      RescateDeMascota mascota1 = new RescateDeMascota(fotos, "descripcion", "model.ubicacion", rescatista, LocalDateTime.now());
+      RescateDeMascota mascota2 = new RescateDeMascota(fotos, "descripcion", "model.ubicacion", rescatista, LocalDateTime.now().minusDays(10));
+      RescateDeMascota mascota3 = new RescateDeMascota(fotos, "descripcion", "model.ubicacion", rescatista, LocalDateTime.now().minusDays(15));
       registroDeRescates.agregarRescateMascota(mascota1);
       registroDeRescates.agregarRescateMascota(mascota2);
       registroDeRescates.agregarRescateMascota(mascota3);*/

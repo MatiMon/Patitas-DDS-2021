@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ubicacion.Ubicacion;
+import model.ubicacion.Ubicacion;
 
 public class TestUbicaciones {
   Ubicacion ubicacion1 = new Ubicacion("Calle falsa 123",20, 20);

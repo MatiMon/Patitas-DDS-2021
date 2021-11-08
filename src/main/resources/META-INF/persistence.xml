@@ -7,32 +7,32 @@
 
     <persistence-unit name="db" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>mascota.Mascota</class>
-        <class>caracteristicas.definidas.CaracteristicaDefinida</class>
-        <class>caracteristicas.definidas.BooleanaDefinida</class>
-        <class>caracteristicas.definidas.EnumeradaDefinida</class>
-        <class>caracteristicas.definidas.NumericoDefinida</class>
-        <class>caracteristicas.definidas.TextoDefinida</class>
-        <class>asociacion.Asociacion</class>
-        <class>asociacion.Voluntario</class>
-        <class>adopciones.PublicacionIntencionDeAdopcion</class>
-        <class>adopciones.PublicacionMascotaEnAdopcion</class>
-        <class>duenio.Duenio</class>
-        <class>rescate.Rescatista</class>
-        <class>contacto.Contacto</class>
-        <class>usuario.Usuario</class>
-        <class>usuario.ValidacionDeContrasenia</class>
-        <class>caracteristicas.TipoCaracteristica</class>
-        <class>caracteristicas.ideales.TextoIdeal</class>
-        <class>caracteristicas.ideales.NumericaIdeal</class>
-        <class>caracteristicas.ideales.EnumeradaIdeal</class>
-        <class>caracteristicas.ideales.BooleanaIdeal</class>
-        <class>caracteristicas.ComodidadIdeal</class>
-        <class>caracteristicas.ideales.CaracteristicaIdeal</class>
-        <class>hogares.HogarDeTransito</class>
+        <class>model.mascota.Mascota</class>
+        <class>model.caracteristicas.definidas.CaracteristicaDefinida</class>
+        <class>model.caracteristicas.definidas.BooleanaDefinida</class>
+        <class>model.caracteristicas.definidas.EnumeradaDefinida</class>
+        <class>model.caracteristicas.definidas.NumericoDefinida</class>
+        <class>model.caracteristicas.definidas.TextoDefinida</class>
+        <class>model.asociacion.Asociacion</class>
+        <class>model.asociacion.Voluntario</class>
+        <class>model.adopciones.PublicacionIntencionDeAdopcion</class>
+        <class>model.adopciones.PublicacionMascotaEnAdopcion</class>
+        <class>model.duenio.Duenio</class>
+        <class>model.rescate.Rescatista</class>
+        <class>model.contacto.Contacto</class>
+        <class>model.usuario.Usuario</class>
+        <class>model.usuario.ValidacionDeContrasenia</class>
+        <class>model.caracteristicas.TipoCaracteristica</class>
+        <class>model.caracteristicas.ideales.TextoIdeal</class>
+        <class>model.caracteristicas.ideales.NumericaIdeal</class>
+        <class>model.caracteristicas.ideales.EnumeradaIdeal</class>
+        <class>model.caracteristicas.ideales.BooleanaIdeal</class>
+        <class>model.caracteristicas.ComodidadIdeal</class>
+        <class>model.caracteristicas.ideales.CaracteristicaIdeal</class>
+        <class>model.hogares.HogarDeTransito</class>
 
-        <class>usuario.Usuario</class>
-        <class>usuario.ValidacionDeContrasenia</class>
+        <class>model.usuario.Usuario</class>
+        <class>model.usuario.ValidacionDeContrasenia</class>
 
         <properties>
             <property name="hibernate.archive.autodetection" value="class"/>

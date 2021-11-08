@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
-import usuario.ListadoContrasenias;
-import usuario.ValidacionPorArchivo;
+import model.usuario.ListadoContrasenias;
+import model.usuario.ValidacionPorArchivo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

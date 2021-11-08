@@ -1,8 +1,8 @@
-import hogares.HogarDeTransito;
-import mascota.Tamanio;
-import mascota.TipoAnimal;
+import model.hogares.HogarDeTransito;
+import model.mascota.Tamanio;
+import model.mascota.TipoAnimal;
 import org.junit.jupiter.api.Test;
-import ubicacion.Ubicacion;
+import model.ubicacion.Ubicacion;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,10 +1,10 @@
-import caracteristicas.definidas.CaracteristicaDefinida;
-import caracteristicas.ideales.CaracteristicaIdeal;
-import caracteristicas.ideales.NumericaIdeal;
-import contacto.Contacto;
-import duenio.Duenio;
-import duenio.TipoDocumento;
-import mascota.*;
+import model.caracteristicas.definidas.CaracteristicaDefinida;
+import model.caracteristicas.ideales.CaracteristicaIdeal;
+import model.caracteristicas.ideales.NumericaIdeal;
+import model.contacto.Contacto;
+import model.duenio.Duenio;
+import model.duenio.TipoDocumento;
+import model.mascota.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

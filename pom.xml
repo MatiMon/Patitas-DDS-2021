@@ -187,7 +187,7 @@
               <archive>
                 <manifest>
                   <mainClass>
-                    rescateDePatitasAPP.RescateDePatitasAPP
+                    model.rescateDePatitasAPP.RescateDePatitasAPP
                   </mainClass>
                 </manifest>
               </archive>

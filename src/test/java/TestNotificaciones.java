@@ -1,15 +1,15 @@
-import adopciones.PublicacionIntencionDeAdopcion;
-import adopciones.PublicacionMascotaEnAdopcion;
-import contacto.Contacto;
-import contacto.MedioDeNotificacion;
-import duenio.Duenio;
-import duenio.TipoDocumento;
-import mascota.*;
+import model.adopciones.PublicacionIntencionDeAdopcion;
+import model.adopciones.PublicacionMascotaEnAdopcion;
+import model.contacto.Contacto;
+import model.contacto.MedioDeNotificacion;
+import model.duenio.Duenio;
+import model.duenio.TipoDocumento;
+import model.mascota.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import rescate.RescateDeMascotaRegistrada;
-import rescate.RescateDeMascotaSinRegistrar;
-import rescate.Rescatista;
+import model.rescate.RescateDeMascotaRegistrada;
+import model.rescate.RescateDeMascotaSinRegistrar;
+import model.rescate.Rescatista;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,7 +53,7 @@ public class TestNotificaciones {
 
     rescateDeMascotaSinRegistrar.notificarEncuentroAlRescatista();
 
-    verify(medioDeNotificacion).enviarNotificacion(this.unContacto, "¡La mascota de la publicación 7 fue " +
+    verify(medioDeNotificacion).enviarNotificacion(this.unContacto, "¡La model.mascota de la publicación 7 fue " +
         "encontrada por su dueño! Los datos del mismo son: Nombre completo: Matias Sosa - Contacto: null");
   }
 
@@ -99,6 +99,6 @@ public class TestNotificaciones {
     publicacion.notificarAlDuenioPosibleAdopcion();
 
     verify(medioDeNotificacion).enviarNotificacion(this.unContacto, "Se encontró un posible Adoptante para " +
-        "tu mascota, siendo tu publiacion la número:80");
+        "tu model.mascota, siendo tu publiacion la número:80");
   }
 }

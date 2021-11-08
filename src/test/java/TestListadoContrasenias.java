@@ -1,7 +1,7 @@
-import excepciones.NombreDeArchivoInvalidoException;
+import model.excepciones.NombreDeArchivoInvalidoException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import usuario.ListadoContrasenias;
+import model.usuario.ListadoContrasenias;
 
 
 public class TestListadoContrasenias {

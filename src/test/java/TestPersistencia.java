@@ -1,14 +1,14 @@
-import asociacion.Voluntario;
-import caracteristicas.definidas.BooleanaDefinida;
-import caracteristicas.definidas.CaracteristicaDefinida;
-import caracteristicas.definidas.TextoDefinida;
+import model.asociacion.Voluntario;
+import model.caracteristicas.definidas.BooleanaDefinida;
+import model.caracteristicas.definidas.CaracteristicaDefinida;
+import model.caracteristicas.definidas.TextoDefinida;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.test.AbstractPersistenceTest;
-import usuario.ValidacionDeContrasenia;
-import usuario.ValidacionDeLongitud;
+import model.usuario.ValidacionDeContrasenia;
+import model.usuario.ValidacionDeLongitud;
 
 import java.util.List;
 

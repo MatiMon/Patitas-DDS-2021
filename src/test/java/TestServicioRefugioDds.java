@@ -1,6 +1,6 @@
-import apiRefugioDds.*;
+import model.apiRefugioDds.*;
 import com.sun.jersey.api.client.ClientResponse;
-import hogares.HogarDeTransito;
+import model.hogares.HogarDeTransito;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
