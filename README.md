@@ -1,7 +1,7 @@
 # DIAGRAMA DE CLASES + DER
 https://lucid.app/lucidchart/ddd8c6d7-5b6c-4cc8-b7c0-ecfe2b4e122b/edit?shared=true&page=G9FOjcLEwgbh#
 
-#PERSISTENCIA
+# PERSISTENCIA
 Cambiar en persistence.xml la pass para la database MySQL local.
 
 * Crear schema con: "CREATE SCHEMA `2021-vi-no-group-19`;"
