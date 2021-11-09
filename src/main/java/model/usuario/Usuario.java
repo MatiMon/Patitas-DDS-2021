@@ -11,10 +11,20 @@ import java.util.Objects;
 @Table(name = "Usuario")
 public class Usuario {
 
+  public Long getId() {
+    return id;
+  }
+
   @Id @GeneratedValue
   private Long id;
 
+  public String getNombreUsuario() {
+    return nombreUsuario;
+  }
+
   private String nombreUsuario;
+
+  private Boolean esAdministrador = false;
 
   @Embedded
   private ContraseniaHasheada contrasenia;

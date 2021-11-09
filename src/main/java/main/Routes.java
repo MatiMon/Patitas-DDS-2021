@@ -1,7 +1,13 @@
 package main;
 
+import controllers.HomeController;
+import controllers.SesionController;
 import spark.Spark;
 import spark.template.handlebars.HandlebarsTemplateEngine;
+import spark.ModelAndView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Routes {
 
@@ -16,13 +22,13 @@ public class Routes {
 
         HandlebarsTemplateEngine engine = new HandlebarsTemplateEngine();
 
-        // HomeController homeController = new HomeController();
-        // SesionController sesionController = new SesionController(); TODO controllers
+        HomeController homeController = new HomeController();
+        SesionController sesionController = new SesionController(); //TODO controllers
 
-        // Spark.get("/", homeController::getHome, engine); TODO home
+        Spark.get("/", homeController::getHome, engine); //TODO home
 
-        // Spark.get("/login", sesionController::mostrarLogin, engine);
-        // Spark.post("/login", sesionController::crearSesion);
+        Spark.get("/login", sesionController::mostrarLogin, engine);
+        Spark.post("/login", sesionController::crearSesion);
 
         /* VER:
         https://github.com/dds-utn/jpa-proof-of-concept-template/tree/modelo-consultoras
