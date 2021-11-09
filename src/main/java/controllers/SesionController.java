@@ -37,8 +37,8 @@ public class SesionController {
 
       response.redirect("/"); // TODO aca va a convenir leer el origen
       return null;
-    } catch (NoSuchElementException e) {
-      response.redirect("/login"); // TODO redirigir agregando un mensaje de error
+    } catch (Exception e) {
+      response.redirect("/error"); // TODO redirigir agregando un mensaje de error
       return null;
     }
   }

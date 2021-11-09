@@ -2,6 +2,7 @@ package main;
 
 import controllers.HomeController;
 import controllers.SesionController;
+import controllers.UserController;
 import spark.Spark;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import spark.ModelAndView;
@@ -24,11 +25,15 @@ public class Routes {
 
         HomeController homeController = new HomeController();
         SesionController sesionController = new SesionController(); //TODO controllers
+        UserController userController = new UserController();
+
+        Map<String, Object> modelo = new HashMap<>();
 
         Spark.get("/", homeController::getHome, engine); //TODO home
-
+        Spark.get("/prueba", (res, req) -> new ModelAndView(modelo, "prueba.html"), engine);
         Spark.get("/login", sesionController::mostrarLogin, engine);
-        Spark.post("/login", sesionController::crearSesion);
+        Spark.post("/login", sesionController::crearSesion); //TODO ver
+        Spark.get("/usuarios/nuevo", userController::registrarUsuario, engine);
 
         /* VER:
         https://github.com/dds-utn/jpa-proof-of-concept-template/tree/modelo-consultoras

@@ -8,9 +8,42 @@
 
 <body>
   <nav>
-    <a href="/">Home</a>
-    <a href="/consultoras">Registrarme</a>
-    <a href="/login">Iniciar Sesión</a>
+    {{!-- <a href="/">Home</a> --}}
+    <div class="box">
+            <a id="home" class="button" href="/"> Home </a>
+    {{!-- <a href="/consultoras">Registrarme</a> --}}
+
+    </div>
+    {{#if sesionIniciada}}
+    <a href="/logout">Cerrar Sesión</a>
+    {{else}}
+    {{!-- <a href="/login">Iniciar Sesión</a> --}}
+
+        <a id="logIn" class="button" href="#login"> Iniciar Sesion </a>
+        <a id="registrarme" class="button" href="/usuarios/nuevo"> Registrarme </a>
+    <div id="login" class="overlay">
+        <div class="popup">
+            <h2> Cosas </h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+            <section class="fondo-gris">
+                <h2>Iniciar Sesión</h2>
+
+                <form class="login" action="/login" method="POST">
+                    <div class="campo">
+                        <span class="nombre-campo">Nombre de usuario:</span><input type="text" name="username" placeholder="Ingrese nombre de usuario">
+                    </div>
+                    <div class="campo">
+                        <span class="nombre-campo">Contraseña:</span><input type="password" name="password" placeholder="Ingrese contraseña">
+                    </div>
+                    <input type="submit" value="Iniciar Sesión">
+                </form>
+            </section>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+
   </nav>
   <main>
     <h1>Patitas</h1>

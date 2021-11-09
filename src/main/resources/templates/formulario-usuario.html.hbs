@@ -1,0 +1,67 @@
+{{# partial "titulo" }}
+<title>Patitas - Registrarme</title>
+{{/partial}}
+
+
+{{# partial "contenido" }}
+
+<div>
+    <section>
+        <h2>Registrarme</h2>
+
+        <form class="login" action="/login" method="POST">
+            <div class="campo">
+                <span class="nombre-campo">Nombre:</span><input type="text" name="Nombre" placeholder="Ingrese su nombre">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Apellido:</span><input type="text" name="Apellido" placeholder="Ingrese su apellido">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Fecha de Nacimiento:</span><input type="date" name="Fecha De Nacimiento">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Tipo de Documento:</span><input list="tiposDocumento" name="Tipo de Documento">
+                <datalist id="tiposDocumento">
+                    {{#tipoDocumento}}
+                    <option value= {{this}}>
+                    {{/tipoDocumento}}
+                </datalist>
+
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Nro Documento:</span><input type="text" name="Numero Documento">
+            </div>
+            <div class="campo">
+                 <span class="nombre-campo">Nombre de usuario:</span><input type="text" name="username" placeholder="Ingrese nombre de usuario">
+            </div>
+            <div class="campo">
+                 <span class="nombre-campo">Contraseña:</span><input type="password" name="password" placeholder="Ingrese una contraseña">
+            </div>
+            <h3>Datos de Contacto</h3>
+            <div class="campo">
+                <span class="nombre-campo">Nombre:</span><input type="text" name="nombre" placeholder="Ingrese Nombre">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Apellido:</span><input type="text" name="apellido" placeholder="Ingrese Apellido">
+            </div>
+            <div class="campo">
+                 <span class="nombre-campo">Telefono:</span><input type="number" name="telefono" placeholder="Ingrese Telefono">
+            </div>
+            <div class="campo">
+                 <span class="nombre-campo">E-mail:</span><input type="email" name="email" placeholder="Ingrese Email">
+            </div>
+            <input type="submit" value="Iniciar Sesión">
+
+
+        </form>
+    </section>
+</div>
+
+
+<a href="/rescates/nuevo">Encontré una Mascota</a>
+<a href="/mascotas/nueva">Registrar mi Mascota</a>
+
+
+{{/partial}}
+
+{{> layout.html.hbs }}
