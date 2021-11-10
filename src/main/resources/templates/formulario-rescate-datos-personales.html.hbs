@@ -1,0 +1,54 @@
+{{# partial "titulo" }}
+<title>Patitas - Registrar rescate</title>
+{{/partial}}
+
+
+{{# partial "contenido" }}
+
+<div>
+    <section>
+        <h2>Registrar datos personales</h2>
+
+        <form class="registrarDatosRescatista" action="/rescates/datosMascota" method="GET">
+            <div class="campo">
+                <span class="nombre-campo">Nombre:</span><input type="text" name="Nombre" placeholder="Ingrese su nombre">
+                <span class="nombre-campo">Apellido:</span><input type="text" name="Apellido" placeholder="Ingrese su apellido">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Fecha de Nacimiento:</span><input type="date" name="Fecha De Nacimiento">
+                <span class="nombre-campo">Tipo de Documento:</span><input list="tiposDocumento" name="Tipo de Documento">
+                <datalist id="tiposDocumento">
+                    {{#tipoDocumento}}
+                    <option value= {{this}}>
+                    {{/tipoDocumento}}
+                </datalist>
+                <span class="nombre-campo">Nro Documento:</span><input type="text" name="Numero Documento">
+            </div>
+            <div class="campo">
+                 <span class="nombre-campo">Nombre de usuario:</span><input type="text" name="username" placeholder="Ingrese nombre de usuario">
+                 <span class="nombre-campo">Contraseña:</span><input type="password" name="password" placeholder="Ingrese una contraseña">
+            </div>
+            <div class="campo">
+                 <span class="nombre-campo">Calle:</span><input type="text" name="calle" placeholder="Ingrese una calle">
+                 <span class="nombre-campo">Altura:</span><input type="number" name="altura" placeholder="Ingrese una altura">
+                 <span class="nombre-campo">Piso/Departamento:</span><input type="text" name="piso o departamento" placeholder="Ingrese un piso/departamento">
+            </div>
+
+
+            <h3>Datos de Contacto</h3>
+            <div class="campo">
+                <span class="nombre-campo">Nombre:</span><input type="text" name="nombre" placeholder="Ingrese Nombre">
+                <span class="nombre-campo">Apellido:</span><input type="text" name="apellido" placeholder="Ingrese Apellido">
+                <span class="nombre-campo">Telefono:</span><input type="number" name="telefono" placeholder="Ingrese Telefono">
+                <span class="nombre-campo">E-mail:</span><input type="email" name="email" placeholder="Ingrese Email">
+            </div>
+
+            <input type="submit" value="Siguiente">
+        </form>
+    </section>
+</div>
+
+
+{{/partial}}
+
+{{> layout.html.hbs }}

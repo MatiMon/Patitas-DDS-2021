@@ -1,0 +1,35 @@
+{{# partial "titulo" }}
+<title>Patitas - Registrarme</title>
+{{/partial}}
+
+
+{{# partial "contenido" }}
+
+<div>
+    <section>
+        <h2>Registrar datos de la mascota</h2>
+
+        <form class="login" action="/login" method="POST">
+            <div class="campo">
+                <span class="nombre-campo">¿La mascota que encontraste tiene chapita?</span>
+                <span class="nombre-campo">Con chapita</span><input type="radio" name="Tiene chapita">
+                <span class="nombre-campo">Sin chapita</span><input type="radio" name="No tiene chapita">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Estado en el que encontraste la mascota:</span><input type="text" name="estado mascota" placeholder="Ingrese la descripcion fisica del estado en que encontro la mascota">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Lugar en el que encontraste la mascota:</span><input type="text" name="lugar mascota" placeholder= "Aca deberia ir un mapa">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Arrastre las fotos aqui:</span><input type="text" name="Drag and drop fotos" placeholder="Aqui iria un drag and drop">
+            </div>
+        </form>
+    </section>
+</div>
+
+<!-- <a href="/rescates/idRescate">Publicar</a> Aca deberiamos agregar un aviso de que el formulario fue procesado con exito o llevar a la publicacion-->
+
+{{/partial}}
+
+{{> layout.html.hbs }}
