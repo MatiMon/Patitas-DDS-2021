@@ -23,7 +23,7 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
 
   @AfterEach
   public void despues() {
-    this.rollbackTransaction();
+    this.commitTransaction();
   }
 
   @Test

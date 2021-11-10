@@ -90,9 +90,28 @@ footer.fondo-gris {
     background: #25d3c0;
 }
 
+.boton-tabla{
+    font-size: small !important;
+    padding: 6px;
+}
 
+.eliminar{
+    border: 2px solid #C70039 !important;
+}
 
+.eliminar:hover{
+    background: #C70039 !important;
+    color: #FFFFFF !important;
+}
 
+.editar{
+    border: 2px solid #3ED024 !important;
+}
+
+.editar:hover{
+    background: #3ED024 !important;
+    color: #FFFFFF !important;
+}
 
 
 .overlay{
