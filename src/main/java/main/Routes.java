@@ -45,6 +45,8 @@ public class Routes {
 
         Spark.get("/rescates/nuevo", rescateController::registrarRescate, engine);
 
+        Spark.get("/caracteristicas/nueva",characteristicsController::registrarNuevaCaracteristica, engine);
+
 
         /* VER:
         https://github.com/dds-utn/jpa-proof-of-concept-template/tree/modelo-consultoras
