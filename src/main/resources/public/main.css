@@ -35,28 +35,11 @@ footer.fondo-gris {
     color: white;
 }
 
-.nueva-consultora .campo{
-    margin: 10px ;
-}
-
-.nueva-consultora .nombre-campo{
-    margin-right: 10px;
-}
-
-
-
-.login .campo{
-    margin: 10px ;
-
-}
-
-.login .nombre-campo{
-    margin-right: 10px;
-}
 
 
 /*modal*/
-.box{
+
+/*.box{
     width: 40%;
     margin: 0 auto;
     background: rgba(255,255,255,0.2);
@@ -65,6 +48,13 @@ footer.fondo-gris {
     border-radius: 20px/50px;
     background-clip: padding-box;
     text_align: center;
+    }*/
+
+.box {
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.2);
+    padding: 40px;
 }
 
 
@@ -100,23 +90,7 @@ footer.fondo-gris {
     background: #25d3c0;
 }
 
-#logInBoton{
-    position: fixed;
-    right: 28px;
-    top: 10;
-}
 
-#registrarme{
-    position: fixed;
-    right: 170px;
-    top: 10;
-}
-
-#home{
-    position: fixed;
-    right: 300px;
-    top: 10;
-}
 
 
 
@@ -190,7 +164,9 @@ footer.fondo-gris {
 
 
 
+
 /* Style the form */
+
 #regForm {
   background-color: #ffffff;
   margin: 200px auto;
@@ -199,7 +175,9 @@ footer.fondo-gris {
   min-width: 300px;
 }
 
+
 /* Style the input fields */
+
 input {
   padding: 10px;
   width: 100%;
@@ -221,20 +199,98 @@ input {
 
 
 
+#header {
+    margin: auto;
+    width: 100%;
+    height: 78px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    background-color: black;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.nav li a{
+    background-color: #000;
+    color: #fff;
+    text-decoration:none;
+    padding:10px 15px;
+    display:block;
+}
+
+.nav li a:hover{
+    background-color: #434343;
+}
+
+.nav > li{
+    float:left;
+}
+
+.nav li ul {
+    display:none;
+    position: absolute;
+    min-width: 140px;
+
+}
+
+.nav li:hover > ul{
+    display:block;
+}
+
+.submenu{
+    right: 0px;
+}
+
+.nav{
+    position: fixed;
+    right: 15px;
+    top: 20px;
+}
 
 
+.w3-table-all{
+border-collapse:collapse;
+border-spacing:0;
+width:100%;
+display:table;
+border:1px solid #ccc;
+}
 
 
+.w3-table-all tr{border-bottom:1px solid #ddd}
+
+.w3-table-all tr:nth-child(odd){background-color:#fff}
+.w3-table-all tr:nth-child(even){background-color:#f1f1f1}
+.w3-hoverable tbody tr:hover{background-color:#ccc}
+
+.w3-table-all td,.w3-table-all th{
+    padding:8px 8px;
+    display:table-cell;
+    text-align:left;
+    vertical-align:top
+    }
+.w3-table-all th:first-child,.w3-table-all td:first-child{
+    padding-left:16px
+}
+.w3-card-4{
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
+    }
+
+.seccion{
+    width:80%;
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
 
 
-
-
-
-
-
-
-
-
-
+#agregar{
+    bottom: -28px;
+    position: relative;
+}
 
 

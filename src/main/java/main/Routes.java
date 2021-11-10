@@ -37,6 +37,7 @@ public class Routes {
         Spark.get("/login", sesionController::mostrarLogin, engine);
         Spark.post("/login", sesionController::crearSesion); //TODO ver
         Spark.get("/usuarios/nuevo", userController::registrarUsuario, engine);
+        Spark.get("/caracteristicas", characteristicsController::mostrarCaracteristicas, engine);
 
         Spark.get("/mascotas/nueva", mascotaController::registrarMascota, engine);
         Spark.get("/rescates/datosPersonales", rescateController::registrarRescate, engine); //TODO ver como poner todo en el mismo html o definir otro path mejor

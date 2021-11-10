@@ -1,0 +1,44 @@
+{{# partial "titulo" }}
+    <title>Patitas - Login</title>
+{{/partial}}
+
+{{# partial "contenido" }}
+    <div>
+        <section class="seccion">
+            <h2>Caracteristicas</h2>
+            <table class="w3-table-all w3-hoverable w3-card-4">
+                <tr>
+                    <th>Descripcion Caracteristica</th>
+                    <th>Es obligatoria</th>
+                    <th>Tipo</th>
+                    <th>Respuestas Posibles</th>
+                </tr>
+                {{#each caracteristicas}}
+                <tr>
+                    <td>{{this.nombre}}</td>
+                    <td><!--ver porque no anda esto-->
+                        {{#if this.esObligatoria}}
+                            Si
+                        {{else}}
+                            No
+                        {{/if}}
+                    </td>
+                    <td>Texto Libre</td>
+                    <td> - </td>
+                </tr>
+                {{/each}}
+            </table>
+            <div>
+                <a id="agregar" class="boton" href="/caracteristicas/nueva">Agregar Caracteristica</a>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+{{/partial}}
+
+{{> layout.html.hbs }}
