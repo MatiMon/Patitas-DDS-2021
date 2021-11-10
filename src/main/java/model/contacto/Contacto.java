@@ -3,7 +3,7 @@ package model.contacto;
 import javax.persistence.*;
 
 @Entity(name = "Contactos")
-//@Table(name = "model.contacto")
+
 public class Contacto {
   @Id
   @GeneratedValue

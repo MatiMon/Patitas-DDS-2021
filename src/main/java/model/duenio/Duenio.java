@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "Duenios")
-//@Table(name = "model.duenio")
+
 public class Duenio {
   @Id
   @GeneratedValue
