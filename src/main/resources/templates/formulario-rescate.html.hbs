@@ -1,0 +1,62 @@
+{{# partial "titulo" }}
+  <title>Patitas - Registrarme</title>
+{{/partial}}
+
+
+{{# partial "contenido" }}
+
+  <div>
+    <section>
+      <h2>Registrarme</h2>
+
+      <form class="login" action="/login" method="POST" multistep="true">
+        <form-step heading="1. Datos personales">
+          <div class="campo">
+            <span class="nombre-campo">Nombre:</span><input type="text" name="Nombre" placeholder="Ingrese su nombre">
+          </div>
+          <div class="campo">
+            <span class="nombre-campo">Apellido:</span><input type="text" name="Apellido" placeholder="Ingrese su apellido">
+          </div>
+          <div class="campo">
+            <span class="nombre-campo">Fecha de Nacimiento:</span><input type="date" name="Fecha De Nacimiento">
+          </div>
+          <div class="campo">
+            <span class="nombre-campo">Tipo de Documento:</span><input list="tiposDocumento" name="Tipo de Documento">
+            <datalist id="tiposDocumento">
+              {{#tipoDocumento}}
+              <option value= {{this}}>
+              {{/tipoDocumento}}
+            </datalist>
+
+          </div>
+          <div class="campo">
+            <span class="nombre-campo">Nro Documento:</span><input type="text" name="Numero Documento">
+          </div>
+          <h5>Dirección</h5>
+          <div class="campo">
+            <span class="nombre-campo">Calle:</span><input type="text" name="direccion-calle" placeholder="Ingrese una calle">
+          </div>
+          <div class="campo">
+            <span class="nombre-campo">Altura:</span><input type="number" name="direccion-altura" placeholder="Ingrese una altura">
+          </div>
+          <div class="campo">
+            <span class="nombre-campo">Piso/Dpto:</span><input type="number" name="direccion-piso-dpto" placeholder="Ingrese el piso/departamento">
+          </div>
+        </form-step>
+        <form-step heading="2. Datos de la mascota">
+
+        </form-step>
+
+
+
+        <input type="submit" value="Siguiente">
+
+
+      </form>
+    </section>
+  </div>
+
+
+{{/partial}}
+
+{{> layout.html.hbs }}
