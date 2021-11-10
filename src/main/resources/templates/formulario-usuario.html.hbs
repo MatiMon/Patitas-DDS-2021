@@ -9,7 +9,9 @@
     <section>
         <h2>Registrarme</h2>
 
-        <form class="login" action="/login" method="POST">
+        <form class="singup" action="/singup" method="POST">
+
+            <div id="registrar">
             <div class="campo">
                 <span class="nombre-campo">Nombre:</span><input type="text" name="Nombre" placeholder="Ingrese su nombre">
             </div>
@@ -50,17 +52,12 @@
             <div class="campo">
                  <span class="nombre-campo">E-mail:</span><input type="email" name="email" placeholder="Ingrese Email">
             </div>
-            <input type="submit" value="Registrarme">
+            </div>
 
-
+            <input class="boton" type="submit" value="Registrarme">
         </form>
     </section>
 </div>
-
-
-<a href="/rescates/nuevo">Encontré una Mascota</a>
-<a href="/mascotas/nueva">Registrar mi Mascota</a>
-
 
 {{/partial}}
 
