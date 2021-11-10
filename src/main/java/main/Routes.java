@@ -1,6 +1,7 @@
 package main;
 
 import controllers.HomeController;
+import controllers.MascotaController;
 import controllers.SesionController;
 import controllers.UserController;
 import spark.Spark;
@@ -26,6 +27,7 @@ public class Routes {
         HomeController homeController = new HomeController();
         SesionController sesionController = new SesionController(); //TODO controllers
         UserController userController = new UserController();
+        MascotaController mascotaController = new MascotaController();
 
         Map<String, Object> modelo = new HashMap<>();
 
@@ -34,6 +36,7 @@ public class Routes {
         Spark.get("/login", sesionController::mostrarLogin, engine);
         Spark.post("/login", sesionController::crearSesion); //TODO ver
         Spark.get("/usuarios/nuevo", userController::registrarUsuario, engine);
+        Spark.get("/mascotas/nueva", mascotaController::registrarMascota, engine);
 
         /* VER:
         https://github.com/dds-utn/jpa-proof-of-concept-template/tree/modelo-consultoras

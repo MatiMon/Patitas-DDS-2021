@@ -1,0 +1,56 @@
+{{# partial "titulo" }}
+<title>Patitas - Registrar mascota</title>
+{{/partial}}
+
+
+{{# partial "contenido" }}
+
+<div>
+    <section>
+        <h2>Registrar mascota</h2>
+
+        <form class="login" action="/login" method="POST">
+            <div class="campo">
+                <span class="nombre-campo">Tipo de mascota:</span>
+                <span class="nombre-campo">Perro</span><input type="radio" name="Tipo de mascota">
+                <span class="nombre-campo">Gato</span><input type="radio" name="Tipo de mascota">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Nombre de mascota:</span><input type="text" name="Nombre de mascota" placeholder="Ingrese el nombre de su mascota">
+                <span class="nombre-campo">Apodo:</span><input type="text" name="Apodo" placeholder="Ingrese el apodo de la mascota">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Edad aproximada:</span><input type="number" name="Edad aproximada" placeholder="Ingrese la edad">
+                <span class="nombre-campo">Sexo:</span><input list="sexo" name="sexo">
+                <datalist id="sexo">
+                    {{#sexo}}
+                    <option value= {{this}}>
+                    {{/sexo}}
+                </datalist>
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Descripcion fisica:</span><input type="text" name="Descripcion fisica" placeholder="Ingrese la descripcion fisica de la mascota">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Arrastre las fotos aqui:</span><input type="text" name="Drag and drop fotos" placeholder="Aqui iria un drag and drop">
+            </div>
+
+            <h3>Caracteristicas</h3>
+            <div class="campo">
+                <span class="nombre-campo">Caract obligatoria 1:</span><input type="text" name="Caracteristica obligatoria" placeholder="Ingrese una caracteristica">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Caract obligatoria 2:</span><input type="text" name="Caracteristica obligatoria" placeholder="Ingrese una caracteristica">
+            </div>
+
+        </form>
+    </section>
+</div>
+
+
+<a href="/">Enviar</a>
+
+
+{{/partial}}
+
+{{> layout.html.hbs }}
