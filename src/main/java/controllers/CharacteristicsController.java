@@ -1,20 +1,24 @@
 package controllers;
 
 import model.caracteristicas.RepositorioCaracteristicasIdeales;
-import model.caracteristicas.ideales.CaracteristicaIdeal;
-import model.caracteristicas.ideales.EnumeradaIdeal;
-import model.caracteristicas.ideales.NumericaIdeal;
-import model.mascota.Sexo;
+import model.caracteristicas.TipoCaracteristica;
+import model.caracteristicas.definidas.CaracteristicaDefinida;
+import model.caracteristicas.ideales.*;
+import model.contacto.Contacto;
+import model.duenio.Duenio;
+import model.duenio.TipoDocumento;
+import model.mascota.*;
+import model.ubicacion.Ubicacion;
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
+import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.time.LocalDate;
+import java.util.*;
 
-public class CharacteristicsController extends Controller{
+public class CharacteristicsController extends Controller implements WithGlobalEntityManager, TransactionalOps {
   public ModelAndView mostrarCaracteristicas(Request request, Response response) {
     if (!estaIniciadaLaSesion(request) || !esUsuarioAdministrador(request)) {
       response.redirect("/");
@@ -41,5 +45,47 @@ public class CharacteristicsController extends Controller{
     Map<String, Object> modelo = getModelo(request, response);
     return new ModelAndView(modelo, "formulario-caracteristica.html.hbs");
   }
+
+  public Void crearCaracteristica(Request request, Response response) {
+    String nombre = request.queryParams("Nombre de la caracteristica");
+    String esObligatoria = request.queryParams("obligatoria");
+    String tipoCaracteristica = request.queryParams("Tipo de caracteristica");
+    String opcion1 = request.queryParams("Opcion1");
+    String opcion2 = request.queryParams("Opcion2");
+
+    Boolean obligatoria = false;
+
+    if(esObligatoria == "Si"){
+      obligatoria = true;
+    }
+
+    TipoCaracteristica unTipoCaracteristica = new TextoIdeal();
+
+    if(tipoCaracteristica == "Texto"){
+      unTipoCaracteristica = new TextoIdeal();
+    }
+    if(tipoCaracteristica == "Numerica"){
+      unTipoCaracteristica = new NumericaIdeal();
+    }
+    if(tipoCaracteristica == "De respuesta si o no"){
+      unTipoCaracteristica = new BooleanaIdeal();
+    }
+    if(tipoCaracteristica == "Opcion multiple"){
+      List<String> opciones = new ArrayList<String>();
+      opciones.add(opcion1);
+      opciones.add(opcion2);
+      unTipoCaracteristica = new EnumeradaIdeal(opciones);
+    }
+
+    CaracteristicaIdeal unaCaracteristica = new CaracteristicaIdeal(nombre,obligatoria,unTipoCaracteristica);
+
+    withTransaction(() -> {
+      RepositorioCaracteristicasIdeales.getInstancia().agregarCaracteristicaIdeal(unaCaracteristica);
+    });
+
+    response.redirect("/caracteristicas");
+    return null;
+  }
+
 
 }
