@@ -46,4 +46,7 @@ public class ContraseniaHasheada {
   public boolean hashMatch(String contrasenia) throws NoSuchAlgorithmException, InvalidKeySpecException {
     return Arrays.equals(this.hash, generarHashPBKDF2(contrasenia));
   }
+
+  public ContraseniaHasheada() {
+  }
 }

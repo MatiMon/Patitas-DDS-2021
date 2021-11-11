@@ -2,14 +2,16 @@ import model.asociacion.Voluntario;
 import model.caracteristicas.definidas.BooleanaDefinida;
 import model.caracteristicas.definidas.CaracteristicaDefinida;
 import model.caracteristicas.definidas.TextoDefinida;
+import model.usuario.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.test.AbstractPersistenceTest;
-import model.usuario.ValidacionDeContrasenia;
-import model.usuario.ValidacionDeLongitud;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -29,8 +31,9 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
   @Test
   public void puedoPersistirValidaciones() {
     entityManager().persist(new ValidacionDeLongitud());
+    entityManager().persist(new ValidacionDeCaracteresConsecutivos());
 
-    assertEquals(1, entityManager().createQuery("from Validaciones", ValidacionDeContrasenia.class).getResultList().size());
+    assertEquals(2, entityManager().createQuery("from Validaciones", ValidacionDeContrasenia.class).getResultList().size());
   }
 
   @Test
@@ -57,6 +60,19 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     assertEquals(caracteristicasPersistidas.get(0).getId(), estaCastrado.getId());
     assertEquals(caracteristicasPersistidas.get(1).getId(), jugueteFavorito.getId());
 
+  }
+
+  @Test
+  public void puedoPersistirUsuarioAdmin() throws NoSuchAlgorithmException, InvalidKeySpecException {
+    ValidacionDeCaracteresConsecutivos validacionDeCaracteresConsecutivos = new ValidacionDeCaracteresConsecutivos();
+    List<ValidacionDeContrasenia> validaciones = new ArrayList<>();
+    validaciones.add(validacionDeCaracteresConsecutivos);
+    ValidadorContrasenia validadorContrasenia = new ValidadorContrasenia(validaciones);
+    Usuario userAdmin = new Usuario("admin", "admin123456", validadorContrasenia);
+
+    entityManager().persist(userAdmin);
+
+    assertEquals(1, entityManager().createQuery("from Usuarios", Usuario.class).getResultList().size());
   }
 }
 

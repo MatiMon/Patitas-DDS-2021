@@ -33,7 +33,7 @@ public class Usuario {
   private ValidadorContrasenia validador;
 
   public Usuario(String nombreUsuario, String contrasenia, ValidadorContrasenia validador) throws NoSuchAlgorithmException, InvalidKeySpecException {
-    this.nombreUsuario = Objects.requireNonNull(nombreUsuario, "Debe introducir un nombre de model.usuario");
+    this.nombreUsuario = Objects.requireNonNull(nombreUsuario, "Debe introducir un nombre de usuario");
     Objects.requireNonNull(contrasenia, "Debe introducir una contrasenia");
 
     this.validador = validador;
@@ -55,5 +55,8 @@ public class Usuario {
       throw new ContraseniaInvalidaException(" la contrasenia no cumple los requerimientos minimos de seguridad");
     }
     this.contrasenia = new ContraseniaHasheada(contrasenia);
+  }
+
+  public Usuario() {
   }
 }

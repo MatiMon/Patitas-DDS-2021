@@ -1,7 +1,5 @@
 package model.usuario;
 
-import model.hogares.HogarDeTransito;
-import model.hogares.RepositorioHogares;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
 import java.security.NoSuchAlgorithmException;
@@ -22,10 +20,15 @@ public class RepositorioUsuarios implements WithGlobalEntityManager {
     entityManager().persist(usuario);
   }
 
+  public List<Usuario> listar() {
+    return entityManager()//
+            .createQuery("from Usuarios", Usuario.class) //
+            .getResultList();
+  }
+
   public Usuario buscarPorUsuarioYContrasenia(String username, String password) throws InvalidKeySpecException, NoSuchAlgorithmException {
-    Usuario usuario = usuarios.stream().filter(u -> u.getNombreUsuario().equals(username)).findFirst().orElse(null);
-    if(usuario.autorizarContrasenia(password)) return usuario;
+    Usuario usuario = listar().stream().filter(u -> u.getNombreUsuario().equals(username)).findFirst().orElse(null);
+    if(usuario.autorizarContrasenia(password) && !usuario.equals(null)) return usuario;
     else throw new RuntimeException("Contraseña invalida");
-  //TODO cambiar esto
   }
 }
