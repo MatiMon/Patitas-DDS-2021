@@ -10,7 +10,7 @@ import java.util.List;
 
 public class UserController {
 
-  public ModelAndView registrarUsuario(Request request, Response response) {
+  public ModelAndView mostrarFormularioNuevoUsuario(Request request, Response response) {
     Map<String, Object> modelo = new HashMap<>();
 
     modelo.put("sesionIniciada", request.session().attribute("user_id") != null);

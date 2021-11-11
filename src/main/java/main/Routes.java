@@ -34,14 +34,14 @@ public class Routes {
         Spark.get("/", homeController::getHome, engine); //TODO home
         Spark.get("/login", sesionController::mostrarLogin, engine);
         Spark.post("/login", sesionController::crearSesion); //TODO ver
-        Spark.get("/usuarios/nuevo", userController::registrarUsuario, engine);
+        Spark.get("/usuarios/nuevo", userController::mostrarFormularioNuevoUsuario, engine);
         Spark.get("/caracteristicas", characteristicsController::mostrarCaracteristicas, engine);
 
         Spark.get("/mascotas/nueva", mascotaController::mostrarFormularioMascota, engine);
-        Spark.get("/rescates/datosPersonales", rescateController::registrarRescate, engine); //TODO ver como poner todo en el mismo html o definir otro path mejor
-        Spark.get("/rescates/datosMascota", rescateController::registrarDatosMascota, engine); //TODO ver como poner todo en el mismo html o definir otro path mejor
+        Spark.get("/rescates/datosPersonales", rescateController::mostrarFormularioRescate, engine); //TODO ver como poner todo en el mismo html o definir otro path mejor
+        Spark.get("/rescates/datosMascota", rescateController::mostrarFormularioRescateDatosMascota, engine); //TODO ver como poner todo en el mismo html o definir otro path mejor
 
-        Spark.get("/rescates/nuevo", rescateController::registrarRescate, engine);
+        Spark.get("/rescates/nuevo", rescateController::mostrarFormularioRescate, engine);
 
         Spark.get("/caracteristicas/nueva",characteristicsController::registrarNuevaCaracteristica, engine);
 

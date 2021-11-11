@@ -11,14 +11,14 @@ import java.util.Map;
 
 public class RescateController {
 
-  public ModelAndView registrarRescate(Request request, Response response) {
+  public ModelAndView mostrarFormularioRescate(Request request, Response response) {
     Map<String, Object> modelo = new HashMap<>();
     modelo.put("sesionIniciada", request.session().attribute("user_id") != null);
     modelo.put("tipoDocumento", TipoDocumento.values());
     return new ModelAndView(modelo, "formulario-rescate.html.hbs");
   }
 
-  public ModelAndView registrarDatosMascota(Request request, Response response) {
+  public ModelAndView mostrarFormularioRescateDatosMascota(Request request, Response response) {
     Map<String, Object> modelo = new HashMap<>();
 
     modelo.put("sesionIniciada", request.session().attribute("user_id") != null);
