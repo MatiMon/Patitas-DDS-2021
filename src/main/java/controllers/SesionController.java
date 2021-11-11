@@ -44,7 +44,7 @@ public class SesionController {
   }
 
   public Response cerrarSesion(Request request, Response response) {
-    request.session().invalidate();
+    request.session().removeAttribute("user_id");
     response.redirect("/");
     return response;
   }

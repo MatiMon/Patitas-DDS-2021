@@ -19,7 +19,11 @@
                             {{#if esAdmin}}
                             <li><a href="/caracteristicas">Administrar Caracteristicas</a></li>
                             {{/if}}
-                            <li><a href="/logout">Cerrar Sesión</a></li>
+                            <li>
+                                <form action="/logout" method="POST">
+                                    <input id="cerrarSesion" type="submit" value="Cerrar Sesión">
+                                </form>
+                            </li>
                         </ul>
                     </li>
                 {{else}}

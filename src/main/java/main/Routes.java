@@ -34,6 +34,7 @@ public class Routes {
         Spark.get("/", homeController::getHome, engine); //TODO home
         Spark.get("/login", sesionController::mostrarLogin, engine);
         Spark.post("/login", sesionController::crearSesion); //TODO ver
+        Spark.post("/logout", sesionController::cerrarSesion);
         Spark.get("/usuarios/nuevo", userController::mostrarFormularioNuevoUsuario, engine);
         Spark.get("/caracteristicas", characteristicsController::mostrarCaracteristicas, engine);
 

@@ -232,20 +232,27 @@ ul, ol {
     list-style: none;
 }
 
-.nav li a{
+.nav li a, #cerrarSesion{
     background-color: #000;
     color: #fff;
     text-decoration:none;
     padding:10px 15px;
     display:block;
+    border: 1px solid #000;
+    font-size: 17px;
+    font-family: Raleway;
 }
 
-.nav li a:hover{
+.nav li a:hover, #cerrarSesion:hover{
     background-color: #434343;
 }
 
 .nav > li{
     float:left;
+}
+#cerrarSesion{
+    cursor: pointer;
+    text-align:left;
 }
 
 .nav li ul {
@@ -277,6 +284,7 @@ width:100%;
 display:table;
 border:1px solid #ccc;
 }
+
 
 
 .w3-table-all tr{border-bottom:1px solid #ddd}
