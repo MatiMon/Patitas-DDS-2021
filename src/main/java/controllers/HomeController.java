@@ -15,6 +15,6 @@ public class HomeController {
     modelo.put("anio", LocalDate.now().getYear());
 
     modelo.put("sesionIniciada", request.session().attribute("user_id") != null);
-    return new ModelAndView(modelo, "index.html");
+    return new ModelAndView(modelo, "home.html");
   }
 }

@@ -42,4 +42,10 @@ public class SesionController {
       return null;
     }
   }
+
+  public Response cerrarSesion(Request request, Response response) {
+    request.session().invalidate();
+    response.redirect("/");
+    return response;
+  }
 }

@@ -33,7 +33,6 @@ public class Routes {
         Map<String, Object> modelo = new HashMap<>();
 
         Spark.get("/", homeController::getHome, engine); //TODO home
-        Spark.get("/prueba", (res, req) -> new ModelAndView(modelo, "prueba.html"), engine);
         Spark.get("/login", sesionController::mostrarLogin, engine);
         Spark.post("/login", sesionController::crearSesion); //TODO ver
         Spark.get("/usuarios/nuevo", userController::registrarUsuario, engine);
