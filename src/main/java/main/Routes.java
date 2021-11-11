@@ -26,17 +26,18 @@ public class Routes {
         UserController userController = new UserController();
 
         MascotaController mascotaController = new MascotaController();
-
+        CharacteristicsController characteristicsController = new CharacteristicsController();
         RescateController rescateController = new RescateController();
 
         Map<String, Object> modelo = new HashMap<>();
 
         Spark.get("/", homeController::getHome, engine); //TODO home
-        Spark.get("/login", sesionController::mostrarLogin, engine);
+        //Spark.get("/login", sesionController::mostrarLogin, engine);
         Spark.post("/login", sesionController::crearSesion); //TODO ver
         Spark.post("/logout", sesionController::cerrarSesion);
         Spark.get("/usuarios/nuevo", userController::mostrarFormularioNuevoUsuario, engine);
         Spark.get("/caracteristicas", characteristicsController::mostrarCaracteristicas, engine);
+
 
         Spark.get("/mascotas/nueva", mascotaController::mostrarFormularioMascota, engine);
         Spark.post("/mascotas/nueva", mascotaController::crearMascota);

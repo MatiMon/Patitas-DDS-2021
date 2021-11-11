@@ -18,12 +18,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MascotaController implements WithGlobalEntityManager, TransactionalOps {
+public class MascotaController extends Controller implements WithGlobalEntityManager, TransactionalOps {
 
   public ModelAndView mostrarFormularioMascota(Request request, Response response) {
-    Map<String, Object> modelo = new HashMap<>();
-
-    modelo.put("sesionIniciada", request.session().attribute("user_id") != null);
+    if (!estaIniciadaLaSesion(request)) {
+      response.redirect("/");
+      return null;
+    }
+    request.session().attribute("redirect_login", "/mascotas/nueva");
+    Map<String, Object> modelo = getModelo(request, response);
     modelo.put("sexo", Sexo.values());
     return new ModelAndView(modelo, "formulario-mascota.html.hbs");
   }

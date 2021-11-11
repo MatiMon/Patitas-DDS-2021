@@ -14,27 +14,31 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class characteristicsController {
-  public static ModelAndView mostrarCaracteristicas(Request request, Response response) {
-    Map<String, Object> modelo = new HashMap<>();
+public class CharacteristicsController extends Controller{
+  public ModelAndView mostrarCaracteristicas(Request request, Response response) {
+    if (!estaIniciadaLaSesion(request) || !esUsuarioAdministrador(request)) {
+      response.redirect("/");
+      return null;
+    }
+    Map<String, Object> modelo = getModelo(request, response);
 
     CaracteristicaIdeal caracteristica = new CaracteristicaIdeal("Edad", false, new NumericaIdeal());
     CaracteristicaIdeal comidaFavorita = new CaracteristicaIdeal("Comida Favorita",
         true, new NumericaIdeal());
     List<CaracteristicaIdeal> lista = Arrays.asList(caracteristica, comidaFavorita,
         caracteristica, comidaFavorita,caracteristica, comidaFavorita);
-    modelo.put("sesionIniciada", request.session().attribute("user_id") != null);
-    //modelo.put("esAdmin", )
     modelo.put("caracteristicas", lista);
     return new ModelAndView(modelo, "caracteristicas.html.hbs");
 
   }
 
-  public static ModelAndView registrarNuevaCaracteristica(Request request,Response response){
-    Map<String, Object> modelo = new HashMap<>();
 
-    modelo.put("sesionIniciada", request.session().attribute("user_id") != null);
-
+  public ModelAndView registrarNuevaCaracteristica(Request request,Response response){
+    if (!estaIniciadaLaSesion(request) || !esUsuarioAdministrador(request)) {
+      response.redirect("/");
+      return null;
+    }
+    Map<String, Object> modelo = getModelo(request, response);
     return new ModelAndView(modelo, "formulario-caracteristica.html.hbs");
   }
 
