@@ -59,4 +59,12 @@ public class Usuario {
 
   public Usuario() {
   }
+
+  public Boolean getEsAdministrador() {
+    return esAdministrador;
+  }
+
+  public void setEsAdministrador(Boolean esAdministrador) {
+    this.esAdministrador = esAdministrador;
+  }
 }

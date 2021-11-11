@@ -12,8 +12,11 @@ non ornare odio justo sed eros. Pellentesque pharetra commodo ipsum vel vulputat
 
 
 <a class="boton" href="/rescates/datosPersonales">Encontré una Mascota</a>
+{{#if sesionIniciada}}
 <a class="boton" href="/mascotas/nueva">Registrar mi Mascota</a>
-
+{{else}}
+<a class="boton" href="#login">Registrar mi Mascota</a>
+{{/if}}
 
 {{/partial}}
 

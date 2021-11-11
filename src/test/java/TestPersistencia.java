@@ -2,6 +2,10 @@ import model.asociacion.Voluntario;
 import model.caracteristicas.definidas.BooleanaDefinida;
 import model.caracteristicas.definidas.CaracteristicaDefinida;
 import model.caracteristicas.definidas.TextoDefinida;
+import model.contacto.Contacto;
+import model.duenio.Duenio;
+import model.duenio.TipoDocumento;
+import model.ubicacion.Ubicacion;
 import model.usuario.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,6 +15,7 @@ import org.uqbarproject.jpa.java8.extras.test.AbstractPersistenceTest;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +50,16 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
   }
 
   @Test
+  public void persistirCosas(){
+    Contacto contactoPrincipal = new Contacto("al", "go", 1234, "algo@gmail");
+    Ubicacion ubicacion = new Ubicacion("String", 123, 456);
+    Duenio duenio = new Duenio("a", "b", LocalDate.now(), TipoDocumento.DNI, 12365454, contactoPrincipal, ubicacion);
+
+
+    assertEquals(true, true);
+  }
+
+  @Test
   public void puedoGuardarDistintosTiposCaracteristicasDefinidas() {
     BooleanaDefinida estaCastrado = new BooleanaDefinida("Esta castrado", true);
     TextoDefinida jugueteFavorito = new TextoDefinida("Juguete Favorito", "Pelota");
@@ -69,6 +84,7 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     validaciones.add(validacionDeCaracteresConsecutivos);
     ValidadorContrasenia validadorContrasenia = new ValidadorContrasenia(validaciones);
     Usuario userAdmin = new Usuario("admin", "admin123456", validadorContrasenia);
+    userAdmin.setEsAdministrador(true);
 
     entityManager().persist(userAdmin);
 

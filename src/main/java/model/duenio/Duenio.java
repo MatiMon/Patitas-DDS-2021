@@ -40,11 +40,11 @@ public class Duenio {
   private Contacto contactoPrincipal;
 
   @OneToMany
-  @JoinColumn(name = "duenioId", referencedColumnName = "id")
+  @JoinColumn(name = "duenioId")
   private List<Contacto> contactosSecundarios;
 
   @OneToOne
-  @JoinColumn(name = "usuarioId", referencedColumnName = "id")
+  @JoinColumn(name = "usuarioId")
   private Usuario usuario;
 
   @Embedded
