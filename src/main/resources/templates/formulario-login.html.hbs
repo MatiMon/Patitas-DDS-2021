@@ -16,6 +16,15 @@
         <input type="submit" value="Iniciar Sesión">
     </form>
 
+  {{#if mensajeError}}
+    <div id="u7" class="ax_default label"  style="margin-top: 15px" data-label="Mensaje de error">
+      <div id="u7_div" class=""></div>
+      <div id="u7_text" class="text ">
+        <p><span>Usuario o contraseña inválidos. Por favor inténtelo nuevamente.</span></p>
+      </div>
+    </div>
+  {{/if}}
+
 </section>
 {{/partial}}
 

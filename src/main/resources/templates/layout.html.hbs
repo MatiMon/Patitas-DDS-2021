@@ -28,7 +28,7 @@
                         </ul>
                     </li>
                 {{else}}
-                    <li><a id="logInBoton" href="#login"> Iniciar Sesion </a></li>
+                    <li><a id="logInBoton" href="/login"> Iniciar Sesion </a></li>
                     <li><a id="registrarme" href="/usuarios/nuevo"> Registrarme </a></li>
                 {{/if}}
 
@@ -37,28 +37,6 @@
         </div>
 
     </div>
-
-    <div id="login" class="overlay">
-        <div class="popup">
-            <h2> Iniciar Sesion </h2>
-            <a class="close" href="#">&times;</a>
-            <div class="content">
-            <section class="fondo-gris">
-                <form class="login" action="/login" method="POST">
-                    <div class="campo">
-                        <span class="nombre-campo">Nombre de usuario:</span><input type="text" name="username" placeholder="Ingrese nombre de usuario">
-                    </div>
-                    <div class="campo">
-                        <span class="nombre-campo">Contraseña:</span><input type="password" name="password" placeholder="Ingrese contraseña">
-                    </div>
-                    <input class="boton" type="submit" value="Iniciar Sesión">
-                </form>
-                <a href="/usuarios/nuevo"> No estoy registrado </a>
-            </section>
-            </div>
-        </div>
-    </div>
-
 
   </nav>
   <main>

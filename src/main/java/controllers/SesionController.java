@@ -17,14 +17,14 @@ public class SesionController extends Controller{
   // de saber le usuarie actual, etc, probablmente se vayan a repetir
   // y convendrá generalizarlas
 
-/*  public ModelAndView mostrarLogin(Request request, Response response) {
+  public ModelAndView mostrarLogin(Request request, Response response) {
     if (estaIniciadaLaSesion(request)) {
       response.redirect("/");
       return null;
     }
     Map<String, Object> modelo = getModelo(request, response);
     return new ModelAndView(modelo, "formulario-login.html.hbs");
-  }*/
+  }
 
   public Void crearSesion(Request request, Response response) {
     try {
@@ -37,7 +37,7 @@ public class SesionController extends Controller{
       response.redirect(request.session().attribute("redirect_login")); // TODO aca va a convenir leer el origen
       return null;
     } catch (Exception e) {
-      response.redirect("/error"); // TODO redirigir agregando un mensaje de error
+      response.redirect("/login-error"); // TODO redirigir agregando un mensaje de error
       return null;
     }
   }
@@ -46,5 +46,11 @@ public class SesionController extends Controller{
     request.session().removeAttribute("user_id");
     response.redirect("/");
     return response;
+  }
+
+  public ModelAndView crearSesionError(Request request, Response response) {
+    Map<String, Object> parametros = new HashMap<>();
+    parametros.put("mensajeError", true);
+    return new ModelAndView(parametros, "formulario-login.html.hbs");
   }
 }

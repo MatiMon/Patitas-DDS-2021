@@ -32,7 +32,7 @@ public class Routes {
         Map<String, Object> modelo = new HashMap<>();
 
         Spark.get("/", homeController::getHome, engine); //TODO home
-        //Spark.get("/login", sesionController::mostrarLogin, engine);
+        Spark.get("/login", sesionController::mostrarLogin, engine);
         Spark.post("/login", sesionController::crearSesion); //TODO ver
         Spark.post("/logout", sesionController::cerrarSesion);
         Spark.get("/usuarios/nuevo", userController::mostrarFormularioNuevoUsuario, engine);
@@ -49,6 +49,7 @@ public class Routes {
 
         Spark.get("/caracteristicas/nueva",characteristicsController::registrarNuevaCaracteristica, engine);
 
+        Spark.get("/login-error", sesionController::crearSesionError, engine);
 
         /* VER:
         https://github.com/dds-utn/jpa-proof-of-concept-template/tree/modelo-consultoras
