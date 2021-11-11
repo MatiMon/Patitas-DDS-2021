@@ -4,7 +4,6 @@ package main;
 import controllers.*;
 import spark.Spark;
 import spark.template.handlebars.HandlebarsTemplateEngine;
-import spark.ModelAndView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,7 +37,7 @@ public class Routes {
         Spark.get("/usuarios/nuevo", userController::registrarUsuario, engine);
         Spark.get("/caracteristicas", characteristicsController::mostrarCaracteristicas, engine);
 
-        Spark.get("/mascotas/nueva", mascotaController::registrarMascota, engine);
+        Spark.get("/mascotas/nueva", mascotaController::mostrarFormularioMascota, engine);
         Spark.get("/rescates/datosPersonales", rescateController::registrarRescate, engine); //TODO ver como poner todo en el mismo html o definir otro path mejor
         Spark.get("/rescates/datosMascota", rescateController::registrarDatosMascota, engine); //TODO ver como poner todo en el mismo html o definir otro path mejor
 

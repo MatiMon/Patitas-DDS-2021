@@ -1,9 +1,11 @@
 package model.mascota;
 
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class RepositorioMascotas {
+public class RepositorioMascotas implements WithGlobalEntityManager {
   private Map<String, Mascota> mascotas;
   private static RepositorioMascotas instancia;
 
@@ -30,6 +32,10 @@ public class RepositorioMascotas {
 
   public void removerMascota(String id) {
     mascotas.remove(id);
+  }
+
+  public void agregarMascota(Mascota mascota) {
+    entityManager().persist(mascota);
   }
 
 
