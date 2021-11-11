@@ -4,6 +4,7 @@ import model.caracteristicas.RepositorioCaracteristicasIdeales;
 import model.caracteristicas.ideales.CaracteristicaIdeal;
 import model.caracteristicas.ideales.EnumeradaIdeal;
 import model.caracteristicas.ideales.NumericaIdeal;
+import model.mascota.Sexo;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
@@ -28,4 +29,13 @@ public class characteristicsController {
     return new ModelAndView(modelo, "caracteristicas.html.hbs");
 
   }
+
+  public static ModelAndView registrarNuevaCaracteristica(Request request,Response response){
+    Map<String, Object> modelo = new HashMap<>();
+
+    modelo.put("sesionIniciada", request.session().attribute("user_id") != null);
+
+    return new ModelAndView(modelo, "formulario-caracteristica.html.hbs");
+  }
+
 }
