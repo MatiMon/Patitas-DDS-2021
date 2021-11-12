@@ -63,18 +63,18 @@ public class CharacteristicsController extends Controller implements WithGlobalE
       obligatoria = true;
     }
 
-    TipoCaracteristica unTipoCaracteristica = new TextoIdeal();
+    TipoCaracteristica unTipoCaracteristica = null;
 
-    if(tipoCaracteristica == "Texto"){
+    if(tipoCaracteristica.equals("Texto")){
       unTipoCaracteristica = new TextoIdeal();
     }
-    if(tipoCaracteristica == "Numerica"){
+    if(tipoCaracteristica.equals("Numerica")){
      unTipoCaracteristica = new NumericaIdeal();
     }
-    if(tipoCaracteristica == "De respuesta si o no"){
+    if(tipoCaracteristica.equals("De respuesta si o no")){
      unTipoCaracteristica = new BooleanaIdeal();
     }
-    if(tipoCaracteristica == "Opcion multiple"){
+    if(tipoCaracteristica.equals("Opcion multiple")){
       List<String> opciones = new ArrayList<String>();
       opciones.add(opcion1);
       opciones.add(opcion2);
