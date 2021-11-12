@@ -37,8 +37,8 @@ public class CharacteristicsController extends Controller implements WithGlobalE
 
   }
 
-  public Map<String, String> descripcionCaracteristica(CaracteristicaIdeal caracteristicaIdeal){
-    Map<String, String> descripcion = new HashMap<>();
+  public Map<String, Object> descripcionCaracteristica(CaracteristicaIdeal caracteristicaIdeal){
+    Map<String, Object> descripcion = new HashMap<>();
     descripcion.put("Nombre", caracteristicaIdeal.getNombre());
     descripcion.put("Tipo",caracteristicaIdeal.getTipo());
     if(caracteristicaIdeal.esObligatoria()){
@@ -46,6 +46,7 @@ public class CharacteristicsController extends Controller implements WithGlobalE
     }else{
       descripcion.put("esObligatoria", "No");
     }
+    descripcion.put("Respuestas", caracteristicaIdeal.getOpciones());
     return descripcion;
   }
 
@@ -61,20 +62,15 @@ public class CharacteristicsController extends Controller implements WithGlobalE
 
   public Void crearCaracteristica(Request request, Response response) {
     String nombre = request.queryParams("Nombre de la caracteristica");
-    String esObligatoria = request.queryParams("obligatoria");
+    System.out.println(request.queryParams("obligatoria"));
+    Boolean obligatoria = request.queryParams("obligatoria").equals("on");
+
     String tipoCaracteristica = request.queryParams("Tipo de caracteristica");
     String opcion1 = request.queryParams("Opcion1");
     String opcion2 = request.queryParams("Opcion2");
     String opcion3 = request.queryParams("Opcion3");
     String opcion4 = request.queryParams("Opcion4");
 
-
-
-    Boolean obligatoria = false;
-
-    if(esObligatoria == "Si"){
-      obligatoria = true;
-    }
 
     TipoCaracteristica unTipoCaracteristica = null;
 
@@ -95,7 +91,7 @@ public class CharacteristicsController extends Controller implements WithGlobalE
       opciones.add(opcion4);
 
 
-      unTipoCaracteristica = new EnumeradaIdeal(opciones);
+      unTipoCaracteristica = new EnumeradaIdeal(opciones.stream().filter(c -> c != null && c.length() != 0).collect(Collectors.toList()));
     }
 
     entityManager().persist(unTipoCaracteristica);

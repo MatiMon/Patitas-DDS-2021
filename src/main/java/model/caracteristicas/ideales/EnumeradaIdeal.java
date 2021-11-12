@@ -9,6 +9,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Entity
 @DiscriminatorValue("Enum")
@@ -17,9 +18,18 @@ public class EnumeradaIdeal extends TipoCaracteristica {
     @ElementCollection
     List<String> opciones;
 
+    public EnumeradaIdeal() {
+    }
+
     @Override
     public String getNombre() {
         return nombre;
+    }
+
+    @Override
+    public String getOpciones() {
+        String respuestas = opciones.stream().map(Object::toString).collect(Collectors.joining(" - "));
+        return respuestas;
     }
 
     private String nombre = "Opcion multiple";

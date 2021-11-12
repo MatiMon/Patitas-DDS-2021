@@ -6,12 +6,17 @@ import model.excepciones.ValorCaracteristicaInvalidoException;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import java.util.Arrays;
+import java.util.List;
 
 @Entity
 @DiscriminatorValue("Text")
 public class TextoIdeal extends TipoCaracteristica {
 
     private String nombre = "Texto";
+
+    public TextoIdeal() {
+    }
 
     public TextoDefinida crearCaracteristica(String nombre, Object valor){
         String _valor;
@@ -26,4 +31,6 @@ public class TextoIdeal extends TipoCaracteristica {
     public String getNombre() {
         return nombre;
     }
+
+
 }

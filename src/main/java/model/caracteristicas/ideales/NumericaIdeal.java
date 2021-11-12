@@ -6,6 +6,8 @@ import model.excepciones.ValorCaracteristicaInvalidoException;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import java.util.Arrays;
+import java.util.List;
 
 
 @Entity
@@ -13,6 +15,9 @@ import javax.persistence.Entity;
 public class NumericaIdeal extends TipoCaracteristica {
 
     private String nombre = "Numerica";
+
+    public NumericaIdeal() {
+    }
 
     public NumericoDefinida crearCaracteristica(String nombre, Object valor){
         int _valor;
@@ -27,4 +32,6 @@ public class NumericaIdeal extends TipoCaracteristica {
     public String getNombre() {
         return nombre;
     }
+
+
 }

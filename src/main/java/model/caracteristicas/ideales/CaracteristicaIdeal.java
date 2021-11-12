@@ -4,6 +4,7 @@ import model.caracteristicas.definidas.CaracteristicaDefinida;
 import model.caracteristicas.TipoCaracteristica;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity (name = "CaracteristicasIdeales")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -39,6 +40,10 @@ public class CaracteristicaIdeal {
 
     public Boolean esObligatoria(){
         return esObligatoria;
+    }
+
+    public String getOpciones(){
+        return tipo.getOpciones();
     }
 
     public CaracteristicaDefinida crearCaracteristica(Object valor){

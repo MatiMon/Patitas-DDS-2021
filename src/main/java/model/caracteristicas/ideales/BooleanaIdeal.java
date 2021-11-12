@@ -6,12 +6,17 @@ import model.excepciones.ValorCaracteristicaInvalidoException;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import java.util.Arrays;
+import java.util.List;
 
 @Entity
 @DiscriminatorValue("Bool")
 public class BooleanaIdeal extends TipoCaracteristica {
 
     private String nombre = "De respuesta si o no";
+
+    public BooleanaIdeal() {
+    }
 
     public BooleanaDefinida crearCaracteristica(String nombre, Object valor){
         boolean _valor;
@@ -25,5 +30,9 @@ public class BooleanaIdeal extends TipoCaracteristica {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public String getOpciones() {
+        return "Si - No";
     }
 }
