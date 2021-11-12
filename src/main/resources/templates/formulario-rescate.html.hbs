@@ -62,7 +62,7 @@
         <div class="tab">
           <div class="campo">
             <span class="nombre-campo">¿La mascota que encontraste tiene chapita?</span>
-            <span class="nombre-campo">Con chapita</span><input id ="checkChapita" type="checkbox"  onclick="hideSteps()" name="Tiene chapita">
+            <span class="nombre-campo">Con chapita</span><input id ="checkChapita" type="checkbox" name="Tiene chapita"> <!--onclick="hideSteps()"-->
           </div>
           <div class="campo">
             <span class="nombre-campo">Estado en el que encontraste la mascota:</span><input type="text" name="estado mascota" placeholder="Ingrese la descripcion fisica del estado en que encontro la mascota">
@@ -73,7 +73,7 @@
           <div class="campo">
             <span class="nombre-campo">Arrastre las fotos aqui:</span><input type="file" name="fotos" accept="image/*" multiple>
           </div>
-          <div id="registrado" style="display:none">
+          <div id="registrado" style="display:block">
             <div class="campo">
               <span class="nombre-campo">Id de la mascota:</span><input type="text" name="chapita" placeholder="Ingrese el id de la chapita">
             </div>
@@ -187,7 +187,7 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
-function hideSteps(){
+/*function hideSteps(){
   var checkBox = document.getElementById("checkChapita");
   var registrado = document.getElementById("registrado");
   var noRegistrado = document.getElementById("sinRegistrar");
@@ -199,7 +199,7 @@ function hideSteps(){
     registrado.style.display = "none";
     noRegistrado.style.display = "block";
   }
-}
+}*/
 </script>
 
 {{/partial}}

@@ -37,6 +37,10 @@ public class Mascota {
   private Duenio duenio;
   private String idMascota;
 
+  public Mascota(){
+
+  }
+
   public Mascota(String nombre, String apodo, int edad, Sexo sexo, TipoAnimal tipoAnimal, String descripcionFisica,
                  List<String> fotos, List<CaracteristicaDefinida> caracteristicaDefinidas, Duenio duenio, String id, Tamanio tamanio) {
     this.nombre = nombre;
@@ -86,5 +90,9 @@ public class Mascota {
 
   public String getIdMascota() {
     return idMascota;
+  }
+
+  public Long getId() {
+    return id;
   }
 }

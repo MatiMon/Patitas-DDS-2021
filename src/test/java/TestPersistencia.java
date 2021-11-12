@@ -6,6 +6,10 @@ import model.caracteristicas.definidas.TextoDefinida;
 import model.contacto.Contacto;
 import model.duenio.Duenio;
 import model.duenio.TipoDocumento;
+import model.mascota.Mascota;
+import model.mascota.Sexo;
+import model.mascota.Tamanio;
+import model.mascota.TipoAnimal;
 import model.ubicacion.Ubicacion;
 import model.usuario.*;
 import org.junit.jupiter.api.AfterEach;
@@ -57,6 +61,14 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     entityManager().persist(patitasAlRescate);
 
     assertNotNull(patitasAlRescate.getId());
+  }
+
+  @Test
+  public void persistirMascota(){
+    Mascota mascota = new Mascota("Pepita", "Pepin", 15, Sexo.HEMBRA, TipoAnimal.GATO,
+        null, new ArrayList<>(), new ArrayList<>(), null, "123", Tamanio.GRANDE);
+    entityManager().persist(mascota);
+    assertNotNull(mascota.getId());
   }
 
   @Test
