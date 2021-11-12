@@ -8,7 +8,7 @@
 
   <div>
     <section>
-      <form class="regForm" action="/rescates/nuevo" method="POST">
+      <form id="regForm" action="/rescates/nuevo" method="POST">
         <div class="tab">
           <div class="campo">
             <span class="nombre-campo">Nombre:</span><input type="text" name="Nombre" placeholder="Ingrese su nombre">
@@ -116,9 +116,9 @@
 
     </section>
   </div>
-  <script >
+  <script>
   var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
+  showTab(currentTab); // Display the current tab
 
 function showTab(n) {
   // This function will display the specified tab of the form...

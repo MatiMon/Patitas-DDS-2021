@@ -33,7 +33,6 @@ public class RescateController extends Controller implements WithGlobalEntityMan
   }
 
   public Void crearRescate(Request request, Response response) {
-
     //Rescatista
     String nombre = request.queryParams("Nombre de mascota");
     String apellido = request.queryParams("Apellido");
@@ -82,9 +81,9 @@ public class RescateController extends Controller implements WithGlobalEntityMan
       entityManager().persist(contactoPrincipal);
       entityManager().persist(rescatista);
       if(tieneChapita){
-        obtenerAsociacion().agregarRescateDeMascotaRegistrada(rescateRegistrado);
+        entityManager().persist(rescateRegistrado);
       }else{
-        obtenerAsociacion().agregarRescateDeMascotaSinRegistar(rescateDeMascotaSinRegistrar);
+        entityManager().persist(rescateDeMascotaSinRegistrar);
       }
       this.commitTransaction();
     }catch (Exception e){
