@@ -11,21 +11,15 @@
                     <th>Descripcion Caracteristica</th>
                     <th>Es obligatoria</th>
                     <th>Tipo</th>
-                    <th>Respuestas Posibles</th>
                     <th>Opciones</th>
+
                 </tr>
                 {{#each caracteristicas}}
                 <tr>
-                    <td>{{this.nombre}}</td>
-                    <td><!--ver porque no anda esto-->
-                        {{#if this.esObligatoria}}
-                            Si
-                        {{else}}
-                            No
-                        {{/if}}
-                    </td>
-                    <td>Texto Libre</td>
-                    <td> - </td>
+                    <td>{{Nombre}}</td>
+                    <td>{{esObligatoria}}</td>
+                    <td>{{Tipo}}</td>
+
                     <td>
                         <a id="editCaracteristica" class="boton boton-tabla editar" href="/caracteristicas/nueva">Editar</a>
                         <a id="elimCarac" class="boton boton-tabla eliminar" href="/caracteristicas/nueva">Eliminar</a>

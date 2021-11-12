@@ -17,6 +17,14 @@ public class EnumeradaIdeal extends TipoCaracteristica {
     @ElementCollection
     List<String> opciones;
 
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
+    private String nombre = "Opcion multiple";
+
+
     public EnumeradaIdeal(List<String> opciones) {
         this.opciones = Objects.requireNonNull(opciones, "Debe ingresar una lista de opciones posibles");
     }

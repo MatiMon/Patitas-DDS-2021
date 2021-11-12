@@ -12,8 +12,10 @@ public class CaracteristicaIdeal {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
+
     private String nombre;
     private Boolean esObligatoria;
+
 
     @ManyToOne
     @JoinColumn(name = "tipoCaracteristica_id")
@@ -24,6 +26,12 @@ public class CaracteristicaIdeal {
         this.esObligatoria = esObligatoria;
         this.tipo = tipo;
     }
+
+    public CaracteristicaIdeal() {
+
+    }
+
+    public String getTipo(){ return tipo.getNombre();}
 
     public String getNombre() {
         return nombre;

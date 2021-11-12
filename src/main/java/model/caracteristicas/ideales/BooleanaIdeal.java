@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 @DiscriminatorValue("Bool")
 public class BooleanaIdeal extends TipoCaracteristica {
 
+    private String nombre = "De respuesta si o no";
+
     public BooleanaDefinida crearCaracteristica(String nombre, Object valor){
         boolean _valor;
         try{
@@ -19,5 +21,9 @@ public class BooleanaIdeal extends TipoCaracteristica {
             throw new ValorCaracteristicaInvalidoException("de tipo Boolean");
         }
         return new BooleanaDefinida(nombre, _valor);
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 }

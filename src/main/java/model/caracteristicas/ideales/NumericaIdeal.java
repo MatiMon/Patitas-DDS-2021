@@ -11,6 +11,9 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("Num")
 public class NumericaIdeal extends TipoCaracteristica {
+
+    private String nombre = "Numerica";
+
     public NumericoDefinida crearCaracteristica(String nombre, Object valor){
         int _valor;
         try{
@@ -19,5 +22,9 @@ public class NumericaIdeal extends TipoCaracteristica {
             throw new ValorCaracteristicaInvalidoException("de tipo Int");
         }
         return new NumericoDefinida(nombre, _valor);
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 }

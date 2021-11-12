@@ -17,6 +17,7 @@ import spark.Response;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class CharacteristicsController extends Controller implements WithGlobalEntityManager, TransactionalOps {
   public ModelAndView mostrarCaracteristicas(Request request, Response response) {
@@ -25,15 +26,27 @@ public class CharacteristicsController extends Controller implements WithGlobalE
       return null;
     }
     Map<String, Object> modelo = getModelo(request, response);
-
-    CaracteristicaIdeal caracteristica = new CaracteristicaIdeal("Edad", false, new NumericaIdeal());
+    List<CaracteristicaIdeal> lista = RepositorioCaracteristicasIdeales.getInstancia().listar();
+/*    CaracteristicaIdeal caracteristica = new CaracteristicaIdeal("Edad", false, new NumericaIdeal());
     CaracteristicaIdeal comidaFavorita = new CaracteristicaIdeal("Comida Favorita",
         true, new NumericaIdeal());
     List<CaracteristicaIdeal> lista = Arrays.asList(caracteristica, comidaFavorita,
-        caracteristica, comidaFavorita,caracteristica, comidaFavorita);
-    modelo.put("caracteristicas", lista);
+        caracteristica, comidaFavorita,caracteristica, comidaFavorita);*/
+    modelo.put("caracteristicas", lista.stream().map(c -> descripcionCaracteristica(c)).collect(Collectors.toList()));
     return new ModelAndView(modelo, "caracteristicas.html.hbs");
 
+  }
+
+  public Map<String, String> descripcionCaracteristica(CaracteristicaIdeal caracteristicaIdeal){
+    Map<String, String> descripcion = new HashMap<>();
+    descripcion.put("Nombre", caracteristicaIdeal.getNombre());
+    descripcion.put("Tipo",caracteristicaIdeal.getTipo());
+    if(caracteristicaIdeal.esObligatoria()){
+      descripcion.put("esObligatoria", "Si");
+    }else{
+      descripcion.put("esObligatoria", "No");
+    }
+    return descripcion;
   }
 
 

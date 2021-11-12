@@ -11,5 +11,11 @@ public abstract class TipoCaracteristica {
     @Id
     @GeneratedValue
     private Long id;
+
+    public TipoCaracteristica() {
+    }
+
     public abstract CaracteristicaDefinida crearCaracteristica(String nombre, Object valor);
+    public abstract String getNombre();
+
 }

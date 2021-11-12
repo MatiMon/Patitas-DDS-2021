@@ -10,6 +10,9 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("Text")
 public class TextoIdeal extends TipoCaracteristica {
+
+    private String nombre = "Texto";
+
     public TextoDefinida crearCaracteristica(String nombre, Object valor){
         String _valor;
         try{
@@ -18,5 +21,9 @@ public class TextoIdeal extends TipoCaracteristica {
             throw new ValorCaracteristicaInvalidoException("de tipo String");
         }
         return new TextoDefinida(nombre, _valor);
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 }

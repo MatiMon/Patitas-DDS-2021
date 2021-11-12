@@ -1,6 +1,7 @@
 package model.caracteristicas;
 
 import model.caracteristicas.ideales.CaracteristicaIdeal;
+import model.duenio.Duenio;
 import model.mascota.Mascota;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
@@ -21,12 +22,16 @@ public class RepositorioCaracteristicasIdeales implements WithGlobalEntityManage
     entityManager().persist(caracteristica);
   }
 
+  public List<CaracteristicaIdeal> listar(){
+      return entityManager().createQuery("from CaracteristicasIdeales", CaracteristicaIdeal.class).getResultList();
+  }
+
   public CaracteristicaIdeal obtenerCaracteristica(String id) {
     return caracteristicas.get(id);
   }
 
   public List<CaracteristicaIdeal> getCaracteristicas(){
-    return new ArrayList<CaracteristicaIdeal>(caracteristicas.values());
+    return new ArrayList<CaracteristicaIdeal>(listar());
   }
 
   public void registrarCaracteristicaIdeal(String id, CaracteristicaIdeal caracteristica) {
