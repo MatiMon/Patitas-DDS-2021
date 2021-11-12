@@ -361,7 +361,7 @@ input.invalid {
 }
 
 button, .button {
-  background-color: #59D9D7;
+  background-color: #90b2ff;
   color: #000;
   border: none;
   padding: 10px 20px;
@@ -420,4 +420,7 @@ button:hover, .button:hover {
   display: none;
 }
 
+#logo{
+    margin: 12px;
+}
 
