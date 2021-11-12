@@ -5,25 +5,31 @@
 {{# partial "contenido" }}
 <section>
     <h2>Iniciar Sesión</h2>
-
     <form class="forumlario" action="/login" method="POST">
-        <div class="campo">
-            <span class="nombre-campo">Nombre de usuario:</span><input  required type="text" name="username" placeholder="Ingrese nombre de usuario">
-        </div>
-        <div class="campo">
-            <span class="nombre-campo">Contraseña:</span><input  required type="password" name="password" placeholder="Ingrese contraseña">
-        </div>
-        <input type="submit" class="button" value="Iniciar Sesión">
-    </form>
+    <div class="registro">
 
-  {{#if mensajeError}}
-    <div id="u7" class="ax_default label"  style="margin-top: 15px" data-label="Mensaje de error">
-      <div id="u7_div" class=""></div>
-      <div id="u7_text" class="text ">
-        <p><span>Usuario o contraseña inválidos. Por favor inténtelo nuevamente.</span></p>
-      </div>
+            <div class="campo">
+                <span class="nombre-campo">Nombre de usuario:</span><input  required type="text" name="username" placeholder="Ingrese nombre de usuario">
+            </div>
+            <div class="campo">
+                <span class="nombre-campo">Contraseña:</span><input  required type="password" name="password" placeholder="Ingrese contraseña">
+            </div>
+            <input type="submit" class="button" value="Iniciar Sesión">
     </div>
-  {{/if}}
+
+        </form>
+
+        {{#if mensajeError}}
+            <div id="u7" class="ax_default label"  style="margin-top: 15px" data-label="Mensaje de error">
+                <div id="u7_div" class=""></div>
+                <div id="u7_text" class="text ">
+                    <p><span>Usuario o contraseña inválidos. Por favor inténtelo nuevamente.</span></p>
+                </div>
+            </div>
+        {{/if}}
+
+
+
 
 </section>
 {{/partial}}

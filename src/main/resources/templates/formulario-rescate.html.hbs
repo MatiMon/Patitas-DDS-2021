@@ -9,7 +9,9 @@
   <div>
     <section>
       <form id="regForm" class ="forumlario" action="/rescates/nuevo" method="POST">
+          <div class="registro">
         <div class="tab">
+
           <div class="campo">
             <span class="nombre-campo">Nombre:</span><input type="text" name="Nombre" placeholder="Ingrese su nombre">
           </div>
@@ -31,6 +33,7 @@
             <span class="nombre-campo">Nro Documento:</span><input type="text" name="Numero Documento">
           </div>
         </div>
+
         <div class="tab">
           <h3>Datos de Contacto</h3>
           <div class="campo">
@@ -46,6 +49,7 @@
             <span class="nombre-campo">E-mail:</span><input type="email" name="email" placeholder="Ingrese Email">
           </div>
         </div>
+
         <div class="tab">
 
           <h5>Dirección</h5>
@@ -59,7 +63,9 @@
             <span class="nombre-campo">Piso/Dpto:</span><input type="number" name="direccion-piso-dpto" placeholder="Ingrese el piso/departamento">
           </div>
         </div>
+
         <div class="tab">
+
           <div class="campo">
             <span class="nombre-campo">¿La mascota que encontraste tiene chapita?</span>
             <span class="nombre-campo">Con chapita</span><input id ="checkChapita" type="checkbox" name="Tiene chapita"> <!--onclick="hideSteps()"-->
@@ -98,6 +104,7 @@
             </div>
           </div>
         </div>
+
         <div style="overflow:auto;">
           <div style="float:right;">
             <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -111,8 +118,9 @@
           <span class="step"></span>
           <span class="step"></span>
         </div>
-
+          </div>
        </form>
+
 
     </section>
   </div>

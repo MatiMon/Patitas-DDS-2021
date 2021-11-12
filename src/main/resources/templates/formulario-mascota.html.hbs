@@ -9,71 +9,76 @@
     <section>
         <h2>Registrar mascota</h2>
 
-        <form class="forumlario" action="/mascotas/nueva" method="POST">
-            <div class="campo">
-                <span class="nombre-campo">Tipo de mascota:</span>
-                <div>
-                <span>Perro</span><input type="radio" name="tipo mascota" value="Perro">
-                <span>Gato</span><input type="radio" name="tipo mascota" value="Gato">
+            <form class="forumlario" action="/mascotas/nueva" method="POST">
+                <div class="registro">
+                <div class="campo">
+                    <span class="nombre-campo">Tipo de mascota:</span>
+                    <div>
+                        <span>Perro</span><input type="radio" name="tipo mascota" value="Perro">
+                        <span>Gato</span><input type="radio" name="tipo mascota" value="Gato">
+                    </div>
                 </div>
-            </div>
-            <div class="campo">
-                <span class="nombre-campo">Nombre de mascota:</span><input  required  type="text" name="Nombre de mascota" placeholder="Ingrese el nombre de su mascota">
-                <span class="nombre-campo">Apodo:</span><input required  type="text" name="Apodo" placeholder="Ingrese el apodo de la mascota">
-                <span class="nombre-campo">Tamaño:</span><input required  list="tamanio" name="tamanio">
-                <datalist id="tamanio">
-                    {{#tamanio}}
-                    <option value= {{this}}>
-                    {{/tamanio}}
-                </datalist>
-            </div>
-            <div class="campo">
-                <span class="nombre-campo">Edad aproximada:</span><input required  type="number" name="Edad aproximada" placeholder="Ingrese la edad">
-                <span class="nombre-campo">Sexo:</span><input required  list="sexo" name="sexo">
-                <datalist id="sexo">
-                    {{#sexo}}
-                    <option value= {{this}}>
-                    {{/sexo}}
-                </datalist>
-            </div>
-            <div class="campo">
-                <span class="nombre-campo">Descripcion fisica:</span><input required  type="text" name="Descripcion fisica" placeholder="Ingrese la descripcion fisica de la mascota">
-            </div>
-            <div class="campo">
-                <span class="nombre-campo">Arrastre las fotos aqui:</span><input required  type="file" name="fotos" accept="image/*" multiple>
-            </div>
-
-            <h3>Caracteristicas</h3>
-            {{#caracteristicas}}
-            <div class="campo">
-                {{#if Opcion-multiple}}
-                    <span class="nombre-campo">{{Nombre}}:</span><input list={{Id}} name={{Id}}>
-                    <datalist id={{Id}}>
-                        {{#each this.Respuestas}}
+                <div class="campo">
+                    <span class="nombre-campo">Nombre de mascota:</span><input  required  type="text" name="Nombre de mascota" placeholder="Ingrese el nombre de su mascota">
+                    <span class="nombre-campo">Apodo:</span><input required  type="text" name="Apodo" placeholder="Ingrese el apodo de la mascota">
+                    <span class="nombre-campo">Tamaño:</span><input required  list="tamanio" name="tamanio">
+                    <datalist id="tamanio">
+                        {{#tamanio}}
                         <option value= {{this}}>
-                        {{/each}}
+                        {{/tamanio}}
                     </datalist>
-                {{/if}}
-                {{#if Texto}}
-                    <span class="nombre-campo">{{Nombre}}:</span><input type="text"  placeholder="Ingrese una respuesta" name={{Id}}>
-                {{/if}}
-                {{#if Numerica}}
-                    <span class="nombre-campo">{{Nombre}}:</span><input type="number" placeholder="Ingrese una respuesta" name={{Id}} >
-                {{/if}}
-                {{#if De-respuesta-si-o-no}}
-                    <span class="nombre-campo">{{Nombre}}:</span><input list={{Id}} name={{Id}}>
-                    <datalist id={{Id}}>
-                        <option value= "Si">
-                        <option value="No">
+                </div>
+                <div class="campo">
+                    <span class="nombre-campo">Edad aproximada:</span><input required  type="number" name="Edad aproximada" placeholder="Ingrese la edad">
+                    <span class="nombre-campo">Sexo:</span><input required  list="sexo" name="sexo">
+                    <datalist id="sexo">
+                        {{#sexo}}
+                        <option value= {{this}}>
+                        {{/sexo}}
                     </datalist>
-                {{/if}}
-            </div>
-            <!--<div class="campo">
-                <span class="nombre-campo">Caract obligatoria 2:</span><input type="text" name="Caracteristica obligatoria" placeholder="Ingrese una caracteristica">
-            </div>-->
-            {{/caracteristicas}}
-            <input class="button" type="submit" value="Registrar Mascota">
-        </form>
+                </div>
+                <div class="campo">
+                    <span class="nombre-campo">Descripcion fisica:</span><input required  type="text" name="Descripcion fisica" placeholder="Ingrese la descripcion fisica de la mascota">
+                </div>
+                <div class="campo">
+                    <span class="nombre-campo">Arrastre las fotos aqui:</span><input required  type="file" name="fotos" accept="image/*" multiple>
+                </div>
+
+                <h3>Caracteristicas</h3>
+                {{#caracteristicas}}
+                    <div class="campo">
+                        {{#if Opcion-multiple}}
+                            <span class="nombre-campo">{{Nombre}}:</span><input list={{Id}} name={{Id}}>
+                            <datalist id={{Id}}>
+                                {{#each this.Respuestas}}
+                                <option value= {{this}}>
+                                {{/each}}
+                            </datalist>
+                        {{/if}}
+                        {{#if Texto}}
+                            <span class="nombre-campo">{{Nombre}}:</span><input type="text"  placeholder="Ingrese una respuesta" name={{Id}}>
+                        {{/if}}
+                        {{#if Numerica}}
+                            <span class="nombre-campo">{{Nombre}}:</span><input type="number" placeholder="Ingrese una respuesta" name={{Id}} >
+                        {{/if}}
+                        {{#if De-respuesta-si-o-no}}
+                            <span class="nombre-campo">{{Nombre}}:</span><input list={{Id}} name={{Id}}>
+                            <datalist id={{Id}}>
+                                <option value= "Si">
+                                <option value="No">
+                            </datalist>
+                        {{/if}}
+                    </div>
+                    <!--<div class="campo">
+                        <span class="nombre-campo">Caract obligatoria 2:</span><input type="text" name="Caracteristica obligatoria" placeholder="Ingrese una caracteristica">
+                    </div>-->
+                {{/caracteristicas}}
+        </div>
+                <input class="button" type="submit" value="Registrar Mascota">
+            </form>
+
+
+
     </section>
 </div>
 
