@@ -52,6 +52,10 @@ public class CharacteristicsController extends Controller implements WithGlobalE
     String tipoCaracteristica = request.queryParams("Tipo de caracteristica");
     String opcion1 = request.queryParams("Opcion1");
     String opcion2 = request.queryParams("Opcion2");
+    String opcion3 = request.queryParams("Opcion3");
+    String opcion4 = request.queryParams("Opcion4");
+
+
 
     Boolean obligatoria = false;
 
@@ -65,18 +69,21 @@ public class CharacteristicsController extends Controller implements WithGlobalE
       unTipoCaracteristica = new TextoIdeal();
     }
     if(tipoCaracteristica == "Numerica"){
-      unTipoCaracteristica = new NumericaIdeal();
+     unTipoCaracteristica = new NumericaIdeal();
     }
     if(tipoCaracteristica == "De respuesta si o no"){
-      unTipoCaracteristica = new BooleanaIdeal();
+     unTipoCaracteristica = new BooleanaIdeal();
     }
     if(tipoCaracteristica == "Opcion multiple"){
       List<String> opciones = new ArrayList<String>();
       opciones.add(opcion1);
       opciones.add(opcion2);
+      opciones.add(opcion3);
+      opciones.add(opcion4);
+
+
       unTipoCaracteristica = new EnumeradaIdeal(opciones);
     }
-
     CaracteristicaIdeal unaCaracteristica = new CaracteristicaIdeal(nombre,obligatoria,unTipoCaracteristica);
 
     withTransaction(() -> {
