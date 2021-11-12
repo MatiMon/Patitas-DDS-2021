@@ -440,3 +440,11 @@ button:hover {
 .step.finish {
   background-color: #04AA6D;
 }
+
+.sinRegistrar {
+  display: none;
+}
+
+.registrado {
+  display: none;
+}
