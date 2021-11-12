@@ -36,14 +36,19 @@ public class Routes {
         Spark.post("/logout", sesionController::cerrarSesion);
         Spark.get("/usuarios/nuevo", userController::mostrarFormularioNuevoUsuario, engine);
         Spark.post("/usuarios/nuevo", userController::crearUsuario);
+        Spark.get("/user-error", userController::crearUsuarioError, engine);
+
         Spark.get("/caracteristicas", characteristicsController::mostrarCaracteristicas, engine);
 
 
         Spark.get("/mascotas/nueva", mascotaController::mostrarFormularioMascota, engine);
         Spark.post("/mascotas/nueva", mascotaController::crearMascota);
+        Spark.get("/mascota-error", mascotaController::crearMascotaError, engine);
 
         Spark.get("/rescates/nuevo", rescateController::mostrarFormularioRescate, engine);
         Spark.post("/rescates/nuevo",rescateController::crearRescate);
+        Spark.get("/rescates-error", rescateController::crearRescateError, engine);
+        Spark.get("/mascota-inexistente", rescateController::obtenerMascotaError, engine);
 
         Spark.get("/caracteristicas/nueva",characteristicsController::registrarNuevaCaracteristica, engine);
         Spark.post("/caracteristicas/nueva",characteristicsController::crearCaracteristica);

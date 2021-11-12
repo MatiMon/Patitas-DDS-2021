@@ -121,6 +121,17 @@
           </div>
        </form>
 
+      {{#if mascotaInexistente}}
+        <div id="u7" class="ax_default label"  style="margin-top: 15px" data-label="Mensaje de error">
+          <p><span>La mascota que ha encontrado no se encuentra registrada en nuestra página</span></p>
+        </div>
+      {{/if}}
+
+      {{#if rescateError}}
+        <div id="u7" class="ax_default label"  style="margin-top: 15px" data-label="Mensaje de error">
+          <p><span>Ha ocurrido un error al intentar registrar el rescate. Por favor intente nuevamente</span></p>
+        </div>
+      {{/if}}
 
     </section>
   </div>
@@ -209,6 +220,8 @@ function fixStepIndicator(n) {
   }
 }*/
 </script>
+
+
 
 {{/partial}}
 

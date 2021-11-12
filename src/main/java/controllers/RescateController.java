@@ -68,7 +68,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
     RescateDeMascotaSinRegistrar rescateDeMascotaSinRegistrar = null;
 
     if(tieneChapita){
-      rescateRegistrado = new RescateDeMascotaRegistrada(fotos, descripcion, ubicacionMascota, rescatista, LocalDateTime.now(), obtenerMascota(idMascota));
+      rescateRegistrado = new RescateDeMascotaRegistrada(fotos, descripcion, ubicacionMascota, rescatista, LocalDateTime.now(), obtenerMascota(idMascota, response));
     }else{
       rescateDeMascotaSinRegistrar = new RescateDeMascotaSinRegistrar(fotos, descripcion, ubicacionMascota,
           rescatista, LocalDateTime.now(), tamanio, tipoAnimal,null, null); //no tiene dueño pues esta perdida
@@ -77,7 +77,6 @@ public class RescateController extends Controller implements WithGlobalEntityMan
 
 
     try{
-      this.beginTransaction();
       entityManager().persist(contactoPrincipal);
       entityManager().persist(rescatista);
       if(tieneChapita){
@@ -87,7 +86,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
       }
       this.commitTransaction();
     }catch (Exception e){
-      //TODO
+      response.redirect("/rescate-error");
     }
 
     response.redirect("/"); //TODO definir a donde redireccionar despues de crear la mascota
@@ -101,8 +100,27 @@ public class RescateController extends Controller implements WithGlobalEntityMan
     return asociaciones.stream().filter(asociacion -> asociacion.getId().equals(1)).findFirst().orElse(null);
   }
 
-  public Mascota obtenerMascota(String idMascota){
-    List<Mascota> mascotas = entityManager().createQuery("from Mascotas", Mascota.class).getResultList();
-    return mascotas.stream().filter(mascota -> mascota.getIdMascota().equals(idMascota)).findFirst().orElse(null);
+  public Mascota obtenerMascota(String idMascota, Response response){
+    Mascota mascota = null;
+    try{
+      List<Mascota> mascotas = entityManager().createQuery("from Mascotas", Mascota.class).getResultList();
+      mascota = mascotas.stream().filter(m -> m.getIdMascota().equals(idMascota)).findFirst().orElse(null);
+    }catch (Exception e){
+      response.redirect("/mascota-inexistente");
+    }
+
+    return mascota;
+  }
+
+  public ModelAndView obtenerMascotaError(Request request, Response response) {
+    Map<String, Object> parametros = new HashMap<>();
+    parametros.put("mascotaInexistente", true);
+    return new ModelAndView(parametros, "formulario-rescate.html.hbs");
+  }
+
+  public ModelAndView crearRescateError(Request request, Response response) {
+    Map<String, Object> parametros = new HashMap<>();
+    parametros.put("rescateError", true);
+    return new ModelAndView(parametros, "formulario-rescate.html.hbs");
   }
 }

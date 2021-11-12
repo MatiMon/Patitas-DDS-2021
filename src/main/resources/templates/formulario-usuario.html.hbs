@@ -56,6 +56,13 @@
 
             <input class="button" type="submit" value="Registrarme">
         </form>
+
+      {{#if usuarioError}}
+        <div id="u7" class="ax_default label"  style="margin-top: 15px" data-label="Mensaje de error">
+          <p><span>Ha ocurrido un error al intentar registrarse. Por favor intente nuevamente.</span></p>
+        </div>
+      {{/if}}
+
     </section>
 </div>
 

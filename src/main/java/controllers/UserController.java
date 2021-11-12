@@ -73,11 +73,17 @@ public class UserController extends Controller implements WithGlobalEntityManage
       entityManager().persist(duenio);
       this.commitTransaction();
     }catch (Exception e){
-      //TODO
+      response.redirect("/user-error");
     }
     request.session().attribute("user_id", usuario.getId());
     response.redirect("/");
     return null;
+  }
+
+  public ModelAndView crearUsuarioError(Request request, Response response) {
+    Map<String, Object> parametros = new HashMap<>();
+    parametros.put("usuarioError", true);
+    return new ModelAndView(parametros, "formulario-usuario.html.hbs");
   }
 
 }
