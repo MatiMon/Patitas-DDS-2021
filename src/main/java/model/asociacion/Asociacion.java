@@ -76,11 +76,11 @@ public class Asociacion  implements WithGlobalEntityManager {
     }
 
     public void agregarRescateDeMascotaSinRegistar(RescateDeMascotaSinRegistrar rescateDeMascotaSinRegistrar) {
-        this.rescatesDeMascotasSinRegistrar.add(rescateDeMascotaSinRegistrar);
+        entityManager().persist(rescateDeMascotaSinRegistrar);
     }
 
     public void agregarRescateDeMascotaRegistrada(RescateDeMascotaRegistrada rescateDeMascotaRegistrada) {
-        this.rescatesDeMascotasRegistradas.add(rescateDeMascotaRegistrada);
+        entityManager().persist(rescateDeMascotaRegistrada);
     }
 
     public void agregarIntencionDeAdopcion(PublicacionIntencionDeAdopcion intencion) {
@@ -144,5 +144,9 @@ public class Asociacion  implements WithGlobalEntityManager {
 
     public void removerComodidad(ComodidadIdeal comodidadIdeal){
         comodidadesPersonalizadas.remove(comodidadIdeal);
+    }
+
+    public Long getId() {
+        return id;
     }
 }

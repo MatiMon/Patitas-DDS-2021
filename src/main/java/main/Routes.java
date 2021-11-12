@@ -44,6 +44,7 @@ public class Routes {
         Spark.post("/mascotas/nueva", mascotaController::crearMascota);
 
         Spark.get("/rescates/nuevo", rescateController::mostrarFormularioRescate, engine);
+        Spark.post("/rescates/nuevo",rescateController::crearRescate);
 
         Spark.get("/caracteristicas/nueva",characteristicsController::registrarNuevaCaracteristica, engine);
         Spark.post("/caracteristicas/nueva",characteristicsController::crearCaracteristica);

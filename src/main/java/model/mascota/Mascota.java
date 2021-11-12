@@ -35,7 +35,7 @@ public class Mascota {
   @ManyToOne
   @JoinColumn(name = "DuenioId")
   private Duenio duenio;
-  private String id_mascota;
+  private String idMascota;
 
   public Mascota(String nombre, String apodo, int edad, Sexo sexo, TipoAnimal tipoAnimal, String descripcionFisica,
                  List<String> fotos, List<CaracteristicaDefinida> caracteristicaDefinidas, Duenio duenio, String id, Tamanio tamanio) {
@@ -48,7 +48,7 @@ public class Mascota {
     this.fotos = fotos;
     this.caracteristicaDefinidas = caracteristicaDefinidas;
     this.duenio = duenio;
-    this.id_mascota = id;
+    this.idMascota = id;
     this.tamanio = tamanio;
   }
 
@@ -82,5 +82,9 @@ public class Mascota {
   public void darEnAdopcionEnLaAsociacionMasCercana (List<CaracteristicaDefinida> comodidades){
     PublicacionMascotaEnAdopcion publicacion = new PublicacionMascotaEnAdopcion(comodidades,this);
     this.duenio.obtenerAsociacionMasCercana().agregarMascotaEnAdopcion(publicacion);
+  }
+
+  public String getIdMascota() {
+    return idMascota;
   }
 }

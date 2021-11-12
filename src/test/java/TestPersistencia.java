@@ -1,3 +1,4 @@
+import model.asociacion.Asociacion;
 import model.asociacion.Voluntario;
 import model.caracteristicas.definidas.BooleanaDefinida;
 import model.caracteristicas.definidas.CaracteristicaDefinida;
@@ -49,6 +50,14 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     assertNotNull(dani.getId());
   }
 
+  @Test
+  public void persistirAsociacion(){
+    Asociacion patitasAlRescate = new Asociacion("Patitas al rescate", new Ubicacion("String", 123, 456),
+        new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+    entityManager().persist(patitasAlRescate);
+
+    assertNotNull(patitasAlRescate.getId());
+  }
 
   @Test
   public void puedoGuardarDistintosTiposCaracteristicasDefinidas() {

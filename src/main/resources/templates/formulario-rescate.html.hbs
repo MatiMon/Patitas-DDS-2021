@@ -8,7 +8,7 @@
 
   <div>
     <section>
-      <form class="regForm" action="/login" method="POST">
+      <form class="regForm" action="/rescates/nuevo" method="POST">
         <div class="tab">
           <div class="campo">
             <span class="nombre-campo">Nombre:</span><input type="text" name="Nombre" placeholder="Ingrese su nombre">
@@ -32,6 +32,21 @@
           </div>
         </div>
         <div class="tab">
+          <h3>Datos de Contacto</h3>
+          <div class="campo">
+            <span class="nombre-campo">Nombre:</span><input type="text" name="nombre" placeholder="Ingrese Nombre">
+          </div>
+          <div class="campo">
+            <span class="nombre-campo">Apellido:</span><input type="text" name="apellido" placeholder="Ingrese Apellido">
+          </div>
+          <div class="campo">
+            <span class="nombre-campo">Telefono:</span><input type="number" name="telefono" placeholder="Ingrese Telefono">
+          </div>
+          <div class="campo">
+            <span class="nombre-campo">E-mail:</span><input type="email" name="email" placeholder="Ingrese Email">
+          </div>
+        </div>
+        <div class="tab">
 
           <h5>Dirección</h5>
           <div class="campo">
@@ -47,8 +62,7 @@
         <div class="tab">
           <div class="campo">
             <span class="nombre-campo">¿La mascota que encontraste tiene chapita?</span>
-            <span class="nombre-campo">Con chapita</span><input type="radio" name="Tiene chapita">
-            <span class="nombre-campo">Sin chapita</span><input type="radio" name="No tiene chapita">
+            <span class="nombre-campo">Con chapita</span><input type="checkbox" name="Tiene chapita">
           </div>
           <div class="campo">
             <span class="nombre-campo">Estado en el que encontraste la mascota:</span><input type="text" name="estado mascota" placeholder="Ingrese la descripcion fisica del estado en que encontro la mascota">
@@ -57,7 +71,31 @@
             <span class="nombre-campo">Lugar en el que encontraste la mascota:</span><input type="text" name="lugar mascota" placeholder= "Aca deberia ir un mapa">
           </div>
           <div class="campo">
-            <span class="nombre-campo">Arrastre las fotos aqui:</span><input type="file" accept="image/*" multiple>
+            <span class="nombre-campo">Arrastre las fotos aqui:</span><input type="file" name="fotos" accept="image/*" multiple>
+          </div>
+          <div class="registrado">
+            <div class="campo">
+              <span class="nombre-campo">Id de la mascota:</span><input type="text" name="chapita" placeholder="Ingrese el id de la chapita">
+            </div>
+          </div>
+          <div class="sinRegistrar">
+            <div class="campo">
+              <span class="nombre-campo">¿Es perro o gato?:</span><input list="tiposAnimales" name="Tipo del animal">
+              <datalist id="tiposAnimales">
+                {{#tipoAnimal}}
+                <option value= {{this}}>
+                {{/tipoAnimal}}
+              </datalist>
+            </div>
+
+            <div class="campo">
+              <span class="nombre-campo">¿Qué tamaño tiene?:</span><input list="tamanioAnimal" name="Tamaño del animal">
+              <datalist id="tamanioAnimal">
+                {{#tamanioAnimal}}
+                <option value= {{this}}>
+                {{/tamanioAnimal}}
+              </datalist>
+            </div>
           </div>
         </div>
         <div style="overflow:auto;">
@@ -71,7 +109,7 @@
           <span class="step"></span>
           <span class="step"></span>
           <span class="step"></span>
-
+          <span class="step"></span>
         </div>
 
        </form>
