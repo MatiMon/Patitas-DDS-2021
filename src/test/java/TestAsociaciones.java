@@ -72,7 +72,7 @@ public class TestAsociaciones {
     ubicacionSanMartin = new Ubicacion("San Martín 150", -34.58499, -58.45023);
     ubicacionGuardiaVieja = new Ubicacion("Guardia Vieja 2077", -34.58499, -58.45023);
     contactos.add(contacto1);
-    this.duenio = new Duenio("Matias", "Sosa", null, TipoDocumento.DNI, 40000000, contacto1,null);
+    this.duenio = new Duenio("Matias", "Sosa", null, TipoDocumento.DNI, 40000000, contacto1,null, null);
 
 
     rescateDeMascotaRegistrada1 = new RescateDeMascotaRegistrada(fotos,"Descripcion1", ubicacionSanMartin, rescatista, LocalDateTime.now().minusDays(5), repositorioMascotas.obtenerMascota("QR-1"));

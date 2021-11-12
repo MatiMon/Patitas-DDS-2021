@@ -18,11 +18,4 @@ public class RescateController extends Controller{
     return new ModelAndView(modelo, "formulario-rescate.html.hbs");
   }
 
-  public ModelAndView mostrarFormularioRescateDatosMascota(Request request, Response response) {
-    Map<String, Object> modelo = new HashMap<>();
-    modelo.put("sesionIniciada", request.session().attribute("user_id") != null);
-    request.session().attribute("redirect_login", "/rescates/datosMascota");
-    return new ModelAndView(modelo, "formulario-rescate-datos-mascota.html.hbs");
-
-  }
 }

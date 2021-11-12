@@ -50,7 +50,7 @@ public class Duenio {
   @Embedded
   private Ubicacion ubicacion;
 
-  public Duenio(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, double documento, Contacto contactoPrincipal, Ubicacion ubicacion) {
+  public Duenio(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, double documento, Contacto contactoPrincipal, Ubicacion ubicacion, Usuario usuario) {
     this.nombre = nombre;
     this.apellido = apellido;
     this.fechaNacimiento = fechaNacimiento;
@@ -58,6 +58,7 @@ public class Duenio {
     this.contactoPrincipal = contactoPrincipal;
     this.documento = documento;
     this.ubicacion = ubicacion;
+    this.usuario = usuario;
   }
 
   public void notificar(String mensaje) {
@@ -85,4 +86,10 @@ public class Duenio {
     return id;
   }
 
+  public Long getUsuarioId() {
+    return usuario.getId();
+  }
+
+  public Duenio() {
+  }
 }

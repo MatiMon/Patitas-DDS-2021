@@ -31,4 +31,5 @@ public class RepositorioUsuarios implements WithGlobalEntityManager {
     if(usuario.autorizarContrasenia(password) && !usuario.equals(null)) return usuario;
     else throw new RuntimeException("Contraseña invalida");
   }
+
 }

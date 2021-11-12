@@ -42,9 +42,6 @@ public class Routes {
         Spark.get("/mascotas/nueva", mascotaController::mostrarFormularioMascota, engine);
         Spark.post("/mascotas/nueva", mascotaController::crearMascota);
 
-        Spark.get("/rescates/datosPersonales", rescateController::mostrarFormularioRescate, engine); //TODO ver como poner todo en el mismo html o definir otro path mejor
-        Spark.get("/rescates/datosMascota", rescateController::mostrarFormularioRescateDatosMascota, engine); //TODO ver como poner todo en el mismo html o definir otro path mejor
-
         Spark.get("/rescates/nuevo", rescateController::mostrarFormularioRescate, engine);
 
         Spark.get("/caracteristicas/nueva",characteristicsController::registrarNuevaCaracteristica, engine);

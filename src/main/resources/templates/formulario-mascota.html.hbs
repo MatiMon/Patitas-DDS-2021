@@ -12,12 +12,20 @@
         <form class="login" action="/mascotas/nueva" method="POST">
             <div class="campo">
                 <span class="nombre-campo">Tipo de mascota:</span>
-                <span class="nombre-campo">Perro</span><input type="radio" name="Tipo de mascota">
-                <span class="nombre-campo">Gato</span><input type="radio" name="Tipo de mascota">
+                <div>
+                <span>Perro</span><input type="radio" name="tipo mascota" value="Perro">
+                <span>Gato</span><input type="radio" name="tipo mascota" value="Gato">
+                </div>
             </div>
             <div class="campo">
                 <span class="nombre-campo">Nombre de mascota:</span><input type="text" name="Nombre de mascota" placeholder="Ingrese el nombre de su mascota">
                 <span class="nombre-campo">Apodo:</span><input type="text" name="Apodo" placeholder="Ingrese el apodo de la mascota">
+                <span class="nombre-campo">Tamaño:</span><input list="tamanio" name="tamanio">
+                <datalist id="tamanio">
+                    {{#tamanio}}
+                    <option value= {{this}}>
+                    {{/tamanio}}
+                </datalist>
             </div>
             <div class="campo">
                 <span class="nombre-campo">Edad aproximada:</span><input type="number" name="Edad aproximada" placeholder="Ingrese la edad">
@@ -32,7 +40,7 @@
                 <span class="nombre-campo">Descripcion fisica:</span><input type="text" name="Descripcion fisica" placeholder="Ingrese la descripcion fisica de la mascota">
             </div>
             <div class="campo">
-                <span class="nombre-campo">Arrastre las fotos aqui:</span><input type="file" accept="image/*" multiple>
+                <span class="nombre-campo">Arrastre las fotos aqui:</span><input type="file" name="fotos" accept="image/*" multiple>
             </div>
 
             <h3>Caracteristicas</h3>

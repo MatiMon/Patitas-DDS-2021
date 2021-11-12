@@ -28,7 +28,7 @@ public class TestRepositorioQR {
       TipoDocumento.DNI,
       999999,
       null,
-          null);
+          null, null);
   Mascota mascota1 = new Mascota("Toto", "Toto", 10,
       Sexo.MACHO, TipoAnimal.PERRO, "perro grande", fotos,
       caracteristicas, unDuenio, "qr-10", Tamanio.GRANDE

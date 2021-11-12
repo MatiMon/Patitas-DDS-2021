@@ -49,15 +49,6 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     assertNotNull(dani.getId());
   }
 
-  @Test
-  public void persistirCosas(){
-    Contacto contactoPrincipal = new Contacto("al", "go", 1234, "algo@gmail");
-    Ubicacion ubicacion = new Ubicacion("String", 123, 456);
-    Duenio duenio = new Duenio("a", "b", LocalDate.now(), TipoDocumento.DNI, 12365454, contactoPrincipal, ubicacion);
-
-
-    assertEquals(true, true);
-  }
 
   @Test
   public void puedoGuardarDistintosTiposCaracteristicasDefinidas() {
@@ -83,10 +74,16 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     List<ValidacionDeContrasenia> validaciones = new ArrayList<>();
     validaciones.add(validacionDeCaracteresConsecutivos);
     ValidadorContrasenia validadorContrasenia = new ValidadorContrasenia(validaciones);
-    Usuario userAdmin = new Usuario("admin", "admin123456", validadorContrasenia);
+    Usuario userAdmin = new Usuario("admin", "adminadmin", validadorContrasenia);
     userAdmin.setEsAdministrador(true);
 
+    Contacto contactoPrincipal = new Contacto("al", "go", 1234, "algo@gmail");
+    Ubicacion ubicacion = new Ubicacion("String", 123, 456);
+    Duenio duenio = new Duenio("Nombre falso", "sanchez", LocalDate.now(), TipoDocumento.DNI, 1254589, contactoPrincipal, ubicacion, userAdmin);
+
     entityManager().persist(userAdmin);
+    entityManager().persist(contactoPrincipal);
+    entityManager().persist(duenio);
 
     assertEquals(1, entityManager().createQuery("from Usuarios", Usuario.class).getResultList().size());
   }

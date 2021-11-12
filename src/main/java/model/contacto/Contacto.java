@@ -47,4 +47,7 @@ public class Contacto {
   public Long getId() {
     return id;
   }
+
+  public Contacto() {
+  }
 }

@@ -80,7 +80,7 @@ public class TestMascotaBuilder {
     Contacto contacto = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
     List<Contacto> contactos = new ArrayList<>();
     contactos.add(contacto);
-    Duenio duenio = new Duenio("Nombre falso", "sanchez", LocalDate.now(), TipoDocumento.DNI, 1254589, null, null);
+    Duenio duenio = new Duenio("Nombre falso", "sanchez", LocalDate.now(), TipoDocumento.DNI, 1254589, null, null, null);
     creadorMascota.setDuenio(duenio);
   }
 
