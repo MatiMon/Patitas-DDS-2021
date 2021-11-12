@@ -38,7 +38,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
     String apellido = request.queryParams("Apellido");
     LocalDate fechaDeNacimiento = LocalDate.parse(request.queryParams("Fecha De Nacimiento"), DateTimeFormatter.ISO_LOCAL_DATE);
     TipoDocumento tipoDocumento = TipoDocumento.valueOf(request.queryParams("Tipo de Documento").toUpperCase(Locale.ROOT));
-    Double nroDocumento = Double.valueOf(request.queryParams("Numero Documento"));
+    String nroDocumento = request.queryParams("Numero Documento");
     String direccion = request.queryParams("direccion-calle") + " " + request.queryParams("direccion-altura") + " " + request.queryParams("direccion-piso-dpto");
 
     //Contacto
@@ -49,7 +49,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
     Contacto contactoPrincipal = new Contacto(nombre1, apellido1, telefono, email);
 
     //Mascota
-    Boolean tieneChapita = Boolean.parseBoolean(request.queryParams("Tiene chapita"));
+    Boolean tieneChapita = (request.queryParams("Tiene chapita")) != null;
     String descripcion = request.queryParams("estado mascota");
     String lugarMascota = request.queryParams("lugar mascota");
     List<String> fotos = new ArrayList<>();
@@ -102,7 +102,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
   }
 
   public Mascota obtenerMascota(String idMascota){
-    List<Mascota> mascotas = entityManager().createQuery("from mascotas", Mascota.class).getResultList();
-    return mascotas.stream().filter(asociacion -> asociacion.getIdMascota().equals(idMascota)).findFirst().orElse(null);
+    List<Mascota> mascotas = entityManager().createQuery("from Mascotas", Mascota.class).getResultList();
+    return mascotas.stream().filter(mascota -> mascota.getIdMascota().equals(idMascota)).findFirst().orElse(null);
   }
 }
