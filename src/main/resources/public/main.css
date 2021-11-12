@@ -189,7 +189,7 @@ input {
     position: fixed;
     right: 0px;
     top: 0px;
-    background-color: black;
+    background-color: #B7E8BD;
 }
 
 ul, ol {
@@ -197,18 +197,18 @@ ul, ol {
 }
 
 .nav li a, #cerrarSesion{
-    background-color: #000;
-    color: #fff;
+    background-color: #B7E8BD;
+    color: #323232;
     text-decoration:none;
     padding:10px 15px;
     display:block;
-    border: 1px solid #000;
+    border: 1px solid #B7E8BD;
     font-size: 17px;
     font-family: Raleway;
 }
 
 .nav li a:hover, #cerrarSesion:hover{
-    background-color: #434343;
+    background-color: #9ee1a6;
 }
 
 .nav > li{
@@ -361,8 +361,8 @@ input.invalid {
 }
 
 button, .button {
-  background-color: #04AA6D;
-  color: #ffffff;
+  background-color: #59D9D7;
+  color: #000;
   border: none;
   padding: 10px 20px;
   font-size: 17px;
