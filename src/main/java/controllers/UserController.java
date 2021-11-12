@@ -75,7 +75,7 @@ public class UserController extends Controller implements WithGlobalEntityManage
     }catch (Exception e){
       //TODO
     }
-
+    request.session().attribute("user_id", usuario.getId());
     response.redirect("/");
     return null;
   }
