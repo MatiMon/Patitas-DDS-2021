@@ -25,6 +25,7 @@ public class MascotaController extends Controller implements WithGlobalEntityMan
   public Map<String, Object> descripcionCaracteristica(CaracteristicaIdeal caracteristicaIdeal){
     Map<String, Object> descripcion = new HashMap<>();
     descripcion.put("Nombre", caracteristicaIdeal.getNombre());
+    descripcion.put("Id", caracteristicaIdeal.getNombre().replace(" ","-"));
     descripcion.put("Tipo",caracteristicaIdeal.getTipo());
     if(caracteristicaIdeal.esObligatoria()){
       descripcion.put("esObligatoria", "Si");
@@ -74,6 +75,9 @@ public class MascotaController extends Controller implements WithGlobalEntityMan
 
     List<CaracteristicaDefinida> caracteristicaDefinidas = new ArrayList<>(); //TODO ver como obtener este dato del formulario
 
+    List<CaracteristicaIdeal> caracteristicas = RepositorioCaracteristicasIdeales.getInstancia().listar();
+    caracteristicas.forEach(c -> caracteristicaDefinidas.add(crear(c, request)));
+
     Long userid = request.session().attribute("user_id");
     /*List<Duenio> duenios = entityManager().createQuery("from Duenios", Duenio.class).getResultList();
     Duenio duenio = duenios.stream().filter(u -> u.getUsuarioId().equals(userid)).findFirst().orElse(null);*/
@@ -81,12 +85,30 @@ public class MascotaController extends Controller implements WithGlobalEntityMan
     Mascota mascota = new Mascota(nombre, apodo, edad, sexo, tipoAnimal, descripcionFisica, fotos, caracteristicaDefinidas, duenio, null, tamanio);
 
     withTransaction(() -> {
-      RepositorioMascotas.getInstancia().agregarMascota(mascota);
+      caracteristicaDefinidas.forEach(c -> entityManager().persist(c));
+      entityManager().persist(mascota);
+
     });
 
     response.redirect("/"); //TODO definir a donde redireccionar despues de crear la mascota
     return null;
   }
+
+  private CaracteristicaDefinida crear(CaracteristicaIdeal c, Request request) {
+     if(c.getTipo().equals("De respuesta si o no")){
+       String cosa = request.queryParams(c.getNombre().replace(" ","-"));
+      Boolean valor = cosa.equals("Si"); //TODO
+      return c.crearCaracteristica(valor);
+    }
+    if(c.getTipo().equals("Numerica")){//TODO
+      int valor = Integer.parseInt(request.queryParams(c.getNombre().replace(" ","-")));
+      return c.crearCaracteristica(valor);
+    }
+    return c.crearCaracteristica(request.queryParams(c.getNombre().replace(" ","-")));
+  }
+
+
+
 
   public Duenio obtenerDuenio(Long userid){
     List<Duenio> duenios = entityManager().createQuery("from Duenios", Duenio.class).getResultList();

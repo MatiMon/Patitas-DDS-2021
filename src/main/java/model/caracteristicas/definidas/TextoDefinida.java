@@ -14,6 +14,9 @@ public class TextoDefinida extends CaracteristicaDefinida {
     this.valor = valor;
   }
 
+  public TextoDefinida() {
+  }
+
   public String getValor() {
     return valor;
   }

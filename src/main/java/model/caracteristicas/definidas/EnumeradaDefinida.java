@@ -14,6 +14,9 @@ public class EnumeradaDefinida extends CaracteristicaDefinida{
     this.valor = valor;
   }
 
+  public EnumeradaDefinida() {
+  }
+
   public String getValor() {
     return valor;
   }

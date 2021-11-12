@@ -12,6 +12,9 @@ public abstract class CaracteristicaDefinida {
     private Long id;
     String nombre;
 
+    public CaracteristicaDefinida() {
+    }
+
     public String getNombre() {
         return nombre;
     }

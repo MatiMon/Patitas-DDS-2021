@@ -79,7 +79,7 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     List<ValidacionDeContrasenia> validaciones = new ArrayList<>();
     validaciones.add(validacionDeCaracteresConsecutivos);
     ValidadorContrasenia validadorContrasenia = new ValidadorContrasenia(validaciones);
-    Usuario userAdmin = new Usuario("admin", "adminadmin", validadorContrasenia);
+    Usuario userAdmin = new Usuario("admin", "123456", validadorContrasenia);
     userAdmin.setEsAdministrador(true);
 
     Contacto contactoPrincipal = new Contacto("al", "go", 1234, "algo@gmail");

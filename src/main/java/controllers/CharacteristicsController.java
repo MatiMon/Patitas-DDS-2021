@@ -62,8 +62,8 @@ public class CharacteristicsController extends Controller implements WithGlobalE
 
   public Void crearCaracteristica(Request request, Response response) {
     String nombre = request.queryParams("Nombre de la caracteristica");
-    System.out.println(request.queryParams("obligatoria"));
-    Boolean obligatoria = request.queryParams("obligatoria").equals("on");
+    //System.out.println("El valor de obligatoria es:"+request.queryParams("obligatoria"));
+    Boolean obligatoria = null != request.queryParams("obligatoria");
 
     String tipoCaracteristica = request.queryParams("Tipo de caracteristica");
     String opcion1 = request.queryParams("Opcion1");

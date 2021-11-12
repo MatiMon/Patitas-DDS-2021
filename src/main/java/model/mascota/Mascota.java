@@ -29,7 +29,7 @@ public class Mascota {
   private List<String> fotos;
 
   @OneToMany
-  @JoinColumn(name = "mascota_id")
+  @JoinColumn(name = "id_mascota")
   private List<CaracteristicaDefinida> caracteristicaDefinidas;
 
   @ManyToOne

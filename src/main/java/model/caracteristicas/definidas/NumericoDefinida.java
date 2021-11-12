@@ -14,6 +14,9 @@ public class NumericoDefinida extends CaracteristicaDefinida {
     this.valor = valor;
   }
 
+  public NumericoDefinida() {
+  }
+
   @Override
   public boolean compatibilidad(CaracteristicaDefinida comodidad) {
     NumericoDefinida comodidadNumerica = (NumericoDefinida) comodidad;
