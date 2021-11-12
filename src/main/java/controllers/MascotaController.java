@@ -48,9 +48,9 @@ public class MascotaController extends Controller implements WithGlobalEntityMan
     List<CaracteristicaDefinida> caracteristicaDefinidas = new ArrayList<>(); //TODO ver como obtener este dato del formulario
 
     Long userid = request.session().attribute("user_id");
-    List<Duenio> duenios = entityManager().createQuery("from Duenios", Duenio.class).getResultList();
-    Duenio duenio = duenios.stream().filter(u -> u.getUsuarioId().equals(userid)).findFirst().orElse(null);
-
+    /*List<Duenio> duenios = entityManager().createQuery("from Duenios", Duenio.class).getResultList();
+    Duenio duenio = duenios.stream().filter(u -> u.getUsuarioId().equals(userid)).findFirst().orElse(null);*/
+    Duenio duenio = obtenerDuenio(userid);
     Mascota mascota = new Mascota(nombre, apodo, edad, sexo, tipoAnimal, descripcionFisica, fotos, caracteristicaDefinidas, duenio, null, tamanio);
 
     withTransaction(() -> {
@@ -59,6 +59,11 @@ public class MascotaController extends Controller implements WithGlobalEntityMan
 
     response.redirect("/"); //TODO definir a donde redireccionar despues de crear la mascota
     return null;
+  }
+
+  public Duenio obtenerDuenio(Long userid){
+    List<Duenio> duenios = entityManager().createQuery("from Duenios", Duenio.class).getResultList();
+    return duenios.stream().filter(u -> u.getUsuarioId().equals(userid)).findFirst().orElse(null);
   }
 
 }
