@@ -54,22 +54,6 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     assertNotNull(dani.getId());
   }
 
-  @Test
-  public void persistirAsociacion(){
-    Asociacion patitasAlRescate = new Asociacion("Patitas al rescate", new Ubicacion("String", 123, 456),
-        new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
-    entityManager().persist(patitasAlRescate);
-
-    assertNotNull(patitasAlRescate.getId());
-  }
-
-  @Test
-  public void persistirMascota(){
-    Mascota mascota = new Mascota("Pepita", "Pepin", 15, Sexo.HEMBRA, TipoAnimal.GATO,
-        null, new ArrayList<>(), new ArrayList<>(), null, "123", Tamanio.GRANDE);
-    entityManager().persist(mascota);
-    assertNotNull(mascota.getId());
-  }
 
   @Test
   public void puedoGuardarDistintosTiposCaracteristicasDefinidas() {
