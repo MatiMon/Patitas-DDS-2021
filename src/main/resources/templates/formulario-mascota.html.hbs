@@ -44,12 +44,30 @@
             </div>
 
             <h3>Caracteristicas</h3>
+            {{#caracteristicas}}
             <div class="campo">
-                <span class="nombre-campo">Caract obligatoria 1:</span><input type="text" name="Caracteristica obligatoria" placeholder="Ingrese una caracteristica">
+                {{#if Opcion-multiple}}
+                    <span class="nombre-campo">{{Nombre}}:</span><input list={{Nombre}} name={{Nombre}}>
+                    <datalist id={{Nombre}}>
+                        {{#each this.Respuestas}}
+                        <option value= {{this}}>
+                        {{/each}}
+                    </datalist>
+                {{/if}}
+                {{#if Texto}}
+                    <span class="nombre-campo">{{Nombre}}:</span><input type="text" name={{Nombre}} placeholder="Ingrese una respuesta">
+                {{/if}}
+                {{#if Numerica}}
+                    <span class="nombre-campo">{{Nombre}}:</span><input type="number" name={{Nombre}} placeholder="Ingrese una respuesta">
+                {{/if}}
+                {{#if De-respuesta-si-o-no}}
+                    <span class="nombre-campo">{{Nombre}}:</span><input type="checkbox" name={{Nombre}}>
+                {{/if}}
             </div>
-            <div class="campo">
+            <!--<div class="campo">
                 <span class="nombre-campo">Caract obligatoria 2:</span><input type="text" name="Caracteristica obligatoria" placeholder="Ingrese una caracteristica">
-            </div>
+            </div>-->
+            {{/caracteristicas}}
             <input class="boton" type="submit" value="Registrar Mascota">
         </form>
     </section>

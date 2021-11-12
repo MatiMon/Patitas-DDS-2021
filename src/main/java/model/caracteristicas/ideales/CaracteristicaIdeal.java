@@ -46,6 +46,10 @@ public class CaracteristicaIdeal {
         return tipo.getOpciones();
     }
 
+    public List<String> getRespuestas(){
+        return tipo.getRespuestas();
+    }
+
     public CaracteristicaDefinida crearCaracteristica(Object valor){
         return tipo.crearCaracteristica(nombre, valor);
     }

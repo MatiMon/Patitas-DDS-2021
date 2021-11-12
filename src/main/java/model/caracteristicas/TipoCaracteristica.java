@@ -23,4 +23,8 @@ public abstract class TipoCaracteristica {
     public String getOpciones() {
         return " - ";
     }
+
+    public List<String> getRespuestas(){
+        return null;
+    }
 }

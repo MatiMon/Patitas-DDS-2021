@@ -32,6 +32,11 @@ public class EnumeradaIdeal extends TipoCaracteristica {
         return respuestas;
     }
 
+    @Override
+    public List<String> getRespuestas(){
+        return opciones;
+    }
+
     private String nombre = "Opcion multiple";
 
 
@@ -55,4 +60,6 @@ public class EnumeradaIdeal extends TipoCaracteristica {
             throw new ValorCaracteristicaInvalidoException("parte de las opciones.");
         }
     }
+
+
 }

@@ -1,6 +1,8 @@
 package controllers;
 
+import model.caracteristicas.RepositorioCaracteristicasIdeales;
 import model.caracteristicas.definidas.CaracteristicaDefinida;
+import model.caracteristicas.ideales.*;
 import model.contacto.Contacto;
 import model.duenio.Duenio;
 import model.duenio.TipoDocumento;
@@ -16,8 +18,26 @@ import spark.Response;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MascotaController extends Controller implements WithGlobalEntityManager, TransactionalOps {
+
+  public Map<String, Object> descripcionCaracteristica(CaracteristicaIdeal caracteristicaIdeal){
+    Map<String, Object> descripcion = new HashMap<>();
+    descripcion.put("Nombre", caracteristicaIdeal.getNombre());
+    descripcion.put("Tipo",caracteristicaIdeal.getTipo());
+    if(caracteristicaIdeal.esObligatoria()){
+      descripcion.put("esObligatoria", "Si");
+    }else{
+      descripcion.put("esObligatoria", "No");
+    }
+    descripcion.put(caracteristicaIdeal.getTipo().replace(" ","-"), true);
+    if(caracteristicaIdeal.getTipo().equals("Opcion multiple")){
+      descripcion.put("Respuestas", caracteristicaIdeal.getRespuestas());
+    }
+    //descripcion.put("Respuestas", caracteristicaIdeal.getOpciones());
+    return descripcion;
+  }
 
   public ModelAndView mostrarFormularioMascota(Request request, Response response) {
     request.session().attribute("redirect_login", "/mascotas/nueva");
@@ -30,6 +50,13 @@ public class MascotaController extends Controller implements WithGlobalEntityMan
     Map<String, Object> modelo = getModelo(request, response);
     modelo.put("sexo", Sexo.values());
     modelo.put("tamanio", Tamanio.values());
+
+
+
+    modelo.put("caracteristicas", RepositorioCaracteristicasIdeales.getInstancia().listar()
+        .stream().map(c -> descripcionCaracteristica(c)).collect(Collectors.toList()));
+
+
     return new ModelAndView(modelo, "formulario-mascota.html.hbs");
   }
 
