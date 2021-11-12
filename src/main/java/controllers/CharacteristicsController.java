@@ -84,6 +84,9 @@ public class CharacteristicsController extends Controller implements WithGlobalE
 
       unTipoCaracteristica = new EnumeradaIdeal(opciones);
     }
+
+    entityManager().persist(unTipoCaracteristica);
+
     CaracteristicaIdeal unaCaracteristica = new CaracteristicaIdeal(nombre,obligatoria,unTipoCaracteristica);
 
     withTransaction(() -> {
