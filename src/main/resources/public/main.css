@@ -12,6 +12,7 @@ main {
 h1 {
  font-weight: 300;
  font-color: #000;
+ text-align: center;
 }
 
 h2 {
@@ -23,11 +24,6 @@ h2 {
 
 footer {
 
-}
-
-section.fondo-gris {
-    background: #cfcdcd;
-    padding: 5px;
 }
 
 footer.fondo-gris {
@@ -61,7 +57,7 @@ footer.fondo-gris {
     margin-top: 100px; /*TODO ver de arreglar con div o algo*/
 }
 
-
+/*
 .button {
     font-size: 1em;
     padding: 10px;
@@ -75,7 +71,7 @@ footer.fondo-gris {
 
 .button:hover{
     background: #25d3c0;
-}
+}*/
 
 .boton {
     font-size: 1em;
@@ -95,6 +91,7 @@ footer.fondo-gris {
 }
 
 .boton-tabla{
+    box-sizing: border-box;
     font-size: small !important;
     padding: 6px;
 }
@@ -118,62 +115,6 @@ footer.fondo-gris {
 }
 
 
-.overlay{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.7);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.overlay:target{
-    visibility: visible;
-    opacity: 1;
-}
-
-
-.popup{
-    margin: 70px auto;
-    padding: 20px;
-    background: #cfcdcd;
-    border-radius: 5px;
-    width: 30%;
-    position: relative;
-    transition: all 2s ease-in-out;
-    height: fit-content;
-}
-
-
-
-.popup h2{
-    margin-top: 0;
-    color: #333;
-}
-
-.popup .close{
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-}
-
-.popup .close:hover{
-    color: #25d3c0;
-}
-
-.popup .content{
-    max-height: 30%;
-    overflow: auto;
-}
-
 @media screen and (max-width: 700px)
 {
     .box{
@@ -183,19 +124,6 @@ footer.fondo-gris {
         width:70%;
     }
 
-}
-
-
-
-
-/* Style the form */
-
-#regForm {
-  background-color: #ffffff;
-  margin: 200px auto;
-  padding: 40px;
-  width: 70%;
-  min-width: 300px;
 }
 
 
@@ -281,7 +209,7 @@ ul, ol {
 }
 
 
-.w3-table-all{
+.table-all{
 border-collapse:collapse;
 border-spacing:0;
 width:100%;
@@ -291,22 +219,22 @@ border:1px solid #ccc;
 
 
 
-.w3-table-all tr{border-bottom:1px solid #ddd}
+.table-all tr{border-bottom:1px solid #ddd}
 
-.w3-table-all tr:nth-child(odd){background-color:#fff}
-.w3-table-all tr:nth-child(even){background-color:#f1f1f1}
-.w3-hoverable tbody tr:hover{background-color:#ccc}
+.table-all tr:nth-child(odd){background-color:#fff}
+.table-all tr:nth-child(even){background-color:#f1f1f1}
+.hoverable tbody tr:hover{background-color:#ccc}
 
-.w3-table-all td,.w3-table-all th{
+.table-all td,.table-all th{
     padding:8px 8px;
     display:table-cell;
     text-align:left;
     vertical-align:top
     }
-.w3-table-all th:first-child,.w3-table-all td:first-child{
+.table-all th:first-child,.table-all td:first-child{
     padding-left:16px
 }
-.w3-card-4{
+.card-4{
     box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
     }
 
@@ -371,7 +299,7 @@ body {
   background-color: #f1f1f1;
 }
 
-#regForm {
+.formulario {
   background-color: #ffffff;
   margin: 100px auto;
   font-family: Raleway;
@@ -380,9 +308,7 @@ body {
   min-width: 300px;
 }
 
-h1 {
-  text-align: center;
-}
+
 
 input {
   padding: 10px;
@@ -402,7 +328,7 @@ input.invalid {
   display: none;
 }
 
-button {
+button, .button {
   background-color: #04AA6D;
   color: #ffffff;
   border: none;
@@ -410,10 +336,23 @@ button {
   font-size: 17px;
   font-family: Raleway;
   cursor: pointer;
+  text-decoration:none;
+  margin: 15px;
 }
 
-button:hover {
+.button{
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: fit-content;
+}
+
+button:hover, .button:hover {
   opacity: 0.8;
+}
+#botonMascotas, #botonRescates{
+    display: inline;
 }
 
 #prevBtn {
@@ -448,3 +387,64 @@ button:hover {
 .registrado {
   display: none;
 }
+
+
+
+/* Inicio modal
+
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.popup{
+    margin: 70px auto;
+    padding: 20px;
+    background: #cfcdcd;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 2s ease-in-out;
+    height: fit-content;
+}
+
+
+
+.popup h2{
+    margin-top: 0;
+    color: #333;
+}
+
+.popup .close{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover{
+    color: #25d3c0;
+}
+
+.popup .content{
+    max-height: 30%;
+    overflow: auto;
+}
+*/

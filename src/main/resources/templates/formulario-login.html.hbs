@@ -3,17 +3,17 @@
 {{/partial}}
 
 {{# partial "contenido" }}
-<section class="fondo-gris">
+<section>
     <h2>Iniciar Sesión</h2>
 
-    <form class="logIn" action="/login" method="POST">
+    <form class="forumlario" action="/login" method="POST">
         <div class="campo">
-            <span class="nombre-campo">Nombre de usuario:</span><input type="text" name="username" placeholder="Ingrese nombre de usuario">
+            <span class="nombre-campo">Nombre de usuario:</span><input  required type="text" name="username" placeholder="Ingrese nombre de usuario">
         </div>
         <div class="campo">
-            <span class="nombre-campo">Contraseña:</span><input type="password" name="password" placeholder="Ingrese contraseña">
+            <span class="nombre-campo">Contraseña:</span><input  required type="password" name="password" placeholder="Ingrese contraseña">
         </div>
-        <input type="submit" value="Iniciar Sesión">
+        <input type="submit" class="button" value="Iniciar Sesión">
     </form>
 
   {{#if mensajeError}}

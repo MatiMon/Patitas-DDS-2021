@@ -9,20 +9,20 @@
     <section>
         <h2>Registrarme</h2>
 
-        <form class="singup" action="/usuarios/nuevo" method="POST">
+        <form class="forumlario" action="/usuarios/nuevo" method="POST">
 
             <div id="registrar">
             <div class="campo">
-                <span class="nombre-campo">Nombre:</span><input type="text" name="Nombre" placeholder="Ingrese su nombre">
+                <span class="nombre-campo">Nombre:</span><input  required type="text" name="Nombre" placeholder="Ingrese su nombre">
             </div>
             <div class="campo">
-                <span class="nombre-campo">Apellido:</span><input type="text" name="Apellido" placeholder="Ingrese su apellido">
+                <span class="nombre-campo">Apellido:</span><input  required type="text" name="Apellido" placeholder="Ingrese su apellido">
             </div>
             <div class="campo">
-                <span class="nombre-campo">Fecha de Nacimiento:</span><input type="date" name="Fecha De Nacimiento">
+                <span class="nombre-campo">Fecha de Nacimiento:</span><input  required type="date" name="Fecha De Nacimiento">
             </div>
             <div class="campo">
-                <span class="nombre-campo">Tipo de Documento:</span><input list="tiposDocumento" name="Tipo de Documento">
+                <span class="nombre-campo">Tipo de Documento:</span><input  required list="tiposDocumento" name="Tipo de Documento">
                 <datalist id="tiposDocumento">
                     {{#tipoDocumento}}
                     <option value= {{this}}>
@@ -31,30 +31,30 @@
 
             </div>
             <div class="campo">
-                <span class="nombre-campo">Nro Documento:</span><input type="text" name="Numero Documento">
+                <span class="nombre-campo">Nro Documento:</span><input required  type="text" name="Numero Documento">
             </div>
             <div class="campo">
-                 <span class="nombre-campo">Nombre de usuario:</span><input type="text" name="username" placeholder="Ingrese nombre de usuario">
+                 <span class="nombre-campo">Nombre de usuario:</span><input required  type="text" name="username" placeholder="Ingrese nombre de usuario">
             </div>
             <div class="campo">
-                 <span class="nombre-campo">Contraseña:</span><input type="password" name="password" placeholder="Ingrese una contraseña">
+                 <span class="nombre-campo">Contraseña:</span><input required  type="password" name="password" placeholder="Ingrese una contraseña">
             </div>
             <h3>Datos de Contacto</h3>
             <div class="campo">
-                <span class="nombre-campo">Nombre:</span><input type="text" name="nombre" placeholder="Ingrese Nombre">
+                <span class="nombre-campo">Nombre:</span><input required  type="text" name="nombre" placeholder="Ingrese Nombre">
             </div>
             <div class="campo">
-                <span class="nombre-campo">Apellido:</span><input type="text" name="apellido" placeholder="Ingrese Apellido">
+                <span class="nombre-campo">Apellido:</span><input required  type="text" name="apellido" placeholder="Ingrese Apellido">
             </div>
             <div class="campo">
-                 <span class="nombre-campo">Telefono:</span><input type="number" name="telefono" placeholder="Ingrese Telefono">
+                 <span class="nombre-campo">Telefono:</span><input required  type="number" name="telefono" placeholder="Ingrese Telefono">
             </div>
             <div class="campo">
-                 <span class="nombre-campo">E-mail:</span><input type="email" name="email" placeholder="Ingrese Email">
+                 <span class="nombre-campo">E-mail:</span><input required  type="email" name="email" placeholder="Ingrese Email">
             </div>
             </div>
 
-            <input class="boton" type="submit" value="Registrarme">
+            <input class="button" type="submit" value="Registrarme">
         </form>
     </section>
 </div>
