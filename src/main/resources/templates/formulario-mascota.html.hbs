@@ -47,21 +47,25 @@
             {{#caracteristicas}}
             <div class="campo">
                 {{#if Opcion-multiple}}
-                    <span class="nombre-campo">{{Nombre}}:</span><input list={{Nombre}} name={{Nombre}}>
-                    <datalist id={{Nombre}}>
+                    <span class="nombre-campo">{{Nombre}}:</span><input list={{Id}} name={{Id}}>
+                    <datalist id={{Id}}>
                         {{#each this.Respuestas}}
                         <option value= {{this}}>
                         {{/each}}
                     </datalist>
                 {{/if}}
                 {{#if Texto}}
-                    <span class="nombre-campo">{{Nombre}}:</span><input type="text" name={{Nombre}} placeholder="Ingrese una respuesta">
+                    <span class="nombre-campo">{{Nombre}}:</span><input type="text"  placeholder="Ingrese una respuesta" name={{Id}}>
                 {{/if}}
                 {{#if Numerica}}
-                    <span class="nombre-campo">{{Nombre}}:</span><input type="number" name={{Nombre}} placeholder="Ingrese una respuesta">
+                    <span class="nombre-campo">{{Nombre}}:</span><input type="number" placeholder="Ingrese una respuesta" name={{Id}} >
                 {{/if}}
                 {{#if De-respuesta-si-o-no}}
-                    <span class="nombre-campo">{{Nombre}}:</span><input type="checkbox" name={{Nombre}}>
+                    <span class="nombre-campo">{{Nombre}}:</span><input list={{Id}} name={{Id}}>
+                    <datalist id={{Id}}>
+                        <option value= "Si">
+                        <option value="No">
+                    </datalist>
                 {{/if}}
             </div>
             <!--<div class="campo">

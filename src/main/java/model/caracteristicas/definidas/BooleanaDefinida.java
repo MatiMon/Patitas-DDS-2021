@@ -14,6 +14,9 @@ public class BooleanaDefinida extends CaracteristicaDefinida {
     this.valor = valor;
   }
 
+  public BooleanaDefinida() {
+  }
+
   @Override
   public boolean compatibilidad(CaracteristicaDefinida comodidad) {
     BooleanaDefinida comodidadBooleana = (BooleanaDefinida) comodidad;
