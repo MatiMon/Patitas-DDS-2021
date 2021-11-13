@@ -115,7 +115,7 @@ footer.fondo-gris {
 }
 
 
-@media screen and (max-width: 700px)
+/*@media screen and (max-width: 700px)
 {
     .box{
         width:70%;
@@ -124,7 +124,7 @@ footer.fondo-gris {
         width:70%;
     }
 
-}
+}*/
 
 
 /* Style the input fields */

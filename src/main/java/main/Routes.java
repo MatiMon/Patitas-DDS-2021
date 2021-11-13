@@ -2,6 +2,7 @@ package main;
 
 
 import controllers.*;
+import org.uqbarproject.jpa.java8.extras.PerThreadEntityManagers;
 import spark.Spark;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -29,6 +30,11 @@ public class Routes {
         RescateController rescateController = new RescateController();
 
         Map<String, Object> modelo = new HashMap<>();
+
+        Spark.after((request, response) -> {
+            PerThreadEntityManagers.getEntityManager();
+            PerThreadEntityManagers.closeEntityManager();
+        });
 
         Spark.get("/", homeController::getHome, engine); //TODO home
         Spark.get("/login", sesionController::mostrarLogin, engine);
