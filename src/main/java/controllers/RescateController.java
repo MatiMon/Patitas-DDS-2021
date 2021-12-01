@@ -55,10 +55,6 @@ public class RescateController extends Controller implements WithGlobalEntityMan
     List<String> fotos = new ArrayList<>();
     String foto = request.queryParams("fotos");
     fotos.add(foto);
-    String idMascota = request.queryParams("chapita");
-    Tamanio tamanio = Tamanio.valueOf(request.queryParams("Tamaño del animal").toUpperCase(Locale.ROOT));
-    TipoAnimal tipoAnimal = TipoAnimal.valueOf(request.queryParams("Tipo del animal").toUpperCase(Locale.ROOT));
-
 
     //TODO esto está con valores random pues no tenemos una api de geocodificación ni el mapa juas juas
     Ubicacion ubicacionMascota = new Ubicacion(lugarMascota, 0.000000, 0.000000);
@@ -68,8 +64,12 @@ public class RescateController extends Controller implements WithGlobalEntityMan
     RescateDeMascotaSinRegistrar rescateDeMascotaSinRegistrar = null;
 
     if(tieneChapita){
+      String idMascota = request.queryParams("chapita");
       rescateRegistrado = new RescateDeMascotaRegistrada(fotos, descripcion, ubicacionMascota, rescatista, LocalDateTime.now(), obtenerMascota(idMascota, response));
     }else{
+      Tamanio tamanio = Tamanio.valueOf(request.queryParams("Tamaño del animal").toUpperCase(Locale.ROOT));
+      TipoAnimal tipoAnimal = TipoAnimal.valueOf(request.queryParams("Tipo del animal").toUpperCase(Locale.ROOT));
+
       rescateDeMascotaSinRegistrar = new RescateDeMascotaSinRegistrar(fotos, descripcion, ubicacionMascota,
           rescatista, LocalDateTime.now(), tamanio, tipoAnimal,null, null); //no tiene dueño pues esta perdida
     }
