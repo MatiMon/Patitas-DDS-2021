@@ -67,16 +67,16 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
-/*function hideSteps(){
+function hideSteps(registrado, sinRegistrar){
   var checkBox = document.getElementById("checkChapita");
-  var registrado = document.getElementById("registrado");
-  var noRegistrado = document.getElementById("sinRegistrar");
+/*  var registrado = document.getElementById("registrado");
+  var noRegistrado = document.getElementById("sinRegistrar");*/
 
   if(checkBox.checked){ //si el rescate tiene chapita, muestra lo que deba completarse (por ahora solo id)
-    registrado.style.display = "block";
-    noRegistrado.style.display = "none";
+    $("#sinRegistrar").remove();
+    $("#campos-opcionales").append(registrado);
   }else{
-    registrado.style.display = "none";
-    noRegistrado.style.display = "block";
+    $("#registrado").remove();
+    $("#campos-opcionales").append(sinRegistrar);
   }
-}*/
+}

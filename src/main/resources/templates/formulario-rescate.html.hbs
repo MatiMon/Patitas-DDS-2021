@@ -68,7 +68,7 @@
 
           <div class="campo">
             <span class="nombre-campo">¿La mascota que encontraste tiene chapita?</span>
-            <span class="nombre-campo">Con chapita</span><input id ="checkChapita" type="checkbox" name="Tiene chapita"> <!--onclick="hideSteps()"-->
+            <span class="nombre-campo">Con chapita</span><input id ="checkChapita" type="checkbox" name="Tiene chapita" onclick="hideSteps(registrado, sinRegistrar)">
           </div>
           <div class="campo">
             <span class="nombre-campo">Estado en el que encontraste la mascota:</span><input type="text" name="estado mascota" placeholder="Ingrese la descripcion fisica del estado en que encontro la mascota">
@@ -79,6 +79,10 @@
           <div class="campo">
             <span class="nombre-campo">Arrastre las fotos aqui:</span><input type="file" name="fotos" accept="image/*" multiple>
           </div>
+          <div id="campos-opcionales">
+
+          </div>
+
           <div id="registrado" style="display:block">
             <div class="campo">
               <span class="nombre-campo">Id de la mascota:</span><input type="text" name="chapita" placeholder="Ingrese el id de la chapita">
@@ -134,11 +138,18 @@
       {{/if}}
 
     </section>
+
   </div>
-<script>
-  var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
-</script>
+  <script>
+    var currentTab = 0; // Current tab is set to be the first tab (0)
+
+    var registrado = $("#registrado").clone();
+    var sinRegistrar = $("#sinRegistrar").clone();
+
+    $("#registrado").remove();
+
+    showTab(currentTab); // Display the current tab
+  </script>
 {{/partial}}
 
 {{> layout.html.hbs }}
