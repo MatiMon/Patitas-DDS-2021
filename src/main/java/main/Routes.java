@@ -12,8 +12,6 @@ import java.util.Map;
 public class Routes {
 
     public static void main(String[] args) {
-        System.out.println("Corriendo bootstrap...");
-
         System.out.println("Iniciando servidor...");
         Spark.port(8080);
         Spark.staticFileLocation("/public");

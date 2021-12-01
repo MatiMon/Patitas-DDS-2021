@@ -4,9 +4,9 @@ https://lucid.app/lucidchart/ddd8c6d7-5b6c-4cc8-b7c0-ecfe2b4e122b/edit?shared=tr
 # PERSISTENCIA
 Cambiar en persistence.xml la pass para la database MySQL local.
 
-* Crear schema con: "CREATE SCHEMA `2021-vi-no-group-19`;"
+* Crear schema con: "CREATE SCHEMA \`2021-vi-no-group-19`;"
 
-* Dropear schema con: "DROP DATABASE `2021-vi-no-group-19`;"
+* Dropear schema con: "DROP DATABASE \`2021-vi-no-group-19`;"
 
 
 * Correr el test 'TestPersistencia' para que se creen las tablas.
