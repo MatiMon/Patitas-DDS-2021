@@ -99,4 +99,32 @@ public class Mascota {
   public Long getIdDuenio(){
     return duenio.getId();
   }
+
+  public int getEdad() {
+    return edad;
+  }
+
+  public Sexo getSexo() {
+    return sexo;
+  }
+
+  public TipoAnimal getTipoAnimal() {
+    return tipoAnimal;
+  }
+
+  public Tamanio getTamanio() {
+    return tamanio;
+  }
+
+  public String getDescripcionFisica() {
+    return descripcionFisica;
+  }
+
+  public List<String> getFotos() {
+    return fotos;
+  }
+
+  public Object getApodo() { return apodo;
+
+  }
 }

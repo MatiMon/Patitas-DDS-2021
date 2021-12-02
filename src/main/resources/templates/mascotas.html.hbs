@@ -5,11 +5,26 @@
 
 {{# partial "contenido" }}
     <h1> Mis Mascotas </h1>
-    {{#each mascotas}}
-        <div>
-            
-        </div>
-    {{/each}}
+    <div>
+        {{#each mascotas}}
+
+            <div class="card">
+                <!--<img src="img_avatar.png" alt="Avatar" style="width:100%">-->
+                <div class="container">
+                    <h4><b>{{this.apodo}}</b></h4>
+                    <p>Nombre: {{this.nombre}}</p>
+                    <p>Edad: {{this.edad}}</p>
+                    <p>Sexo: {{this.sexo}}</p>
+                    <p>Tamaño: {{this.tamanio}}</p>
+                    <p>Descripcion: {{this.descripcionFisica}}</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <div>
+        <a class="button" id="botonMascotas" href="/mascotas/nueva" style="display:block">Registrar Nueva Mascota</a>
+    </div>
+
 
 {{/partial}}
 

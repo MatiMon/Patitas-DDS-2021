@@ -16,6 +16,9 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -128,9 +131,32 @@ public class MascotaController extends Controller implements WithGlobalEntityMan
   }
 
   public ModelAndView mostrarMascotas(Request request, Response response) {
+    if (!estaIniciadaLaSesion(request)) {
+      response.redirect("/");
+      return null;
+    }
     Map<String, Object> model = this.getModelo(request, response);
     RepositorioMascotas repoMascotas = RepositorioMascotas.getInstancia();
-    model.put("mascotas", repoMascotas.obtenerMascotasUser(request.session().attribute("user_id")));
+    model.put("mascotas", repoMascotas.obtenerMascotasUser(request.session().attribute("user_id"))
+        .stream().map(m -> descripcionMascota(m)).collect(Collectors.toList()));
+/*    model.put("mascotas", repoMascotas.obtenerMascotasUser(request.session().attribute("user_id")));*/
     return new ModelAndView(model, "mascotas.html.hbs");
+  }
+
+  public Map<String, Object> descripcionMascota(Mascota mascota) {
+    Map<String, Object> descripcion = new HashMap<>();
+    descripcion.put("nombre", mascota.getNombre());
+    descripcion.put("apodo", mascota.getApodo());
+    descripcion.put("edad", Long.valueOf(mascota.getEdad()));
+    descripcion.put("sexo", mascota.getSexo().getNombre());
+    descripcion.put("tamanio", mascota.getTamanio().getNombre());
+    descripcion.put("descripcionFisica", mascota.getDescripcionFisica());
+
+
+/*     TipoAnimal tipoAnimal;
+    private List<String> fotos;*/
+
+
+    return descripcion;
   }
 }

@@ -1,9 +1,25 @@
 package model.mascota;
 
 public enum Tamanio {
-  GRANDE(true), MEDIANO(true), CHICO(false);
+  GRANDE(true){
+    @Override
+    public String getNombre() {
+      return "Grande";
+    }
+  }, MEDIANO(true) {
+    @Override
+    public String getNombre() {
+      return "Mediano";
+    }
+  }, CHICO(false) {
+    @Override
+    public String getNombre() {
+      return "Chico";
+    }
+  };
 
   private boolean necesitaPatio;
+
 
   Tamanio(boolean necesitaPatio) {
     this.necesitaPatio = necesitaPatio;
@@ -12,4 +28,6 @@ public enum Tamanio {
   public boolean necesitaPatio(){
     return necesitaPatio;
   }
+
+  public abstract String getNombre();
 }
