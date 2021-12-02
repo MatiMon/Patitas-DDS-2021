@@ -64,8 +64,18 @@ public class CharacteristicsController extends Controller implements WithGlobalE
   }
 
   public Void crearCaracteristica(Request request, Response response) {
+    CaracteristicaIdeal unaCaracteristica = generarCaracteristica(request);
+
+    withTransaction(() -> {
+      RepositorioCaracteristicasIdeales.getInstancia().agregarCaracteristicaIdeal(unaCaracteristica);
+    });
+
+    response.redirect("/caracteristicas");
+    return null;
+  }
+
+  private CaracteristicaIdeal generarCaracteristica(Request request) {
     String nombre = request.queryParams("Nombre de la caracteristica");
-    //System.out.println("El valor de obligatoria es:"+request.queryParams("obligatoria"));
     Boolean obligatoria = null != request.queryParams("obligatoria");
 
     String tipoCaracteristica = request.queryParams("Tipo de caracteristica");
@@ -100,30 +110,30 @@ public class CharacteristicsController extends Controller implements WithGlobalE
     entityManager().persist(unTipoCaracteristica);
 
     CaracteristicaIdeal unaCaracteristica = new CaracteristicaIdeal(nombre,obligatoria,unTipoCaracteristica);
-
-    withTransaction(() -> {
-      RepositorioCaracteristicasIdeales.getInstancia().agregarCaracteristicaIdeal(unaCaracteristica);
-    });
-
-    response.redirect("/caracteristicas");
-    return null;
+    return unaCaracteristica;
   }
 
 
   public ModelAndView getDetalleCaracteristica(Request request, Response response) {
     String id = request.params(":id");
-   // try{
-      CaracteristicaIdeal caracteristica = RepositorioCaracteristicasIdeales.getInstancia().obtenerCaracteristica(id);
+      CaracteristicaIdeal caracteristica = RepositorioCaracteristicasIdeales.getInstancia().buscarCaracteristica(id);
 
       Map<String, Object> parametros = getModelo(request, response);
+
       parametros.put("caracteristica",caracteristica);
+      parametros.put("esObligatoria", caracteristica.esObligatoria());
+
 
       return new ModelAndView(parametros, "formulario-edicion-caracteristica.html.hbs");
-      //        : null;
-    //} catch(NumberFormatException e){
-     // response.status(400);
-     // System.out.println("El id ingresado (" + id +") no es un número");
-     // return "Bad Request";
     }
 
+  public Void actualizarCaracteristica(Request request, Response response) {
+    String id = request.params(":id");
+    withTransaction(() -> {
+      RepositorioCaracteristicasIdeales.getInstancia().eliminarCaracteristica(id);
+      RepositorioCaracteristicasIdeales.getInstancia().agregarCaracteristicaIdeal(generarCaracteristica(request));
+    });
+    response.redirect("/caracteristicas");
+    return null;
+  }
 }

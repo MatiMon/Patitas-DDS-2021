@@ -51,6 +51,15 @@ public class RepositorioCaracteristicasIdeales implements WithGlobalEntityManage
     return getCaractetisticasObligatorias().stream().map(CaracteristicaIdeal::getNombre).collect(Collectors.toList());
   }
 
+  public CaracteristicaIdeal buscarCaracteristica(String id) {
+    return entityManager().find(CaracteristicaIdeal.class, Long.parseLong(id));
+  }
+
+  public void eliminarCaracteristica(String id){
+    CaracteristicaIdeal unaCaracteristica = buscarCaracteristica(id);
+    entityManager().remove(unaCaracteristica);
+  }
+
   public static RepositorioCaracteristicasIdeales getInstancia() {
     return INSTANCIA;
   }
