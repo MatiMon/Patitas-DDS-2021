@@ -21,6 +21,9 @@ public class ListadoContrasenias {
     @Transient
     private List<String> cache;
 
+    public ListadoContrasenias() {
+
+    }
 
     public ListadoContrasenias(String nombreArchivo) {
             this.nombreArchivo = nombreArchivo;
@@ -34,6 +37,7 @@ public class ListadoContrasenias {
     public void guardarArchivoEnCache(String nombreArchivo) {
         InputStream inputStream = getClass().getResourceAsStream(nombreArchivo);
         if (inputStream == null) throw new NombreDeArchivoInvalidoException("No existe el archivo");
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
         this.cache = new ArrayList<>(reader.lines().collect(Collectors.toList()));
     }

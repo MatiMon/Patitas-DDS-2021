@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+/*
 
 public class TestMascotaBuilder {
   MascotaBuilder creadorMascota = new MascotaBuilder();
@@ -44,6 +45,7 @@ public class TestMascotaBuilder {
     );
   }
 
+*/
 /*  @Test
   public void noSePuedeCrearUnaMascotaSinTodasSusCaracteristicasObligatorias(){
     agregarDatosMascota();
@@ -53,7 +55,8 @@ public class TestMascotaBuilder {
         MascotaInvalidaException.class,
         () -> creadorMascota.registrarMascota()
     );
-  }*/
+  }*//*
+
 
  @Test
   public void sePuedeCrearUnaMascotaSinSusCaracteristicasOpcionales(){
@@ -86,3 +89,4 @@ public class TestMascotaBuilder {
 
 }
 
+*/

@@ -54,7 +54,7 @@ public class UserController extends Controller implements WithGlobalEntityManage
     String apellido = request.queryParams("Apellido");
     LocalDate fechaNacimiento = LocalDate.parse(request.queryParams("Fecha De Nacimiento"), DateTimeFormatter.ISO_LOCAL_DATE);
     TipoDocumento tipoDocumento = TipoDocumento.valueOf(request.queryParams("Tipo de Documento").toUpperCase(Locale.ROOT));
-    double documento = Double.valueOf(request.queryParams("Numero Documento"));
+    Double documento = Double.valueOf(request.queryParams("Numero Documento"));
     String nombre1 = request.queryParams("nombre");
     String apellido1 = request.queryParams("apellido");
     String telefono = request.queryParams("telefono");

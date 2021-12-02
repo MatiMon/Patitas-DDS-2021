@@ -6,6 +6,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class RepositorioUsuarios implements WithGlobalEntityManager {
 
@@ -32,8 +33,8 @@ public class RepositorioUsuarios implements WithGlobalEntityManager {
 
   public Usuario buscarPorUsuarioYContrasenia(String username, String password) throws InvalidKeySpecException, NoSuchAlgorithmException {
     Usuario usuario = listar().stream().filter(u -> u.getNombreUsuario().equals(username)).findFirst().orElse(null);
-    if(usuario.autorizarContrasenia(password) && !usuario.equals(null)) return usuario;
-    else throw new RuntimeException("Contraseña invalida");
+    if(usuario.autorizarContrasenia(password) && Objects.nonNull(usuario)) return usuario;
+    throw new RuntimeException("Contraseña invalida");
   }
 
 }

@@ -7,6 +7,8 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -36,7 +38,7 @@ public class SesionController extends Controller{
 
       response.redirect(request.session().attribute("redirect_login")); // TODO aca va a convenir leer el origen
       return null;
-    } catch (Exception e) {
+    } catch (RuntimeException | InvalidKeySpecException | NoSuchAlgorithmException e) {
       response.redirect("/login-error"); // TODO redirigir agregando un mensaje de error
       return null;
     }
