@@ -6,9 +6,7 @@ import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Transient;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,8 +36,15 @@ public class ListadoContrasenias {
         InputStream inputStream = getClass().getResourceAsStream(nombreArchivo);
         if (inputStream == null) throw new NombreDeArchivoInvalidoException("No existe el archivo");
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        this.cache = new ArrayList<>(reader.lines().collect(Collectors.toList()));
+        try {
+            InputStreamReader iReader = new InputStreamReader(inputStream, "UTF-8");
+            BufferedReader reader = new BufferedReader(iReader);
+            this.cache = new ArrayList<>(reader.lines().collect(Collectors.toList()));
+
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 
