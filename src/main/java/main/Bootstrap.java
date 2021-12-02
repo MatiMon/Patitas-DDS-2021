@@ -65,7 +65,7 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 
     userAdmin.setEsAdministrador(true);
 
-    Contacto contactoPrincipal = new Contacto("al", "go", 1234, "algo@gmail");
+    Contacto contactoPrincipal = new Contacto("al", "go", "1234", "algo@gmail");
     Ubicacion ubicacion = new Ubicacion("String", 123, 456);
     Duenio duenio = new Duenio("Nombre falso", "sanchez", LocalDate.now(), TipoDocumento.DNI, 1254589, contactoPrincipal, ubicacion, userAdmin);
 

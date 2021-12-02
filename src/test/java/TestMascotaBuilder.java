@@ -77,7 +77,7 @@ public class TestMascotaBuilder {
     creadorMascota.setFotos(fotos);
     creadorMascota.setTamanio(Tamanio.MEDIANO);
     creadorMascota.setId("123");
-    Contacto contacto = new Contacto("nombre", "apellido", 1234, "nombre@hotmail.com");
+    Contacto contacto = new Contacto("nombre", "apellido", "1234", "nombre@hotmail.com");
     List<Contacto> contactos = new ArrayList<>();
     contactos.add(contacto);
     Duenio duenio = new Duenio("Nombre falso", "sanchez", LocalDate.now(), TipoDocumento.DNI, 1254589, null, null, null);

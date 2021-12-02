@@ -95,4 +95,8 @@ public class Mascota {
   public Long getId() {
     return id;
   }
+
+  public Long getIdDuenio(){
+    return duenio.getId();
+  }
 }

@@ -127,4 +127,10 @@ public class MascotaController extends Controller implements WithGlobalEntityMan
     return new ModelAndView(parametros, "formulario-mascota.html.hbs");
   }
 
+  public ModelAndView mostrarMascotas(Request request, Response response) {
+    Map<String, Object> model = this.getModelo(request, response);
+    RepositorioMascotas repoMascotas = RepositorioMascotas.getInstancia();
+    model.put("mascotas", repoMascotas.obtenerMascotasUser(request.session().attribute("user_id")));
+    return new ModelAndView(model, "mascotas.html.hbs");
+  }
 }

@@ -1,9 +1,12 @@
 package model.mascota;
 
+import model.usuario.Usuario;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class RepositorioMascotas implements WithGlobalEntityManager {
   private Map<String, Mascota> mascotas;
@@ -39,4 +42,9 @@ public class RepositorioMascotas implements WithGlobalEntityManager {
   }
 
 
+  public List<Mascota> obtenerMascotasUser(Long user_id) {
+    return entityManager()//
+        .createQuery("from Mascotas", Mascota.class)
+        .getResultList().stream().filter(mascota -> mascota.getIdDuenio() == user_id).collect(Collectors.toList());
+  }
 }

@@ -34,7 +34,7 @@ public class TestRescates {
       this.fotos.add("Foto en el parque");
 
       this.contactos = new ArrayList<>();
-      this.unContacto = new Contacto("Juan", "Pérez", 1153798990, "juan.perez@hotmail.com");
+      this.unContacto = new Contacto("Juan", "Pérez", "1153798990", "juan.perez@hotmail.com");
       this.contactos.add(unContacto);
 
       this.unaMascota = new Mascota("Perrito", "Perry",
