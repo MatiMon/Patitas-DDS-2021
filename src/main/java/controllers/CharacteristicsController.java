@@ -14,6 +14,7 @@ import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
+import spark.TemplateEngine;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -33,12 +34,14 @@ public class CharacteristicsController extends Controller implements WithGlobalE
     List<CaracteristicaIdeal> lista = Arrays.asList(caracteristica, comidaFavorita,
         caracteristica, comidaFavorita,caracteristica, comidaFavorita);*/
     modelo.put("caracteristicas", lista.stream().map(c -> descripcionCaracteristica(c)).collect(Collectors.toList()));
+
     return new ModelAndView(modelo, "caracteristicas.html.hbs");
 
   }
 
   public Map<String, Object> descripcionCaracteristica(CaracteristicaIdeal caracteristicaIdeal){
     Map<String, Object> descripcion = new HashMap<>();
+    descripcion.put("id",String.valueOf(caracteristicaIdeal.getId()));
     descripcion.put("Nombre", caracteristicaIdeal.getNombre());
     descripcion.put("Tipo",caracteristicaIdeal.getTipo());
     if(caracteristicaIdeal.esObligatoria()){
@@ -106,5 +109,21 @@ public class CharacteristicsController extends Controller implements WithGlobalE
     return null;
   }
 
+
+  public ModelAndView getDetalleCaracteristica(Request request, Response response) {
+    String id = request.params(":id");
+   // try{
+      CaracteristicaIdeal caracteristica = RepositorioCaracteristicasIdeales.getInstancia().obtenerCaracteristica(id);
+
+      Map<String, Object> parametros = getModelo(request, response);
+      parametros.put("caracteristica",caracteristica);
+
+      return new ModelAndView(parametros, "formulario-edicion-caracteristica.html.hbs");
+      //        : null;
+    //} catch(NumberFormatException e){
+     // response.status(400);
+     // System.out.println("El id ingresado (" + id +") no es un número");
+     // return "Bad Request";
+    }
 
 }

@@ -1,14 +1,8 @@
 package main;
 
-import com.sun.xml.internal.ws.developer.MemberSubmissionAddressing;
-import model.asociacion.Asociacion;
 import model.contacto.Contacto;
 import model.duenio.Duenio;
 import model.duenio.TipoDocumento;
-import model.mascota.Mascota;
-import model.mascota.Sexo;
-import model.mascota.Tamanio;
-import model.mascota.TipoAnimal;
 import model.ubicacion.Ubicacion;
 import model.usuario.Usuario;
 import model.usuario.ValidacionDeCaracteresConsecutivos;

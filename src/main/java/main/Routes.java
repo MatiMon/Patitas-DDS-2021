@@ -55,6 +55,8 @@ public class Routes {
         Spark.get("/mascota-inexistente", rescateController::obtenerMascotaError, engine);
 
         Spark.get("/caracteristicas/nueva",characteristicsController::registrarNuevaCaracteristica, engine);
+        Spark.get("/caracteristicas/:id",characteristicsController::getDetalleCaracteristica, engine);
+
         Spark.post("/caracteristicas/nueva",characteristicsController::crearCaracteristica);
 
         Spark.get("/login-error", sesionController::crearSesionError, engine);
