@@ -34,7 +34,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
 
   public Void crearRescate(Request request, Response response) {
     //Rescatista
-    String nombre = request.queryParams("Nombre de mascota");
+    String nombre = request.queryParams("Nombre");
     String apellido = request.queryParams("Apellido");
     LocalDate fechaDeNacimiento = LocalDate.parse(request.queryParams("Fecha De Nacimiento"), DateTimeFormatter.ISO_LOCAL_DATE);
     TipoDocumento tipoDocumento = TipoDocumento.valueOf(request.queryParams("Tipo de Documento").toUpperCase(Locale.ROOT));

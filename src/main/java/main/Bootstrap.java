@@ -1,14 +1,8 @@
 package main;
 
-import com.sun.xml.internal.ws.developer.MemberSubmissionAddressing;
-import model.asociacion.Asociacion;
 import model.contacto.Contacto;
 import model.duenio.Duenio;
 import model.duenio.TipoDocumento;
-import model.mascota.Mascota;
-import model.mascota.Sexo;
-import model.mascota.Tamanio;
-import model.mascota.TipoAnimal;
 import model.ubicacion.Ubicacion;
 import model.usuario.Usuario;
 import model.usuario.ValidacionDeCaracteresConsecutivos;
@@ -65,7 +59,7 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 
     userAdmin.setEsAdministrador(true);
 
-    Contacto contactoPrincipal = new Contacto("al", "go", 1234, "algo@gmail");
+    Contacto contactoPrincipal = new Contacto("al", "go", "1234", "algo@gmail");
     Ubicacion ubicacion = new Ubicacion("String", 123, 456);
     Duenio duenio = new Duenio("Nombre falso", "sanchez", LocalDate.now(), TipoDocumento.DNI, 1254589, contactoPrincipal, ubicacion, userAdmin);
 

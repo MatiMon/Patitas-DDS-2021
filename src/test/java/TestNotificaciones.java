@@ -33,7 +33,7 @@ public class TestNotificaciones {
     this.fotos = new ArrayList<>();
     fotos.add("Una foto");
 
-    this.unContacto = new Contacto("Juan", "Perez", 1550123456, "juanperez@hotmail.com");
+    this.unContacto = new Contacto("Juan", "Perez", "1550123456", "juanperez@hotmail.com");
     unContacto.setMedioDeNotificacionPreferido(medioDeNotificacion);
 
     this.unDuenio = new Duenio("Matias", "Sosa", null, TipoDocumento.DNI, 40000000, this.unContacto,null, null);
