@@ -57,7 +57,7 @@ public class UserController extends Controller implements WithGlobalEntityManage
     double documento = Double.valueOf(request.queryParams("Numero Documento"));
     String nombre1 = request.queryParams("nombre");
     String apellido1 = request.queryParams("apellido");
-    int telefono = Integer.parseInt(request.queryParams("telefono"));
+    String telefono = request.queryParams("telefono");
     String email = request.queryParams("email");
     Contacto contactoPrincipal = new Contacto(nombre1, apellido1, telefono, email);
     Ubicacion ubicacion = new Ubicacion("mi casa", 12, 12);

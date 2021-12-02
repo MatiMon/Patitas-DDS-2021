@@ -16,7 +16,7 @@ public class Contacto {
   private String apellido;
 
   @Column
-  private int telefono;
+  private String telefono;
 
   @Column
   private String email;
@@ -24,7 +24,7 @@ public class Contacto {
   @Transient //TODO OneToOne? ver
   private MedioDeNotificacion medioDeNotificacionPreferido;
 
-  public Contacto(String nombre, String apellido, int telefono, String email) {
+  public Contacto(String nombre, String apellido, String telefono, String email) {
     this.nombre = nombre;
     this.apellido = apellido;
     this.telefono = telefono;

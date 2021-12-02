@@ -44,7 +44,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
     //Contacto
     String nombre1 = request.queryParams("nombre");
     String apellido1 = request.queryParams("apellido");
-    int telefono = Integer.parseInt(request.queryParams("telefono"));
+    String telefono = (request.queryParams("telefono"));
     String email = request.queryParams("email");
     Contacto contactoPrincipal = new Contacto(nombre1, apellido1, telefono, email);
 
@@ -77,6 +77,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
 
 
     try{
+      this.beginTransaction();
       entityManager().persist(contactoPrincipal);
       entityManager().persist(rescatista);
       if(tieneChapita){
