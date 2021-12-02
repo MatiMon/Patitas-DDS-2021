@@ -15,4 +15,12 @@ public class ComodidadIdeal extends CaracteristicaIdeal {
         this.preguntaAdoptante = preguntaAdoptante;
         this.preguntaDuenio = preguntaDuenio;
     }
+
+    public String getPreguntaAdoptante() {
+        return preguntaAdoptante;
+    }
+
+    public String getPreguntaDuenio() {
+        return preguntaDuenio;
+    }
 }

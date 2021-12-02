@@ -55,7 +55,7 @@ public class TestMascotaBuilder {
     );
   }
 
-  @Test
+ @Test
   public void sePuedeCrearUnaMascotaSinSusCaracteristicasOpcionales(){
     agregarDatosMascota();
     creadorMascota.ingresarNuevaCaracteristica(estaCastrada, true);

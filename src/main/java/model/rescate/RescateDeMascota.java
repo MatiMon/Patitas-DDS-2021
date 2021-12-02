@@ -19,6 +19,11 @@ public abstract class RescateDeMascota {
 
   @ElementCollection
   private List<String> fotos = new ArrayList<>();
+
+  public String getDescripcion() {
+    return descripcion;
+  }
+
   private String descripcion;
 
   @Embedded

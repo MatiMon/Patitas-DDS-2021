@@ -68,7 +68,7 @@ public class TestAsociaciones {
     contacto2 = new Contacto("nombre", "apellido", "1234", "nombre@hotmail.com");
     fotos.add("una foto");
     contacto1 = new Contacto("Juan", "Perez", "15501234", "juanperez@hotmail.com");
-    rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "callefalsa123", contacto1);
+    rescatista = new Rescatista("nombre", "apodo", LocalDate.of(2021,12,12), TipoDocumento.DNI, "123","callefalsa123", contacto1);
     ubicacionSanMartin = new Ubicacion("San Martín 150", -34.58499, -58.45023);
     ubicacionGuardiaVieja = new Ubicacion("Guardia Vieja 2077", -34.58499, -58.45023);
     contactos.add(contacto1);

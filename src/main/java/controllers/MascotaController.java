@@ -151,7 +151,11 @@ public class MascotaController extends Controller implements WithGlobalEntityMan
     descripcion.put("sexo", mascota.getSexo().getNombre());
     descripcion.put("tamanio", mascota.getTamanio().getNombre());
     descripcion.put("descripcionFisica", mascota.getDescripcionFisica());
-
+    if (mascota.getTipoAnimal().compareTo(TipoAnimal.PERRO) == 0) {
+     descripcion.put("esPerro", true);
+    }else{
+      descripcion.put("esPerro", false);
+    }
 
 /*     TipoAnimal tipoAnimal;
     private List<String> fotos;*/

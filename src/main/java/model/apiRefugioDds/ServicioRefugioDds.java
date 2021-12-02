@@ -23,7 +23,7 @@ public class ServicioRefugioDds implements ServicioRefugio {
   }
 
   public List<HogarDeTransito> obtenerTodosLosHogares(String bearerToken) {
-    if (bearerToken == "") {
+    if (bearerToken.equals("")) {
       throw new ObtenerTodosLosHogaresException("debe ingresar un token.");
     }
     ClientResponse response = this.api.getPaginaDeHogares("1", bearerToken);
@@ -73,5 +73,9 @@ public class ServicioRefugioDds implements ServicioRefugio {
 
   public void setBearerToken(String bearerToken) {
     this.bearerToken = bearerToken;
+  }
+
+  public String getEmail() {
+    return email;
   }
 }

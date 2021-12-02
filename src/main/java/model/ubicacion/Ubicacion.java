@@ -17,7 +17,7 @@ public class Ubicacion {
   private double longitud;
 
   public Ubicacion(String direccion, double unaLatitud, double unaLongitud) {
-    direccion = direccion;
+    this.direccion = direccion;
     latitud = unaLatitud;
     longitud = unaLongitud;
   }

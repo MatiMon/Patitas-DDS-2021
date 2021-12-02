@@ -38,7 +38,7 @@ public class TestNotificaciones {
 
     this.unDuenio = new Duenio("Matias", "Sosa", null, TipoDocumento.DNI, 40000000, this.unContacto,null, null);
 
-    this.unRescatista = new Rescatista("Jerónimo", "Fontana", null, null, null, this.unContacto);
+    this.unRescatista = new Rescatista("Jerónimo", "Fontana", null, null, null,null, this.unContacto);
 
     this.unaMascota = new Mascota("Pepe", null, 4, Sexo.MACHO, TipoAnimal.GATO,
         "facha", Arrays.asList("foto1.jpg"), null, this.unDuenio, "QR-1", Tamanio.GRANDE);

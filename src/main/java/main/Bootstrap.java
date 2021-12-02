@@ -53,11 +53,12 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
     Usuario userAdmin = null;
     try{
       userAdmin = new Usuario(user, pass, validadorContrasenia);
+      userAdmin.setEsAdministrador(true);
     }catch(Exception e){
       //...
     }
 
-    userAdmin.setEsAdministrador(true);
+
 
     Contacto contactoPrincipal = new Contacto("al", "go", "1234", "algo@gmail");
     Ubicacion ubicacion = new Ubicacion("String", 123, 456);

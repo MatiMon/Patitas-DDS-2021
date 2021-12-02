@@ -27,7 +27,6 @@ public class Routes {
         CharacteristicsController characteristicsController = new CharacteristicsController();
         RescateController rescateController = new RescateController();
 
-        Map<String, Object> modelo = new HashMap<>();
 
         Spark.after((request, response) -> {
             PerThreadEntityManagers.getEntityManager();

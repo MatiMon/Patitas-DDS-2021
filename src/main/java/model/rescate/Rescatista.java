@@ -31,6 +31,12 @@ public class Rescatista {
   @Enumerated(EnumType.ORDINAL)
   private TipoDocumento tipoDocumento;
 
+  private String nroDocumento;
+
+  public String getNroDocumento() {
+    return nroDocumento;
+  }
+
   @Column
   private String direccion;
 
@@ -41,7 +47,7 @@ public class Rescatista {
   @JoinColumn(name = "rescatistaId")
   private List<Contacto> contactosSecundarios = new ArrayList<>();
 
-  public Rescatista(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, String direccion, Contacto contactoPrincipal) {
+  public Rescatista(String nombre, String apellido, LocalDate fechaNacimiento, TipoDocumento tipoDocumento, String nroDocumento, String direccion, Contacto contactoPrincipal) {
     if(contactoPrincipal == null){
       throw new RescatistaInvalidoException("debe tener al menos un model.contacto");
     }
@@ -51,6 +57,7 @@ public class Rescatista {
     this.tipoDocumento = tipoDocumento;
     this.direccion = direccion;
     this.contactoPrincipal = contactoPrincipal;
+    this.nroDocumento =nroDocumento;
   }
 
   public void agregarContactoSecundario(Contacto contacto){

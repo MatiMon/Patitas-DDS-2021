@@ -9,6 +9,10 @@ import java.util.List;
 
 public class RepositorioUsuarios implements WithGlobalEntityManager {
 
+  public List<Usuario> getUsuarios() {
+    return usuarios;
+  }
+
   List<Usuario> usuarios = new ArrayList<>();
   private static RepositorioUsuarios instancia = new RepositorioUsuarios();
 

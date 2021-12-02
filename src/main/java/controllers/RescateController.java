@@ -59,7 +59,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
     //TODO esto está con valores random pues no tenemos una api de geocodificación ni el mapa juas juas
     Ubicacion ubicacionMascota = new Ubicacion(lugarMascota, 0.000000, 0.000000);
 
-    Rescatista rescatista = new Rescatista(nombre, apellido, fechaDeNacimiento, tipoDocumento, direccion, contactoPrincipal);
+    Rescatista rescatista = new Rescatista(nombre, apellido, fechaDeNacimiento, tipoDocumento,nroDocumento, direccion, contactoPrincipal);
     RescateDeMascotaRegistrada rescateRegistrado = null;
     RescateDeMascotaSinRegistrar rescateDeMascotaSinRegistrar = null;
 
@@ -98,7 +98,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
   //la asociacion está creada por un test que está en el test de persistencia
   public Asociacion obtenerAsociacion(){
     List<Asociacion> asociaciones = entityManager().createQuery("from asociaciones", Asociacion.class).getResultList();
-    return asociaciones.stream().filter(asociacion -> asociacion.getId().equals(1)).findFirst().orElse(null);
+    return asociaciones.stream().filter(asociacion -> asociacion.getId() == 1).findFirst().orElse(null);
   }
 
   public Mascota obtenerMascota(String idMascota, Response response){

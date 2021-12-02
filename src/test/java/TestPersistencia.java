@@ -1,3 +1,4 @@
+
 import model.asociacion.Asociacion;
 import model.asociacion.Voluntario;
 import model.caracteristicas.definidas.BooleanaDefinida;
@@ -93,4 +94,5 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     assertEquals(1, entityManager().createQuery("from Usuarios", Usuario.class).getResultList().size());
   }
 }
+
 

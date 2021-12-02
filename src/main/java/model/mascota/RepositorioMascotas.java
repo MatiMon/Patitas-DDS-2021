@@ -45,6 +45,6 @@ public class RepositorioMascotas implements WithGlobalEntityManager {
   public List<Mascota> obtenerMascotasUser(Long user_id) {
     return entityManager()//
         .createQuery("from Mascotas", Mascota.class)
-        .getResultList().stream().filter(mascota -> mascota.getIdDuenio() == user_id).collect(Collectors.toList());
+        .getResultList().stream().filter(mascota -> (mascota.getIdDuenio()) == user_id).collect(Collectors.toList());
   }
 }

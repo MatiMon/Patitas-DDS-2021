@@ -5,13 +5,22 @@
 
 {{# partial "contenido" }}
     <h1> Mis Mascotas </h1>
-    <div>
+    <div style="text-align: center;">
         {{#each mascotas}}
 
             <div class="card">
                 <!--<img src="img_avatar.png" alt="Avatar" style="width:100%">-->
                 <div class="container">
-                    <h4><b>{{this.apodo}}</b></h4>
+                    <div style="position: relative; text-align: center; color: white;">
+                        {{#if this.esPerro}}
+                            <img src="https://i.imgur.com/y1oZwwL.png" id="perro" style="width:140px; padding: 20px;">
+                        {{else}}
+                            <img src="https://i.imgur.com/LOuHCl2.png" id="gato" style="width:127px;
+                            padding-top: 14px; padding-bottom:26px;font-family: 'Raleway';width: 127px;padding-left: 27px;padding-right: 27px;">
+                        {{/if}}
+                        <div style="position: absolute;top: 50%;left: 50%; transform: translate(-50%, -50%);color:white;font-size:larger;">{{this.apodo}}</div>
+                    </div>
+
                     <p>Nombre: {{this.nombre}}</p>
                     <p>Edad: {{this.edad}}</p>
                     <p>Sexo: {{this.sexo}}</p>

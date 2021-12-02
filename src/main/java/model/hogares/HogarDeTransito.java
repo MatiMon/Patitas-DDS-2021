@@ -99,4 +99,11 @@ public class HogarDeTransito {
     return ubicacion;
   }
 
+  public int getCapacidad() {
+    return Capacidad;
+  }
+
+  public String getTelefono() {
+    return telefono;
+  }
 }

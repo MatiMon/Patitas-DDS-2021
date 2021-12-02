@@ -44,7 +44,7 @@ public class TestRescates {
 
       this.duenio = new Duenio("Matias", "Sosa", null, TipoDocumento.DNI, 40000000, this.unContacto,null, null);
 
-      this.rescatista = new Rescatista("Manuel", "Quintana", null, null, null, this.unContacto);
+      this.rescatista = new Rescatista("Manuel", "Quintana", null, null, "123",null, this.unContacto);
 
 
 
