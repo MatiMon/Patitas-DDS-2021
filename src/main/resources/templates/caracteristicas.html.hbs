@@ -15,20 +15,20 @@
                     <th>Opciones</th>
 
                 </tr>
-                {{#each caracteristicas}}
+                {{#caracteristicas}}
                 <tr>
                     <td>{{Nombre}}</td>
                     <td>{{esObligatoria}}</td>
                     <td>{{Tipo}}</td>
                     <td>{{Respuestas}}</td>
                     <td>
-                        <a id="editCaracteristica" class="boton boton-tabla editar" href="/caracteristicas/nueva">Editar</a>
+                        <a id="editCaracteristica" class="boton boton-tabla editar" href="/caracteristicas/{{id}}">Editar</a>
                         <a id="elimCarac" class="boton boton-tabla eliminar" href="/caracteristicas/nueva">Eliminar</a>
                         <!-- TODO: Agregar comportamiento a los botones  -->
 
                     </td>
                 </tr>
-                {{/each}}
+                {{/caracteristicas}}
             </table>
             <div>
                 <a id="agregar" class="button" href="/caracteristicas/nueva">Agregar Caracteristica</a>

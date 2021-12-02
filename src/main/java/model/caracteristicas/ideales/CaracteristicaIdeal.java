@@ -53,4 +53,8 @@ public class CaracteristicaIdeal {
     public CaracteristicaDefinida crearCaracteristica(Object valor){
         return tipo.crearCaracteristica(nombre, valor);
     }
+
+    public Long getId() {
+        return id;
+    }
 }

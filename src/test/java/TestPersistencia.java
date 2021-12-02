@@ -82,7 +82,7 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     Usuario userAdmin = new Usuario("admin", "123456", validadorContrasenia);
     userAdmin.setEsAdministrador(true);
 
-    Contacto contactoPrincipal = new Contacto("al", "go", 1234, "algo@gmail");
+    Contacto contactoPrincipal = new Contacto("al", "go", "1234", "algo@gmail");
     Ubicacion ubicacion = new Ubicacion("String", 123, 456);
     Duenio duenio = new Duenio("Nombre falso", "sanchez", LocalDate.now(), TipoDocumento.DNI, 1254589, contactoPrincipal, ubicacion, userAdmin);
 
