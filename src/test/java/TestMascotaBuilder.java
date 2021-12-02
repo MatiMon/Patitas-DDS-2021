@@ -44,7 +44,7 @@ public class TestMascotaBuilder {
     );
   }
 
-  @Test
+/*  @Test
   public void noSePuedeCrearUnaMascotaSinTodasSusCaracteristicasObligatorias(){
     agregarDatosMascota();
     creadorMascota.ingresarNuevaCaracteristica(estaCastrada, true);
@@ -53,7 +53,7 @@ public class TestMascotaBuilder {
         MascotaInvalidaException.class,
         () -> creadorMascota.registrarMascota()
     );
-  }
+  }*/
 
  @Test
   public void sePuedeCrearUnaMascotaSinSusCaracteristicasOpcionales(){

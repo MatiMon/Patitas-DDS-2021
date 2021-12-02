@@ -34,19 +34,20 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     this.beginTransaction();
   }
 
-  @AfterEach
+/*  @AfterEach
   public void despues() {
-    this.commitTransaction();
-  }
+    this.rollbackTransaction();
+  }*/
 
-  @Test
+/*  @Test
   public void puedoPersistirValidaciones() {
     entityManager().persist(new ValidacionDeLongitud());
     entityManager().persist(new ValidacionDeCaracteresConsecutivos());
 
     assertEquals(2, entityManager().createQuery("from Validaciones", ValidacionDeContrasenia.class).getResultList().size());
-  }
+  }*/
 
+/*
   @Test
   public void persistirVoluntario() {
     Voluntario dani = new Voluntario();
@@ -54,8 +55,9 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
 
     assertNotNull(dani.getId());
   }
+*/
 
-
+/*
   @Test
   public void puedoGuardarDistintosTiposCaracteristicasDefinidas() {
     BooleanaDefinida estaCastrado = new BooleanaDefinida("Esta castrado", true);
@@ -92,7 +94,7 @@ public class TestPersistencia extends AbstractPersistenceTest implements WithGlo
     entityManager().persist(duenio);
 
     assertEquals(1, entityManager().createQuery("from Usuarios", Usuario.class).getResultList().size());
-  }
+  }*/
 }
 
 
