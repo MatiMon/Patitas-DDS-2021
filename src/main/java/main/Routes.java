@@ -55,9 +55,12 @@ public class Routes {
 
         Spark.get("/caracteristicas/nueva",characteristicsController::registrarNuevaCaracteristica, engine);
         Spark.get("/caracteristicas/:id",characteristicsController::getDetalleCaracteristica, engine);
+        Spark.get("/caracteristicas/:id/confirmacion/", characteristicsController::getCaracteristicaAEliminar,engine);
 
         Spark.post("/caracteristicas/nueva",characteristicsController::crearCaracteristica);
         Spark.post("/caracteristicas/:id",characteristicsController::actualizarCaracteristica);
+
+        Spark.post("/caracteristicas/:id/confirmacion/",characteristicsController::eliminarCaracteristica);
 
         Spark.get("/login-error", sesionController::crearSesionError, engine);
 

@@ -1,0 +1,31 @@
+{{# partial "titulo" }}
+<title>Patitas - Eliminar caracteristica</title>
+{{/partial}}
+
+
+{{# partial "contenido" }}
+
+<div>
+    <section>
+        {{#caracteristica}}
+        <h2>Confirmar eliminacion</h2>
+        <div>
+        <div class="confirmacion">
+            <span style="pregunta-confirmacion">¿Esta seguro que desea eliminar la caracteristica {{nombre}}?</span>
+        </div>
+        <form class="confirmacion" action="/caracteristicas/{{id}}/confirmacion/" method="POST">
+            <input class="button-eliminar" type="submit" value="Eliminar">
+            <a id="elimCarac" class="button-cancelar" href="/caracteristicas">Cancelar</a>
+        </form>
+        {{/caracteristica}}
+        </div>
+    </section>
+</div>
+
+
+<!-- <a href="/mascotas/enviado">Enviar</a>  Aca deberiamos agregar un aviso de que el formulario fue procesado con exito o algo asi-->
+
+
+{{/partial}}
+
+{{> layout.html.hbs }}

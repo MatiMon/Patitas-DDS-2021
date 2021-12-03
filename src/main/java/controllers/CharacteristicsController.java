@@ -115,6 +115,10 @@ public class CharacteristicsController extends Controller implements WithGlobalE
 
 
   public ModelAndView getDetalleCaracteristica(Request request, Response response) {
+    if (!estaIniciadaLaSesion(request) || !esUsuarioAdministrador(request)) {
+      response.redirect("/");
+      return null;
+    }
     String id = request.params(":id");
       CaracteristicaIdeal caracteristica = RepositorioCaracteristicasIdeales.getInstancia().buscarCaracteristica(id);
 
@@ -132,6 +136,29 @@ public class CharacteristicsController extends Controller implements WithGlobalE
     withTransaction(() -> {
       RepositorioCaracteristicasIdeales.getInstancia().eliminarCaracteristica(id);
       RepositorioCaracteristicasIdeales.getInstancia().agregarCaracteristicaIdeal(generarCaracteristica(request));
+    });
+    response.redirect("/caracteristicas");
+    return null;
+  }
+
+  public ModelAndView getCaracteristicaAEliminar(Request request, Response response) {
+    if (!estaIniciadaLaSesion(request) || !esUsuarioAdministrador(request)) {
+      response.redirect("/");
+      return null;
+    }
+    String id = request.params(":id");
+    CaracteristicaIdeal caracteristica = RepositorioCaracteristicasIdeales.getInstancia().buscarCaracteristica(id);
+
+    Map<String, Object> parametros = getModelo(request, response);
+
+    parametros.put("caracteristica",caracteristica);
+    return new ModelAndView(parametros, "confirmacion-eliminar-caracteristica.html.hbs");
+  }
+
+  public Void eliminarCaracteristica(Request request, Response response) {
+    String id = request.params(":id");
+    withTransaction(() -> {
+      RepositorioCaracteristicasIdeales.getInstancia().eliminarCaracteristica(id);
     });
     response.redirect("/caracteristicas");
     return null;
