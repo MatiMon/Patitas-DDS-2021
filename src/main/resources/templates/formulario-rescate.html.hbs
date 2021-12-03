@@ -74,7 +74,14 @@
             <span class="nombre-campo">Estado en el que encontraste la mascota:</span><input type="text" name="estado mascota" placeholder="Ingrese la descripcion fisica del estado en que encontro la mascota">
           </div>
           <div class="campo">
-            <span class="nombre-campo">Lugar en el que encontraste la mascota:</span><input type="text" name="lugar mascota" placeholder= "Aca deberia ir un mapa">
+
+            <span class="nombre-campo">Lugar en el que encontraste la mascota:</span>
+                <input id="pac-input" class="controls" type="text" placeholder="Ingrese direccion">
+                <div id="map"></div>
+
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwiuUJ6HQxo91RPKQZAdHN-Ps38JVd92c&libraries=places&callback=initAutocomplete"
+                     async defer></script>
+
           </div>
           <div class="campo">
             <span class="nombre-campo">Arrastre las fotos aqui:</span><input type="file" name="fotos" accept="image/*" multiple>

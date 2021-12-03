@@ -13,7 +13,8 @@ public class Routes {
 
     public static void main(String[] args) {
         System.out.println("Iniciando servidor...");
-        Spark.port(8080);
+        //Spark.port(8080);
+        Spark.port(getHerokuAssignedPort());
         Spark.staticFileLocation("/public");
 
 
@@ -72,6 +73,16 @@ public class Routes {
 
         System.out.println("Servidor iniciado!");
     }
+
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
+
 
 
 }
