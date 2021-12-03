@@ -81,6 +81,18 @@ function hideSteps(registrado, sinRegistrar){
   }
 }
 
+function qrCode(identificadorDeMascota) {
+    window.addEventListener("load", function(){
+        let textoAMostrar = "Id de la mascota: ";
+        textoAMostrar += identificadorDeMascota;
+        new QRCode(document.getElementById(identificadorDeMascota), {
+            text: textoAMostrar,
+            width: 100,
+            height: 100,
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    });
+}
 
 // This example adds a search box to a map, using the Google Place Autocomplete
 // feature. People can enter geographical searches. The search box will return a

@@ -156,6 +156,7 @@ public class MascotaController extends Controller implements WithGlobalEntityMan
     }else{
       descripcion.put("esPerro", false);
     }
+    descripcion.put("identificador", mascota.getId());
 
 /*     TipoAnimal tipoAnimal;
     private List<String> fotos;*/
