@@ -90,7 +90,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
       response.redirect("/rescate-error");
     }
 
-    response.redirect("/"); //TODO definir a donde redireccionar despues de crear la mascota
+    response.redirect("/", 201); //TODO definir a donde redireccionar despues de crear la mascota
     return null;
   }
 
@@ -124,4 +124,5 @@ public class RescateController extends Controller implements WithGlobalEntityMan
     parametros.put("rescateError", true);
     return new ModelAndView(parametros, "formulario-rescate.html.hbs");
   }
+
 }

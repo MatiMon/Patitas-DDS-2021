@@ -15,20 +15,16 @@
                 <span class="nombre-campo">Contraseña:</span><input  required type="password" name="password" placeholder="Ingrese contraseña">
             </div>
             <input type="submit" class="button" value="Iniciar Sesión">
+
+      {{#if mensajeError}}
+        <div class="alert alert-danger" role="alert">
+          Usuario o contraseña inválidos. Por favor inténtelo nuevamente.
+        </div>
+      {{/if}}
+      
     </div>
 
         </form>
-
-        {{#if mensajeError}}
-            <div id="u7" class="ax_default label"  style="margin-top: 15px" data-label="Mensaje de error">
-                <div id="u7_div" class=""></div>
-                <div id="u7_text" class="text ">
-                    <p><span>Usuario o contraseña inválidos. Por favor inténtelo nuevamente.</span></p>
-                </div>
-            </div>
-        {{/if}}
-
-
 
 
 </section>

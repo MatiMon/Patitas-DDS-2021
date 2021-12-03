@@ -10,8 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ContextTest extends AbstractPersistenceTest implements WithGlobalEntityManager {
 
-/*
-	@Test
+/*	@Test
 	public void contextUp() {
 		assertNotNull(entityManager());
 	}
@@ -19,7 +18,6 @@ public class ContextTest extends AbstractPersistenceTest implements WithGlobalEn
 	@Test
 	public void contextUpWithTransaction() throws Exception {
 		withTransaction(() -> {});
-	}
-*/
+	}*/
 
 }

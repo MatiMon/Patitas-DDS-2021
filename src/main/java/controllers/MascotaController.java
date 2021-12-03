@@ -101,7 +101,7 @@ public class MascotaController extends Controller implements WithGlobalEntityMan
       response.redirect("/mascota-error");
     }
 
-    response.redirect("/"); //TODO definir a donde redireccionar despues de crear la mascota
+    response.redirect("/mascotas");
     return null;
   }
 
