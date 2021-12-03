@@ -5,15 +5,14 @@
 
 {{# partial "contenido" }}
 <h1> Bienvenidos!! </h1>
-<div class="mision">
-  <div class="text_mision">
-    <p> Nuestra mision: </p>
-    <p> Salvar el planeta </p>
-    <p> Rescatar perritos </p>
-    <p> Bajar la inflacion</p>
-    <p> Destruir a los malos </p>
-  </div>
+<div class="mision" style="width: 50%;text-align: center; display: inline-block;">
+    <p> Nuestra mision: Salvar el planeta, Rescatar perritos, Bajar la inflacion, Destruir a los malos, Hacer un deploy de Heroku sin morir en el intento </p>
+    <p> Lorem ipsum dolor sit amet consectetur adipiscing elit nunc eu massa leo sociosqu, duis proin vestibulum lobortis primis ac mattis ullamcorper porta ut tortor hendrerit dignissim,
+      risus sem magna quisque quam velit nascetur bibendum integer dictum elementum.  </p>
+
 </div>
+
+<img src="https://i.imgur.com/5x727aM.png" style="height: 268px; display: inline;">
 
 {{#if rescateExitoso}}
   <div class="alert alert-success" role="alert">
@@ -22,9 +21,11 @@
 
 {{/if}}
 
+<div style="text-align: center">
+  <a class="button" id="botonRescates" href="/rescates/nuevo">Encontré una Mascota</a>
+  <a class="button" id="botonMascotas" href="/mascotas/nueva">Registrar mi Mascota</a>
+</div>
 
-<a class="button" id="botonRescates" href="/rescates/nuevo">Encontré una Mascota</a>
-<a class="button" id="botonMascotas" href="/mascotas/nueva">Registrar mi Mascota</a>
 
 {{/partial}}
 
