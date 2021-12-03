@@ -16,9 +16,6 @@ public class HomeController extends Controller{
   public ModelAndView getHome(Request request, Response response) {
     Map<String, Object> modelo = getModelo(request, response);
     request.session().attribute("redirect_login", "/");
-    if(response.status() == 201){
-      modelo.put("rescateExitoso", true);
-    }
     return new ModelAndView(modelo, "home.html.hbs");
   }
 

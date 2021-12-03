@@ -53,6 +53,7 @@ public class Routes {
         Spark.post("/rescates/nuevo",rescateController::crearRescate);
         Spark.get("/rescates-error", rescateController::crearRescateError, engine);
         Spark.get("/mascota-inexistente", rescateController::obtenerMascotaError, engine);
+        Spark.get("/rescate-exitoso", rescateController::crearRescateExitoso, engine);
 
         Spark.get("/caracteristicas/nueva",characteristicsController::registrarNuevaCaracteristica, engine);
         Spark.get("/caracteristicas/:id",characteristicsController::getDetalleCaracteristica, engine);

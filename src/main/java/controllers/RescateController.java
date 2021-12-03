@@ -90,7 +90,7 @@ public class RescateController extends Controller implements WithGlobalEntityMan
       response.redirect("/rescate-error");
     }
 
-    response.redirect("/", 201); //TODO definir a donde redireccionar despues de crear la mascota
+    response.redirect("/rescate-exitoso"); //TODO definir a donde redireccionar despues de crear la mascota
     return null;
   }
 
@@ -123,6 +123,12 @@ public class RescateController extends Controller implements WithGlobalEntityMan
     Map<String, Object> parametros = new HashMap<>();
     parametros.put("rescateError", true);
     return new ModelAndView(parametros, "formulario-rescate.html.hbs");
+  }
+
+  public ModelAndView crearRescateExitoso(Request request, Response response) {
+    Map<String, Object> parametros = new HashMap<>();
+    parametros.put("rescateExitoso", true);
+    return new ModelAndView(parametros, "home.html.hbs");
   }
 
 }
